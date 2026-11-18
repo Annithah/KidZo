@@ -1,0 +1,29 @@
+{
+  "name": "kidzo",
+  "private": true,
+  "version": "0.1.0",
+  "description": "KIDZO - interactive entertainment and learning for kids 2-12, with a protected parent area and admin dashboard.",
+  "packageManager": "pnpm@12.21.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev:api": "pnpm --filter @kidzo/api dev",
+    "dev:admin": "pnpm --filter @kidzo/admin dev",
+    "dev:mobile": "pnpm --filter @kidzo/mobile start",
+    "db:seed": "pnpm --filter @kidzo/api db:seed",
+    "typecheck": "pnpm -r --workspace-concurrency=1 typecheck",
+    "lint": "pnpm -r lint",
+    "test": "pnpm -r test",
+    "check": "pnpm typecheck && pnpm lint && pnpm test"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.6.6",
+    "eslint": "^10.15.0",
+    "globals": "^17.14.0",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.73.0",
+    "vitest": "^5.1.0"
+  }
+}
