@@ -7,6 +7,7 @@ import {
   completionResultSchema,
   contentDetailSchema,
   contentSummarySchema,
+  guestPlaybackSchema,
   insightsSchema,
   sessionSchema,
   stickerSchema,
@@ -16,6 +17,7 @@ import {
   type CompleteSessionInput,
   type ContentType,
   type CreateChildInput,
+  type GuestPlaybackInput,
   type LoginInput,
   type OfflineSession,
   type RegisterInput,
@@ -78,6 +80,10 @@ export const api = {
   catalog: (query: { childId?: string; type?: ContentType; calm?: boolean }) =>
     client.get('/catalog', { query, schema: z.array(contentSummarySchema) }),
   content: (id: string) => client.get(`/content/${id}`, { schema: contentDetailSchema }),
+  guestCatalog: (age: number) => client.post('/guest/catalog', { age }, { auth: false, schema: z.array(contentSummarySchema) }),
+  guestContent: (id: string, age: number) =>
+    client.post(`/guest/content/${id}`, { age }, { auth: false, schema: contentDetailSchema }),
+  guestPlayback: (input: GuestPlaybackInput) => client.post('/guest/playback', guestPlaybackSchema.parse(input), { auth: false }),
   stickers: () => client.get('/stickers', { schema: z.array(stickerSchema) }),
 
   startSession: (input: StartSessionInput) => client.post('/sessions', input, { schema: startedSessionSchema }),

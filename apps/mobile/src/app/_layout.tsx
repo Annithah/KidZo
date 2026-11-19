@@ -20,6 +20,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ApiError } from '@kidzo/shared';
 import { FamilyProvider } from '../lib/family';
+import { GuestProvider } from '../lib/guest';
 import { ParentGateProvider } from '../lib/parent-gate';
 import { SessionProvider, useSession } from '../lib/session';
 import { SyncManager } from '../lib/sync';
@@ -57,6 +58,7 @@ function RootStack() {
         <Stack.Screen name="sign-up" />
         <Stack.Screen name="forgot-password" />
         <Stack.Screen name="reset-password" />
+        <Stack.Screen name="guest" />
       </Stack.Protected>
       <Stack.Protected guard={signedIn}>
         <Stack.Screen name="(app)" />
@@ -85,13 +87,15 @@ export default function RootLayout() {
       <SafeAreaProvider>
         <QueryClientProvider client={queryClient}>
           <SessionProvider>
-            <FamilyProvider>
-              <ParentGateProvider>
-                <SyncManager />
-                <StatusBar style="dark" />
-                <RootStack />
-              </ParentGateProvider>
-            </FamilyProvider>
+            <GuestProvider>
+              <FamilyProvider>
+                <ParentGateProvider>
+                  <SyncManager />
+                  <StatusBar style="dark" />
+                  <RootStack />
+                </ParentGateProvider>
+              </FamilyProvider>
+            </GuestProvider>
           </SessionProvider>
         </QueryClientProvider>
       </SafeAreaProvider>

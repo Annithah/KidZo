@@ -4,6 +4,7 @@ export * from './schemas/child';
 export * from './schemas/content';
 export * from './schemas/session';
 export * from './schemas/admin';
+export * from './schemas/guest';
 export * from './tokens';
 export * from './policy';
 export * from './content-graph';

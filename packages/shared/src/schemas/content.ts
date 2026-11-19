@@ -48,6 +48,7 @@ const emoji = z.string().min(1).max(16);
 export const sceneSchema = z.object({
   emoji,
   color: hexColor,
+  videoUrl: z.string().url().max(500).nullable().default(null),
 });
 
 export const storyChoiceSchema = z.object({

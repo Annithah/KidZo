@@ -40,7 +40,7 @@ export function BranchingEditor({ body, onChange }: { body: BranchingBody; onCha
           className="btn sky small"
           style={{ alignSelf: 'flex-end' }}
           disabled={body.nodes.length >= 200}
-          onClick={() => onChange({ ...body, nodes: [...body.nodes, { id: nextId(ids, 'scene'), text: { en: '' }, scene: { emoji: '🌟', color: '#5BC0F8' }, familyTurn: false, choices: [], next: null, ending: true }] })}
+          onClick={() => onChange({ ...body, nodes: [...body.nodes, { id: nextId(ids, 'scene'), text: { en: '' }, scene: { emoji: '🌟', color: '#5BC0F8', videoUrl: null }, familyTurn: false, choices: [], next: null, ending: true }] })}
         >
           + Add scene
         </button>
@@ -93,6 +93,10 @@ export function BranchingEditor({ body, onChange }: { body: BranchingBody; onCha
               ) : null}
             </div>
             <LocalizedInput label="Story text" multiline value={node.text} onChange={(text) => setNode(node.id, { text })} />
+            <SceneVideoField
+              videoUrl={node.scene.videoUrl}
+              onChange={(videoUrl) => setNode(node.id, { scene: { ...node.scene, videoUrl } })}
+            />
 
             {mode === 'choices'
               ? node.choices.map((choice, ci) => (
@@ -154,6 +158,46 @@ export function BranchingEditor({ body, onChange }: { body: BranchingBody; onCha
           </section>
         );
       })}
+    </div>
+  );
+}
+
+function SceneVideoField({ videoUrl, onChange }: { videoUrl: string | null; onChange: (url: string | null) => void }) {
+  const [uploading, setUploading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  return (
+    <div className="stack">
+      <Field label="Scene video URL" hint="MP4 video clip, up to 100 MB. Optional; the emoji scene remains as a fallback.">
+        <input className="input" type="url" value={videoUrl ?? ''} onChange={(e) => onChange(e.target.value.trim() || null)} />
+      </Field>
+      <label className="btn small secondary" style={{ cursor: 'pointer', alignSelf: 'flex-start' }}>
+        {uploading ? 'Uploading...' : 'Upload MP4 video'}
+        <input
+          type="file"
+          accept="video/mp4"
+          hidden
+          disabled={uploading}
+          onChange={async (e) => {
+            const file = e.target.files?.[0];
+            if (!file) return;
+            setUploading(true);
+            setError(null);
+            try {
+              const result = await api.uploadMedia(file);
+              if (result.contentType !== 'video/mp4') throw new Error('Choose an MP4 video file');
+              onChange(result.url);
+            } catch (err) {
+              setError(describeError(err).message);
+            } finally {
+              setUploading(false);
+              e.target.value = '';
+            }
+          }}
+        />
+      </label>
+      {videoUrl ? <video controls playsInline src={videoUrl} style={{ maxWidth: 420, maxHeight: 240, borderRadius: 12 }} /> : null}
+      {error ? <div className="alert error" role="alert">{error}</div> : null}
     </div>
   );
 }

@@ -45,8 +45,8 @@ describe('content editor model', () => {
       kind: 'branching' as const,
       startNodeId: 'a',
       nodes: [
-        { id: 'a', text: { en: 'A' }, scene: { emoji: 'x', color: '#000000' }, familyTurn: false, next: null, ending: false, choices: [{ id: 'c', label: { en: 'go' }, emoji: 'x', next: 'b' }] },
-        { id: 'b', text: { en: 'B' }, scene: { emoji: 'x', color: '#000000' }, familyTurn: false, next: null, ending: true, choices: [] },
+        { id: 'a', text: { en: 'A' }, scene: { emoji: 'x', color: '#000000', videoUrl: null }, familyTurn: false, next: null, ending: false, choices: [{ id: 'c', label: { en: 'go' }, emoji: 'x', next: 'b' }] },
+        { id: 'b', text: { en: 'B' }, scene: { emoji: 'x', color: '#000000', videoUrl: null }, familyTurn: false, next: null, ending: true, choices: [] },
       ],
     };
     const result = removeNode(body, 'b');

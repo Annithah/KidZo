@@ -151,6 +151,21 @@ export const playSessions = pgTable(
   (t) => [index('play_sessions_child_date_idx').on(t.childId, t.localDate)],
 );
 
+export const guestContentDailyStats = pgTable(
+  'guest_content_daily_stats',
+  {
+    contentId: uuid('content_id')
+      .notNull()
+      .references(() => content.id, { onDelete: 'cascade' }),
+    date: text('date').notNull(),
+    plays: integer('plays').notNull().default(0),
+    completions: integer('completions').notNull().default(0),
+    secondsPlayed: integer('seconds_played').notNull().default(0),
+    completedSeconds: integer('completed_seconds').notNull().default(0),
+  },
+  (t) => [primaryKey({ columns: [t.contentId, t.date] }), index('guest_content_daily_date_idx').on(t.date)],
+);
+
 export const media = pgTable('media', {
   id: uuid('id').primaryKey().defaultRandom(),
   storageKey: text('storage_key').notNull().unique(),

@@ -7,7 +7,7 @@ import multipart from '@fastify/multipart';
 import rateLimit from '@fastify/rate-limit';
 import fastifyStatic from '@fastify/static';
 import Fastify, { type FastifyInstance } from 'fastify';
-import { MAX_MEDIA_BYTES } from '@kidzo/shared';
+import { MAX_UPLOAD_BYTES } from '@kidzo/shared';
 import type { Config } from './config';
 import type { Db } from './db/client';
 import { registerErrorHandler } from './lib/errors';
@@ -17,6 +17,7 @@ import { adminRoutes } from './routes/admin';
 import { authRoutes } from './routes/auth';
 import { catalogRoutes } from './routes/catalog';
 import { childRoutes } from './routes/children';
+import { guestRoutes } from './routes/guest';
 import { meRoutes } from './routes/me';
 import { sessionRoutes } from './routes/sessions';
 
@@ -75,7 +76,7 @@ export async function buildApp({ config, db, storage, mailer }: BuildAppOptions)
     ...(config.NODE_ENV === 'test' ? { allowList: () => process.env.KIDZO_TEST_RATE_LIMIT !== '1' } : {}),
   });
   await app.register(jwt, { secret: config.JWT_SECRET, sign: { algorithm: 'HS256' }, verify: { algorithms: ['HS256'] } });
-  await app.register(multipart, { limits: { fileSize: MAX_MEDIA_BYTES, files: 1 } });
+  await app.register(multipart, { limits: { fileSize: MAX_UPLOAD_BYTES, files: 1 } });
   await app.register(fastifyStatic, {
     root: path.resolve(config.UPLOAD_DIR),
     prefix: '/media/',
@@ -89,6 +90,7 @@ export async function buildApp({ config, db, storage, mailer }: BuildAppOptions)
   await app.register(authRoutes);
   await app.register(meRoutes);
   await app.register(childRoutes);
+  await app.register(guestRoutes);
   await app.register(catalogRoutes);
   await app.register(sessionRoutes);
   await app.register(adminRoutes);

@@ -1,6 +1,8 @@
+import { randomUUID } from 'node:crypto';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import type { ContentDetail } from '@kidzo/shared';
-import { ADMIN, bearer, createTestApp, login, registerParent, type TestContext } from './helpers';
+import { playSessions } from '../src/db/schema';
+import { ADMIN, bearer, createChild, createTestApp, login, registerParent, type TestContext } from './helpers';
 
 let ctx: TestContext;
 let adminToken: string;
@@ -45,7 +47,71 @@ describe('admin access', () => {
   it('returns stats', async () => {
     const res = await ctx.app.inject({ method: 'GET', url: '/admin/stats', headers: bearer(adminToken) });
     expect(res.statusCode).toBe(200);
-    expect(res.json().content.published).toBe(10);
+    expect(res.json()).toMatchObject({
+      content: { published: 10 },
+      completionRatePercent: 0,
+      averagePlaySeconds: 0,
+      averageCompletionSeconds: 0,
+      topGames: [],
+      lowEngagementContent: [],
+    });
+    expect(res.json().dailyActivity).toHaveLength(7);
+  });
+
+  it('reports aggregated engagement and weekly activity', async () => {
+    const date = new Date().toISOString().slice(0, 10);
+    const before = await ctx.app.inject({ method: 'GET', url: '/admin/stats', headers: bearer(adminToken) });
+    const beforeDay = before.json().dailyActivity.find((day: { date: string }) => day.date === date);
+    const { tokens } = await registerParent(ctx.app);
+    const child = await createChild(ctx.app, tokens.accessToken);
+    const created = await ctx.app.inject({
+      method: 'POST',
+      url: '/admin/content',
+      headers: bearer(adminToken),
+      payload: { ...draft, slug: 'analytics-adventure' },
+    });
+    const contentId = created.json().id as string;
+    const startedAt = new Date();
+    const sessions = [
+      { completed: true, secondsPlayed: 60 },
+      { completed: true, secondsPlayed: 120 },
+      { completed: false, secondsPlayed: 180 },
+    ];
+    await ctx.database.db.insert(playSessions).values(
+      sessions.map((session, index) => ({
+        clientSessionId: randomUUID(),
+        childId: child.id,
+        contentId,
+        localDate: startedAt.toISOString().slice(0, 10),
+        startedAt: new Date(startedAt.getTime() - index * 1000),
+        lastActiveAt: startedAt,
+        completed: session.completed,
+        secondsPlayed: session.secondsPlayed,
+      })),
+    );
+
+    const res = await ctx.app.inject({ method: 'GET', url: '/admin/stats', headers: bearer(adminToken) });
+    expect(res.statusCode).toBe(200);
+    const stats = res.json();
+    expect(stats.sessionsLast7Days).toBe(3);
+    expect(stats.completionsLast7Days).toBe(2);
+    expect(stats.completionRatePercent).toBe(66.7);
+    expect(stats.averagePlaySeconds).toBe(120);
+    expect(stats.averageCompletionSeconds).toBe(90);
+    expect(stats.topContent[0]).toMatchObject({ id: contentId, plays: 3 });
+    expect(stats.topSkills).toContainEqual({ skill: 'kindness', plays: 3 });
+    expect(stats.lowEngagementContent).toContainEqual({
+      id: contentId,
+      title: 'Test Adventure',
+      plays: 3,
+      completionRatePercent: 66.7,
+    });
+    expect(stats.dailyActivity.find((day: { date: string }) => day.date === date)).toMatchObject({
+      newFamilies: beforeDay.newFamilies + 1,
+      newChildren: beforeDay.newChildren + 1,
+      plays: beforeDay.plays + 3,
+      completions: beforeDay.completions + 2,
+    });
   });
 });
 
@@ -145,5 +211,17 @@ describe('media upload', () => {
       payload: fake.body,
     });
     expect(bad.statusCode).toBe(400);
+
+    const mp4 = Buffer.concat([Buffer.from([0x00, 0x00, 0x00, 0x18, 0x66, 0x74, 0x79, 0x70]), Buffer.from('isom'), Buffer.alloc(64)]);
+    const video = multipart('scene.mp4', 'video/mp4', mp4);
+    const uploadedVideo = await ctx.app.inject({
+      method: 'POST',
+      url: '/admin/media',
+      headers: { ...bearer(adminToken), ...video.headers },
+      payload: video.body,
+    });
+    expect(uploadedVideo.statusCode).toBe(201);
+    expect(uploadedVideo.json()).toMatchObject({ contentType: 'video/mp4' });
+    expect(uploadedVideo.json().url).toMatch(/\/media\/.+\.mp4$/);
   });
 });

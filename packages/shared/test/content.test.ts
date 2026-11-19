@@ -12,7 +12,7 @@ import {
 } from '../src';
 
 const t = (en: string) => ({ en });
-const scene = { emoji: '🌙', color: '#24264A' };
+const scene = { emoji: '🌙', color: '#24264A', videoUrl: null };
 
 const story: BranchingBody = {
   kind: 'branching',

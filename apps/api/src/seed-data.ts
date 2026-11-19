@@ -7,8 +7,18 @@ import type { ContentInput, LocalizedText, StickerInput, StoryNode } from '@kidz
 
 const t = (en: string, fr?: string): LocalizedText => (fr ? { en, fr } : { en });
 
-type NodeInput = Partial<StoryNode> & Pick<StoryNode, 'id' | 'text' | 'scene'>;
-const node = (n: NodeInput): StoryNode => ({ familyTurn: false, choices: [], next: null, ending: false, ...n });
+type NodeInput = Omit<Partial<StoryNode>, 'scene'> &
+  Pick<StoryNode, 'id' | 'text'> & {
+    scene: Pick<StoryNode['scene'], 'emoji' | 'color'> & { videoUrl?: string | null };
+  };
+const node = ({ scene, ...n }: NodeInput): StoryNode => ({
+  familyTurn: false,
+  choices: [],
+  next: null,
+  ending: false,
+  ...n,
+  scene: { videoUrl: null, ...scene },
+});
 
 export const seedStickers: StickerInput[] = [
   { slug: 'moonbeam-butterfly', name: t('Moonbeam Butterfly', 'Papillon rayon de lune'), emoji: '🦋', color: '#A98BFF' },

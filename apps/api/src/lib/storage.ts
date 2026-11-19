@@ -18,6 +18,7 @@ const EXTENSIONS: Record<string, string> = {
   'audio/mpeg': 'mp3',
   'audio/mp4': 'm4a',
   'audio/aac': 'aac',
+  'video/mp4': 'mp4',
 };
 
 export class LocalDiskStorage implements MediaStorage {
@@ -48,6 +49,9 @@ export function sniffMediaType(buf: Buffer): string | null {
     return 'audio/mpeg';
   }
   if (buf[0] === 0xff && ((buf[1] ?? 0) & 0xf6) === 0xf0) return 'audio/aac';
-  if (startsWith([0x66, 0x74, 0x79, 0x70], 4)) return 'audio/mp4';
+  if (startsWith([0x66, 0x74, 0x79, 0x70], 4)) {
+    const audioBrands = new Set(['M4A ', 'M4B ', 'M4P ', 'F4A ', 'F4B ']);
+    return audioBrands.has(buf.toString('ascii', 8, 12)) ? 'audio/mp4' : 'video/mp4';
+  }
   return null;
 }

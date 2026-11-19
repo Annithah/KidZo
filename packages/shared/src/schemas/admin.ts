@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { SKILLS } from './content';
 
 export const adminStatsSchema = z.object({
   parents: z.number().int(),
@@ -10,7 +11,29 @@ export const adminStatsSchema = z.object({
   }),
   sessionsLast7Days: z.number().int(),
   completionsLast7Days: z.number().int(),
+  completionRatePercent: z.number().min(0).max(100),
+  averagePlaySeconds: z.number().int().min(0),
+  averageCompletionSeconds: z.number().int().min(0),
   topContent: z.array(z.object({ id: z.uuid(), title: z.string(), plays: z.number().int() })),
+  topSkills: z.array(z.object({ skill: z.enum(SKILLS), plays: z.number().int() })),
+  topGames: z.array(z.object({ id: z.uuid(), title: z.string(), plays: z.number().int() })),
+  lowEngagementContent: z.array(
+    z.object({
+      id: z.uuid(),
+      title: z.string(),
+      plays: z.number().int(),
+      completionRatePercent: z.number().min(0).max(100),
+    }),
+  ),
+  dailyActivity: z.array(
+    z.object({
+      date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+      newFamilies: z.number().int(),
+      newChildren: z.number().int(),
+      plays: z.number().int(),
+      completions: z.number().int(),
+    }),
+  ),
 });
 export type AdminStats = z.infer<typeof adminStatsSchema>;
 
@@ -48,5 +71,8 @@ export const ALLOWED_MEDIA_TYPES = [
   'audio/mpeg',
   'audio/mp4',
   'audio/aac',
+  'video/mp4',
 ] as const;
 export const MAX_MEDIA_BYTES = 15 * 1024 * 1024;
+export const MAX_VIDEO_BYTES = 100 * 1024 * 1024;
+export const MAX_UPLOAD_BYTES = MAX_VIDEO_BYTES;

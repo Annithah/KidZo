@@ -23,6 +23,7 @@ export default function Welcome() {
         <View style={styles.actions}>
           <Button label={t('welcome.getStarted')} size="kid" fullWidth onPress={() => router.push('/sign-up')} />
           <Button label={t('welcome.haveAccount')} variant="secondary" fullWidth onPress={() => router.push('/sign-in')} />
+          <Button label={t('guest.try')} variant="ghost" fullWidth onPress={() => router.push('/guest/age')} />
         </View>
       }
     >

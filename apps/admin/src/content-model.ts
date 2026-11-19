@@ -17,7 +17,7 @@ export type Draft = Omit<ContentInput, 'body'> & {
   rewardStickerId: string | null;
 };
 
-const SCENE = { emoji: '🌟', color: '#5BC0F8' };
+const SCENE = { emoji: '🌟', color: '#5BC0F8', videoUrl: null };
 
 export function blankNode(id: string, ending = false): StoryNode {
   return { id, text: { en: '' }, scene: { ...SCENE }, familyTurn: false, choices: [], next: null, ending };

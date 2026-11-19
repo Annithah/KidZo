@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
+import { useVideoPlayer, VideoView } from 'expo-video';
 import Animated, { FadeIn, FadeInDown } from 'react-native-reanimated';
 import { localize, type BranchingBody, type Locale } from '@kidzo/shared';
 import { useT } from '../../i18n';
@@ -25,9 +26,27 @@ export function StoryPlayer({ body, locale, familyMode, narration, onFinish }: P
   const nodes = useMemo(() => new Map(body.nodes.map((n) => [n.id, n])), [body.nodes]);
   const [path, setPath] = useState<string[]>([body.startNodeId]);
   const [speaking, setSpeaking] = useState(false);
+  const [failedVideoNodeId, setFailedVideoNodeId] = useState<string | null>(null);
   const node = nodes.get(path[path.length - 1] ?? body.startNodeId);
   const text = node ? localize(node.text, locale) : '';
   const parentsTurn = !!node?.familyTurn && familyMode;
+  const videoUrl = node?.scene.videoUrl ?? null;
+  const videoPlayer = useVideoPlayer(videoUrl, (player) => {
+    player.loop = true;
+  });
+
+  useEffect(() => {
+    const subscription = videoPlayer.addListener('statusChange', ({ status }) => {
+      setFailedVideoNodeId(status === 'error' ? node?.id ?? null : null);
+    });
+    if (videoUrl) videoPlayer.play();
+    else videoPlayer.pause();
+    return () => {
+      subscription.remove();
+      videoPlayer.pause();
+    };
+  }, [node?.id, videoPlayer, videoUrl]);
+  const videoFailed = !!node && failedVideoNodeId === node.id;
 
   const calm = palette.isCalm;
   const read = (value: string) => {
@@ -51,9 +70,13 @@ export function StoryPlayer({ body, locale, familyMode, narration, onFinish }: P
   return (
     <View style={styles.wrap}>
       <Animated.View key={node.id} entering={FadeIn.duration(350)} style={[styles.scene, { backgroundColor: node.scene.color }]}>
-        <Text style={styles.sceneEmoji} accessibilityElementsHidden>
-          {node.scene.emoji}
-        </Text>
+        {videoUrl && !videoFailed ? (
+          <VideoView player={videoPlayer} style={styles.sceneVideo} nativeControls contentFit="cover" />
+        ) : (
+          <Text style={styles.sceneEmoji} accessibilityElementsHidden>
+            {node.scene.emoji}
+          </Text>
+        )}
       </Animated.View>
 
       {parentsTurn ? (
@@ -113,7 +136,8 @@ export function StoryPlayer({ body, locale, familyMode, narration, onFinish }: P
 
 const styles = StyleSheet.create({
   wrap: { flex: 1, gap: spacing.md },
-  scene: { height: 220, borderRadius: radii.xl, alignItems: 'center', justifyContent: 'center' },
+  scene: { height: 220, borderRadius: radii.xl, overflow: 'hidden', alignItems: 'center', justifyContent: 'center' },
+  sceneVideo: { width: '100%', height: '100%' },
   sceneEmoji: { fontSize: 120, lineHeight: 140 },
   familyBanner: { backgroundColor: colors.lavender, borderRadius: radii.lg, padding: spacing.md, gap: 2 },
   textCard: { borderRadius: radii.lg, padding: spacing.md, gap: spacing.xs },

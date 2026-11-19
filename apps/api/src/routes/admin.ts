@@ -6,15 +6,18 @@ import {
   CONTENT_STATUSES,
   CONTENT_TYPES,
   MAX_MEDIA_BYTES,
+  MAX_UPLOAD_BYTES,
+  MAX_VIDEO_BYTES,
   contentInputSchema,
   estimatePackageBytes,
   paginationQuerySchema,
   stickerInputSchema,
   publishProblems,
   type AdminStats,
+  type Skill,
 } from '@kidzo/shared';
 import type { Db } from '../db/client';
-import { auditLogs, children, content, media, playSessions, stickers, users } from '../db/schema';
+import { auditLogs, children, content, guestContentDailyStats, media, playSessions, stickers, users } from '../db/schema';
 import { requireAdmin } from '../lib/auth';
 import { audit } from '../lib/audit';
 import { AppError, badRequest, conflict, notFound, parse } from '../lib/errors';
@@ -44,26 +47,116 @@ export async function adminRoutes(app: FastifyInstance): Promise<void> {
   app.addHook('preHandler', requireAdmin);
 
   app.get('/admin/stats', async (): Promise<AdminStats> => {
-    const since = new Date(Date.now() - 7 * 86_400_000);
+    const now = new Date();
+    const since = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() - 6));
     const [parents] = await app.db.select({ n: count() }).from(users).where(eq(users.role, 'parent'));
     const [kids] = await app.db.select({ n: count() }).from(children);
     const statusRows = await app.db.select({ status: content.status, n: count() }).from(content).groupBy(content.status);
-    const [sessions] = await app.db
+    const activity = await app.db
       .select({
-        total: count(),
-        completed: sql<number>`count(*) filter (where ${playSessions.completed})::int`,
+        id: content.id,
+        title: content.title,
+        type: content.type,
+        skills: content.skills,
+        startedAt: playSessions.startedAt,
+        secondsPlayed: playSessions.secondsPlayed,
+        completed: playSessions.completed,
       })
       .from(playSessions)
-      .where(gte(playSessions.startedAt, since));
-    const top = await app.db
-      .select({ id: content.id, title: content.title, plays: count(playSessions.id) })
-      .from(playSessions)
       .innerJoin(content, eq(content.id, playSessions.contentId))
-      .where(gte(playSessions.startedAt, since))
-      .groupBy(content.id)
-      .orderBy(desc(count(playSessions.id)))
-      .limit(5);
+      .where(gte(playSessions.startedAt, since));
+    const guestActivity = await app.db
+      .select({
+        id: content.id,
+        title: content.title,
+        type: content.type,
+        skills: content.skills,
+        date: guestContentDailyStats.date,
+        plays: guestContentDailyStats.plays,
+        completions: guestContentDailyStats.completions,
+        secondsPlayed: guestContentDailyStats.secondsPlayed,
+        completedSeconds: guestContentDailyStats.completedSeconds,
+      })
+      .from(guestContentDailyStats)
+      .innerJoin(content, eq(content.id, guestContentDailyStats.contentId))
+      .where(gte(guestContentDailyStats.date, since.toISOString().slice(0, 10)));
+    const newFamilies = await app.db
+      .select({ createdAt: users.createdAt })
+      .from(users)
+      .where(and(eq(users.role, 'parent'), gte(users.createdAt, since)));
+    const newChildren = await app.db.select({ createdAt: children.createdAt }).from(children).where(gte(children.createdAt, since));
+
     const byStatus = Object.fromEntries(statusRows.map((r) => [r.status, r.n]));
+    const contentActivity = new Map<string, { id: string; title: string; type: string; plays: number; completions: number }>();
+    const skillPlays = new Map<Skill, number>();
+    const daily = new Map<string, AdminStats['dailyActivity'][number]>();
+    for (let index = 0; index < 7; index += 1) {
+      const date = new Date(since.getTime() + index * 86_400_000).toISOString().slice(0, 10);
+      daily.set(date, { date, newFamilies: 0, newChildren: 0, plays: 0, completions: 0 });
+    }
+    let playedSeconds = 0;
+    let completedSeconds = 0;
+    let completionCount = 0;
+
+    for (const row of activity) {
+      const current = contentActivity.get(row.id) ?? {
+        id: row.id,
+        title: row.title.en,
+        type: row.type,
+        plays: 0,
+        completions: 0,
+      };
+      current.plays += 1;
+      if (row.completed) {
+        current.completions += 1;
+        completionCount += 1;
+        completedSeconds += row.secondsPlayed;
+      }
+      contentActivity.set(row.id, current);
+      playedSeconds += row.secondsPlayed;
+      for (const skill of row.skills) skillPlays.set(skill, (skillPlays.get(skill) ?? 0) + 1);
+      const day = daily.get(row.startedAt.toISOString().slice(0, 10));
+      if (day) {
+        day.plays += 1;
+        if (row.completed) day.completions += 1;
+      }
+    }
+
+    let sessionsLast7Days = activity.length;
+    for (const row of guestActivity) {
+      const current = contentActivity.get(row.id) ?? {
+        id: row.id,
+        title: row.title.en,
+        type: row.type,
+        plays: 0,
+        completions: 0,
+      };
+      current.plays += row.plays;
+      current.completions += row.completions;
+      contentActivity.set(row.id, current);
+      sessionsLast7Days += row.plays;
+      completionCount += row.completions;
+      playedSeconds += row.secondsPlayed;
+      completedSeconds += row.completedSeconds;
+      for (const skill of row.skills) skillPlays.set(skill, (skillPlays.get(skill) ?? 0) + row.plays);
+      const day = daily.get(row.date);
+      if (day) {
+        day.plays += row.plays;
+        day.completions += row.completions;
+      }
+    }
+
+    for (const row of newFamilies) {
+      const day = daily.get(row.createdAt.toISOString().slice(0, 10));
+      if (day) day.newFamilies += 1;
+    }
+    for (const row of newChildren) {
+      const day = daily.get(row.createdAt.toISOString().slice(0, 10));
+      if (day) day.newChildren += 1;
+    }
+
+    const byPlays = <T extends { plays: number; title: string }>(a: T, b: T) => b.plays - a.plays || a.title.localeCompare(b.title);
+    const rankedContent = [...contentActivity.values()].sort(byPlays);
     return {
       parents: parents?.n ?? 0,
       children: kids?.n ?? 0,
@@ -72,9 +165,28 @@ export async function adminRoutes(app: FastifyInstance): Promise<void> {
         draft: byStatus.draft ?? 0,
         archived: byStatus.archived ?? 0,
       },
-      sessionsLast7Days: sessions?.total ?? 0,
-      completionsLast7Days: Number(sessions?.completed ?? 0),
-      topContent: top.map((t) => ({ id: t.id, title: t.title.en, plays: t.plays })),
+      sessionsLast7Days,
+      completionsLast7Days: completionCount,
+      completionRatePercent: sessionsLast7Days === 0 ? 0 : Math.round((completionCount / sessionsLast7Days) * 1000) / 10,
+      averagePlaySeconds: sessionsLast7Days === 0 ? 0 : Math.round(playedSeconds / sessionsLast7Days),
+      averageCompletionSeconds: completionCount === 0 ? 0 : Math.round(completedSeconds / completionCount),
+      topContent: rankedContent.slice(0, 5).map(({ id, title, plays }) => ({ id, title, plays })),
+      topSkills: [...skillPlays.entries()]
+        .map(([skill, plays]) => ({ skill, plays }))
+        .sort((a, b) => b.plays - a.plays || a.skill.localeCompare(b.skill))
+        .slice(0, 5),
+      topGames: rankedContent.filter((item) => item.type === 'game').slice(0, 5).map(({ id, title, plays }) => ({ id, title, plays })),
+      lowEngagementContent: [...contentActivity.values()]
+        .filter((item) => item.plays >= 3)
+        .map(({ id, title, plays, completions }) => ({
+          id,
+          title,
+          plays,
+          completionRatePercent: Math.round((completions / plays) * 1000) / 10,
+        }))
+        .sort((a, b) => a.completionRatePercent - b.completionRatePercent || b.plays - a.plays || a.title.localeCompare(b.title))
+        .slice(0, 5),
+      dailyActivity: [...daily.values()],
     };
   });
 
@@ -263,13 +375,16 @@ export async function adminRoutes(app: FastifyInstance): Promise<void> {
   // Media uploads
 
   app.post('/admin/media', async (request, reply) => {
-    const file = await request.file({ limits: { fileSize: MAX_MEDIA_BYTES, files: 1 } });
+    const file = await request.file({ limits: { fileSize: MAX_UPLOAD_BYTES, files: 1 } });
     if (!file) throw badRequest('Attach a file');
     const data = await file.toBuffer();
-    if (file.file.truncated) throw badRequest('File is too large (max 15 MB)');
     const detected = sniffMediaType(data);
     if (!detected || !(ALLOWED_MEDIA_TYPES as readonly string[]).includes(detected)) {
-      throw badRequest('Only PNG, JPEG, WebP images and MP3, M4A, AAC audio are allowed');
+      throw badRequest('Only PNG, JPEG, WebP images, MP3, M4A, AAC audio, and MP4 video are allowed');
+    }
+    const maxBytes = detected === 'video/mp4' ? MAX_VIDEO_BYTES : MAX_MEDIA_BYTES;
+    if (file.file.truncated || data.length > maxBytes) {
+      throw badRequest(`File is too large (max ${Math.round(maxBytes / (1024 * 1024))} MB)`);
     }
     const stored = await app.storage.put(data, detected);
     await app.db.insert(media).values({

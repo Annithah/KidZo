@@ -57,13 +57,20 @@ API tests start an embedded database per file, so they run one file at a time.
 
 - **Kids:** profile picker, home with featured adventure, interactive stories with branching
   choices and Family Mode, quizzes, songs with narration, stars and a sticker album, adventure replay.
+- **Guest play:** try age-filtered content without creating a family or child profile. The selected
+  age stays in memory; guest plays and completions are reported as anonymous daily aggregates.
+- **Interactive video:** admins can attach MP4 scene clips (up to 100 MB) to branching stories.
+  Clips loop behind the story choices, with the illustrated emoji scene as a fallback when a clip
+  cannot play. Video clips require a connection; downloaded stories still have the fallback scene.
 - **Calm mode and limits:** bedtime theme and schedule, daily time limits with a heads-up,
   lock now, all enforced on the server and on the device.
 - **Offline:** downloaded adventures play without a connection. Play sessions queue and sync later.
 - **Parents:** PIN gate with lockout, control center, child management, limits and bedtime
   settings, weekly insights, downloads, password reset, data export and account delete.
 - **Admin:** stats, content editor with story graph validation, publish flow, stickers,
-  media upload, users and audit log.
+  media upload, users and audit log. Performance reporting includes weekly activity,
+  completion and duration metrics, including guest aggregates, popular skills and games,
+  and low-completion content.
 - **Languages:** English, French, Kinyarwanda and Kiswahili.
 
 ## Security notes
@@ -73,6 +80,7 @@ API tests start an embedded database per file, so they run one file at a time.
 - Every child and session route checks that the child belongs to the signed-in parent.
 - Admin role is re-read from the database on every admin request.
 - Uploads are checked by file signature, not by the declared type.
+- Guest reports retain only content/day aggregates. Guest age, profile and progress are not stored.
 - Sensitive actions are written to the audit log.
 
 ## Project status
