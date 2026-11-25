@@ -18,6 +18,7 @@ import {
 } from '@kidzo/shared';
 import { api, describeError, type ContentWithProblems } from '../api';
 import { BranchingEditor, QuizEditor, SongEditor } from '../components/BodyEditors';
+import { BranchingPreview } from '../components/BranchingPreview';
 import { ErrorBox, Field, Loading, LocalizedInput, StatusBadge } from '../components/ui';
 import { blankDraft, draftFromDetail, liveProblems, withType, type Draft } from '../content-model';
 
@@ -293,6 +294,9 @@ function Editor({ item }: { item: ContentWithProblems | null }) {
         ) : (
           <SongEditor body={draft.body} onChange={(body) => update({ body })} />
         )}
+        {draft.body.kind === 'branching' && tab === 'visual' ? (
+          <BranchingPreview body={draft.body} />
+        ) : null}
       </div>
     </div>
   );

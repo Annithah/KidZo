@@ -5,13 +5,39 @@ Expo SDK 58 app with Expo Router. See the root README for the whole project.
 ## Run
 
 ```bash
+pnpm db:seed          # once, to add the sample catalog
 pnpm dev:api          # from the repo root, in one terminal
-pnpm dev:mobile       # in another, then press i, a or w
+pnpm --filter @kidzo/mobile exec expo start --lan  # in another terminal
 ```
 
-In development the app reaches the API on port 4000 of the Metro host, so a phone on the
-same Wi-Fi works without config. Set `EXPO_PUBLIC_API_URL` for preview and production builds
-(see `.env.example`).
+The signed-out app opens directly to the age-appropriate guest experience without requiring an
+account. After age selection, the guest catalog highlights a story the child can tap to start;
+stories keep their interactive choices and narration. Account creation and sign-in remain available
+from the welcome screen.
+
+For ages 5–10, the guest home includes **My Day, My Way**, an offline interactive video lesson.
+It uses four bundled 14-second excerpts from the supplied Power of Routine, Visual Schedules,
+Foundations to Communication, and technology-development videos. Each clip plays before a timed
+question appears; the player pauses, shows a three-second countdown, and follows the selected or
+configured default answer. Answer selections are included in the play path.
+
+The supplied footage does not contain distinct animated alternatives for every answer. The demo
+therefore uses the source excerpt and choice-specific feedback, rather than claiming unseen footage
+exists. To publish fully visual branches for the example morning routine, upload additional clips
+for brushing teeth, safe showering, and breakfast, plus any distinct follow-up scenes (wash face,
+get dressed, comb hair, breakfast choices, and getting ready for school). The admin editor blocks
+publishing a timed question until each answer destination has its own video clip. The provided
+Talk, Play, Thrive video has not yet been excerpted into this demo.
+
+In the admin visual editor, enable a timed question on a scene with choices, set its timestamp,
+choose the default answer, and upload the source clip and each answer-destination clip. Open
+**Preview and test answer paths** to play the flow and exercise every answer branch. The timeout
+is fixed at exactly three seconds.
+
+In Expo LAN mode, the mobile app reaches the API on port 4000 of the Metro host. Start the API
+first and keep the phone and computer on the same Wi-Fi. Expo tunnel mode tunnels Metro only, not
+the KIDZO API; set `EXPO_PUBLIC_API_URL` to a reachable API address when using a tunnel or a
+preview/production build (see `.env.example`).
 
 ## Layout
 

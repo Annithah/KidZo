@@ -116,10 +116,22 @@ export function liveProblems(draft: Draft): { schema: string[]; publish: string[
 export function removeNode(body: Extract<ContentBody, { kind: 'branching' }>, id: string): Extract<ContentBody, { kind: 'branching' }> {
   const nodes = body.nodes
     .filter((n) => n.id !== id)
-    .map((n) => ({
-      ...n,
-      next: n.next === id ? null : n.next,
-      choices: n.choices.filter((c) => c.next !== id),
-    }));
+    .map((n) => {
+      const choices = n.choices.filter((c) => c.next !== id);
+      const defaultChoiceId = n.videoQuestion?.defaultChoiceId;
+      const nextDefaultChoiceId =
+        choices.find((choice) => choice.id === defaultChoiceId)?.id ?? choices[0]?.id;
+      return {
+        ...n,
+        next: n.next === id ? null : n.next,
+        choices,
+        videoQuestion: n.videoQuestion && nextDefaultChoiceId
+          ? {
+              ...n.videoQuestion,
+              defaultChoiceId: nextDefaultChoiceId,
+            }
+          : undefined,
+      };
+    });
   return { ...body, nodes, startNodeId: body.startNodeId === id ? (nodes[0]?.id ?? '') : body.startNodeId };
 }

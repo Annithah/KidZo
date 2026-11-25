@@ -118,6 +118,8 @@ export const en = {
   'player.parentsTurn': "Parent's turn!",
   'player.familyMode': 'FAMILY MODE',
   'player.next': 'Next',
+  'player.autoChoiceCountdown': 'Choose in {{seconds}}…',
+  'player.watchForQuestion': 'Watch for a question!',
   'player.readAloud': 'Read to me',
   'player.stop': 'Stop',
   'player.correct': "That's right!",

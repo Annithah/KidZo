@@ -112,6 +112,8 @@ export const fr: Translations = {
   'player.parentsTurn': 'Au tour du parent !',
   'player.familyMode': 'MODE FAMILLE',
   'player.next': 'Suivant',
+  'player.autoChoiceCountdown': 'Choisis en {{seconds}}…',
+  'player.watchForQuestion': 'Regarde bien, une question arrive !',
   'player.readAloud': 'Lis-moi',
   'player.stop': 'Stop',
   'player.correct': "C'est ça !",

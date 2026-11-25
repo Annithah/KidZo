@@ -59,9 +59,11 @@ API tests start an embedded database per file, so they run one file at a time.
   choices and Family Mode, quizzes, songs with narration, stars and a sticker album, adventure replay.
 - **Guest play:** try age-filtered content without creating a family or child profile. The selected
   age stays in memory; guest plays and completions are reported as anonymous daily aggregates.
-- **Interactive video:** admins can attach MP4 scene clips (up to 100 MB) to branching stories.
-  Clips loop behind the story choices, with the illustrated emoji scene as a fallback when a clip
-  cannot play. Video clips require a connection; downloaded stories still have the fallback scene.
+- **Interactive video:** admins can attach MP4 scene clips (up to 100 MB), pause at a configured
+  question timestamp, select a safe default answer, and preview/test every answer branch. The
+  player shows a three-second countdown before automatically choosing the default; publishing
+  requires a video clip for every answer destination. Illustrated emoji scenes remain a playback
+  fallback when a clip fails.
 - **Calm mode and limits:** bedtime theme and schedule, daily time limits with a heads-up,
   lock now, all enforced on the server and on the device.
 - **Offline:** downloaded adventures play without a connection. Play sessions queue and sync later.

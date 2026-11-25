@@ -113,6 +113,8 @@ export const rw: Translations = {
   'player.parentsTurn': 'Ni igihe cy’umubyeyi!',
   'player.familyMode': 'UBURYO BW’UMURYANGO',
   'player.next': 'Ibikurikira',
+  'player.autoChoiceCountdown': 'Hitamo mu masegonda {{seconds}}…',
+  'player.watchForQuestion': 'Reba neza, ikibazo kiraje!',
   'player.readAloud': 'Nsomera',
   'player.stop': 'Hagarara',
   'player.correct': 'Ni byo rwose!',

@@ -52,13 +52,16 @@ function RootStack() {
   const signedIn = status === 'signedIn';
   return (
     <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.cream }, animation: 'slide_from_right' }}>
+      <Stack.Screen name="index" />
       <Stack.Protected guard={!signedIn}>
         <Stack.Screen name="welcome" />
         <Stack.Screen name="sign-in" />
         <Stack.Screen name="sign-up" />
         <Stack.Screen name="forgot-password" />
         <Stack.Screen name="reset-password" />
-        <Stack.Screen name="guest" />
+        <Stack.Screen name="guest/age" />
+        <Stack.Screen name="guest/home" />
+        <Stack.Screen name="guest/play/[id]" />
       </Stack.Protected>
       <Stack.Protected guard={signedIn}>
         <Stack.Screen name="(app)" />

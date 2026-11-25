@@ -45,6 +45,16 @@ const hexColor = z.string().regex(/^#[0-9A-Fa-f]{6}$/, 'Use a hex color like #FF
 export const nodeIdSchema = z.string().regex(/^[a-z0-9_-]{1,40}$/, 'Use lowercase letters, numbers, - or _');
 const emoji = z.string().min(1).max(16);
 
+export const VIDEO_ANSWER_TIMEOUT_SECONDS = 3;
+
+export const videoQuestionSchema = z.object({
+  /** Position in the attached clip at which playback pauses and the question appears. */
+  timestampSeconds: z.number().finite().min(0).max(7200),
+  /** Choice selected automatically when the child does not answer in three seconds. */
+  defaultChoiceId: nodeIdSchema,
+});
+export type VideoQuestion = z.infer<typeof videoQuestionSchema>;
+
 export const sceneSchema = z.object({
   emoji,
   color: hexColor,
@@ -69,6 +79,8 @@ export const storyNodeSchema = z.object({
   choices: z.array(storyChoiceSchema).max(4).default([]),
   /** Linear continuation when there are no choices. */
   next: nodeIdSchema.nullable().default(null),
+  /** Pauses the scene video at a timestamp to show choices for three seconds. */
+  videoQuestion: videoQuestionSchema.optional(),
   /** Marks a valid ending. */
   ending: z.boolean().default(false),
 });

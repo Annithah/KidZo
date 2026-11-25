@@ -21,6 +21,17 @@ export function validateBranchingBody(body: BranchingBody): string[] {
     if (node.familyTurn && !hasChoices) {
       problems.push(`Scene "${node.id}" is a family turn but has no choices`);
     }
+    if (node.videoQuestion) {
+      if (!hasChoices) {
+        problems.push(`Scene "${node.id}" has a timed video question but no choices`);
+      } else if (!node.choices.some((choice) => choice.id === node.videoQuestion?.defaultChoiceId)) {
+        problems.push(`Scene "${node.id}" default answer "${node.videoQuestion.defaultChoiceId}" is not one of its choices`);
+      }
+      const destinationIds = node.choices.map((choice) => choice.next);
+      if (new Set(destinationIds).size !== destinationIds.length) {
+        problems.push(`Timed video answers in scene "${node.id}" must lead to different destination scenes`);
+      }
+    }
     if (hasNext && node.next !== null && !byId.has(node.next)) {
       problems.push(`Scene "${node.id}" continues to missing scene "${node.next}"`);
     }
@@ -95,6 +106,72 @@ export function isValidStoryPath(body: BranchingBody, path: readonly string[]): 
   }
   const last = byId.get(path[path.length - 1] as string);
   return last?.ending === true;
+}
+
+export interface BranchingPathPlan {
+  scenes: string[];
+  choices: Array<{ nodeId: string; choiceId: string }>;
+}
+
+export interface BranchingPathEnumeration {
+  paths: BranchingPathPlan[];
+  cycles: number;
+  truncated: boolean;
+}
+
+/** Enumerates complete answer routes while bounding cyclic or highly branching drafts. */
+export function enumerateBranchingPaths(body: BranchingBody, maxPaths = 256): BranchingPathEnumeration {
+  const limit = Math.max(1, Math.floor(maxPaths));
+  const byId = new Map(body.nodes.map((node) => [node.id, node]));
+  const result: BranchingPathEnumeration = { paths: [], cycles: 0, truncated: false };
+  let visitedStates = 0;
+  const stateLimit = limit * Math.max(1, body.nodes.length);
+
+  const visit = (
+    nodeId: string,
+    scenes: string[],
+    choices: BranchingPathPlan['choices'],
+    ancestors: Set<string>,
+  ) => {
+    if (result.paths.length >= limit || visitedStates >= stateLimit) {
+      result.truncated = true;
+      return;
+    }
+    visitedStates += 1;
+    if (ancestors.has(nodeId)) {
+      result.cycles += 1;
+      return;
+    }
+    const node = byId.get(nodeId);
+    if (!node) return;
+    const nextScenes = [...scenes, nodeId];
+    if (node.ending) {
+      result.paths.push({ scenes: nextScenes, choices });
+      return;
+    }
+    const nextAncestors = new Set(ancestors).add(nodeId);
+    const edges = node.choices.length > 0
+      ? node.choices.map((choice) => ({
+          nodeId: choice.next,
+          choices: [...choices, { nodeId: node.id, choiceId: choice.id }],
+        }))
+      : node.next
+        ? [{ nodeId: node.next, choices }]
+        : [];
+    for (let index = 0; index < edges.length; index += 1) {
+      if (result.paths.length >= limit) {
+        result.truncated = true;
+        break;
+      }
+      const edge = edges[index];
+      if (!edge) continue;
+      visit(edge.nodeId, nextScenes, edge.choices, nextAncestors);
+      if (result.truncated) break;
+    }
+  };
+
+  visit(body.startNodeId, [], [], new Set());
+  return result;
 }
 
 export function scoreQuiz(body: QuizBody, answers: Record<string, string>): { correct: number; total: number } {
@@ -173,6 +250,21 @@ export function publishProblems(input: {
   body: ContentBody;
 }): string[] {
   const problems = validateContentBody(input.body);
+  if (input.body.kind === 'branching') {
+    const nodes = new Map(input.body.nodes.map((node) => [node.id, node]));
+    for (const node of input.body.nodes) {
+      if (node.videoQuestion && !node.scene.videoUrl) {
+        problems.push(`Scene "${node.id}" has a timed question but no video clip`);
+      }
+      if (!node.videoQuestion) continue;
+      for (const choice of node.choices) {
+        const destination = nodes.get(choice.next);
+        if (destination && !destination.scene.videoUrl) {
+          problems.push(`Answer "${choice.id}" from scene "${node.id}" needs a video clip on destination scene "${destination.id}"`);
+        }
+      }
+    }
+  }
   if (!input.languages.includes('en')) problems.push('English must be one of the languages');
   const texts = collectBodyTexts(input.body);
   for (const lang of input.languages) {

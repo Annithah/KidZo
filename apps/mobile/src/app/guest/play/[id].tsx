@@ -119,7 +119,7 @@ function GuestPlayer({
         </View>
       ) : null}
       {content.body.kind === 'branching' ? (
-        <StoryPlayer body={content.body} locale={contentLocale} familyMode={false} narration onFinish={(path) => finish(path)} />
+        <StoryPlayer body={content.body} locale={contentLocale} familyMode={false} narration onFinish={(path, answers) => finish(path, answers)} />
       ) : content.body.kind === 'quiz' ? (
         <QuizPlayer body={content.body} locale={contentLocale} narration onFinish={(path, answers) => finish(path, answers)} />
       ) : (

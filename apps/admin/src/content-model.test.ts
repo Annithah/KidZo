@@ -45,13 +45,14 @@ describe('content editor model', () => {
       kind: 'branching' as const,
       startNodeId: 'a',
       nodes: [
-        { id: 'a', text: { en: 'A' }, scene: { emoji: 'x', color: '#000000', videoUrl: null }, familyTurn: false, next: null, ending: false, choices: [{ id: 'c', label: { en: 'go' }, emoji: 'x', next: 'b' }] },
+        { id: 'a', text: { en: 'A' }, scene: { emoji: 'x', color: '#000000', videoUrl: null }, familyTurn: false, next: null, ending: false, choices: [{ id: 'c', label: { en: 'go' }, emoji: 'x', next: 'b' }], videoQuestion: { timestampSeconds: 2, defaultChoiceId: 'c' } },
         { id: 'b', text: { en: 'B' }, scene: { emoji: 'x', color: '#000000', videoUrl: null }, familyTurn: false, next: null, ending: true, choices: [] },
       ],
     };
     const result = removeNode(body, 'b');
     expect(result.nodes).toHaveLength(1);
     expect(result.nodes[0]?.choices).toEqual([]);
+    expect(result.nodes[0]?.videoQuestion).toBeUndefined();
     expect(removeNode(body, 'a').startNodeId).toBe('b');
   });
 });

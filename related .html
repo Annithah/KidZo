@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Kindness Adventure</title>
+<style>
+:root{--ink:#18324b;--pink:#ff7198;--yellow:#ffd65a;--blue:#58c7ef;--green:#72d6a0}
+*{box-sizing:border-box}body{margin:0;background:#10283d;color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+.app{max-width:1100px;margin:auto;padding:14px}.top{display:flex;align-items:center;justify-content:space-between;color:white;gap:12px;flex-wrap:wrap}
+h1{font-size:clamp(22px,4vw,34px);margin:6px 0}.tag{font-size:13px;opacity:.85}
+.stage{position:relative;overflow:hidden;aspect-ratio:16/9;border-radius:22px;background:linear-gradient(#79d8ff 0 58%,#8be2a0 58% 100%);box-shadow:0 18px 50px #0005}
+.sun{position:absolute;right:10%;top:8%;width:75px;height:75px;border-radius:50%;background:#ffe77a;box-shadow:0 0 40px #fff5}
+.cloud{position:absolute;top:16%;font-size:clamp(35px,6vw,65px);animation:drift 24s linear infinite}
+.cloud.c2{top:28%;left:55%;animation-duration:32s}
+@keyframes drift{from{transform:translateX(-150px)}to{transform:translateX(1100px)}}
+.hill{position:absolute;bottom:18%;width:65%;height:30%;border-radius:50%;background:#6dcc88;filter:brightness(1.03)}
+.hill.h1{left:-10%}.hill.h2{right:-12%;background:#58c77d}
+.path{position:absolute;bottom:-15%;left:37%;width:30%;height:43%;background:#f5d99a;transform:rotate(-12deg);border-radius:50%}
+.tree{position:absolute;bottom:24%;font-size:clamp(55px,9vw,105px);filter:drop-shadow(0 8px 3px #346b4933)}
+.tree.t1{left:7%}.tree.t2{right:8%;font-size:clamp(45px,7vw,85px)}
+.character{position:absolute;bottom:19%;width:16%;min-width:78px;text-align:center;animation:bob 2s ease-in-out infinite}
+.character.tom{left:32%}.character.mia{left:49%;animation-delay:.4s}.character.helper{left:69%;display:none}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.head{width:54%;aspect-ratio:1;border-radius:50%;margin:auto;background:#f4c69b;border:4px solid #8c573c;position:relative;z-index:2}
+.hair{position:absolute;top:-5%;left:8%;width:84%;height:38%;background:#563526;border-radius:60% 60% 25% 25%}
+.eye{position:absolute;top:48%;left:29%;width:7px;height:9px;background:#25384a;border-radius:50%;box-shadow:24px 0 #25384a}
+.smile{position:absolute;top:66%;left:39%;width:22%;height:9px;border-bottom:3px solid #a94e4e;border-radius:50%}
+.body{width:70%;height:72px;margin:-2px auto 0;border-radius:24px 24px 12px 12px;background:#ffca52;border:4px solid #b47730;position:relative}
+.mia .body{background:#fa82b3;border-color:#a34b78}.helper .body{background:#63a9ef;border-color:#35649b}
+.legs{font-size:25px;letter-spacing:10px;margin-top:-4px}
+.name{font-weight:800;color:#18324b;text-shadow:0 1px #fff;font-size:clamp(10px,1.5vw,15px)}
+.puppy{position:absolute;left:43%;bottom:17%;font-size:clamp(42px,7vw,78px);animation:puppy 1.4s ease-in-out infinite;filter:drop-shadow(0 6px 3px #4443)}
+@keyframes puppy{0%,100%{transform:rotate(-4deg) translateY(0)}50%{transform:rotate(4deg) translateY(-7px)}}
+.bag{position:absolute;left:54%;bottom:20%;font-size:clamp(30px,5vw,52px)}
+.scene-label{position:absolute;left:3%;top:4%;background:#ffffffd9;padding:8px 14px;border-radius:99px;font-weight:800;font-size:clamp(12px,2vw,17px)}
+.bubble{position:absolute;left:5%;right:5%;top:13%;margin:auto;max-width:680px;text-align:center;background:#ffffffed;padding:12px 18px;border-radius:18px;font-size:clamp(14px,2.2vw,22px);font-weight:700;box-shadow:0 5px 0 #0001}
+.controls{background:#fff;border-radius:18px;margin-top:12px;padding:14px}
+.progress{height:10px;background:#e5edf2;border-radius:20px;overflow:hidden;margin:6px 0 12px}.bar{height:100%;width:0;background:linear-gradient(90deg,#58c7ef,#72d6a0);transition:width .25s}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.row button,.answers button{border:0;border-radius:14px;padding:12px 17px;font-weight:800;font-size:15px;cursor:pointer;box-shadow:0 4px 0 #0002}
+.row button{background:#eaf4fa;color:#18324b}.row button.primary{background:#ffd65a}.row button:focus,.answers button:focus{outline:4px solid #18324b;outline-offset:2px}
+.status{margin-left:auto;font-size:13px;color:#577080}
+.question{display:none;margin-top:14px;padding:18px;border-radius:18px;background:#fff5cf;border:3px solid #ffd65a}
+.question h2{margin:0 0 12px;font-size:clamp(19px,3vw,26px)}.answers{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.answers button{min-height:76px;background:#fff;color:#18324b;text-align:left}.answers button:nth-child(1){border-bottom:6px solid #65c994}.answers button:nth-child(2){border-bottom:6px solid #62bfe8}.answers button:nth-child(3){border-bottom:6px solid #fa8bb0}
+.caption{font-size:15px;min-height:24px;color:#35536a;margin-top:8px}
+.end{display:none;text-align:center;padding:20px;background:#e7fff1;border-radius:18px;margin-top:12px}.end h2{font-size:30px;margin:0}
+@media(max-width:650px){.answers{grid-template-columns:1fr}.answers button{min-height:55px}.character{bottom:18%}.body{height:48px}.head{border-width:3px}.bubble{top:12%}.stage{border-radius:14px}}
+</style></head>
+<body><main class="app">
+<div class="top"><div><div class="tag">AN INTERACTIVE STORY • AGES 5–10</div><h1>🌟 The Kindness Adventure</h1></div><div class="tag">A story where YOUR choices matter</div></div>
+<section class="stage" id="stage" aria-label="Animated park scene">
+<div class="sun"></div><div class="cloud">☁️</div><div class="cloud c2">☁️</div><div class="hill h1"></div><div class="hill h2"></div><div class="path"></div>
+<div class="tree t1">🌳</div><div class="tree t2">🌲</div>
+<div class="scene-label" id="sceneLabel">Scene 1 · A surprise in the park</div>
+<div class="bubble" id="bubble">What a lovely day to play!</div>
+<div class="character tom" id="tom"><div class="head"><div class="hair"></div><div class="eye"></div><div class="smile"></div></div><div class="body"></div><div class="legs">👟 👟</div><div class="name">Tom</div></div>
+<div class="character mia" id="mia"><div class="head"><div class="hair" style="background:#6a4028"></div><div class="eye"></div><div class="smile"></div></div><div class="body"></div><div class="legs">👟 👟</div><div class="name">Mia</div></div>
+<div class="character helper" id="helper"><div class="head"><div class="hair" style="background:#4d382e"></div><div class="eye"></div><div class="smile"></div></div><div class="body"></div><div class="legs">👟 👟</div><div class="name">Park helper</div></div>
+<div class="puppy" id="puppy">🐶</div><div class="bag" id="bag">🎒</div>
+</section>
+<section class="controls">
+<div class="progress"><div class="bar" id="bar"></div></div>
+<div class="row"><button class="primary" id="play">▶ Play story</button><button id="pause">Ⅱ Pause</button><button id="replay">↻ Replay</button><button id="sound">🔊 Sound on</button><span class="status" id="status">Ready · 0%</span></div>
+<div class="caption" id="caption" aria-live="polite">Press Play story to begin your adventure.</div>
+</section>
+<section class="question" id="question"><h2 id="qtitle">What should Tom do?</h2><div class="answers" id="answers"></div></section>
+<section class="end" id="end"><h2>🎉 You did it, Kindness Champion!</h2><p id="endingText">Every kind choice helps make the world brighter.</p><button class="primary" onclick="restart()">↻ Play again</button></section>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+let timer=null,elapsed=0,duration=45,segment=0,paused=true,sound=true,chosen="",step=0;
+const scenes=[
+{label:"Scene 1 · A surprise in the park",duration:45,lines:[
+[0,"Tom: What a lovely day to play!"],[8,"Mia: Look! Is that a little puppy beside the bag?"],[17,"Tom: Hello, little puppy. Are you lost?"],[27,"Mia: We should make sure the puppy is safe."],[37,"Tom: Hmm… what is the kindest and safest thing to do?"]],kind:"intro"},
+{label:"Scene 2A · Asking for help",duration:35,lines:[[0,"Tom: Let's ask the park helper. We should not handle this alone."],[8,"Mia: Excuse me! We found a puppy. Can you help?"],[17,"Helper: Of course. I'll check the puppy's tag and contact its family."],[26,"Owner: Coco! I've been looking everywhere. Thank you!"]],kind:"A"},
+{label:"Scene 2B · Thinking it over",duration:35,lines:[[0,"Tom: I was going to keep playing… but the puppy still needs help."],[9,"Mia: Imagine how worried its family might be."],[18,"Tom: You're right. I can ask a trusted adult."],[27,"Helper: Thank you for noticing. Let's help this puppy safely."]],kind:"B"},
+{label:"Scene 2C · A safer choice",duration:35,lines:[[0,"Tom: I thought about taking the puppy home, but I don't know who it belongs to."],[10,"Mia: A new animal needs care. Let's find a trusted adult."],[20,"Helper: Good thinking. I'll help find the puppy's family."],[28,"Tom: Asking for help is a responsible choice."]],kind:"C"},
+{label:"Scene 3 · Friends work together",duration:35,lines:[[0,"Mia: We did something helpful together!"],[8,"Tom: We listened, stayed safe and asked an adult."],[17,"Helper: The puppy is safe. You both showed kindness and responsibility."],[26,"Tom: When we work as a team, small actions can make a big difference!"]],kind:"follow"},
+{label:"Scene 4 · The kindness promise",duration:30,lines:[[0,"Mia: Let's remember to share, take turns and respect each other."],[8,"Tom: And tell the truth, say sorry when we make mistakes, and care for other people's things."],[18,"Mia: When feelings get big, we can pause, breathe and talk kindly."],[25,"Both: Friends make the world brighter!"]],kind:"end"}
+];
+function say(line){$("caption").textContent=line;if(sound&&'speechSynthesis'in window){speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(line);u.rate=.92;u.pitch=1.12;u.lang='en-US';speechSynthesis.speak(u)}}
+function setLook(kind){$("helper").style.display=["A","B","C","follow","end"].includes(kind)?"block":"none";$("puppy").textContent=kind==="end"?"🐶💖":"🐶";$("bag").textContent=kind==="A"?"🦴":kind==="B"?"🎒":kind==="C"?"🎒":"🌼";$("tom").style.left=kind==="A"?"25%":kind==="B"?"29%":"32%";$("mia").style.left="47%";$("helper").style.left="70%";$("bubble").textContent=kind==="A"?"Let's find the puppy's family!":kind==="B"?"A caring choice can start with noticing.":kind==="C"?"Safety first: let's ask a trusted adult.":kind==="follow"?"Teamwork makes kindness stronger!":kind==="end"?"Let's take our kindness into the world!":"A lovely day at the park!";}
+function showScene(i){segment=i;elapsed=0;duration=scenes[i].duration;$("sceneLabel").textContent=scenes[i].label;setLook(scenes[i].kind);$("question").style.display="none";$("end").style.display="none";$("stage").style.display="block";say(scenes[i].lines[0][1]);updateProgress();paused=false;clearInterval(timer);timer=setInterval(tick,1000)}
+function tick(){if(paused)return;elapsed++;let line=scenes[segment].lines.filter(x=>x[0]===elapsed)[0];if(line)say(line[1]);updateProgress();if(elapsed>=duration){clearInterval(timer);paused=true;if(segment===0)askFirst();else if(segment>=1&&segment<=3)askSecond();else if(segment===4)askFinal();else finish()}}
+function updateProgress(){let total=[45,35,35,35,35,30].reduce((a,b)=>a+b,0);let done=[45,35,35,35,35,30].slice(0,segment).reduce((a,b)=>a+b,0)+elapsed;$("bar").style.width=(100*done/total)+"%";$("status").textContent=`Story progress · ${Math.round(100*done/total)}%`}
+function question(title,opts,fn){paused=true;clearInterval(timer);$("qtitle").textContent=title;$("answers").innerHTML="";opts.forEach((o,i)=>{let b=document.createElement("button");b.textContent=o;b.onclick=()=>{speechSynthesis?.cancel();$("question").style.display="none";fn(i)};$("answers").appendChild(b)});$("question").style.display="block";$("caption").textContent="Choose an answer to guide the story."}
+function askFirst(){question("🐶 You see a little puppy alone in the park. What should you do?",["A. Help the puppy find its owner with a trusted adult.","B. Ignore the puppy and continue playing.","C. Take the puppy home alone."],i=>{chosen="ABC"[i];showScene(i===0?1:i===1?2:3)})}
+function askSecond(){question("🌈 What can Tom and Mia do next to be good friends?",["A. Take turns and share their toys.","B. Grab what they want without asking.","C. Leave a friend out of the game."],i=>{if(i===0)say("Great idea! Sharing and taking turns helps everyone feel included.");else if(i===1)say("Oops! Grabbing can hurt feelings. Let's try asking and taking turns.");else say("A friend may feel left out. Let's invite everyone to play.");setTimeout(()=>showScene(4),1200)})}
+function askFinal(){question("💛 Tom makes a mistake and knocks over Mia's block tower. What should he do?",["A. Tell the truth, say sorry and help rebuild.","B. Blame someone else.","C. Walk away and pretend it did not happen."],i=>{let msgs=["Honesty and a sincere apology help repair trust.","Blaming someone else is not honest. We can choose to tell the truth.","Walking away does not fix the problem. An apology and helping can make things better."];say(msgs[i]);$("question").style.display="none";setTimeout(finish,1800)})}
+function finish(){paused=true;clearInterval(timer);$("stage").style.display="block";setLook("end");$("bubble").textContent="You can make kind choices every day!";$("end").style.display="block";$("endingText").textContent="You helped Tom learn about kindness, empathy, safety, honesty, responsibility, sharing and friendship. Remember: pause, think, choose kindly and ask a trusted adult when you need help.";say("Congratulations, Kindness Champion! Your choices helped shape the adventure.");$("bar").style.width="100%";$("status").textContent="Story complete · 100%"}
+function restart(){speechSynthesis?.cancel();showScene(0)}
+$("play").onclick=()=>{if($("end").style.display==="block"||segment===0&&elapsed===0&&paused)showScene(0);else if($("question").style.display==="block")return;else{paused=false;timer=setInterval(tick,1000)}};
+$("pause").onclick=()=>{paused=true;clearInterval(timer);speechSynthesis?.pause();$("caption").textContent="Story paused. Press Play story when you're ready."};
+$("replay").onclick=restart;$("sound").onclick=()=>{sound=!sound;$("sound").textContent=sound?"🔊 Sound on":"🔇 Sound off";if(!sound)speechSynthesis?.cancel()};
+</script></body></html>

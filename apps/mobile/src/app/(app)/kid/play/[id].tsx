@@ -131,7 +131,7 @@ function Player({ child, content, familyMode }: { child: Child; content: Content
           locale={locale}
           familyMode={familyMode}
           narration={child.settings.narrationEnabled}
-          onFinish={(path) => void finish(path)}
+          onFinish={(path, answers) => void finish(path, answers)}
         />
       ) : content.body.kind === 'quiz' ? (
         <QuizPlayer body={content.body} locale={locale} narration={child.settings.narrationEnabled} onFinish={(path, answers) => void finish(path, answers)} />

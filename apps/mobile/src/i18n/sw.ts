@@ -113,6 +113,8 @@ export const sw: Translations = {
   'player.parentsTurn': 'Zamu ya mzazi!',
   'player.familyMode': 'HALI YA FAMILIA',
   'player.next': 'Inayofuata',
+  'player.autoChoiceCountdown': 'Chagua ndani ya sekunde {{seconds}}…',
+  'player.watchForQuestion': 'Tazama, swali linakuja!',
   'player.readAloud': 'Nisomee',
   'player.stop': 'Simama',
   'player.correct': 'Sahihi kabisa!',

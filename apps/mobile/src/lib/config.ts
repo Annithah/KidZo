@@ -2,8 +2,8 @@ import Constants from 'expo-constants';
 import { Platform } from 'react-native';
 
 /**
- * API base URL. Set EXPO_PUBLIC_API_URL for real builds. In development the app derives the
- * URL from the Metro host so a phone on the same Wi-Fi reaches the API on port 4000.
+ * API base URL. Set EXPO_PUBLIC_API_URL for builds and when using an Expo tunnel; the tunnel
+ * host serves Metro, not the API. On a local network, development uses the Metro host on port 4000.
  */
 function resolveApiUrl(): string {
   const explicit = process.env.EXPO_PUBLIC_API_URL;

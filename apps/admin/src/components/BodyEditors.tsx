@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import type { BranchingBody, QuizBody, SongBody, StoryNode } from '@kidzo/shared';
+import { VIDEO_ANSWER_TIMEOUT_SECONDS, type BranchingBody, type QuizBody, type SongBody, type StoryNode } from '@kidzo/shared';
 import { api, describeError } from '../api';
 import { nextId, removeNode } from '../content-model';
 import { Field, LocalizedInput } from './ui';
@@ -11,11 +11,25 @@ export function BranchingEditor({ body, onChange }: { body: BranchingBody; onCha
   const ids = body.nodes.map((n) => n.id);
   const setNode = (id: string, patch: Partial<StoryNode>) =>
     onChange({ ...body, nodes: body.nodes.map((n) => (n.id === id ? { ...n, ...patch } : n)) });
+  const setChoices = (id: string, choices: StoryNode['choices']) => {
+    const node = body.nodes.find((n) => n.id === id);
+    if (!node) return;
+    const defaultChoiceId = node.videoQuestion?.defaultChoiceId;
+    const nextDefault = choices.some((choice) => choice.id === defaultChoiceId)
+      ? defaultChoiceId
+      : choices[0]?.id;
+    setNode(id, {
+      choices,
+      videoQuestion: node.videoQuestion && nextDefault
+        ? { ...node.videoQuestion, defaultChoiceId: nextDefault }
+        : undefined,
+    });
+  };
 
   const setMode = (node: StoryNode, mode: Mode) => {
     const other = ids.find((i) => i !== node.id) ?? node.id;
-    if (mode === 'ending') setNode(node.id, { ending: true, next: null, choices: [], familyTurn: false });
-    if (mode === 'next') setNode(node.id, { ending: false, next: node.next ?? other, choices: [] });
+    if (mode === 'ending') setNode(node.id, { ending: true, next: null, choices: [], familyTurn: false, videoQuestion: undefined });
+    if (mode === 'next') setNode(node.id, { ending: false, next: node.next ?? other, choices: [], videoQuestion: undefined });
     if (mode === 'choices') {
       setNode(node.id, {
         ending: false,
@@ -92,22 +106,87 @@ export function BranchingEditor({ body, onChange }: { body: BranchingBody; onCha
                 </label>
               ) : null}
             </div>
-            <LocalizedInput label="Story text" multiline value={node.text} onChange={(text) => setNode(node.id, { text })} />
+            <LocalizedInput
+              label={node.videoQuestion ? 'Question prompt' : 'Story text'}
+              multiline
+              value={node.text}
+              onChange={(text) => setNode(node.id, { text })}
+            />
             <SceneVideoField
               videoUrl={node.scene.videoUrl}
               onChange={(videoUrl) => setNode(node.id, { scene: { ...node.scene, videoUrl } })}
             />
+            {mode === 'choices' ? (
+              <div className="stack">
+                <label className="checkbox">
+                  <input
+                    type="checkbox"
+                    checked={!!node.videoQuestion}
+                    onChange={(e) => setNode(node.id, {
+                      videoQuestion: e.target.checked
+                        ? { timestampSeconds: 7, defaultChoiceId: node.choices[0]?.id ?? '' }
+                        : undefined,
+                    })}
+                  />
+                  Pause this video for a timed question
+                </label>
+                {node.videoQuestion ? (
+                  <>
+                    <div className="row">
+                      <Field label="Ask at (seconds)" hint="Time from the start of this clip">
+                        <input
+                          className="input"
+                          type="number"
+                          min={0}
+                          max={7200}
+                          step={0.1}
+                          value={node.videoQuestion.timestampSeconds}
+                          onChange={(e) => setNode(node.id, {
+                            videoQuestion: { ...node.videoQuestion!, timestampSeconds: Number(e.target.value) },
+                          })}
+                        />
+                      </Field>
+                      <Field label="No-answer timeout">
+                        <input className="input" type="text" readOnly value={`${VIDEO_ANSWER_TIMEOUT_SECONDS} seconds`} />
+                      </Field>
+                    </div>
+                    <p className="muted small">
+                      The video pauses at this time. If no answer is chosen, the selected default is used after {VIDEO_ANSWER_TIMEOUT_SECONDS} seconds.
+                    </p>
+                    <p className="muted small">
+                      Each answer destination needs its own video scene before this experience can be published.
+                    </p>
+                    {!node.scene.videoUrl ? (
+                      <div className="alert info">Upload a video for this scene before publishing its timed question.</div>
+                    ) : null}
+                  </>
+                ) : null}
+              </div>
+            ) : null}
 
             {mode === 'choices'
               ? node.choices.map((choice, ci) => (
                   <div key={choice.id} className="choice stack">
                     <div className="row">
                       <strong style={{ flex: 1 }}>Choice {ci + 1}</strong>
+                      {node.videoQuestion ? (
+                        <label className="checkbox">
+                          <input
+                            type="radio"
+                            name={`default-${node.id}`}
+                            checked={node.videoQuestion.defaultChoiceId === choice.id}
+                            onChange={() => setNode(node.id, {
+                              videoQuestion: { ...node.videoQuestion!, defaultChoiceId: choice.id },
+                            })}
+                          />
+                          Default if unanswered
+                        </label>
+                      ) : null}
                       <button
                         type="button"
                         className="btn small ghost"
                         disabled={node.choices.length <= 1}
-                        onClick={() => setNode(node.id, { choices: node.choices.filter((c) => c.id !== choice.id) })}
+                        onClick={() => setChoices(node.id, node.choices.filter((c) => c.id !== choice.id))}
                       >
                         Remove choice
                       </button>
@@ -118,14 +197,14 @@ export function BranchingEditor({ body, onChange }: { body: BranchingBody; onCha
                           className="input"
                           style={{ width: 90 }}
                           value={choice.emoji}
-                          onChange={(e) => setNode(node.id, { choices: node.choices.map((c) => (c.id === choice.id ? { ...c, emoji: e.target.value } : c)) })}
+                          onChange={(e) => setChoices(node.id, node.choices.map((c) => (c.id === choice.id ? { ...c, emoji: e.target.value } : c)))}
                         />
                       </Field>
                       <Field label="Goes to">
                         <select
                           className="input"
                           value={choice.next}
-                          onChange={(e) => setNode(node.id, { choices: node.choices.map((c) => (c.id === choice.id ? { ...c, next: e.target.value } : c)) })}
+                          onChange={(e) => setChoices(node.id, node.choices.map((c) => (c.id === choice.id ? { ...c, next: e.target.value } : c)))}
                         >
                           {ids.filter((i) => i !== node.id).map((id) => (
                             <option key={id}>{id}</option>
@@ -136,7 +215,7 @@ export function BranchingEditor({ body, onChange }: { body: BranchingBody; onCha
                     <LocalizedInput
                       label="Choice label"
                       value={choice.label}
-                      onChange={(label) => setNode(node.id, { choices: node.choices.map((c) => (c.id === choice.id ? { ...c, label } : c)) })}
+                      onChange={(label) => setChoices(node.id, node.choices.map((c) => (c.id === choice.id ? { ...c, label } : c)))}
                     />
                   </div>
                 ))
@@ -147,9 +226,10 @@ export function BranchingEditor({ body, onChange }: { body: BranchingBody; onCha
                 className="btn small secondary"
                 style={{ alignSelf: 'flex-start' }}
                 onClick={() =>
-                  setNode(node.id, {
-                    choices: [...node.choices, { id: nextId(node.choices.map((c) => c.id), 'choice'), label: { en: '' }, emoji: '✨', next: ids.find((i) => i !== node.id) ?? node.id }],
-                  })
+                  setChoices(node.id, [
+                    ...node.choices,
+                    { id: nextId(node.choices.map((c) => c.id), 'choice'), label: { en: '' }, emoji: '✨', next: ids.find((i) => i !== node.id) ?? node.id },
+                  ])
                 }
               >
                 + Add choice

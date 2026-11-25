@@ -2,9 +2,11 @@ import { describe, expect, it } from 'vitest';
 import {
   computeStars,
   contentInputSchema,
+  enumerateBranchingPaths,
   formatBytes,
   isValidStoryPath,
   localize,
+  publishProblems,
   validateBranchingBody,
   validateQuizBody,
   type BranchingBody,
@@ -96,6 +98,107 @@ describe('branching validation', () => {
     expect(isValidStoryPath(story, ['start', 'end'])).toBe(false);
     expect(isValidStoryPath(story, ['start', 'sunny'])).toBe(false);
     expect(isValidStoryPath(story, [])).toBe(false);
+  });
+
+  it('enumerates each complete answer route and reports cycles or path caps', () => {
+    const routes = enumerateBranchingPaths(story);
+    expect(routes.paths).toHaveLength(2);
+    expect(routes.paths.map((path) => path.choices[0]?.choiceId)).toEqual(['sun', 'mirror']);
+    expect(routes.cycles).toBe(0);
+    expect(routes.truncated).toBe(false);
+    expect(enumerateBranchingPaths(story, 1).truncated).toBe(true);
+
+    const cyclic: BranchingBody = {
+      ...story,
+      nodes: story.nodes.map((node) =>
+        node.id === 'sunny' ? { ...node, next: 'start' } : node,
+      ),
+    };
+    expect(enumerateBranchingPaths(cyclic).cycles).toBeGreaterThan(0);
+  });
+
+  it('requires a timed question default to point to one of the scene choices', () => {
+    const timed: BranchingBody = {
+      ...story,
+      nodes: story.nodes.map((node) =>
+        node.id === 'start'
+          ? { ...node, videoQuestion: { timestampSeconds: 7, defaultChoiceId: 'sun' } }
+          : node,
+      ),
+    };
+    expect(validateBranchingBody(timed)).toEqual([]);
+    expect(validateBranchingBody({
+      ...timed,
+      nodes: timed.nodes.map((node) =>
+        node.id === 'start' && node.videoQuestion
+          ? { ...node, videoQuestion: { ...node.videoQuestion, defaultChoiceId: 'missing' } }
+          : node,
+      ),
+    })).toContain('Scene "start" default answer "missing" is not one of its choices');
+    expect(validateBranchingBody({
+      ...story,
+      nodes: story.nodes.map((node) =>
+        node.id === 'sunny'
+          ? { ...node, videoQuestion: { timestampSeconds: 7, defaultChoiceId: 'sun' } }
+          : node,
+      ),
+    })).toContain('Scene "sunny" has a timed video question but no choices');
+  });
+
+  it('requires timed answers to lead to different scenes', () => {
+    const timed: BranchingBody = {
+      ...story,
+      nodes: story.nodes.map((node) =>
+        node.id === 'start'
+          ? {
+              ...node,
+              videoQuestion: { timestampSeconds: 7, defaultChoiceId: 'sun' },
+              choices: node.choices.map((choice) => ({ ...choice, next: 'sunny' })),
+            }
+          : node,
+      ),
+    };
+    expect(validateBranchingBody(timed)).toContain('Timed video answers in scene "start" must lead to different destination scenes');
+  });
+
+  it('blocks publishing a timed question without a video clip', () => {
+    const timed: BranchingBody = {
+      ...story,
+      nodes: story.nodes.map((node) =>
+        node.id === 'start'
+          ? { ...node, videoQuestion: { timestampSeconds: 7, defaultChoiceId: 'sun' } }
+          : node,
+      ),
+    };
+    expect(publishProblems({
+      title: t('Garden'),
+      summary: t('Explore the garden.'),
+      languages: ['en'],
+      body: timed,
+    })).toContain('Scene "start" has a timed question but no video clip');
+  });
+
+  it('requires a separate destination clip for each timed answer branch', () => {
+    const timed: BranchingBody = {
+      ...story,
+      nodes: story.nodes.map((node) =>
+        node.id === 'start'
+          ? {
+              ...node,
+              scene: { ...node.scene, videoUrl: 'https://media.example/start.mp4' },
+              videoQuestion: { timestampSeconds: 7, defaultChoiceId: 'sun' },
+            }
+          : node,
+      ),
+    };
+    const problems = publishProblems({
+      title: t('Garden'),
+      summary: t('Explore the garden.'),
+      languages: ['en'],
+      body: timed,
+    });
+    expect(problems).toContain('Answer "sun" from scene "start" needs a video clip on destination scene "sunny"');
+    expect(problems).toContain('Answer "mirror" from scene "start" needs a video clip on destination scene "mirror"');
   });
 });
 

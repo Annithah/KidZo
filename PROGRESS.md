@@ -24,10 +24,11 @@ delivered incrementally.
 - [x] **M7 Hardening and docs** - security review, accessibility pass, README, env docs, final full check.
 - [x] **M8 Admin performance reporting** - add privacy-conscious weekly engagement, completion, duration, category, game and low-completion metrics.
 - [x] **M9 Guest video experience** - age-filtered guest catalog and playback without profiles or saved age, MP4 uploads and looping branching-scene video with emoji fallback, and anonymous daily play/completion/duration aggregates.
+- [x] **M10 Timed interactive video** - timestamped video questions, three-second default-answer timer, selected-choice path recording, safe publish validation for branch clips, and admin preview/answer-branch testing.
 
 ## Reconciled full-brief requirements
 - [x] Admin analytics for weekly family and child growth, plays, completions, duration, popular skills and games, and low-completion content.
-- [x] Interactive scene video: admins can attach MP4 clips up to 100 MB; the mobile branching-story player loops the clip with story choices and falls back to the emoji scene if video playback fails.
+- [x] Interactive scene video: admins can attach MP4 clips up to 100 MB; timed questions pause playback at their configured timestamp, show a three-second countdown, and choose a required default answer. Publishing checks that every answer destination has its own clip; the admin preview tests all answer branches.
 - [x] Guest play without a family account: age-filtered catalog and content routes; guest age is transient and reports store daily content aggregates without a guest or child identifier.
 - [ ] Separate content review and unpublished states. Current workflow uses draft, published and archived.
 - [ ] Interest-based recommendations using minimal activity data. Guest catalog age filtering is implemented, but recommendations are not.
@@ -44,6 +45,7 @@ delivered incrementally.
 | 2026-11-18 | M8 and full workspace | pass | pass | 82 pass (shared 31, api 30, admin 6, mobile 15) | API health and admin analytics smoke tested; admin production build |
 | 2026-11-18 | M9 and full workspace | pass | pass | 84 pass (shared 31, api 32, admin 6, mobile 15) | Admin production build and mobile web export passed |
 | 2026-11-18 | API production bundle | pass | pass | n/a | Fixed tsup 9 config compatibility; API bundle built and `/health` smoke-tested |
+| 2026-11-24 | M10 timed video (targeted) | pending | pending | pending | Timestamp question/default-answer editor and mobile player in progress |
 
 ## Dev accounts (seed script, local only)
 - Admin: `admin@kidzo.local` / `KidzoAdmin2026`
@@ -59,6 +61,7 @@ delivered incrementally.
 - **Video delivery:** the current upload endpoint buffers video files in memory before writing to local disk. Production needs streaming uploads and a cloud video/CDN setup before accepting large clips at scale.
 - **Kinyarwanda and Kiswahili review:** UI translations for RW and SW were drafted by Claude and need a native speaker check. Story content is EN, with FR for some titles.
 - **Real art and narration audio:** content uses emoji scenes and device text-to-speech until illustrations and recorded audio exist.
+- **Interactive branch footage:** the four bundled source excerpts do not contain all alternate morning-routine scenes. Produce and upload a separate clip for every answer destination; the Talk, Play, Thrive source still needs editorial review and excerpting.
 - **App store accounts and EAS:** Apple and Google developer accounts, `eas init` project id, bundle ids.
 - **Legal:** privacy policy and terms URLs, and a COPPA / GDPR-K review. The app records parental consent at signup and supports export and delete.
 - **Mascot art for Zo:** only the logo exists. Zo is drawn from the logo star for now.
