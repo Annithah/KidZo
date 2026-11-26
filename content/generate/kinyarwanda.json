@@ -1,0 +1,1067 @@
+{
+  "topic": "kinyarwanda",
+  "category": "learning",
+  "skills": [
+    "language",
+    "geography"
+  ],
+  "art": "object.book",
+  "videos": [
+    {
+      "id": "kinyarwanda-number-1",
+      "title": "Number 1 in Kinyarwanda",
+      "ageGroup": "little",
+      "summary": "Number 1 in Kinyarwanda",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's learn a word in Kinyarwanda!"
+        },
+        {
+          "art": "object.star*1",
+          "say": "One in Kinyarwanda is rimwe.",
+          "big": "1 = rimwe"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Say it with me: rimwe.",
+          "big": "rimwe"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How do you say one in Kinyarwanda?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "rimwe",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "gatanu",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "One is rimwe."
+        }
+      ]
+    },
+    {
+      "id": "kinyarwanda-number-2",
+      "title": "Number 2 in Kinyarwanda",
+      "ageGroup": "little",
+      "summary": "Number 2 in Kinyarwanda",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's learn a word in Kinyarwanda!"
+        },
+        {
+          "art": "object.star*2",
+          "say": "Two in Kinyarwanda is kabiri.",
+          "big": "2 = kabiri"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Say it with me: kabiri.",
+          "big": "kabiri"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How do you say two in Kinyarwanda?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "kabiri",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "gatandatu",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Two is kabiri."
+        }
+      ]
+    },
+    {
+      "id": "kinyarwanda-number-3",
+      "title": "Number 3 in Kinyarwanda",
+      "ageGroup": "little",
+      "summary": "Number 3 in Kinyarwanda",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's learn a word in Kinyarwanda!"
+        },
+        {
+          "art": "object.star*3",
+          "say": "Three in Kinyarwanda is gatatu.",
+          "big": "3 = gatatu"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Say it with me: gatatu.",
+          "big": "gatatu"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How do you say three in Kinyarwanda?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "gatatu",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "karindwi",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Three is gatatu."
+        }
+      ]
+    },
+    {
+      "id": "kinyarwanda-number-4",
+      "title": "Number 4 in Kinyarwanda",
+      "ageGroup": "little",
+      "summary": "Number 4 in Kinyarwanda",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's learn a word in Kinyarwanda!"
+        },
+        {
+          "art": "object.star*4",
+          "say": "Four in Kinyarwanda is kane.",
+          "big": "4 = kane"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Say it with me: kane.",
+          "big": "kane"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How do you say four in Kinyarwanda?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "kane",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "umunani",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Four is kane."
+        }
+      ]
+    },
+    {
+      "id": "kinyarwanda-number-5",
+      "title": "Number 5 in Kinyarwanda",
+      "ageGroup": "little",
+      "summary": "Number 5 in Kinyarwanda",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's learn a word in Kinyarwanda!"
+        },
+        {
+          "art": "object.star*5",
+          "say": "Five in Kinyarwanda is gatanu.",
+          "big": "5 = gatanu"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Say it with me: gatanu.",
+          "big": "gatanu"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How do you say five in Kinyarwanda?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "gatanu",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "icyenda",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Five is gatanu."
+        }
+      ]
+    },
+    {
+      "id": "kinyarwanda-number-6",
+      "title": "Number 6 in Kinyarwanda",
+      "ageGroup": "young",
+      "summary": "Number 6 in Kinyarwanda",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's learn a word in Kinyarwanda!"
+        },
+        {
+          "art": "object.star*6",
+          "say": "Six in Kinyarwanda is gatandatu.",
+          "big": "6 = gatandatu"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Say it with me: gatandatu.",
+          "big": "gatandatu"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How do you say six in Kinyarwanda?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "gatandatu",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "icumi",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "kabiri",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Six is gatandatu."
+        }
+      ]
+    },
+    {
+      "id": "kinyarwanda-number-7",
+      "title": "Number 7 in Kinyarwanda",
+      "ageGroup": "young",
+      "summary": "Number 7 in Kinyarwanda",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's learn a word in Kinyarwanda!"
+        },
+        {
+          "art": "object.star*7",
+          "say": "Seven in Kinyarwanda is karindwi.",
+          "big": "7 = karindwi"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Say it with me: karindwi.",
+          "big": "karindwi"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How do you say seven in Kinyarwanda?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "karindwi",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "rimwe",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "gatatu",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Seven is karindwi."
+        }
+      ]
+    },
+    {
+      "id": "kinyarwanda-number-8",
+      "title": "Number 8 in Kinyarwanda",
+      "ageGroup": "young",
+      "summary": "Number 8 in Kinyarwanda",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's learn a word in Kinyarwanda!"
+        },
+        {
+          "art": "object.star*8",
+          "say": "Eight in Kinyarwanda is umunani.",
+          "big": "8 = umunani"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Say it with me: umunani.",
+          "big": "umunani"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How do you say eight in Kinyarwanda?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "umunani",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "kabiri",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "kane",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Eight is umunani."
+        }
+      ]
+    },
+    {
+      "id": "kinyarwanda-number-9",
+      "title": "Number 9 in Kinyarwanda",
+      "ageGroup": "young",
+      "summary": "Number 9 in Kinyarwanda",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's learn a word in Kinyarwanda!"
+        },
+        {
+          "art": "object.star*9",
+          "say": "Nine in Kinyarwanda is icyenda.",
+          "big": "9 = icyenda"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Say it with me: icyenda.",
+          "big": "icyenda"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How do you say nine in Kinyarwanda?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "icyenda",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "gatatu",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "gatanu",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Nine is icyenda."
+        }
+      ]
+    },
+    {
+      "id": "kinyarwanda-number-10",
+      "title": "Number 10 in Kinyarwanda",
+      "ageGroup": "young",
+      "summary": "Number 10 in Kinyarwanda",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's learn a word in Kinyarwanda!"
+        },
+        {
+          "art": "object.star*9",
+          "say": "Ten in Kinyarwanda is icumi.",
+          "big": "10 = icumi"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Say it with me: icumi.",
+          "big": "icumi"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How do you say ten in Kinyarwanda?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "icumi",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "kane",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "gatandatu",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Ten is icumi."
+        }
+      ]
+    },
+    {
+      "id": "kinyarwanda-color-red",
+      "title": "Red in Kinyarwanda",
+      "ageGroup": "young",
+      "summary": "Red in Kinyarwanda",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's learn a color in Kinyarwanda!"
+        },
+        {
+          "art": "object.apple",
+          "say": "Red in Kinyarwanda is umutuku.",
+          "big": "umutuku"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Say it with me: umutuku.",
+          "big": "umutuku"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How do you say red in Kinyarwanda?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "umutuku",
+              "art": "object.apple"
+            },
+            {
+              "label": "umuhondo",
+              "art": "object.banana"
+            },
+            {
+              "label": "ubururu",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Red is umutuku."
+        }
+      ]
+    },
+    {
+      "id": "kinyarwanda-color-yellow",
+      "title": "Yellow in Kinyarwanda",
+      "ageGroup": "young",
+      "summary": "Yellow in Kinyarwanda",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's learn a color in Kinyarwanda!"
+        },
+        {
+          "art": "object.banana",
+          "say": "Yellow in Kinyarwanda is umuhondo.",
+          "big": "umuhondo"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Say it with me: umuhondo.",
+          "big": "umuhondo"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How do you say yellow in Kinyarwanda?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "umuhondo",
+              "art": "object.banana"
+            },
+            {
+              "label": "ubururu",
+              "art": "object.whale"
+            },
+            {
+              "label": "icyatsi",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Yellow is umuhondo."
+        }
+      ]
+    },
+    {
+      "id": "kinyarwanda-color-blue",
+      "title": "Blue in Kinyarwanda",
+      "ageGroup": "young",
+      "summary": "Blue in Kinyarwanda",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's learn a color in Kinyarwanda!"
+        },
+        {
+          "art": "object.whale",
+          "say": "Blue in Kinyarwanda is ubururu.",
+          "big": "ubururu"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Say it with me: ubururu.",
+          "big": "ubururu"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How do you say blue in Kinyarwanda?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "ubururu",
+              "art": "object.whale"
+            },
+            {
+              "label": "icyatsi",
+              "art": "object.turtle"
+            },
+            {
+              "label": "umweru",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Blue is ubururu."
+        }
+      ]
+    },
+    {
+      "id": "kinyarwanda-color-green",
+      "title": "Green in Kinyarwanda",
+      "ageGroup": "young",
+      "summary": "Green in Kinyarwanda",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's learn a color in Kinyarwanda!"
+        },
+        {
+          "art": "object.turtle",
+          "say": "Green in Kinyarwanda is icyatsi.",
+          "big": "icyatsi"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Say it with me: icyatsi.",
+          "big": "icyatsi"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How do you say green in Kinyarwanda?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "icyatsi",
+              "art": "object.turtle"
+            },
+            {
+              "label": "umweru",
+              "art": "object.cloud"
+            },
+            {
+              "label": "umutuku",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Green is icyatsi."
+        }
+      ]
+    },
+    {
+      "id": "kinyarwanda-color-white",
+      "title": "White in Kinyarwanda",
+      "ageGroup": "young",
+      "summary": "White in Kinyarwanda",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's learn a color in Kinyarwanda!"
+        },
+        {
+          "art": "object.cloud",
+          "say": "White in Kinyarwanda is umweru.",
+          "big": "umweru"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Say it with me: umweru.",
+          "big": "umweru"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How do you say white in Kinyarwanda?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "umweru",
+              "art": "object.cloud"
+            },
+            {
+              "label": "umutuku",
+              "art": "object.apple"
+            },
+            {
+              "label": "umuhondo",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "White is umweru."
+        }
+      ]
+    },
+    {
+      "id": "kinyarwanda-animal-cow",
+      "title": "Cow in Kinyarwanda",
+      "ageGroup": "little",
+      "summary": "Cow in Kinyarwanda",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's learn an animal word in Kinyarwanda!"
+        },
+        {
+          "art": "object.hippo",
+          "say": "Cow in Kinyarwanda is inka.",
+          "big": "inka"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Say it with me: inka.",
+          "big": "inka"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which word means cow?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "inka",
+              "art": "object.hippo"
+            },
+            {
+              "label": "inzovu",
+              "art": "object.hippo"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Cow is inka."
+        }
+      ]
+    },
+    {
+      "id": "kinyarwanda-animal-lion",
+      "title": "Lion in Kinyarwanda",
+      "ageGroup": "little",
+      "summary": "Lion in Kinyarwanda",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's learn an animal word in Kinyarwanda!"
+        },
+        {
+          "art": "object.lion",
+          "say": "Lion in Kinyarwanda is intare.",
+          "big": "intare"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Say it with me: intare.",
+          "big": "intare"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which word means lion?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "intare",
+              "art": "object.lion"
+            },
+            {
+              "label": "injangwe",
+              "art": "object.cat"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Lion is intare."
+        }
+      ]
+    },
+    {
+      "id": "kinyarwanda-animal-elephant",
+      "title": "Elephant in Kinyarwanda",
+      "ageGroup": "little",
+      "summary": "Elephant in Kinyarwanda",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's learn an animal word in Kinyarwanda!"
+        },
+        {
+          "art": "object.hippo",
+          "say": "Elephant in Kinyarwanda is inzovu.",
+          "big": "inzovu"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Say it with me: inzovu.",
+          "big": "inzovu"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which word means elephant?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "inzovu",
+              "art": "object.hippo"
+            },
+            {
+              "label": "inkoko",
+              "art": "object.chick"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Elephant is inzovu."
+        }
+      ]
+    },
+    {
+      "id": "kinyarwanda-animal-cat",
+      "title": "Cat in Kinyarwanda",
+      "ageGroup": "little",
+      "summary": "Cat in Kinyarwanda",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's learn an animal word in Kinyarwanda!"
+        },
+        {
+          "art": "object.cat",
+          "say": "Cat in Kinyarwanda is injangwe.",
+          "big": "injangwe"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Say it with me: injangwe.",
+          "big": "injangwe"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which word means cat?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "injangwe",
+              "art": "object.cat"
+            },
+            {
+              "label": "ifi",
+              "art": "object.fish"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Cat is injangwe."
+        }
+      ]
+    },
+    {
+      "id": "kinyarwanda-animal-chicken",
+      "title": "Chicken in Kinyarwanda",
+      "ageGroup": "little",
+      "summary": "Chicken in Kinyarwanda",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's learn an animal word in Kinyarwanda!"
+        },
+        {
+          "art": "object.chick",
+          "say": "Chicken in Kinyarwanda is inkoko.",
+          "big": "inkoko"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Say it with me: inkoko.",
+          "big": "inkoko"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which word means chicken?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "inkoko",
+              "art": "object.chick"
+            },
+            {
+              "label": "inka",
+              "art": "object.hippo"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Chicken is inkoko."
+        }
+      ]
+    },
+    {
+      "id": "kinyarwanda-animal-fish",
+      "title": "Fish in Kinyarwanda",
+      "ageGroup": "little",
+      "summary": "Fish in Kinyarwanda",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's learn an animal word in Kinyarwanda!"
+        },
+        {
+          "art": "object.fish",
+          "say": "Fish in Kinyarwanda is ifi.",
+          "big": "ifi"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Say it with me: ifi.",
+          "big": "ifi"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which word means fish?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "ifi",
+              "art": "object.fish"
+            },
+            {
+              "label": "intare",
+              "art": "object.lion"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Fish is ifi."
+        }
+      ]
+    },
+    {
+      "id": "kinyarwanda-greeting-muraho",
+      "title": "Saying hello in Kinyarwanda",
+      "ageGroup": "young",
+      "summary": "Saying hello in Kinyarwanda",
+      "scenes": [
+        {
+          "art": "object.wave-hand",
+          "say": "In Kinyarwanda, hello is muraho.",
+          "big": "muraho"
+        },
+        {
+          "art": "object.friends",
+          "say": "Try it with your family: muraho!"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Muraho means hello.",
+          "big": "muraho"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What does muraho mean?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Hello",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Good morning",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Goodnight",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Muraho means hello."
+        }
+      ]
+    },
+    {
+      "id": "kinyarwanda-greeting-mwaramutse",
+      "title": "Saying good morning in Kinyarwanda",
+      "ageGroup": "young",
+      "summary": "Saying good morning in Kinyarwanda",
+      "scenes": [
+        {
+          "art": "object.wave-hand",
+          "say": "In Kinyarwanda, good morning is mwaramutse.",
+          "big": "mwaramutse"
+        },
+        {
+          "art": "object.friends",
+          "say": "Try it with your family: mwaramutse!"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Mwaramutse means good morning.",
+          "big": "mwaramutse"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What does mwaramutse mean?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Good morning",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Thank you",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Goodnight",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Mwaramutse means good morning."
+        }
+      ]
+    },
+    {
+      "id": "kinyarwanda-greeting-murakoze",
+      "title": "Saying thank you in Kinyarwanda",
+      "ageGroup": "young",
+      "summary": "Saying thank you in Kinyarwanda",
+      "scenes": [
+        {
+          "art": "object.wave-hand",
+          "say": "In Kinyarwanda, thank you is murakoze.",
+          "big": "murakoze"
+        },
+        {
+          "art": "object.friends",
+          "say": "Try it with your family: murakoze!"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Murakoze means thank you.",
+          "big": "murakoze"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What does murakoze mean?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Thank you",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Yes",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Goodnight",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Murakoze means thank you."
+        }
+      ]
+    },
+    {
+      "id": "kinyarwanda-greeting-yego",
+      "title": "Saying yes in Kinyarwanda",
+      "ageGroup": "young",
+      "summary": "Saying yes in Kinyarwanda",
+      "scenes": [
+        {
+          "art": "object.wave-hand",
+          "say": "In Kinyarwanda, yes is yego.",
+          "big": "yego"
+        },
+        {
+          "art": "object.friends",
+          "say": "Try it with your family: yego!"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Yego means yes.",
+          "big": "yego"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What does yego mean?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Yes",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Hello",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Goodnight",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Yego means yes."
+        }
+      ]
+    }
+  ]
+}

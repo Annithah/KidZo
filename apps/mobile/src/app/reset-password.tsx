@@ -10,8 +10,8 @@ import { Text } from '../components/Typography';
 import { Zo } from '../components/Zo';
 import { useT } from '../i18n';
 import { api } from '../lib/api';
-import { validate, type FieldErrors } from '../lib/form';
-import { spacing } from '../theme';
+import { validate, validateField, type FieldErrors } from '../lib/form';
+import { spacing } from '../theme/core';
 
 /**
  * Opened from the reset email link (kidzo://reset-password?token=...). If the link did not
@@ -28,6 +28,7 @@ export default function ResetPassword() {
   const [done, setDone] = useState(false);
   const [busy, setBusy] = useState(false);
 
+  const blur = (field: string) => setErrors((e) => ({ ...e, [field]: validateField(resetPasswordSchema, { token: token.trim(), password }, field) ?? '' }));
   const submit = async () => {
     const { data, errors: fieldErrors } = validate(resetPasswordSchema, { token: token.trim(), password });
     if (fieldErrors.token) fieldErrors.token = t('auth.resetInvalid');
@@ -50,7 +51,7 @@ export default function ResetPassword() {
       <Screen>
         <Header backLabel={t('common.back')} />
         <View style={styles.top}>
-          <Zo size={88} />
+          <Zo size={96} mood="waving" />
           <Text variant="h1" align="center">
             {t('auth.resetTitle')}
           </Text>
@@ -70,23 +71,26 @@ export default function ResetPassword() {
                 autoCapitalize="none"
                 autoCorrect={false}
                 hint={t('auth.resetCodeHint')}
-                error={errors.token}
+                error={errors.token || undefined}
+          onBlur={() => blur('token')}
               />
             )}
             {linkToken && errors.token ? <InlineMessage tone="error" message={errors.token} /> : null}
             <TextField
               label={t('auth.newPassword')}
+          icon="password"
               value={password}
               onChangeText={setPassword}
               secureTextEntry
               autoComplete="new-password"
               textContentType="newPassword"
               hint={t('auth.passwordHint')}
-              error={errors.password}
+              error={errors.password || undefined}
+          onBlur={() => blur('password')}
               onSubmitEditing={submit}
             />
             {formError ? <InlineMessage tone="error" message={formError} /> : null}
-            <Button label={t('auth.resetSubmit')} size="kid" fullWidth loading={busy} onPress={submit} />
+            <Button label={t('auth.resetSubmit')} icon="check" size="kid" fullWidth loading={busy} disabled={busy} onPress={submit} />
           </>
         )}
       </Screen>

@@ -84,7 +84,22 @@ export async function createChild(app: FastifyInstance, token: string, overrides
   return res.json<Child>();
 }
 
+/** Child-scoped token for kid endpoints, as the app requests when a profile is opened. */
+export async function childToken(app: FastifyInstance, token: string, childId: string): Promise<string> {
+  const res = await app.inject({ method: 'POST', url: `/children/${childId}/token`, headers: bearer(token) });
+  if (res.statusCode !== 200) throw new Error(`child token failed: ${res.statusCode} ${res.body}`);
+  return res.json<{ token: string }>().token;
+}
+
+/** Parent login plus the child header, for requests made on a child's screens. */
+export async function asChild(app: FastifyInstance, token: string, childId: string): Promise<Record<string, string>> {
+  return { ...bearer(token), 'x-kidzo-child': await childToken(app, token, childId) };
+}
+
+/** Catalog as a parent, or as a child when the query names one (`?childId=...`). */
 export async function catalog(app: FastifyInstance, token: string, query = ''): Promise<ContentSummary[]> {
-  const res = await app.inject({ method: 'GET', url: `/catalog${query}`, headers: bearer(token) });
+  const childId = /childId=([0-9a-f-]{36})/.exec(query)?.[1];
+  const headers = childId ? await asChild(app, token, childId) : bearer(token);
+  const res = await app.inject({ method: 'GET', url: `/catalog${query}`, headers });
   return res.json<ContentSummary[]>();
 }

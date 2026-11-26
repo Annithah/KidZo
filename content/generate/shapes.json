@@ -1,0 +1,644 @@
+{
+  "topic": "shapes",
+  "category": "learning",
+  "skills": [
+    "shapes",
+    "math"
+  ],
+  "art": "object.triangle",
+  "videos": [
+    {
+      "id": "shape-circle",
+      "title": "The circle",
+      "ageGroup": "little",
+      "summary": "The circle",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's learn a shape. It's a circle!",
+          "big": "CIRCLE"
+        },
+        {
+          "art": "object.circle",
+          "say": "A circle is round with no corners.",
+          "show": "circle"
+        },
+        {
+          "art": "object.circle",
+          "say": "You can see this shape in a wheel."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which one is the circle?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Circle",
+              "art": "object.circle"
+            },
+            {
+              "label": "Star",
+              "art": "object.star"
+            }
+          ],
+          "answer": 0,
+          "explanation": "A circle is round with no corners."
+        }
+      ]
+    },
+    {
+      "id": "shape-square",
+      "title": "The square",
+      "ageGroup": "little",
+      "summary": "The square",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's learn a shape. It's a square!",
+          "big": "SQUARE"
+        },
+        {
+          "art": "object.square",
+          "say": "A square has four equal sides and four corners.",
+          "show": "square"
+        },
+        {
+          "art": "object.square",
+          "say": "You can see this shape in a window."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which one is the square?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Square",
+              "art": "object.square"
+            },
+            {
+              "label": "Heart",
+              "art": "object.heart"
+            }
+          ],
+          "answer": 0,
+          "explanation": "A square has four equal sides and four corners."
+        }
+      ]
+    },
+    {
+      "id": "shape-triangle",
+      "title": "The triangle",
+      "ageGroup": "little",
+      "summary": "The triangle",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's learn a shape. It's a triangle!",
+          "big": "TRIANGLE"
+        },
+        {
+          "art": "object.triangle",
+          "say": "A triangle has three sides and three corners.",
+          "show": "triangle"
+        },
+        {
+          "art": "object.triangle",
+          "say": "You can see this shape in a slice of pizza."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which one is the triangle?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Triangle",
+              "art": "object.triangle"
+            },
+            {
+              "label": "Diamond",
+              "art": "object.diamond"
+            }
+          ],
+          "answer": 0,
+          "explanation": "A triangle has three sides and three corners."
+        }
+      ]
+    },
+    {
+      "id": "shape-star",
+      "title": "The star",
+      "ageGroup": "little",
+      "summary": "The star",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's learn a shape. It's a star!",
+          "big": "STAR"
+        },
+        {
+          "art": "object.star",
+          "say": "A star shape has points all around.",
+          "show": "star"
+        },
+        {
+          "art": "object.star",
+          "say": "You can see this shape in a starfish."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which one is the star?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Star",
+              "art": "object.star"
+            },
+            {
+              "label": "Oval",
+              "art": "object.shell"
+            }
+          ],
+          "answer": 0,
+          "explanation": "A star shape has points all around."
+        }
+      ]
+    },
+    {
+      "id": "shape-heart",
+      "title": "The heart",
+      "ageGroup": "little",
+      "summary": "The heart",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's learn a shape. It's a heart!",
+          "big": "HEART"
+        },
+        {
+          "art": "object.heart",
+          "say": "A heart shape means love.",
+          "show": "heart"
+        },
+        {
+          "art": "object.heart",
+          "say": "You can see this shape in a valentine card."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which one is the heart?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Heart",
+              "art": "object.heart"
+            },
+            {
+              "label": "Rectangle",
+              "art": "object.book"
+            }
+          ],
+          "answer": 0,
+          "explanation": "A heart shape means love."
+        }
+      ]
+    },
+    {
+      "id": "shape-diamond",
+      "title": "The diamond",
+      "ageGroup": "little",
+      "summary": "The diamond",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's learn a shape. It's a diamond!",
+          "big": "DIAMOND"
+        },
+        {
+          "art": "object.diamond",
+          "say": "A diamond looks like a square standing on its corner.",
+          "show": "diamond"
+        },
+        {
+          "art": "object.diamond",
+          "say": "You can see this shape in a kite."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which one is the diamond?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Diamond",
+              "art": "object.diamond"
+            },
+            {
+              "label": "Circle",
+              "art": "object.circle"
+            }
+          ],
+          "answer": 0,
+          "explanation": "A diamond looks like a square standing on its corner."
+        }
+      ]
+    },
+    {
+      "id": "shape-oval",
+      "title": "The oval",
+      "ageGroup": "little",
+      "summary": "The oval",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's learn a shape. It's a oval!",
+          "big": "OVAL"
+        },
+        {
+          "art": "object.shell",
+          "say": "An oval is like a stretched circle, like an egg.",
+          "show": "oval"
+        },
+        {
+          "art": "object.shell",
+          "say": "You can see this shape in an egg."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which one is the oval?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Oval",
+              "art": "object.shell"
+            },
+            {
+              "label": "Square",
+              "art": "object.square"
+            }
+          ],
+          "answer": 0,
+          "explanation": "An oval is like a stretched circle, like an egg."
+        }
+      ]
+    },
+    {
+      "id": "shape-rectangle",
+      "title": "The rectangle",
+      "ageGroup": "little",
+      "summary": "The rectangle",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's learn a shape. It's a rectangle!",
+          "big": "RECTANGLE"
+        },
+        {
+          "art": "object.book",
+          "say": "A rectangle has four sides: two long and two short.",
+          "show": "rectangle"
+        },
+        {
+          "art": "object.book",
+          "say": "You can see this shape in a door."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which one is the rectangle?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Rectangle",
+              "art": "object.book"
+            },
+            {
+              "label": "Triangle",
+              "art": "object.triangle"
+            }
+          ],
+          "answer": 0,
+          "explanation": "A rectangle has four sides: two long and two short."
+        }
+      ]
+    },
+    {
+      "id": "shape-3d-cube",
+      "title": "3D shapes: the cube",
+      "ageGroup": "young",
+      "summary": "3D shapes: the cube",
+      "scenes": [
+        {
+          "art": "object.puzzle",
+          "say": "Some shapes are solid. We call them 3D shapes. This one is a cube.",
+          "big": "CUBE"
+        },
+        {
+          "art": "object.square",
+          "say": "A cube has 6 square faces, like a dice."
+        },
+        {
+          "art": "zo.thinking",
+          "say": "Look around your home. Can you find this shape?"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How many flat faces does a cube have?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "6",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "7",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "4",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "A cube has 6 square faces, like a dice."
+        }
+      ]
+    },
+    {
+      "id": "shape-3d-sphere",
+      "title": "3D shapes: the sphere",
+      "ageGroup": "young",
+      "summary": "3D shapes: the sphere",
+      "scenes": [
+        {
+          "art": "object.puzzle",
+          "say": "Some shapes are solid. We call them 3D shapes. This one is a sphere.",
+          "big": "SPHERE"
+        },
+        {
+          "art": "object.circle",
+          "say": "A sphere is perfectly round, like a ball. It has no flat faces."
+        },
+        {
+          "art": "zo.thinking",
+          "say": "Look around your home. Can you find this shape?"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How many flat faces does a sphere have?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "0",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "1",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "2",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "A sphere is perfectly round, like a ball. It has no flat faces."
+        }
+      ]
+    },
+    {
+      "id": "shape-3d-cylinder",
+      "title": "3D shapes: the cylinder",
+      "ageGroup": "young",
+      "summary": "3D shapes: the cylinder",
+      "scenes": [
+        {
+          "art": "object.puzzle",
+          "say": "Some shapes are solid. We call them 3D shapes. This one is a cylinder.",
+          "big": "CYLINDER"
+        },
+        {
+          "art": "object.circle",
+          "say": "A cylinder has 2 flat circle faces and one curved side, like a can."
+        },
+        {
+          "art": "zo.thinking",
+          "say": "Look around your home. Can you find this shape?"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How many flat faces does a cylinder have?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "2",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "3",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "0",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "A cylinder has 2 flat circle faces and one curved side, like a can."
+        }
+      ]
+    },
+    {
+      "id": "shape-3d-cone",
+      "title": "3D shapes: the cone",
+      "ageGroup": "young",
+      "summary": "3D shapes: the cone",
+      "scenes": [
+        {
+          "art": "object.puzzle",
+          "say": "Some shapes are solid. We call them 3D shapes. This one is a cone.",
+          "big": "CONE"
+        },
+        {
+          "art": "object.circle",
+          "say": "A cone has 1 circle face and a point, like an ice cream cone."
+        },
+        {
+          "art": "zo.thinking",
+          "say": "Look around your home. Can you find this shape?"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How many flat faces does a cone have?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "1",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "2",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "3",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "A cone has 1 circle face and a point, like an ice cream cone."
+        }
+      ]
+    },
+    {
+      "id": "shape-3d-pyramid",
+      "title": "3D shapes: the pyramid",
+      "ageGroup": "big",
+      "summary": "3D shapes: the pyramid",
+      "scenes": [
+        {
+          "art": "object.puzzle",
+          "say": "Some shapes are solid. We call them 3D shapes. This one is a pyramid.",
+          "big": "PYRAMID"
+        },
+        {
+          "art": "object.triangle",
+          "say": "A square pyramid has a square base and 4 triangle sides: 5 faces."
+        },
+        {
+          "art": "zo.thinking",
+          "say": "Look around your home. Can you find this shape?"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How many flat faces does a pyramid have?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "5",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "6",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "3",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "8",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "A square pyramid has a square base and 4 triangle sides: 5 faces."
+        }
+      ]
+    },
+    {
+      "id": "shape-3d-triangular-prism",
+      "title": "3D shapes: the triangular prism",
+      "ageGroup": "big",
+      "summary": "3D shapes: the triangular prism",
+      "scenes": [
+        {
+          "art": "object.puzzle",
+          "say": "Some shapes are solid. We call them 3D shapes. This one is a triangular prism.",
+          "big": "TRIANGULAR PRISM"
+        },
+        {
+          "art": "object.triangle",
+          "say": "A triangular prism has 2 triangles and 3 rectangles: 5 faces."
+        },
+        {
+          "art": "zo.thinking",
+          "say": "Look around your home. Can you find this shape?"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How many flat faces does a triangular prism have?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "5",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "6",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "3",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "8",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "A triangular prism has 2 triangles and 3 rectangles: 5 faces."
+        }
+      ]
+    },
+    {
+      "id": "shape-3d-cuboid",
+      "title": "3D shapes: the cuboid",
+      "ageGroup": "big",
+      "summary": "3D shapes: the cuboid",
+      "scenes": [
+        {
+          "art": "object.puzzle",
+          "say": "Some shapes are solid. We call them 3D shapes. This one is a cuboid.",
+          "big": "CUBOID"
+        },
+        {
+          "art": "object.square",
+          "say": "A cuboid is like a box: 6 rectangle faces."
+        },
+        {
+          "art": "zo.thinking",
+          "say": "Look around your home. Can you find this shape?"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How many flat faces does a cuboid have?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "6",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "7",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "4",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "9",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "A cuboid is like a box: 6 rectangle faces."
+        }
+      ]
+    }
+  ]
+}

@@ -20,4 +20,9 @@ export default tseslint.config(
       'no-console': ['warn', { allow: ['warn', 'error'] }],
     },
   },
+  {
+    // Content CLI scripts print their summaries to the terminal.
+    files: ['apps/api/scripts/**'],
+    rules: { 'no-console': 'off' },
+  },
 );

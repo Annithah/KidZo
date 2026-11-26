@@ -10,8 +10,7 @@ import {
   contentInputSchema,
   estimatePackageBytes,
   publishProblems,
-  stickerInputSchema,
-} from '@kidzo/shared';
+  stickerInputSchema, gateFields } from '@kidzo/shared';
 import { loadConfig } from './config';
 import { openDatabase, type Db } from './db/client';
 import { children, content, stickers, users } from './db/schema';
@@ -28,7 +27,7 @@ export async function seed(db: Db, options: { adminEmail: string; adminPassword:
     const [row] = await db
       .insert(stickers)
       .values(input)
-      .onConflictDoUpdate({ target: stickers.slug, set: { name: input.name, emoji: input.emoji, color: input.color } })
+      .onConflictDoUpdate({ target: stickers.slug, set: { name: input.name, art: input.art, color: input.color } })
       .returning({ id: stickers.id });
     if (row) stickerIds.set(input.slug, row.id);
   }
@@ -42,6 +41,7 @@ export async function seed(db: Db, options: { adminEmail: string; adminPassword:
     if (problems.length > 0) throw new Error(`Seed content "${input.slug}" is invalid: ${problems.join('; ')}`);
     const values = {
       ...input,
+      ...gateFields(input),
       status: 'published' as const,
       sizeBytes: estimatePackageBytes(input.body),
       publishedAt: new Date(),

@@ -1,30 +1,46 @@
 import * as Haptics from 'expo-haptics';
-import type { ReactNode } from 'react';
 import { ActivityIndicator, Platform, Pressable, StyleSheet, View, type StyleProp, type ViewStyle } from 'react-native';
-import { pressedShade } from '@kidzo/shared';
-import { bedtimeColors, colors, fontFamilies, radii, touchTargets } from '../theme';
+import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withSpring, withTiming } from 'react-native-reanimated';
+import { buttonEdge, fonts, motion, onColor, palette, radius, touchTargets, useTheme, type ColorName } from '../theme/core';
+import { Icon, type IconName } from './icon/Icon';
 import { Text } from './Typography';
 
-export type ButtonVariant = 'primary' | 'secondary' | 'sky' | 'mint' | 'lavender' | 'yellow' | 'navy' | 'moon' | 'ghost' | 'danger';
+export type ButtonVariant =
+  | 'primary'
+  | 'secondary'
+  | 'navy'
+  | 'moon'
+  | 'ghost'
+  | 'danger'
+  // World colors
+  | 'sky'
+  | 'mint'
+  | 'grape'
+  | 'bubblegum'
+  | 'tangerine'
+  | 'leaf'
+  | 'star'
+  // Older names kept for readability in screens
+  | 'lavender'
+  | 'yellow';
 type Size = 'kid' | 'md' | 'sm';
 
-const VARIANTS: Record<ButtonVariant, { bg: string; fg: string; edge: string; border?: string }> = {
-  primary: { bg: colors.coral, fg: colors.white, edge: pressedShade[colors.coral] ?? colors.coral },
-  secondary: { bg: colors.white, fg: colors.navy, edge: colors.line, border: colors.line },
-  sky: { bg: colors.skyBlue, fg: colors.white, edge: pressedShade[colors.skyBlue] ?? colors.skyBlue },
-  mint: { bg: colors.mint, fg: colors.navy, edge: pressedShade[colors.mint] ?? colors.mint },
-  lavender: { bg: colors.lavender, fg: colors.white, edge: pressedShade[colors.lavender] ?? colors.lavender },
-  yellow: { bg: colors.starYellow, fg: colors.navy, edge: pressedShade[colors.starYellow] ?? colors.starYellow },
-  navy: { bg: colors.navy, fg: colors.white, edge: pressedShade[colors.navy] ?? colors.navy },
-  moon: { bg: bedtimeColors.moonYellow, fg: bedtimeColors.deepIndigo, edge: pressedShade[bedtimeColors.moonYellow] ?? '#000' },
-  ghost: { bg: 'transparent', fg: colors.navy, edge: 'transparent' },
-  danger: { bg: colors.white, fg: colors.error, edge: colors.line, border: colors.error },
+const WORLD: Partial<Record<ButtonVariant, ColorName>> = {
+  sky: 'sky',
+  mint: 'mint',
+  grape: 'grape',
+  lavender: 'grape',
+  bubblegum: 'bubblegum',
+  tangerine: 'tangerine',
+  leaf: 'leaf',
+  star: 'star',
+  yellow: 'star',
 };
 
-const SIZES: Record<Size, { height: number; font: number; pad: number; edge: number }> = {
-  kid: { height: touchTargets.kid, font: 22, pad: 28, edge: 6 },
-  md: { height: 52, font: 18, pad: 22, edge: 4 },
-  sm: { height: touchTargets.compact, font: 15, pad: 16, edge: 3 },
+const SIZES: Record<Size, { height: number; font: number; pad: number; edge: number; icon: number }> = {
+  kid: { height: touchTargets.little, font: 22, pad: 28, edge: buttonEdge.little, icon: 28 },
+  md: { height: 54, font: 18, pad: 22, edge: buttonEdge.md, icon: 22 },
+  sm: { height: touchTargets.standard, font: 16, pad: 18, edge: buttonEdge.sm, icon: 18 },
 };
 
 interface Props {
@@ -32,7 +48,8 @@ interface Props {
   onPress?: () => void;
   variant?: ButtonVariant;
   size?: Size;
-  icon?: ReactNode;
+  icon?: IconName;
+  iconRight?: IconName;
   disabled?: boolean;
   loading?: boolean;
   fullWidth?: boolean;
@@ -41,92 +58,89 @@ interface Props {
   textColor?: string;
 }
 
-/** Chunky pressable button with a 3D bottom edge that squashes when pressed. */
-export function Button({
-  label,
-  onPress,
-  variant = 'primary',
-  size = 'md',
-  icon,
-  disabled,
-  loading,
-  fullWidth,
-  accessibilityHint,
-  style,
-  textColor,
-}: Props) {
-  const v = VARIANTS[variant];
+/** Chunky pressable button: darker bottom edge that squashes with a springy press. */
+export function Button({ label, onPress, variant = 'primary', size = 'md', icon, iconRight, disabled, loading, fullWidth, accessibilityHint, style, textColor }: Props) {
+  const theme = useTheme();
+  const reduce = useReducedMotion();
+  const press = useSharedValue(0);
   const s = SIZES[size];
-  const inactive = disabled || loading;
+  const inactive = !!(disabled || loading);
+
+  const world = WORLD[variant];
+  const look = (() => {
+    if (world) return { bg: palette[world][500], fg: onColor(palette[world][500]), edge: palette[world][700], border: 'transparent' };
+    switch (variant) {
+      case 'secondary':
+        return { bg: theme.surface, fg: theme.text, edge: theme.lineStrong, border: theme.line };
+      case 'navy':
+        return { bg: palette.navy[500], fg: palette.paper[500], edge: palette.navy[800], border: 'transparent' };
+      case 'moon':
+        return { bg: palette.moon[500], fg: palette.night[500], edge: palette.moon[700], border: 'transparent' };
+      case 'ghost':
+        return { bg: 'transparent', fg: theme.text, edge: 'transparent', border: 'transparent' };
+      case 'danger':
+        return { bg: theme.surface, fg: theme.errorText, edge: palette.error[200], border: palette.error[300] };
+      default:
+        return { bg: theme.primary, fg: theme.onPrimary, edge: theme.primaryEdge, border: 'transparent' };
+    }
+  })();
   const edge = variant === 'ghost' ? 0 : s.edge;
+  const fg = inactive ? theme.textSubtle : (textColor ?? look.fg);
+
+  const faceStyle = useAnimatedStyle(() => ({ transform: [{ translateY: press.value * edge }] }));
+
+  const animate = (to: number) => {
+    press.value = reduce ? to : to === 1 ? withTiming(1, { duration: motion.duration.fast }) : withSpring(0, motion.spring.pop);
+  };
 
   return (
     <Pressable
       accessibilityRole="button"
       accessibilityLabel={label}
       accessibilityHint={accessibilityHint}
-      accessibilityState={{ disabled: !!inactive, busy: !!loading }}
+      accessibilityState={{ disabled: inactive, busy: !!loading }}
       disabled={inactive}
-      hitSlop={6}
+      hitSlop={4}
+      onPressIn={() => animate(1)}
+      onPressOut={() => animate(0)}
       onPress={() => {
         if (Platform.OS !== 'web') void Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
         onPress?.();
       }}
       style={[fullWidth && styles.full, style]}
     >
-      {({ pressed }) => (
-        <View
+      <View style={[styles.edge, { backgroundColor: inactive ? theme.line : look.edge, paddingBottom: edge, minHeight: s.height + edge }]}>
+        <Animated.View
           style={[
-            styles.edge,
+            styles.face,
+            faceStyle,
             {
-              backgroundColor: inactive ? colors.line : v.edge,
-              borderRadius: radii.pill,
-              paddingBottom: pressed ? Math.max(1, edge - 4) : edge,
-              marginTop: pressed ? Math.min(4, edge - 1) : 0,
+              minHeight: s.height,
+              paddingHorizontal: s.pad,
+              backgroundColor: inactive ? theme.surfaceSunken : look.bg,
+              borderColor: inactive ? theme.line : look.border,
             },
           ]}
         >
-          <View
-            style={[
-              styles.face,
-              {
-                minHeight: s.height,
-                paddingHorizontal: s.pad,
-                backgroundColor: inactive ? colors.surfaceMuted : v.bg,
-                borderColor: inactive ? colors.line : (v.border ?? 'transparent'),
-              },
-            ]}
-          >
-            {loading ? (
-              <ActivityIndicator color={v.fg} />
-            ) : (
-              <>
-                {icon}
-                <Text
-                  style={{ fontFamily: fontFamilies.displayBold, fontSize: s.font, lineHeight: s.font * 1.3 }}
-                  color={inactive ? colors.inkSubtle : (textColor ?? v.fg)}
-                  numberOfLines={1}
-                >
-                  {label}
-                </Text>
-              </>
-            )}
-          </View>
-        </View>
-      )}
+          {loading ? (
+            <ActivityIndicator color={look.fg} />
+          ) : (
+            <>
+              {icon ? <Icon name={icon} size={s.icon} color={fg} accent={look.edge === 'transparent' ? undefined : look.edge} /> : null}
+              <Text style={{ fontFamily: fonts.displaySemi, fontSize: s.font, lineHeight: s.font * 1.3 }} color={fg} numberOfLines={1}>
+                {label}
+              </Text>
+              {iconRight ? <Icon name={iconRight} size={s.icon} color={fg} /> : null}
+            </>
+          )}
+        </Animated.View>
+      </View>
     </Pressable>
   );
 }
 
 const styles = StyleSheet.create({
   full: { alignSelf: 'stretch' },
-  edge: {},
-  face: {
-    borderRadius: radii.pill,
-    borderWidth: 2,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: 10,
-  },
+  edge: { borderRadius: radius.full },
+  face: { borderRadius: radius.full, borderWidth: 2, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 10 },
 });

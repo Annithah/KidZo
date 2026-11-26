@@ -1,7 +1,7 @@
 import { Stack } from 'expo-router';
 import { ParentGate } from '../../../components/ParentGate';
 import { useParentGate } from '../../../lib/parent-gate';
-import { colors } from '../../../theme';
+import { lightTheme } from '../../../theme/core';
 
 /** Everything under /parent requires passing the grown-ups gate. */
 export default function ParentLayout() {
@@ -9,7 +9,7 @@ export default function ParentLayout() {
   if (!unlocked) return <ParentGate />;
   return (
     <Stack
-      screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.cream } }}
+      screenOptions={{ headerShown: false, contentStyle: { backgroundColor: lightTheme.background } }}
       screenListeners={{ focus: touch, state: touch }}
     />
   );

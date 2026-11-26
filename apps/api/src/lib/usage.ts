@@ -2,6 +2,7 @@ import { and, eq, inArray, sql } from 'drizzle-orm';
 import {
   evaluatePlayPolicy,
   isLocked,
+  normalizeChildSettings,
   localParts,
   type Insights,
   type TodayStatus,
@@ -22,7 +23,7 @@ export async function getOwnedChild(db: Db, parentId: string, childId: string): 
     .limit(1);
   if (!row) throw notFound('Child');
   if (row.child.parentId !== parentId) throw forbidden();
-  return row;
+  return { ...row, child: { ...row.child, settings: normalizeChildSettings(row.child.settings) } };
 }
 
 export async function secondsPlayedOn(db: Db, childId: string, localDate: string): Promise<number> {

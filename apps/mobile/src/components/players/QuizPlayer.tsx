@@ -1,113 +1,130 @@
 import * as Haptics from 'expo-haptics';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Platform, Pressable, StyleSheet, View } from 'react-native';
-import Animated, { FadeIn, useAnimatedStyle, useSharedValue, withSequence, withTiming } from 'react-native-reanimated';
+import Animated, { FadeIn } from 'react-native-reanimated';
 import { localize, type Locale, type QuizBody } from '@kidzo/shared';
 import { useT } from '../../i18n';
-import { speak, stopSpeaking } from '../../lib/narration';
-import { colors, radii, softShadow, spacing } from '../../theme';
-import { ProgressBar } from '../Controls';
+import { DEFAULT_FEEDBACK_SECONDS } from '../../lib/answer-feedback';
+import { speak, speakAndWait, stopSpeaking } from '../../lib/narration';
+import { useAnswerFeedback } from '../../lib/use-answer-feedback';
+import { palette, radius, shadow, spacing, useTheme } from '../../theme/core';
+import { AnswerFeedback, type FeedbackTone } from '../AnswerFeedback';
+import { Art } from '../art/Art';
+import { SwooshProgress } from '../Controls';
+import { Icon } from '../icon/Icon';
 import { Text } from '../Typography';
 
 interface Props {
   body: QuizBody;
   locale: Locale;
   narration: boolean;
+  /** Seconds the answer feedback stays up (parent setting: 3, 5 or 8). */
+  feedbackSeconds?: number;
   onFinish: (path: string[], answers: Record<string, string>) => void;
 }
 
 /**
- * Quiz game. The first answer to each question is what counts for stars; kids can keep
- * trying until they find the right one, with friendly feedback either way.
+ * Quiz game. One answer per question: the options lock on the first tap, Zo shows and says
+ * whether it was right (or kindly gives the right answer), and the quiz moves on after the
+ * feedback countdown or when the child taps Next.
  */
-export function QuizPlayer({ body, locale, narration, onFinish }: Props) {
+export function QuizPlayer({ body, locale, narration, feedbackSeconds = DEFAULT_FEEDBACK_SECONDS, onFinish }: Props) {
   const { t } = useT();
+  const theme = useTheme();
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
-  const [feedback, setFeedback] = useState<{ optionId: string; correct: boolean } | null>(null);
-  const shake = useSharedValue(0);
-  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [result, setResult] = useState<{ optionId: string; correct: boolean; message: string } | null>(null);
   const question = body.questions[index];
+
+  const advance = () => {
+    stopSpeaking();
+    setResult(null);
+    if (index + 1 < body.questions.length) {
+      setIndex(index + 1);
+      feedback.reset();
+    } else onFinish(body.questions.map((q) => q.id), answers);
+  };
+  const feedback = useAnswerFeedback({ durationMs: feedbackSeconds * 1000, onDone: advance });
 
   useEffect(() => {
     if (narration && question) void speak(localize(question.prompt, locale), locale);
     return () => stopSpeaking();
   }, [index, narration, question, locale]);
 
-  useEffect(() => () => {
-    if (timer.current) clearTimeout(timer.current);
-  }, []);
-
-  const shakeStyle = useAnimatedStyle(() => ({ transform: [{ translateX: shake.value }] }));
   if (!question) return null;
 
   const choose = (optionId: string) => {
-    if (feedback?.correct) return;
+    if (feedback.locked) return;
     const correct = optionId === question.correctOptionId;
-    const nextAnswers = answers[question.id] ? answers : { ...answers, [question.id]: optionId };
-    setAnswers(nextAnswers);
-    setFeedback({ optionId, correct });
+    const right = question.options.find((o) => o.id === question.correctOptionId);
+    const explanation = question.explanation ? localize(question.explanation, locale) : '';
+    const message = correct
+      ? t('feedback.great')
+      : [t('feedback.goodTry', { answer: right ? localize(right.label, locale) : '' }), explanation].filter(Boolean).join(' ');
+    setAnswers((prev) => ({ ...prev, [question.id]: optionId }));
+    setResult({ optionId, correct, message });
     if (Platform.OS !== 'web') {
       void Haptics.notificationAsync(correct ? Haptics.NotificationFeedbackType.Success : Haptics.NotificationFeedbackType.Warning);
     }
-    if (!correct) {
-      shake.set(withSequence(withTiming(-10, { duration: 60 }), withTiming(10, { duration: 60 }), withTiming(-6, { duration: 60 }), withTiming(0, { duration: 60 })));
-      return;
-    }
-    timer.current = setTimeout(() => {
-      setFeedback(null);
-      if (index + 1 < body.questions.length) setIndex(index + 1);
-      else onFinish(body.questions.map((q) => q.id), nextAnswers);
-    }, 1200);
+    feedback.answer(narration ? speakAndWait(message, locale, { calm: theme.isCalm }) : undefined);
   };
+
+  const tone: FeedbackTone = result?.correct ? 'right' : 'gentle';
 
   return (
     <View style={styles.wrap}>
-      <Text variant="caption" muted>
+      <SwooshProgress done={index + (result ? 1 : 0)} total={body.questions.length} label={t('player.question', { current: index + 1, total: body.questions.length })} />
+      <Text variant="caption" muted align="center">
         {t('player.question', { current: index + 1, total: body.questions.length })}
       </Text>
-      <ProgressBar value={(index + (feedback?.correct ? 1 : 0)) / body.questions.length} color={colors.starYellow} />
-      <Animated.View key={question.id} entering={FadeIn} style={styles.prompt}>
-        <Text style={styles.promptEmoji}>{question.emoji}</Text>
+      <Animated.View key={question.id} entering={FadeIn} style={[styles.prompt, { backgroundColor: theme.surface }, shadow(2, palette.grape[700], theme)]}>
+        <Art art={question.art} size={140} />
         <Text variant="h2" align="center">
           {localize(question.prompt, locale)}
         </Text>
       </Animated.View>
 
-      <Animated.View style={[styles.options, shakeStyle]}>
+      <View style={styles.options}>
         {question.options.map((option) => {
-          const chosen = feedback?.optionId === option.id;
-          const border = chosen ? (feedback?.correct ? colors.success : colors.error) : colors.line;
+          const chosen = result?.optionId === option.id;
+          const isAnswer = !!result && option.id === question.correctOptionId;
+          const gentleMiss = chosen && !result?.correct;
           return (
             <Pressable
               key={option.id}
               accessibilityRole="button"
               accessibilityLabel={localize(option.label, locale)}
+              accessibilityState={{ selected: chosen, disabled: feedback.locked }}
+              disabled={feedback.locked}
               onPress={() => choose(option.id)}
               style={({ pressed }) => [
                 styles.option,
-                softShadow(2),
-                { borderColor: border, transform: [{ scale: pressed ? 0.96 : 1 }] },
-                chosen && feedback?.correct && { backgroundColor: '#E3F9EF' },
+                shadow(1, undefined, theme),
+                {
+                  backgroundColor: isAnswer ? theme.successSurface : gentleMiss ? palette.star[50] : theme.surface,
+                  borderColor: isAnswer ? theme.success : gentleMiss ? palette.star[400] : theme.line,
+                  opacity: result && !isAnswer && !chosen ? 0.55 : 1,
+                  transform: [{ scale: pressed && !feedback.locked ? 0.96 : 1 }],
+                },
               ]}
             >
-              <Text style={styles.optionEmoji}>{option.emoji}</Text>
+              <Art art={option.art} size={72} />
               <Text variant="bodyBold" align="center">
                 {localize(option.label, locale)}
               </Text>
+              {isAnswer || gentleMiss ? (
+                <View style={[styles.mark, { backgroundColor: isAnswer ? theme.success : palette.star[500] }]}>
+                  <Icon name={isAnswer ? 'check' : 'info'} size={16} color={isAnswer ? palette.paper[500] : palette.navy[500]} />
+                </View>
+              ) : null}
             </Pressable>
           );
         })}
-      </Animated.View>
+      </View>
 
-      {feedback ? (
-        <View
-          accessibilityLiveRegion="polite"
-          style={[styles.feedback, { backgroundColor: feedback.correct ? colors.success : colors.coral }]}
-        >
-          <Text variant="h3" color={colors.white} align="center">
-            {feedback.correct ? `🎉 ${t('player.correct')}` : `💪 ${t('player.tryAgain')}`}
-          </Text>
+      {result ? (
+        <View style={styles.feedback}>
+          <AnswerFeedback tone={tone} message={result.message} snapshot={feedback.snapshot} onNext={feedback.next} />
         </View>
       ) : null}
     </View>
@@ -116,20 +133,9 @@ export function QuizPlayer({ body, locale, narration, onFinish }: Props) {
 
 const styles = StyleSheet.create({
   wrap: { flex: 1, gap: spacing.md },
-  prompt: { alignItems: 'center', gap: spacing.sm, paddingVertical: spacing.md },
-  promptEmoji: { fontSize: 72, lineHeight: 88 },
+  prompt: { alignItems: 'center', gap: spacing.sm, padding: spacing.md, borderRadius: radius.xl },
   options: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.md, justifyContent: 'center' },
-  option: {
-    width: '45%',
-    minHeight: 132,
-    backgroundColor: colors.white,
-    borderRadius: radii.lg,
-    borderWidth: 3,
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: spacing.sm,
-    gap: 6,
-  },
-  optionEmoji: { fontSize: 48, lineHeight: 58 },
-  feedback: { borderRadius: radii.lg, padding: spacing.md, marginTop: 'auto' },
+  option: { width: '45%', minHeight: 150, borderRadius: radius.lg, borderWidth: 3, alignItems: 'center', justifyContent: 'center', padding: spacing.sm, gap: 6 },
+  mark: { position: 'absolute', top: 8, right: 8, width: 28, height: 28, borderRadius: 14, alignItems: 'center', justifyContent: 'center' },
+  feedback: { marginTop: 'auto', gap: spacing.sm },
 });

@@ -1,0 +1,1289 @@
+{
+  "topic": "alphabet",
+  "category": "learning",
+  "skills": [
+    "letters",
+    "language"
+  ],
+  "art": "object.letter-a",
+  "videos": [
+    {
+      "id": "letter-a",
+      "title": "The letter A",
+      "ageGroup": "little",
+      "summary": "The letter A",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's meet the letter A!",
+          "big": "A a"
+        },
+        {
+          "art": "object.apple",
+          "say": "A is for apple.",
+          "show": "apple"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Big A and little a. Can you draw it in the air?",
+          "big": "A a"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which letter is A?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "A",
+              "art": "object.apple"
+            },
+            {
+              "label": "F",
+              "art": "object.fish"
+            }
+          ],
+          "answer": 0,
+          "explanation": "A is for apple."
+        }
+      ]
+    },
+    {
+      "id": "letter-b",
+      "title": "The letter B",
+      "ageGroup": "little",
+      "summary": "The letter B",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's meet the letter B!",
+          "big": "B b"
+        },
+        {
+          "art": "object.bee",
+          "say": "B is for bee.",
+          "show": "bee"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Big B and little b. Can you draw it in the air?",
+          "big": "B b"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which letter is B?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "B",
+              "art": "object.bee"
+            },
+            {
+              "label": "G",
+              "art": "object.giraffe"
+            }
+          ],
+          "answer": 0,
+          "explanation": "B is for bee."
+        }
+      ]
+    },
+    {
+      "id": "letter-c",
+      "title": "The letter C",
+      "ageGroup": "little",
+      "summary": "The letter C",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's meet the letter C!",
+          "big": "C c"
+        },
+        {
+          "art": "object.cat",
+          "say": "C is for cat.",
+          "show": "cat"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Big C and little c. Can you draw it in the air?",
+          "big": "C c"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which letter is C?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "C",
+              "art": "object.cat"
+            },
+            {
+              "label": "H",
+              "art": "object.house"
+            }
+          ],
+          "answer": 0,
+          "explanation": "C is for cat."
+        }
+      ]
+    },
+    {
+      "id": "letter-d",
+      "title": "The letter D",
+      "ageGroup": "little",
+      "summary": "The letter D",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's meet the letter D!",
+          "big": "D d"
+        },
+        {
+          "art": "object.diamond",
+          "say": "D is for diamond.",
+          "show": "diamond"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Big D and little d. Can you draw it in the air?",
+          "big": "D d"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which letter is D?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "D",
+              "art": "object.diamond"
+            },
+            {
+              "label": "I",
+              "art": "object.ladybug"
+            }
+          ],
+          "answer": 0,
+          "explanation": "D is for diamond."
+        }
+      ]
+    },
+    {
+      "id": "letter-e",
+      "title": "The letter E",
+      "ageGroup": "little",
+      "summary": "The letter E",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's meet the letter E!",
+          "big": "E e"
+        },
+        {
+          "art": "object.shell",
+          "say": "E is for egg.",
+          "show": "egg"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Big E and little e. Can you draw it in the air?",
+          "big": "E e"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which letter is E?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "E",
+              "art": "object.shell"
+            },
+            {
+              "label": "J",
+              "art": "object.footprints"
+            }
+          ],
+          "answer": 0,
+          "explanation": "E is for egg."
+        }
+      ]
+    },
+    {
+      "id": "letter-f",
+      "title": "The letter F",
+      "ageGroup": "little",
+      "summary": "The letter F",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's meet the letter F!",
+          "big": "F f"
+        },
+        {
+          "art": "object.fish",
+          "say": "F is for fish.",
+          "show": "fish"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Big F and little f. Can you draw it in the air?",
+          "big": "F f"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which letter is F?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "F",
+              "art": "object.fish"
+            },
+            {
+              "label": "K",
+              "art": "object.diamond"
+            }
+          ],
+          "answer": 0,
+          "explanation": "F is for fish."
+        }
+      ]
+    },
+    {
+      "id": "letter-g",
+      "title": "The letter G",
+      "ageGroup": "little",
+      "summary": "The letter G",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's meet the letter G!",
+          "big": "G g"
+        },
+        {
+          "art": "object.giraffe",
+          "say": "G is for giraffe.",
+          "show": "giraffe"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Big G and little g. Can you draw it in the air?",
+          "big": "G g"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which letter is G?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "G",
+              "art": "object.giraffe"
+            },
+            {
+              "label": "L",
+              "art": "object.lion"
+            }
+          ],
+          "answer": 0,
+          "explanation": "G is for giraffe."
+        }
+      ]
+    },
+    {
+      "id": "letter-h",
+      "title": "The letter H",
+      "ageGroup": "little",
+      "summary": "The letter H",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's meet the letter H!",
+          "big": "H h"
+        },
+        {
+          "art": "object.house",
+          "say": "H is for house.",
+          "show": "house"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Big H and little h. Can you draw it in the air?",
+          "big": "H h"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which letter is H?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "H",
+              "art": "object.house"
+            },
+            {
+              "label": "M",
+              "art": "object.moon"
+            }
+          ],
+          "answer": 0,
+          "explanation": "H is for house."
+        }
+      ]
+    },
+    {
+      "id": "letter-i",
+      "title": "The letter I",
+      "ageGroup": "little",
+      "summary": "The letter I",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's meet the letter I!",
+          "big": "I i"
+        },
+        {
+          "art": "object.ladybug",
+          "say": "I is for insect.",
+          "show": "insect"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Big I and little i. Can you draw it in the air?",
+          "big": "I i"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which letter is I?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "I",
+              "art": "object.ladybug"
+            },
+            {
+              "label": "N",
+              "art": "object.numbers"
+            }
+          ],
+          "answer": 0,
+          "explanation": "I is for insect."
+        }
+      ]
+    },
+    {
+      "id": "letter-j",
+      "title": "The letter J",
+      "ageGroup": "little",
+      "summary": "The letter J",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's meet the letter J!",
+          "big": "J j"
+        },
+        {
+          "art": "object.footprints",
+          "say": "J is for jump.",
+          "show": "jump"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Big J and little j. Can you draw it in the air?",
+          "big": "J j"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which letter is J?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "J",
+              "art": "object.footprints"
+            },
+            {
+              "label": "O",
+              "art": "object.owl"
+            }
+          ],
+          "answer": 0,
+          "explanation": "J is for jump."
+        }
+      ]
+    },
+    {
+      "id": "letter-k",
+      "title": "The letter K",
+      "ageGroup": "little",
+      "summary": "The letter K",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's meet the letter K!",
+          "big": "K k"
+        },
+        {
+          "art": "object.diamond",
+          "say": "K is for kite.",
+          "show": "kite"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Big K and little k. Can you draw it in the air?",
+          "big": "K k"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which letter is K?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "K",
+              "art": "object.diamond"
+            },
+            {
+              "label": "P",
+              "art": "object.panda"
+            }
+          ],
+          "answer": 0,
+          "explanation": "K is for kite."
+        }
+      ]
+    },
+    {
+      "id": "letter-l",
+      "title": "The letter L",
+      "ageGroup": "little",
+      "summary": "The letter L",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's meet the letter L!",
+          "big": "L l"
+        },
+        {
+          "art": "object.lion",
+          "say": "L is for lion.",
+          "show": "lion"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Big L and little l. Can you draw it in the air?",
+          "big": "L l"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which letter is L?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "L",
+              "art": "object.lion"
+            },
+            {
+              "label": "Q",
+              "art": "object.question"
+            }
+          ],
+          "answer": 0,
+          "explanation": "L is for lion."
+        }
+      ]
+    },
+    {
+      "id": "letter-m",
+      "title": "The letter M",
+      "ageGroup": "little",
+      "summary": "The letter M",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's meet the letter M!",
+          "big": "M m"
+        },
+        {
+          "art": "object.moon",
+          "say": "M is for moon.",
+          "show": "moon"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Big M and little m. Can you draw it in the air?",
+          "big": "M m"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which letter is M?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "M",
+              "art": "object.moon"
+            },
+            {
+              "label": "R",
+              "art": "object.rocket"
+            }
+          ],
+          "answer": 0,
+          "explanation": "M is for moon."
+        }
+      ]
+    },
+    {
+      "id": "letter-n",
+      "title": "The letter N",
+      "ageGroup": "little",
+      "summary": "The letter N",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's meet the letter N!",
+          "big": "N n"
+        },
+        {
+          "art": "object.numbers",
+          "say": "N is for numbers.",
+          "show": "numbers"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Big N and little n. Can you draw it in the air?",
+          "big": "N n"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which letter is N?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "N",
+              "art": "object.numbers"
+            },
+            {
+              "label": "S",
+              "art": "object.sun"
+            }
+          ],
+          "answer": 0,
+          "explanation": "N is for numbers."
+        }
+      ]
+    },
+    {
+      "id": "letter-o",
+      "title": "The letter O",
+      "ageGroup": "little",
+      "summary": "The letter O",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's meet the letter O!",
+          "big": "O o"
+        },
+        {
+          "art": "object.owl",
+          "say": "O is for owl.",
+          "show": "owl"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Big O and little o. Can you draw it in the air?",
+          "big": "O o"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which letter is O?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "O",
+              "art": "object.owl"
+            },
+            {
+              "label": "T",
+              "art": "object.turtle"
+            }
+          ],
+          "answer": 0,
+          "explanation": "O is for owl."
+        }
+      ]
+    },
+    {
+      "id": "letter-p",
+      "title": "The letter P",
+      "ageGroup": "little",
+      "summary": "The letter P",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's meet the letter P!",
+          "big": "P p"
+        },
+        {
+          "art": "object.panda",
+          "say": "P is for panda.",
+          "show": "panda"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Big P and little p. Can you draw it in the air?",
+          "big": "P p"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which letter is P?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "P",
+              "art": "object.panda"
+            },
+            {
+              "label": "U",
+              "art": "object.unicorn"
+            }
+          ],
+          "answer": 0,
+          "explanation": "P is for panda."
+        }
+      ]
+    },
+    {
+      "id": "letter-q",
+      "title": "The letter Q",
+      "ageGroup": "little",
+      "summary": "The letter Q",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's meet the letter Q!",
+          "big": "Q q"
+        },
+        {
+          "art": "object.question",
+          "say": "Q is for question.",
+          "show": "question"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Big Q and little q. Can you draw it in the air?",
+          "big": "Q q"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which letter is Q?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Q",
+              "art": "object.question"
+            },
+            {
+              "label": "V",
+              "art": "object.flower"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Q is for question."
+        }
+      ]
+    },
+    {
+      "id": "letter-r",
+      "title": "The letter R",
+      "ageGroup": "little",
+      "summary": "The letter R",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's meet the letter R!",
+          "big": "R r"
+        },
+        {
+          "art": "object.rocket",
+          "say": "R is for rocket.",
+          "show": "rocket"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Big R and little r. Can you draw it in the air?",
+          "big": "R r"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which letter is R?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "R",
+              "art": "object.rocket"
+            },
+            {
+              "label": "W",
+              "art": "object.whale"
+            }
+          ],
+          "answer": 0,
+          "explanation": "R is for rocket."
+        }
+      ]
+    },
+    {
+      "id": "letter-s",
+      "title": "The letter S",
+      "ageGroup": "little",
+      "summary": "The letter S",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's meet the letter S!",
+          "big": "S s"
+        },
+        {
+          "art": "object.sun",
+          "say": "S is for sun.",
+          "show": "sun"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Big S and little s. Can you draw it in the air?",
+          "big": "S s"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which letter is S?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "S",
+              "art": "object.sun"
+            },
+            {
+              "label": "X",
+              "art": "object.fox"
+            }
+          ],
+          "answer": 0,
+          "explanation": "S is for sun."
+        }
+      ]
+    },
+    {
+      "id": "letter-t",
+      "title": "The letter T",
+      "ageGroup": "little",
+      "summary": "The letter T",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's meet the letter T!",
+          "big": "T t"
+        },
+        {
+          "art": "object.turtle",
+          "say": "T is for turtle.",
+          "show": "turtle"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Big T and little t. Can you draw it in the air?",
+          "big": "T t"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which letter is T?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "T",
+              "art": "object.turtle"
+            },
+            {
+              "label": "Y",
+              "art": "object.banana"
+            }
+          ],
+          "answer": 0,
+          "explanation": "T is for turtle."
+        }
+      ]
+    },
+    {
+      "id": "letter-u",
+      "title": "The letter U",
+      "ageGroup": "little",
+      "summary": "The letter U",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's meet the letter U!",
+          "big": "U u"
+        },
+        {
+          "art": "object.unicorn",
+          "say": "U is for unicorn.",
+          "show": "unicorn"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Big U and little u. Can you draw it in the air?",
+          "big": "U u"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which letter is U?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "U",
+              "art": "object.unicorn"
+            },
+            {
+              "label": "Z",
+              "art": "object.wind"
+            }
+          ],
+          "answer": 0,
+          "explanation": "U is for unicorn."
+        }
+      ]
+    },
+    {
+      "id": "letter-v",
+      "title": "The letter V",
+      "ageGroup": "little",
+      "summary": "The letter V",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's meet the letter V!",
+          "big": "V v"
+        },
+        {
+          "art": "object.flower",
+          "say": "V is for violet flower.",
+          "show": "violet flower"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Big V and little v. Can you draw it in the air?",
+          "big": "V v"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which letter is V?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "V",
+              "art": "object.flower"
+            },
+            {
+              "label": "A",
+              "art": "object.apple"
+            }
+          ],
+          "answer": 0,
+          "explanation": "V is for violet flower."
+        }
+      ]
+    },
+    {
+      "id": "letter-w",
+      "title": "The letter W",
+      "ageGroup": "little",
+      "summary": "The letter W",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's meet the letter W!",
+          "big": "W w"
+        },
+        {
+          "art": "object.whale",
+          "say": "W is for whale.",
+          "show": "whale"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Big W and little w. Can you draw it in the air?",
+          "big": "W w"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which letter is W?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "W",
+              "art": "object.whale"
+            },
+            {
+              "label": "B",
+              "art": "object.bee"
+            }
+          ],
+          "answer": 0,
+          "explanation": "W is for whale."
+        }
+      ]
+    },
+    {
+      "id": "letter-x",
+      "title": "The letter X",
+      "ageGroup": "little",
+      "summary": "The letter X",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's meet the letter X!",
+          "big": "X x"
+        },
+        {
+          "art": "object.fox",
+          "say": "X is in the word fox.",
+          "show": "fox"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Big X and little x. Can you draw it in the air?",
+          "big": "X x"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which letter is X?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "X",
+              "art": "object.fox"
+            },
+            {
+              "label": "C",
+              "art": "object.cat"
+            }
+          ],
+          "answer": 0,
+          "explanation": "X is in the word fox."
+        }
+      ]
+    },
+    {
+      "id": "letter-y",
+      "title": "The letter Y",
+      "ageGroup": "little",
+      "summary": "The letter Y",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's meet the letter Y!",
+          "big": "Y y"
+        },
+        {
+          "art": "object.banana",
+          "say": "Y is for yellow.",
+          "show": "yellow"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Big Y and little y. Can you draw it in the air?",
+          "big": "Y y"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which letter is Y?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Y",
+              "art": "object.banana"
+            },
+            {
+              "label": "D",
+              "art": "object.diamond"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Y is for yellow."
+        }
+      ]
+    },
+    {
+      "id": "letter-z",
+      "title": "The letter Z",
+      "ageGroup": "little",
+      "summary": "The letter Z",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's meet the letter Z!",
+          "big": "Z z"
+        },
+        {
+          "art": "object.wind",
+          "say": "Z is for zigzag.",
+          "show": "zigzag"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Big Z and little z. Can you draw it in the air?",
+          "big": "Z z"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which letter is Z?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Z",
+              "art": "object.wind"
+            },
+            {
+              "label": "E",
+              "art": "object.shell"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Z is for zigzag."
+        }
+      ]
+    },
+    {
+      "id": "phonics-short-a",
+      "title": "Phonics: the short a sound",
+      "ageGroup": "young",
+      "summary": "Phonics: the short a sound",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's listen for the short a sound."
+        },
+        {
+          "art": "object.book",
+          "say": "cat.",
+          "big": "cat"
+        },
+        {
+          "art": "object.book",
+          "say": "hat.",
+          "big": "hat"
+        },
+        {
+          "art": "object.book",
+          "say": "map.",
+          "big": "map"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Cat, hat, map. They all have the short a sound!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which word has the short a sound?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "cat",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "sun",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "tree",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Cat has the short a sound."
+        }
+      ]
+    },
+    {
+      "id": "phonics-short-o",
+      "title": "Phonics: the short o sound",
+      "ageGroup": "young",
+      "summary": "Phonics: the short o sound",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's listen for the short o sound."
+        },
+        {
+          "art": "object.book",
+          "say": "dog.",
+          "big": "dog"
+        },
+        {
+          "art": "object.book",
+          "say": "top.",
+          "big": "top"
+        },
+        {
+          "art": "object.book",
+          "say": "box.",
+          "big": "box"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Dog, top, box. They all have the short o sound!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which word has the short o sound?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "dog",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "sun",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "tree",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Dog has the short o sound."
+        }
+      ]
+    },
+    {
+      "id": "phonics-sh",
+      "title": "Phonics: the sh sound",
+      "ageGroup": "young",
+      "summary": "Phonics: the sh sound",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's listen for the sh sound."
+        },
+        {
+          "art": "object.book",
+          "say": "ship.",
+          "big": "ship"
+        },
+        {
+          "art": "object.book",
+          "say": "shell.",
+          "big": "shell"
+        },
+        {
+          "art": "object.book",
+          "say": "fish.",
+          "big": "fish"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Ship, shell, fish. They all have the sh sound!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which word has the sh sound?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "ship",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "sun",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "tree",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Ship has the sh sound."
+        }
+      ]
+    },
+    {
+      "id": "phonics-ch",
+      "title": "Phonics: the ch sound",
+      "ageGroup": "young",
+      "summary": "Phonics: the ch sound",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's listen for the ch sound."
+        },
+        {
+          "art": "object.book",
+          "say": "chick.",
+          "big": "chick"
+        },
+        {
+          "art": "object.book",
+          "say": "chair.",
+          "big": "chair"
+        },
+        {
+          "art": "object.book",
+          "say": "lunch.",
+          "big": "lunch"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Chick, chair, lunch. They all have the ch sound!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which word has the ch sound?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "chick",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "sun",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "tree",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Chick has the ch sound."
+        }
+      ]
+    }
+  ]
+}

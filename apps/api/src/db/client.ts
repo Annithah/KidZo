@@ -9,6 +9,7 @@ import { migrate as migratePg } from 'drizzle-orm/node-postgres/migrator';
 import type { PgDatabase, PgQueryResultHKT } from 'drizzle-orm/pg-core';
 import pg from 'pg';
 import * as schema from './schema';
+import { upgradeLegacyArt } from './upgrade-art';
 
 export type Db = PgDatabase<PgQueryResultHKT, typeof schema>;
 
@@ -36,6 +37,7 @@ export async function openDatabase(options: DatabaseOptions): Promise<Database> 
     const pool = new pg.Pool({ connectionString: options.databaseUrl, max: 10 });
     const db = drizzlePg(pool, { schema });
     await migratePg(db, { migrationsFolder });
+    await upgradeLegacyArt(db as unknown as Db);
     return { db: db as unknown as Db, close: () => pool.end() };
   }
   const dir = options.pgliteDir ?? 'memory';
@@ -43,5 +45,6 @@ export async function openDatabase(options: DatabaseOptions): Promise<Database> 
   const client = dir === 'memory' ? new PGlite() : new PGlite(dir);
   const db = drizzlePglite(client, { schema });
   await migratePglite(db, { migrationsFolder });
+  await upgradeLegacyArt(db as unknown as Db);
   return { db: db as unknown as Db, close: () => client.close() };
 }

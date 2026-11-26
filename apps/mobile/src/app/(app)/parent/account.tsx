@@ -1,17 +1,19 @@
+import { router } from 'expo-router';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { useState } from 'react';
 import { Share, View } from 'react-native';
 import { LOCALES, LOCALE_LABELS, pinSchema, type Locale } from '@kidzo/shared';
 import { Button } from '../../../components/Button';
 import { Segmented, TextField } from '../../../components/Controls';
-import { Card, Header, Screen } from '../../../components/Layout';
+import { Card, Header, Row, Screen } from '../../../components/Layout';
 import { InlineMessage, errorMessage } from '../../../components/States';
 import { Text } from '../../../components/Typography';
 import { setAppLocale, useT } from '../../../i18n';
 import { api } from '../../../lib/api';
 import { offlineQueue } from '../../../lib/offline';
 import { useSession } from '../../../lib/session';
-import { spacing } from '../../../theme';
+import { spacing } from '../../../theme/core';
+import { Icon } from '../../../components/icon/Icon';
 
 type Notice = { tone: 'success' | 'error'; message: string } | null;
 
@@ -68,8 +70,8 @@ export default function Account() {
       <Card>
         <Text variant="bodyBold">{t('account.changePin')}</Text>
         <View style={{ gap: spacing.sm, marginTop: spacing.xs }}>
-          <TextField label={t('account.currentPassword')} value={pinPassword} onChangeText={setPinPassword} secureTextEntry autoComplete="current-password" />
-          <TextField label={t('account.newPin')} value={newPin} onChangeText={setNewPin} keyboardType="number-pad" maxLength={4} secureTextEntry />
+          <TextField label={t('account.currentPassword')} icon="password" value={pinPassword} onChangeText={setPinPassword} secureTextEntry autoComplete="current-password" />
+          <TextField label={t('account.newPin')} icon="lock" value={newPin} onChangeText={setNewPin} keyboardType="number-pad" maxLength={4} secureTextEntry />
           <Button
             label={t('common.save')}
             variant="sky"
@@ -88,7 +90,10 @@ export default function Account() {
       </Card>
 
       <Card>
-        <Text variant="bodyBold">🔄 {t('account.pendingSync', { count: pending.data ?? 0 })}</Text>
+        <Row>
+          <Icon name="sync" size={22} />
+          <Text variant="bodyBold">{t('account.pendingSync', { count: pending.data ?? 0 })}</Text>
+        </Row>
         <View style={{ marginTop: spacing.xs }}>
           <Button
             label={t('account.syncNow')}
@@ -128,12 +133,16 @@ export default function Account() {
         </View>
       </Card>
 
-      <Text variant="small" muted align="center">
-        🛡️ {t('account.privacy')}
-      </Text>
+      <Row style={{ justifyContent: 'center', paddingHorizontal: spacing.md }}>
+        <Icon name="privacy" size={20} />
+        <Text variant="small" muted style={{ flex: 1 }}>
+          {t('account.privacy')}
+        </Text>
+      </Row>
       {notice ? <InlineMessage tone={notice.tone} message={notice.message} /> : null}
 
-      <Button label={t('account.signOut')} variant="navy" fullWidth onPress={() => void signOut()} />
+      <Button label={t('account.credits')} icon="video" variant="sky" fullWidth onPress={() => router.push('/parent/credits')} />
+      <Button label={t('account.signOut')} icon="signOut" variant="navy" fullWidth onPress={() => void signOut()} />
 
       <Card>
         <Text variant="bodyBold">{t('account.deleteAccount')}</Text>
@@ -144,6 +153,7 @@ export default function Account() {
           <TextField label={t('account.deleteConfirm')} value={deletePassword} onChangeText={setDeletePassword} secureTextEntry autoComplete="current-password" />
           <Button
             label={t('account.deleteAccount')}
+            icon="delete"
             variant="danger"
             disabled={deletePassword.length === 0}
             loading={busy === 'delete'}

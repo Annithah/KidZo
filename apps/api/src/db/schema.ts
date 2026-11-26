@@ -10,6 +10,7 @@ import {
   uuid,
 } from 'drizzle-orm/pg-core';
 import type {
+  AgeGroup,
   ChildSettings,
   ContentBody,
   ContentStatus,
@@ -77,7 +78,7 @@ export const stickers = pgTable('stickers', {
   id: uuid('id').primaryKey().defaultRandom(),
   slug: text('slug').notNull().unique(),
   name: jsonb('name').$type<LocalizedText>().notNull(),
-  emoji: text('emoji').notNull(),
+  art: text('art').notNull(),
   color: text('color').notNull(),
   createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
 });
@@ -93,10 +94,16 @@ export const content = pgTable(
     summary: jsonb('summary').$type<LocalizedText>().notNull(),
     ageMin: integer('age_min').notNull(),
     ageMax: integer('age_max').notNull(),
+    /** Age groups allowed to receive this item; always filled (from the range when not chosen). */
+    ageGroups: jsonb('age_groups').$type<AgeGroup[]>().notNull().default([]),
+    /** Main video length for video content, used to enforce each age group's limit. */
+    videoSeconds: integer('video_seconds'),
+    /** "source:originalId" for imported or generated items, so pipelines never create duplicates. */
+    sourceKey: text('source_key').unique(),
     durationMinutes: integer('duration_minutes').notNull(),
     skills: jsonb('skills').$type<Skill[]>().notNull(),
     languages: jsonb('languages').$type<Locale[]>().notNull(),
-    coverEmoji: text('cover_emoji').notNull(),
+    coverArt: text('cover_art').notNull(),
     coverColor: text('cover_color').notNull(),
     calm: boolean('calm').notNull().default(false),
     featured: boolean('featured').notNull().default(false),
@@ -110,6 +117,33 @@ export const content = pgTable(
     ...timestamps,
   },
   (t) => [index('content_status_idx').on(t.status)],
+);
+
+/** Stored media files for a content item (variants, thumbnail) with their origin and license. */
+export const mediaAssets = pgTable(
+  'media_assets',
+  {
+    id: uuid('id').primaryKey().defaultRandom(),
+    contentId: uuid('content_id').references(() => content.id, { onDelete: 'cascade' }),
+    /** source, p480, p720, thumbnail, narration */
+    role: text('role').notNull(),
+    storageKey: text('storage_key').notNull(),
+    url: text('url').notNull(),
+    contentType: text('content_type').notNull(),
+    sizeBytes: integer('size_bytes').notNull().default(0),
+    width: integer('width'),
+    height: integer('height'),
+    durationSeconds: integer('duration_seconds'),
+    source: text('source').notNull(),
+    sourceUrl: text('source_url'),
+    originalId: text('original_id'),
+    author: text('author'),
+    license: text('license').notNull(),
+    attribution: text('attribution').notNull(),
+    downloadedAt: timestamp('downloaded_at', { withTimezone: true }),
+    createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index('media_assets_content_idx').on(t.contentId)],
 );
 
 export const childStickers = pgTable(

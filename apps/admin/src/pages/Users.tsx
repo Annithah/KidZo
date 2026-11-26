@@ -1,61 +1,65 @@
 import { useQuery } from '@tanstack/react-query';
 import { useState } from 'react';
 import { api } from '../api';
-import { Empty, ErrorBox, Loading } from '../components/ui';
+import { DataTable } from '../components/DataTable';
+import { Icon } from '../components/Icon';
+import { Button, ErrorBox, Loading, PageHeader } from '../components/ui';
 
-const PAGE = 25;
+const PAGE = 100;
 
 export function UsersPage() {
   const [offset, setOffset] = useState(0);
   const users = useQuery({ queryKey: ['users', offset], queryFn: () => api.users(offset, PAGE) });
+  const total = users.data?.total ?? 0;
 
   return (
     <>
-      <div className="page-head">
-        <h1>Families</h1>
-      </div>
-      <p className="muted">Account emails and child counts only. Child names and play history stay private to each family.</p>
+      <PageHeader kicker="People" title="Families" description="Account emails and child counts only. Child names and play history stay private to each family." />
       {users.isLoading ? (
         <Loading />
       ) : users.error || !users.data ? (
         <ErrorBox error={users.error} onRetry={() => void users.refetch()} />
-      ) : users.data.items.length === 0 ? (
-        <Empty>No accounts yet.</Empty>
       ) : (
-        <div className="card">
-          <table>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Role</th>
-                <th>Children</th>
-                <th>Joined</th>
-              </tr>
-            </thead>
-            <tbody>
-              {users.data.items.map((u) => (
-                <tr key={u.id}>
-                  <td>{u.displayName}</td>
-                  <td>{u.email}</td>
-                  <td>{u.role}</td>
-                  <td>{u.childCount}</td>
-                  <td>{new Date(u.createdAt).toLocaleDateString()}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-          <div className="row" style={{ marginTop: 12 }}>
-            <button type="button" className="btn small secondary" disabled={offset === 0} onClick={() => setOffset(Math.max(0, offset - PAGE))}>
-              Previous
-            </button>
-            <span className="muted small">
-              {offset + 1}-{Math.min(offset + PAGE, users.data.total)} of {users.data.total}
-            </span>
-            <button type="button" className="btn small secondary" disabled={offset + PAGE >= users.data.total} onClick={() => setOffset(offset + PAGE)}>
-              Next
-            </button>
-          </div>
+        <div className="stack">
+          <DataTable
+            caption="Family accounts"
+            rows={users.data.items}
+            rowKey={(u) => u.id}
+            searchText={(u) => `${u.displayName} ${u.email}`}
+            searchLabel="Search names and emails"
+            initialSort={{ key: 'joined', dir: 'desc' }}
+            empty={{ title: 'No accounts yet' }}
+            columns={[
+              {
+                key: 'name',
+                header: 'Name',
+                sort: (u) => u.displayName,
+                render: (u) => (
+                  <span className="row" style={{ gap: 8, flexWrap: 'nowrap' }}>
+                    <Icon name="user" size={18} />
+                    <strong>{u.displayName}</strong>
+                  </span>
+                ),
+              },
+              { key: 'email', header: 'Email', sort: (u) => u.email, render: (u) => u.email },
+              { key: 'role', header: 'Role', sort: (u) => u.role, render: (u) => <span className="badge neutral">{u.role}</span> },
+              { key: 'kids', header: 'Children', numeric: true, sort: (u) => u.childCount, render: (u) => u.childCount },
+              { key: 'joined', header: 'Joined', sort: (u) => u.createdAt, render: (u) => new Date(u.createdAt).toLocaleDateString() },
+            ]}
+          />
+          {total > PAGE ? (
+            <div className="row end">
+              <span className="muted small">
+                Loaded {offset + 1} to {Math.min(offset + PAGE, total)} of {total}
+              </span>
+              <Button tone="secondary" small disabled={offset === 0} onClick={() => setOffset(Math.max(0, offset - PAGE))}>
+                Previous batch
+              </Button>
+              <Button tone="secondary" small disabled={offset + PAGE >= total} onClick={() => setOffset(offset + PAGE)}>
+                Next batch
+              </Button>
+            </div>
+          ) : null}
         </div>
       )}
     </>

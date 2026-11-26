@@ -5,11 +5,16 @@ import {
   ALLOWED_MEDIA_TYPES,
   CONTENT_STATUSES,
   CONTENT_TYPES,
+  PUBLISHABLE_STATUSES,
+  summarizeStoryPaths,
+  type ContentStatus,
+  type StoryChoiceInsights,
   MAX_MEDIA_BYTES,
   MAX_UPLOAD_BYTES,
   MAX_VIDEO_BYTES,
   contentInputSchema,
   estimatePackageBytes,
+  gateFields,
   paginationQuerySchema,
   stickerInputSchema,
   publishProblems,
@@ -163,6 +168,8 @@ export async function adminRoutes(app: FastifyInstance): Promise<void> {
       content: {
         published: byStatus.published ?? 0,
         draft: byStatus.draft ?? 0,
+        review: byStatus.review ?? 0,
+        unpublished: byStatus.unpublished ?? 0,
         archived: byStatus.archived ?? 0,
       },
       sessionsLast7Days,
@@ -247,7 +254,7 @@ export async function adminRoutes(app: FastifyInstance): Promise<void> {
     try {
       const [row] = await app.db
         .insert(content)
-        .values({ ...input, status: 'draft', sizeBytes: estimatePackageBytes(input.body), createdBy: request.user.sub })
+        .values({ ...input, ...gateFields(input), status: 'draft', sizeBytes: estimatePackageBytes(input.body), createdBy: request.user.sub })
         .returning();
       if (!row) throw new AppError(500, 'INTERNAL', 'Could not create content');
       await audit(app.db, { actorId: request.user.sub, action: 'content.create', entity: 'content', entityId: row.id });
@@ -273,6 +280,7 @@ export async function adminRoutes(app: FastifyInstance): Promise<void> {
         .update(content)
         .set({
           ...input,
+          ...gateFields(input),
           sizeBytes: estimatePackageBytes(input.body),
           version: current.version + 1,
           updatedAt: new Date(),
@@ -292,6 +300,9 @@ export async function adminRoutes(app: FastifyInstance): Promise<void> {
     const { id } = parse(idParams, request.params);
     const [current] = await app.db.select().from(content).where(eq(content.id, id)).limit(1);
     if (!current) throw notFound('Content');
+    if (!PUBLISHABLE_STATUSES.includes(current.status)) {
+      throw new AppError(409, 'REVIEW_REQUIRED', 'Submit this content for review before publishing it');
+    }
     const problems = publishProblems(current);
     if (problems.length) throw new AppError(400, 'PUBLISH_BLOCKED', 'This content is not ready to publish', problems);
     const [row] = await app.db
@@ -304,19 +315,81 @@ export async function adminRoutes(app: FastifyInstance): Promise<void> {
     return toContentSummary(row);
   });
 
-  const setStatus = (status: 'draft' | 'archived', action: string) => async (request: { params: unknown; user: { sub: string } }) => {
-    const { id } = parse(idParams, request.params);
-    const [row] = await app.db
-      .update(content)
-      .set({ status, updatedAt: new Date() })
-      .where(eq(content.id, id))
-      .returning();
-    if (!row) throw notFound('Content');
-    await audit(app.db, { actorId: request.user.sub, action, entity: 'content', entityId: id });
-    return toContentSummary(row);
-  };
-  app.post('/admin/content/:id/unpublish', setStatus('draft', 'content.unpublish'));
-  app.post('/admin/content/:id/archive', setStatus('archived', 'content.archive'));
+  /**
+   * Moves content between workflow states. `from` lists the states the move is allowed from;
+   * submitting for review also requires the content to pass the publish checks.
+   */
+  const transition =
+    (to: ContentStatus, from: readonly ContentStatus[], action: string, message: string, checkReady = false) =>
+    async (request: { params: unknown; user: { sub: string } }) => {
+      const { id } = parse(idParams, request.params);
+      const [current] = await app.db.select().from(content).where(eq(content.id, id)).limit(1);
+      if (!current) throw notFound('Content');
+      if (!from.includes(current.status)) throw new AppError(409, 'INVALID_STATUS', message);
+      if (checkReady) {
+        const problems = publishProblems(current);
+        if (problems.length) throw new AppError(400, 'PUBLISH_BLOCKED', 'Fix these before sending it for review', problems);
+      }
+      const [row] = await app.db
+        .update(content)
+        .set({ status: to, updatedAt: new Date() })
+        .where(eq(content.id, id))
+        .returning();
+      if (!row) throw notFound('Content');
+      await audit(app.db, { actorId: request.user.sub, action, entity: 'content', entityId: id });
+      return toContentSummary(row);
+    };
+  app.post('/admin/content/:id/submit', transition('review', ['draft'], 'content.submit', 'Only drafts can be sent for review', true));
+  app.post('/admin/content/:id/request-changes', transition('draft', ['review'], 'content.request_changes', 'Only content in review can be sent back'));
+  app.post('/admin/content/:id/unpublish', transition('unpublished', ['published'], 'content.unpublish', 'Only live content can be unpublished'));
+  app.post('/admin/content/:id/archive', transition('archived', ['draft', 'review', 'unpublished'], 'content.archive', 'Unpublish live content before archiving it'));
+  app.post('/admin/content/:id/restore', transition('draft', ['archived'], 'content.restore', 'Only archived content can be restored'));
+
+  /** Popular choices and endings per branching story, from completed sessions in the last N days. */
+  app.get('/admin/analytics/story-choices', async (request): Promise<StoryChoiceInsights> => {
+    const { days } = parse(z.object({ days: z.coerce.number().int().min(1).max(365).default(30) }), request.query);
+    const since = new Date(Date.now() - days * 86_400_000);
+    const stories = await app.db.select().from(content).where(eq(content.type, 'adventure'));
+    const sessions = await app.db
+      .select({ contentId: playSessions.contentId, path: playSessions.path })
+      .from(playSessions)
+      .where(and(eq(playSessions.completed, true), gte(playSessions.startedAt, since)));
+    const pathsByContent = new Map<string, string[][]>();
+    for (const s of sessions) {
+      const list = pathsByContent.get(s.contentId) ?? [];
+      list.push(s.path);
+      pathsByContent.set(s.contentId, list);
+    }
+    const pct = (n: number, total: number) => (total > 0 ? Math.round((n / total) * 1000) / 10 : 0);
+    const excerpt = (text: string) => (text.length > 90 ? `${text.slice(0, 87)}...` : text);
+    const result: StoryChoiceInsights['stories'] = [];
+    for (const story of stories) {
+      if (story.body.kind !== 'branching') continue;
+      const body = story.body;
+      const summary = summarizeStoryPaths(body, pathsByContent.get(story.id) ?? []);
+      if (summary.paths === 0) continue;
+      const nodes = new Map(body.nodes.map((n) => [n.id, n]));
+      const endingsTotal = summary.endings.reduce((n, e) => n + e.count, 0);
+      result.push({
+        id: story.id,
+        title: story.title.en,
+        paths: summary.paths,
+        endings: summary.endings.map((e) => ({ ...e, text: excerpt(nodes.get(e.nodeId)?.text.en ?? e.nodeId), percent: pct(e.count, endingsTotal) })),
+        choices: summary.choices.map((c) => {
+          const node = nodes.get(c.nodeId);
+          const picked = c.picks.reduce((n, p) => n + p.count, 0);
+          return {
+            nodeId: c.nodeId,
+            text: excerpt(node?.text.en ?? c.nodeId),
+            reached: c.reached,
+            picks: c.picks.map((p) => ({ ...p, label: node?.choices.find((x) => x.id === p.choiceId)?.label.en ?? p.choiceId, percent: pct(p.count, picked) })),
+          };
+        }),
+      });
+    }
+    result.sort((a, b) => b.paths - a.paths);
+    return { days, stories: result };
+  });
 
   app.delete('/admin/content/:id', async (request, reply) => {
     const { id } = parse(idParams, request.params);

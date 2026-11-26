@@ -3,7 +3,7 @@ import { eq } from 'drizzle-orm';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import type { CompletionResult, ContentDetail, Insights, TodayStatus } from '@kidzo/shared';
 import { children } from '../src/db/schema';
-import { bearer, catalog, createChild, createTestApp, registerParent, type TestContext } from './helpers';
+import { asChild, bearer, catalog, createChild, createTestApp, registerParent, type TestContext } from './helpers';
 
 let ctx: TestContext;
 beforeAll(async () => {
@@ -32,11 +32,11 @@ async function contentBySlug(token: string, slug: string): Promise<ContentDetail
   return res.json<ContentDetail>();
 }
 
-const start = (token: string, childId: string, contentId: string, clientSessionId = randomUUID()) =>
+const start = async (token: string, childId: string, contentId: string, clientSessionId = randomUUID()) =>
   ctx.app.inject({
     method: 'POST',
     url: '/sessions',
-    headers: bearer(token),
+    headers: await asChild(ctx.app, token, childId).catch(() => bearer(token)),
     payload: { childId, contentId, clientSessionId, familyMode: true },
   });
 
@@ -312,7 +312,11 @@ describe('play sessions', () => {
     const a = await family();
     const b = await family();
     const song = await contentBySlug(a.token, 'moon-song');
-    expect((await start(b.token, a.child.id, song.id)).statusCode).toBe(403);
+    // B cannot get a child token for A's child, and cannot start play for them with their own child's token.
+    expect((await ctx.app.inject({ method: 'POST', url: `/children/${a.child.id}/token`, headers: bearer(b.token) })).statusCode).toBe(403);
+    const asB = await asChild(ctx.app, b.token, b.child.id);
+    const res0 = await ctx.app.inject({ method: 'POST', url: '/sessions', headers: asB, payload: { childId: a.child.id, contentId: song.id, clientSessionId: randomUUID(), familyMode: false } });
+    expect(res0.statusCode).toBe(403);
     const session = (await start(a.token, a.child.id, song.id)).json<{ id: string }>();
     const res = await ctx.app.inject({
       method: 'POST',

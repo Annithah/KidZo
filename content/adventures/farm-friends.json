@@ -1,0 +1,60 @@
+{
+  "id": "farm-friends",
+  "title": "Farm Friends Morning",
+  "summary": "Say good morning to the baby animals.",
+  "ageGroup": "little",
+  "skills": [
+    "animals"
+  ],
+  "art": "object.chick",
+  "startNodeId": "start",
+  "nodes": [
+    {
+      "id": "start",
+      "text": "Good morning! Which baby animal shall we visit?",
+      "art": "object.chick",
+      "video": "kidzo:animal-sounds-1",
+      "choices": [
+        {
+          "id": "piglet",
+          "label": "The piglet",
+          "art": "object.chick",
+          "next": "piglet"
+        },
+        {
+          "id": "capybara",
+          "label": "The capybaras",
+          "art": "object.bunny",
+          "next": "capybara"
+        }
+      ]
+    },
+    {
+      "id": "piglet",
+      "text": "A hungry little pig is having breakfast.",
+      "art": "object.apple",
+      "video": "wikimedia:131803444",
+      "next": "sounds"
+    },
+    {
+      "id": "capybara",
+      "text": "Two baby capybaras stay close to their family.",
+      "art": "object.bunny",
+      "video": "wikimedia:79509929",
+      "next": "sounds"
+    },
+    {
+      "id": "sounds",
+      "text": "Listen to all the animal sounds on the farm!",
+      "art": "object.music-note",
+      "video": "kidzo:animal-sounds-2",
+      "next": "end"
+    },
+    {
+      "id": "end",
+      "text": "Bye bye, farm friends! See you tomorrow.",
+      "art": "zo.waving",
+      "ending": true
+    }
+  ]
+}

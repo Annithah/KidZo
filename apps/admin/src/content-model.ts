@@ -2,6 +2,7 @@
 import {
   BODY_KIND_FOR_TYPE,
   contentInputSchema,
+  friendlyMessage,
   publishProblems,
   type ContentBody,
   type ContentDetail,
@@ -9,6 +10,7 @@ import {
   type ContentType,
   type StoryNode,
 } from '@kidzo/shared';
+import { base } from '@kidzo/ui-tokens';
 
 /** Editable content: metadata as entered, body always in its parsed (defaults applied) form. */
 export type Draft = Omit<ContentInput, 'body'> & {
@@ -17,7 +19,7 @@ export type Draft = Omit<ContentInput, 'body'> & {
   rewardStickerId: string | null;
 };
 
-const SCENE = { emoji: '🌟', color: '#5BC0F8', videoUrl: null };
+const SCENE = { art: 'object.sparkle-star', color: base.sky, videoUrl: null };
 
 export function blankNode(id: string, ending = false): StoryNode {
   return { id, text: { en: '' }, scene: { ...SCENE }, familyTurn: false, choices: [], next: null, ending };
@@ -34,17 +36,29 @@ export function blankBody(type: ContentType): ContentBody {
           {
             id: 'q1',
             prompt: { en: '' },
-            emoji: '❓',
+            art: 'object.question',
             correctOptionId: 'a',
             options: [
-              { id: 'a', label: { en: '' }, emoji: '🅰️' },
-              { id: 'b', label: { en: '' }, emoji: '🅱️' },
+              { id: 'a', label: { en: '' }, art: 'object.letter-a' },
+              { id: 'b', label: { en: '' }, art: 'object.letter-b' },
             ],
           },
         ],
       };
     case 'song':
-      return { kind: 'song', audioUrl: null, lines: [{ text: { en: '' }, emoji: '🎵' }] };
+      return { kind: 'song', audioUrl: null, lines: [{ text: { en: '' }, art: 'object.music-note' }] };
+    case 'video':
+      return {
+        kind: 'video',
+        videoUrl: '',
+        variants: { p480: null, p720: null },
+        thumbnailUrl: null,
+        durationSeconds: 60,
+        audio: 'original',
+        captions: null,
+        credit: { source: 'upload', sourceUrl: null, originalId: null, author: null, license: 'Owned by KIDZO', attribution: 'KIDZO', downloadedAt: null },
+        quiz: [],
+      };
   }
 }
 
@@ -56,11 +70,12 @@ export function blankDraft(type: ContentType = 'adventure'): Draft {
     summary: { en: '' },
     ageMin: 3,
     ageMax: 8,
+    ageGroups: ['little', 'young'],
     durationMinutes: 10,
     skills: ['kindness'],
     languages: ['en'],
-    coverEmoji: '🌈',
-    coverColor: '#5BC0F8',
+    coverArt: 'object.rainbow',
+    coverColor: base.sky,
     calm: false,
     featured: false,
     rewardStars: 10,
@@ -77,10 +92,11 @@ export function draftFromDetail(d: ContentDetail): Draft {
     summary: d.summary,
     ageMin: d.ageMin,
     ageMax: d.ageMax,
+    ageGroups: d.ageGroups,
     durationMinutes: d.durationMinutes,
     skills: d.skills,
     languages: d.languages,
-    coverEmoji: d.coverEmoji,
+    coverArt: d.coverArt,
     coverColor: d.coverColor,
     calm: d.calm,
     featured: d.featured,
@@ -107,7 +123,7 @@ export function nextId(existing: readonly string[], prefix: string): string {
 export function liveProblems(draft: Draft): { schema: string[]; publish: string[] } {
   const parsed = contentInputSchema.safeParse(draft);
   if (!parsed.success) {
-    return { schema: parsed.error.issues.map((i) => `${i.path.join('.') || 'content'}: ${i.message}`), publish: [] };
+    return { schema: parsed.error.issues.map((i) => `${i.path.join('.') || 'content'}: ${friendlyMessage(i)}`), publish: [] };
   }
   return { schema: [], publish: publishProblems(parsed.data) };
 }

@@ -1,0 +1,971 @@
+{
+  "topic": "habits",
+  "category": "morning-activities",
+  "skills": [
+    "habits",
+    "kindness"
+  ],
+  "art": "object.sparkles",
+  "videos": [
+    {
+      "id": "habit-brushing-teeth-little",
+      "title": "Brushing teeth",
+      "ageGroup": "little",
+      "summary": "Brushing teeth",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Here's a good habit to try every day!"
+        },
+        {
+          "art": "object.sparkles",
+          "say": "Brush your teeth in the morning and at night."
+        },
+        {
+          "art": "object.sparkles",
+          "say": "Brush gently, top and bottom, for two minutes."
+        },
+        {
+          "art": "object.sparkles",
+          "say": "Clean teeth are happy teeth!"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "You can do it!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is the good habit?",
+          "art": "object.sparkles",
+          "options": [
+            {
+              "label": "Brush your teeth",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Skip brushing",
+              "art": "object.question"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Brushing keeps teeth clean and strong."
+        }
+      ]
+    },
+    {
+      "id": "habit-brushing-teeth-young",
+      "title": "Brushing teeth",
+      "ageGroup": "young",
+      "summary": "Brushing teeth",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Here's a good habit to try every day!"
+        },
+        {
+          "art": "object.sparkles",
+          "say": "Brush your teeth in the morning and at night."
+        },
+        {
+          "art": "object.sparkles",
+          "say": "Brush gently, top and bottom, for two minutes."
+        },
+        {
+          "art": "object.sparkles",
+          "say": "Clean teeth are happy teeth!"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "You can do it!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is the good habit?",
+          "art": "object.sparkles",
+          "options": [
+            {
+              "label": "Brush your teeth",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Skip brushing",
+              "art": "object.question"
+            },
+            {
+              "label": "Ask a grown-up to do it for you",
+              "art": "object.friends"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Brushing keeps teeth clean and strong."
+        }
+      ]
+    },
+    {
+      "id": "habit-washing-hands-little",
+      "title": "Washing hands",
+      "ageGroup": "little",
+      "summary": "Washing hands",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Here's a good habit to try every day!"
+        },
+        {
+          "art": "object.ocean-wave",
+          "say": "Wash your hands with soap and water."
+        },
+        {
+          "art": "object.ocean-wave",
+          "say": "Rub your palms, fingers and thumbs."
+        },
+        {
+          "art": "object.ocean-wave",
+          "say": "Rinse and dry. Germs gone!"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "You can do it!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is the good habit?",
+          "art": "object.ocean-wave",
+          "options": [
+            {
+              "label": "Use soap and water",
+              "art": "object.ocean-wave"
+            },
+            {
+              "label": "Just shake them",
+              "art": "object.question"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Soap and water wash germs away."
+        }
+      ]
+    },
+    {
+      "id": "habit-washing-hands-young",
+      "title": "Washing hands",
+      "ageGroup": "young",
+      "summary": "Washing hands",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Here's a good habit to try every day!"
+        },
+        {
+          "art": "object.ocean-wave",
+          "say": "Wash your hands with soap and water."
+        },
+        {
+          "art": "object.ocean-wave",
+          "say": "Rub your palms, fingers and thumbs."
+        },
+        {
+          "art": "object.ocean-wave",
+          "say": "Rinse and dry. Germs gone!"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "You can do it!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is the good habit?",
+          "art": "object.ocean-wave",
+          "options": [
+            {
+              "label": "Use soap and water",
+              "art": "object.ocean-wave"
+            },
+            {
+              "label": "Just shake them",
+              "art": "object.question"
+            },
+            {
+              "label": "Ask a grown-up to do it for you",
+              "art": "object.friends"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Soap and water wash germs away."
+        }
+      ]
+    },
+    {
+      "id": "habit-sharing-little",
+      "title": "Sharing",
+      "ageGroup": "little",
+      "summary": "Sharing",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Here's a good habit to try every day!"
+        },
+        {
+          "art": "object.friends",
+          "say": "Sharing means letting others use your things too."
+        },
+        {
+          "art": "object.friends",
+          "say": "When we share, everyone can play."
+        },
+        {
+          "art": "object.friends",
+          "say": "Sharing makes friends happy."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "You can do it!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is the good habit?",
+          "art": "object.friends",
+          "options": [
+            {
+              "label": "Share the toys",
+              "art": "object.friends"
+            },
+            {
+              "label": "Keep everything",
+              "art": "object.question"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Sharing lets everyone play together."
+        }
+      ]
+    },
+    {
+      "id": "habit-sharing-young",
+      "title": "Sharing",
+      "ageGroup": "young",
+      "summary": "Sharing",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Here's a good habit to try every day!"
+        },
+        {
+          "art": "object.friends",
+          "say": "Sharing means letting others use your things too."
+        },
+        {
+          "art": "object.friends",
+          "say": "When we share, everyone can play."
+        },
+        {
+          "art": "object.friends",
+          "say": "Sharing makes friends happy."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "You can do it!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is the good habit?",
+          "art": "object.friends",
+          "options": [
+            {
+              "label": "Share the toys",
+              "art": "object.friends"
+            },
+            {
+              "label": "Keep everything",
+              "art": "object.question"
+            },
+            {
+              "label": "Ask a grown-up to do it for you",
+              "art": "object.friends"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Sharing lets everyone play together."
+        }
+      ]
+    },
+    {
+      "id": "habit-thank-you-little",
+      "title": "Thank you",
+      "ageGroup": "little",
+      "summary": "Thank you",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Here's a good habit to try every day!"
+        },
+        {
+          "art": "object.heart",
+          "say": "When someone helps you, say thank you."
+        },
+        {
+          "art": "object.heart",
+          "say": "Thank you shows you care."
+        },
+        {
+          "art": "object.heart",
+          "say": "In Kinyarwanda, thank you is murakoze."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "You can do it!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is the good habit?",
+          "art": "object.heart",
+          "options": [
+            {
+              "label": "Say thank you",
+              "art": "object.heart"
+            },
+            {
+              "label": "Say nothing",
+              "art": "object.question"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Saying thank you shows kindness."
+        }
+      ]
+    },
+    {
+      "id": "habit-thank-you-young",
+      "title": "Thank you",
+      "ageGroup": "young",
+      "summary": "Thank you",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Here's a good habit to try every day!"
+        },
+        {
+          "art": "object.heart",
+          "say": "When someone helps you, say thank you."
+        },
+        {
+          "art": "object.heart",
+          "say": "Thank you shows you care."
+        },
+        {
+          "art": "object.heart",
+          "say": "In Kinyarwanda, thank you is murakoze."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "You can do it!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is the good habit?",
+          "art": "object.heart",
+          "options": [
+            {
+              "label": "Say thank you",
+              "art": "object.heart"
+            },
+            {
+              "label": "Say nothing",
+              "art": "object.question"
+            },
+            {
+              "label": "Ask a grown-up to do it for you",
+              "art": "object.friends"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Saying thank you shows kindness."
+        }
+      ]
+    },
+    {
+      "id": "habit-tidy-up-little",
+      "title": "Tidy up",
+      "ageGroup": "little",
+      "summary": "Tidy up",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Here's a good habit to try every day!"
+        },
+        {
+          "art": "object.house",
+          "say": "After playing, put your toys away."
+        },
+        {
+          "art": "object.house",
+          "say": "A tidy room is easy to play in."
+        },
+        {
+          "art": "object.house",
+          "say": "Everyone can help tidy up."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "You can do it!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is the good habit?",
+          "art": "object.house",
+          "options": [
+            {
+              "label": "Put toys away",
+              "art": "object.house"
+            },
+            {
+              "label": "Leave a mess",
+              "art": "object.question"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Tidying up keeps our home nice."
+        }
+      ]
+    },
+    {
+      "id": "habit-tidy-up-young",
+      "title": "Tidy up",
+      "ageGroup": "young",
+      "summary": "Tidy up",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Here's a good habit to try every day!"
+        },
+        {
+          "art": "object.house",
+          "say": "After playing, put your toys away."
+        },
+        {
+          "art": "object.house",
+          "say": "A tidy room is easy to play in."
+        },
+        {
+          "art": "object.house",
+          "say": "Everyone can help tidy up."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "You can do it!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is the good habit?",
+          "art": "object.house",
+          "options": [
+            {
+              "label": "Put toys away",
+              "art": "object.house"
+            },
+            {
+              "label": "Leave a mess",
+              "art": "object.question"
+            },
+            {
+              "label": "Ask a grown-up to do it for you",
+              "art": "object.friends"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Tidying up keeps our home nice."
+        }
+      ]
+    },
+    {
+      "id": "habit-drink-water-little",
+      "title": "Drink water",
+      "ageGroup": "little",
+      "summary": "Drink water",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Here's a good habit to try every day!"
+        },
+        {
+          "art": "object.ocean-wave",
+          "say": "Our bodies need water."
+        },
+        {
+          "art": "object.ocean-wave",
+          "say": "Drink water when you are thirsty."
+        },
+        {
+          "art": "object.ocean-wave",
+          "say": "Water helps you play and think."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "You can do it!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is the good habit?",
+          "art": "object.ocean-wave",
+          "options": [
+            {
+              "label": "Water",
+              "art": "object.ocean-wave"
+            },
+            {
+              "label": "Sugary drinks all day",
+              "art": "object.question"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Water keeps our bodies healthy."
+        }
+      ]
+    },
+    {
+      "id": "habit-drink-water-young",
+      "title": "Drink water",
+      "ageGroup": "young",
+      "summary": "Drink water",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Here's a good habit to try every day!"
+        },
+        {
+          "art": "object.ocean-wave",
+          "say": "Our bodies need water."
+        },
+        {
+          "art": "object.ocean-wave",
+          "say": "Drink water when you are thirsty."
+        },
+        {
+          "art": "object.ocean-wave",
+          "say": "Water helps you play and think."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "You can do it!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is the good habit?",
+          "art": "object.ocean-wave",
+          "options": [
+            {
+              "label": "Water",
+              "art": "object.ocean-wave"
+            },
+            {
+              "label": "Sugary drinks all day",
+              "art": "object.question"
+            },
+            {
+              "label": "Ask a grown-up to do it for you",
+              "art": "object.friends"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Water keeps our bodies healthy."
+        }
+      ]
+    },
+    {
+      "id": "habit-healthy-food-little",
+      "title": "Healthy food",
+      "ageGroup": "little",
+      "summary": "Healthy food",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Here's a good habit to try every day!"
+        },
+        {
+          "art": "object.apple",
+          "say": "Fruits and vegetables help you grow."
+        },
+        {
+          "art": "object.apple",
+          "say": "Try a rainbow of colors on your plate."
+        },
+        {
+          "art": "object.apple",
+          "say": "Healthy food gives you energy."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "You can do it!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is the good habit?",
+          "art": "object.apple",
+          "options": [
+            {
+              "label": "Fruits and vegetables",
+              "art": "object.apple"
+            },
+            {
+              "label": "Only candy",
+              "art": "object.question"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Fruits and vegetables help us grow."
+        }
+      ]
+    },
+    {
+      "id": "habit-healthy-food-young",
+      "title": "Healthy food",
+      "ageGroup": "young",
+      "summary": "Healthy food",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Here's a good habit to try every day!"
+        },
+        {
+          "art": "object.apple",
+          "say": "Fruits and vegetables help you grow."
+        },
+        {
+          "art": "object.apple",
+          "say": "Try a rainbow of colors on your plate."
+        },
+        {
+          "art": "object.apple",
+          "say": "Healthy food gives you energy."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "You can do it!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is the good habit?",
+          "art": "object.apple",
+          "options": [
+            {
+              "label": "Fruits and vegetables",
+              "art": "object.apple"
+            },
+            {
+              "label": "Only candy",
+              "art": "object.question"
+            },
+            {
+              "label": "Ask a grown-up to do it for you",
+              "art": "object.friends"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Fruits and vegetables help us grow."
+        }
+      ]
+    },
+    {
+      "id": "habit-sleep-well-little",
+      "title": "Sleep well",
+      "ageGroup": "little",
+      "summary": "Sleep well",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Here's a good habit to try every day!"
+        },
+        {
+          "art": "object.moon",
+          "say": "Sleep helps your body grow and rest."
+        },
+        {
+          "art": "object.moon",
+          "say": "Go to bed at the same time each night."
+        },
+        {
+          "art": "object.moon",
+          "say": "A good sleep means a happy morning."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "You can do it!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is the good habit?",
+          "art": "object.moon",
+          "options": [
+            {
+              "label": "Get a good sleep",
+              "art": "object.moon"
+            },
+            {
+              "label": "Stay up all night",
+              "art": "object.question"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Sleep helps our bodies rest and grow."
+        }
+      ]
+    },
+    {
+      "id": "habit-sleep-well-young",
+      "title": "Sleep well",
+      "ageGroup": "young",
+      "summary": "Sleep well",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Here's a good habit to try every day!"
+        },
+        {
+          "art": "object.moon",
+          "say": "Sleep helps your body grow and rest."
+        },
+        {
+          "art": "object.moon",
+          "say": "Go to bed at the same time each night."
+        },
+        {
+          "art": "object.moon",
+          "say": "A good sleep means a happy morning."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "You can do it!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is the good habit?",
+          "art": "object.moon",
+          "options": [
+            {
+              "label": "Get a good sleep",
+              "art": "object.moon"
+            },
+            {
+              "label": "Stay up all night",
+              "art": "object.question"
+            },
+            {
+              "label": "Ask a grown-up to do it for you",
+              "art": "object.friends"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Sleep helps our bodies rest and grow."
+        }
+      ]
+    },
+    {
+      "id": "habit-taking-turns-little",
+      "title": "Taking turns",
+      "ageGroup": "little",
+      "summary": "Taking turns",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Here's a good habit to try every day!"
+        },
+        {
+          "art": "object.puzzle",
+          "say": "Taking turns means waiting for your go."
+        },
+        {
+          "art": "object.puzzle",
+          "say": "First you, then me."
+        },
+        {
+          "art": "object.puzzle",
+          "say": "Games are more fun when we take turns."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "You can do it!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is the good habit?",
+          "art": "object.puzzle",
+          "options": [
+            {
+              "label": "Take turns",
+              "art": "object.puzzle"
+            },
+            {
+              "label": "Always go first",
+              "art": "object.question"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Taking turns is fair for everyone."
+        }
+      ]
+    },
+    {
+      "id": "habit-taking-turns-young",
+      "title": "Taking turns",
+      "ageGroup": "young",
+      "summary": "Taking turns",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Here's a good habit to try every day!"
+        },
+        {
+          "art": "object.puzzle",
+          "say": "Taking turns means waiting for your go."
+        },
+        {
+          "art": "object.puzzle",
+          "say": "First you, then me."
+        },
+        {
+          "art": "object.puzzle",
+          "say": "Games are more fun when we take turns."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "You can do it!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is the good habit?",
+          "art": "object.puzzle",
+          "options": [
+            {
+              "label": "Take turns",
+              "art": "object.puzzle"
+            },
+            {
+              "label": "Always go first",
+              "art": "object.question"
+            },
+            {
+              "label": "Ask a grown-up to do it for you",
+              "art": "object.friends"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Taking turns is fair for everyone."
+        }
+      ]
+    },
+    {
+      "id": "habit-say-sorry-little",
+      "title": "Say sorry",
+      "ageGroup": "little",
+      "summary": "Say sorry",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Here's a good habit to try every day!"
+        },
+        {
+          "art": "object.heart",
+          "say": "Everyone makes mistakes."
+        },
+        {
+          "art": "object.heart",
+          "say": "When we hurt someone, we say sorry."
+        },
+        {
+          "art": "object.heart",
+          "say": "Then we try to make it better."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "You can do it!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is the good habit?",
+          "art": "object.heart",
+          "options": [
+            {
+              "label": "Say sorry",
+              "art": "object.heart"
+            },
+            {
+              "label": "Blame someone else",
+              "art": "object.question"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Saying sorry helps fix a mistake."
+        }
+      ]
+    },
+    {
+      "id": "habit-say-sorry-young",
+      "title": "Say sorry",
+      "ageGroup": "young",
+      "summary": "Say sorry",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Here's a good habit to try every day!"
+        },
+        {
+          "art": "object.heart",
+          "say": "Everyone makes mistakes."
+        },
+        {
+          "art": "object.heart",
+          "say": "When we hurt someone, we say sorry."
+        },
+        {
+          "art": "object.heart",
+          "say": "Then we try to make it better."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "You can do it!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is the good habit?",
+          "art": "object.heart",
+          "options": [
+            {
+              "label": "Say sorry",
+              "art": "object.heart"
+            },
+            {
+              "label": "Blame someone else",
+              "art": "object.question"
+            },
+            {
+              "label": "Ask a grown-up to do it for you",
+              "art": "object.friends"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Saying sorry helps fix a mistake."
+        }
+      ]
+    }
+  ]
+}

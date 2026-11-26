@@ -1,7 +1,7 @@
 import { and, asc, eq, sql } from 'drizzle-orm';
 import type { FastifyInstance } from 'fastify';
 import { z } from 'zod';
-import { computeStars, guestCatalogQuerySchema, guestPlaybackSchema, isAgeAppropriate } from '@kidzo/shared';
+import { ageGroupFor, computeStars, guestCatalogQuerySchema, guestPlaybackSchema, isAgeAppropriate, isForAgeGroup } from '@kidzo/shared';
 import { content, guestContentDailyStats } from '../db/schema';
 import { badRequest, notFound, parse } from '../lib/errors';
 import { toContentDetail, toContentSummary } from '../lib/serialize';
@@ -13,7 +13,7 @@ export async function guestRoutes(app: FastifyInstance): Promise<void> {
     if (query.type) filters.push(eq(content.type, query.type));
     const rows = await app.db.select().from(content).where(and(...filters)).orderBy(asc(content.ageMin));
     return rows
-      .filter((row) => isAgeAppropriate(query.age, row.ageMin, row.ageMax))
+      .filter((row) => isAgeAppropriate(query.age, row.ageMin, row.ageMax) && isForAgeGroup(ageGroupFor(query.age), row))
       .filter((row) => !query.skill || row.skills.includes(query.skill))
       .map(toContentSummary);
   });
@@ -22,7 +22,7 @@ export async function guestRoutes(app: FastifyInstance): Promise<void> {
     const { age } = parse(guestCatalogQuerySchema.pick({ age: true }), request.body);
     const { id } = parse(z.object({ id: z.uuid() }), request.params);
     const [row] = await app.db.select().from(content).where(and(eq(content.id, id), eq(content.status, 'published'))).limit(1);
-    if (!row || !isAgeAppropriate(age, row.ageMin, row.ageMax)) throw notFound('Content');
+    if (!row || !isAgeAppropriate(age, row.ageMin, row.ageMax) || !isForAgeGroup(ageGroupFor(age), row)) throw notFound('Content');
     return toContentDetail(row);
   });
 

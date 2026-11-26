@@ -1,0 +1,1511 @@
+{
+  "topic": "bedtime",
+  "category": "bedtime",
+  "skills": [
+    "calm"
+  ],
+  "art": "object.moon",
+  "calm": true,
+  "videos": [
+    {
+      "id": "bedtime-sleepy-moon-little",
+      "title": "Sleepy moon",
+      "ageGroup": "little",
+      "summary": "Sleepy moon",
+      "scenes": [
+        {
+          "art": "zo.sleepy",
+          "say": "Time to slow down. Take a big, slow breath."
+        },
+        {
+          "art": "object.moon",
+          "say": "The moon rises slowly over the quiet hills."
+        },
+        {
+          "art": "object.moon",
+          "say": "Everything is calm and quiet."
+        },
+        {
+          "art": "object.full-moon",
+          "say": "The night is soft and safe."
+        },
+        {
+          "art": "zo.sleepy",
+          "say": "Close your eyes. Goodnight."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do we do at bedtime?",
+          "art": "object.moon",
+          "options": [
+            {
+              "label": "Rest",
+              "art": "object.moon"
+            },
+            {
+              "label": "Run",
+              "art": "object.footprints"
+            }
+          ],
+          "answer": 0,
+          "explanation": "At bedtime we rest so our bodies can grow strong."
+        }
+      ]
+    },
+    {
+      "id": "bedtime-sleepy-moon-young",
+      "title": "Sleepy moon",
+      "ageGroup": "young",
+      "summary": "Sleepy moon",
+      "scenes": [
+        {
+          "art": "zo.sleepy",
+          "say": "Time to slow down. Take a big, slow breath."
+        },
+        {
+          "art": "object.moon",
+          "say": "The moon rises slowly over the quiet hills."
+        },
+        {
+          "art": "object.moon",
+          "say": "Everything is calm and quiet."
+        },
+        {
+          "art": "object.star",
+          "say": "Listen to the quiet. Breathe in... and breathe out."
+        },
+        {
+          "art": "object.full-moon",
+          "say": "The night is soft and safe."
+        },
+        {
+          "art": "zo.sleepy",
+          "say": "Close your eyes. Goodnight."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do we do at bedtime?",
+          "art": "object.moon",
+          "options": [
+            {
+              "label": "Rest",
+              "art": "object.moon"
+            },
+            {
+              "label": "Run",
+              "art": "object.footprints"
+            },
+            {
+              "label": "Shout",
+              "art": "object.music-note"
+            }
+          ],
+          "answer": 0,
+          "explanation": "At bedtime we rest so our bodies can grow strong."
+        }
+      ]
+    },
+    {
+      "id": "bedtime-owl-goodnight-little",
+      "title": "Owl goodnight",
+      "ageGroup": "little",
+      "summary": "Owl goodnight",
+      "scenes": [
+        {
+          "art": "zo.sleepy",
+          "say": "Time to slow down. Take a big, slow breath."
+        },
+        {
+          "art": "object.owl",
+          "say": "A little owl says goodnight to the stars."
+        },
+        {
+          "art": "object.owl",
+          "say": "Everything is calm and quiet."
+        },
+        {
+          "art": "object.full-moon",
+          "say": "The night is soft and safe."
+        },
+        {
+          "art": "zo.sleepy",
+          "say": "Close your eyes. Goodnight."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do we do at bedtime?",
+          "art": "object.owl",
+          "options": [
+            {
+              "label": "Rest",
+              "art": "object.moon"
+            },
+            {
+              "label": "Run",
+              "art": "object.footprints"
+            }
+          ],
+          "answer": 0,
+          "explanation": "At bedtime we rest so our bodies can grow strong."
+        }
+      ]
+    },
+    {
+      "id": "bedtime-owl-goodnight-young",
+      "title": "Owl goodnight",
+      "ageGroup": "young",
+      "summary": "Owl goodnight",
+      "scenes": [
+        {
+          "art": "zo.sleepy",
+          "say": "Time to slow down. Take a big, slow breath."
+        },
+        {
+          "art": "object.owl",
+          "say": "A little owl says goodnight to the stars."
+        },
+        {
+          "art": "object.owl",
+          "say": "Everything is calm and quiet."
+        },
+        {
+          "art": "object.star",
+          "say": "Listen to the quiet. Breathe in... and breathe out."
+        },
+        {
+          "art": "object.full-moon",
+          "say": "The night is soft and safe."
+        },
+        {
+          "art": "zo.sleepy",
+          "say": "Close your eyes. Goodnight."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do we do at bedtime?",
+          "art": "object.owl",
+          "options": [
+            {
+              "label": "Rest",
+              "art": "object.moon"
+            },
+            {
+              "label": "Run",
+              "art": "object.footprints"
+            },
+            {
+              "label": "Shout",
+              "art": "object.music-note"
+            }
+          ],
+          "answer": 0,
+          "explanation": "At bedtime we rest so our bodies can grow strong."
+        }
+      ]
+    },
+    {
+      "id": "bedtime-turtle-slow-little",
+      "title": "Turtle slow",
+      "ageGroup": "little",
+      "summary": "Turtle slow",
+      "scenes": [
+        {
+          "art": "zo.sleepy",
+          "say": "Time to slow down. Take a big, slow breath."
+        },
+        {
+          "art": "object.turtle",
+          "say": "Turtle walks slowly home to rest."
+        },
+        {
+          "art": "object.turtle",
+          "say": "Everything is calm and quiet."
+        },
+        {
+          "art": "object.full-moon",
+          "say": "The night is soft and safe."
+        },
+        {
+          "art": "zo.sleepy",
+          "say": "Close your eyes. Goodnight."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do we do at bedtime?",
+          "art": "object.turtle",
+          "options": [
+            {
+              "label": "Rest",
+              "art": "object.moon"
+            },
+            {
+              "label": "Run",
+              "art": "object.footprints"
+            }
+          ],
+          "answer": 0,
+          "explanation": "At bedtime we rest so our bodies can grow strong."
+        }
+      ]
+    },
+    {
+      "id": "bedtime-turtle-slow-young",
+      "title": "Turtle slow",
+      "ageGroup": "young",
+      "summary": "Turtle slow",
+      "scenes": [
+        {
+          "art": "zo.sleepy",
+          "say": "Time to slow down. Take a big, slow breath."
+        },
+        {
+          "art": "object.turtle",
+          "say": "Turtle walks slowly home to rest."
+        },
+        {
+          "art": "object.turtle",
+          "say": "Everything is calm and quiet."
+        },
+        {
+          "art": "object.star",
+          "say": "Listen to the quiet. Breathe in... and breathe out."
+        },
+        {
+          "art": "object.full-moon",
+          "say": "The night is soft and safe."
+        },
+        {
+          "art": "zo.sleepy",
+          "say": "Close your eyes. Goodnight."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do we do at bedtime?",
+          "art": "object.turtle",
+          "options": [
+            {
+              "label": "Rest",
+              "art": "object.moon"
+            },
+            {
+              "label": "Run",
+              "art": "object.footprints"
+            },
+            {
+              "label": "Shout",
+              "art": "object.music-note"
+            }
+          ],
+          "answer": 0,
+          "explanation": "At bedtime we rest so our bodies can grow strong."
+        }
+      ]
+    },
+    {
+      "id": "bedtime-whale-lullaby-little",
+      "title": "Whale lullaby",
+      "ageGroup": "little",
+      "summary": "Whale lullaby",
+      "scenes": [
+        {
+          "art": "zo.sleepy",
+          "say": "Time to slow down. Take a big, slow breath."
+        },
+        {
+          "art": "object.whale",
+          "say": "A whale hums a soft song in the deep blue sea."
+        },
+        {
+          "art": "object.whale",
+          "say": "Everything is calm and quiet."
+        },
+        {
+          "art": "object.full-moon",
+          "say": "The night is soft and safe."
+        },
+        {
+          "art": "zo.sleepy",
+          "say": "Close your eyes. Goodnight."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do we do at bedtime?",
+          "art": "object.whale",
+          "options": [
+            {
+              "label": "Rest",
+              "art": "object.moon"
+            },
+            {
+              "label": "Run",
+              "art": "object.footprints"
+            }
+          ],
+          "answer": 0,
+          "explanation": "At bedtime we rest so our bodies can grow strong."
+        }
+      ]
+    },
+    {
+      "id": "bedtime-whale-lullaby-young",
+      "title": "Whale lullaby",
+      "ageGroup": "young",
+      "summary": "Whale lullaby",
+      "scenes": [
+        {
+          "art": "zo.sleepy",
+          "say": "Time to slow down. Take a big, slow breath."
+        },
+        {
+          "art": "object.whale",
+          "say": "A whale hums a soft song in the deep blue sea."
+        },
+        {
+          "art": "object.whale",
+          "say": "Everything is calm and quiet."
+        },
+        {
+          "art": "object.star",
+          "say": "Listen to the quiet. Breathe in... and breathe out."
+        },
+        {
+          "art": "object.full-moon",
+          "say": "The night is soft and safe."
+        },
+        {
+          "art": "zo.sleepy",
+          "say": "Close your eyes. Goodnight."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do we do at bedtime?",
+          "art": "object.whale",
+          "options": [
+            {
+              "label": "Rest",
+              "art": "object.moon"
+            },
+            {
+              "label": "Run",
+              "art": "object.footprints"
+            },
+            {
+              "label": "Shout",
+              "art": "object.music-note"
+            }
+          ],
+          "answer": 0,
+          "explanation": "At bedtime we rest so our bodies can grow strong."
+        }
+      ]
+    },
+    {
+      "id": "bedtime-bunny-burrow-little",
+      "title": "Bunny burrow",
+      "ageGroup": "little",
+      "summary": "Bunny burrow",
+      "scenes": [
+        {
+          "art": "zo.sleepy",
+          "say": "Time to slow down. Take a big, slow breath."
+        },
+        {
+          "art": "object.bunny",
+          "say": "Bunny snuggles into a warm, cozy burrow."
+        },
+        {
+          "art": "object.bunny",
+          "say": "Everything is calm and quiet."
+        },
+        {
+          "art": "object.full-moon",
+          "say": "The night is soft and safe."
+        },
+        {
+          "art": "zo.sleepy",
+          "say": "Close your eyes. Goodnight."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do we do at bedtime?",
+          "art": "object.bunny",
+          "options": [
+            {
+              "label": "Rest",
+              "art": "object.moon"
+            },
+            {
+              "label": "Run",
+              "art": "object.footprints"
+            }
+          ],
+          "answer": 0,
+          "explanation": "At bedtime we rest so our bodies can grow strong."
+        }
+      ]
+    },
+    {
+      "id": "bedtime-bunny-burrow-young",
+      "title": "Bunny burrow",
+      "ageGroup": "young",
+      "summary": "Bunny burrow",
+      "scenes": [
+        {
+          "art": "zo.sleepy",
+          "say": "Time to slow down. Take a big, slow breath."
+        },
+        {
+          "art": "object.bunny",
+          "say": "Bunny snuggles into a warm, cozy burrow."
+        },
+        {
+          "art": "object.bunny",
+          "say": "Everything is calm and quiet."
+        },
+        {
+          "art": "object.star",
+          "say": "Listen to the quiet. Breathe in... and breathe out."
+        },
+        {
+          "art": "object.full-moon",
+          "say": "The night is soft and safe."
+        },
+        {
+          "art": "zo.sleepy",
+          "say": "Close your eyes. Goodnight."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do we do at bedtime?",
+          "art": "object.bunny",
+          "options": [
+            {
+              "label": "Rest",
+              "art": "object.moon"
+            },
+            {
+              "label": "Run",
+              "art": "object.footprints"
+            },
+            {
+              "label": "Shout",
+              "art": "object.music-note"
+            }
+          ],
+          "answer": 0,
+          "explanation": "At bedtime we rest so our bodies can grow strong."
+        }
+      ]
+    },
+    {
+      "id": "bedtime-panda-nap-little",
+      "title": "Panda nap",
+      "ageGroup": "little",
+      "summary": "Panda nap",
+      "scenes": [
+        {
+          "art": "zo.sleepy",
+          "say": "Time to slow down. Take a big, slow breath."
+        },
+        {
+          "art": "object.panda",
+          "say": "Panda yawns and curls up in the bamboo."
+        },
+        {
+          "art": "object.panda",
+          "say": "Everything is calm and quiet."
+        },
+        {
+          "art": "object.full-moon",
+          "say": "The night is soft and safe."
+        },
+        {
+          "art": "zo.sleepy",
+          "say": "Close your eyes. Goodnight."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do we do at bedtime?",
+          "art": "object.panda",
+          "options": [
+            {
+              "label": "Rest",
+              "art": "object.moon"
+            },
+            {
+              "label": "Run",
+              "art": "object.footprints"
+            }
+          ],
+          "answer": 0,
+          "explanation": "At bedtime we rest so our bodies can grow strong."
+        }
+      ]
+    },
+    {
+      "id": "bedtime-panda-nap-young",
+      "title": "Panda nap",
+      "ageGroup": "young",
+      "summary": "Panda nap",
+      "scenes": [
+        {
+          "art": "zo.sleepy",
+          "say": "Time to slow down. Take a big, slow breath."
+        },
+        {
+          "art": "object.panda",
+          "say": "Panda yawns and curls up in the bamboo."
+        },
+        {
+          "art": "object.panda",
+          "say": "Everything is calm and quiet."
+        },
+        {
+          "art": "object.star",
+          "say": "Listen to the quiet. Breathe in... and breathe out."
+        },
+        {
+          "art": "object.full-moon",
+          "say": "The night is soft and safe."
+        },
+        {
+          "art": "zo.sleepy",
+          "say": "Close your eyes. Goodnight."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do we do at bedtime?",
+          "art": "object.panda",
+          "options": [
+            {
+              "label": "Rest",
+              "art": "object.moon"
+            },
+            {
+              "label": "Run",
+              "art": "object.footprints"
+            },
+            {
+              "label": "Shout",
+              "art": "object.music-note"
+            }
+          ],
+          "answer": 0,
+          "explanation": "At bedtime we rest so our bodies can grow strong."
+        }
+      ]
+    },
+    {
+      "id": "bedtime-starry-sky-little",
+      "title": "Starry sky",
+      "ageGroup": "little",
+      "summary": "Starry sky",
+      "scenes": [
+        {
+          "art": "zo.sleepy",
+          "say": "Time to slow down. Take a big, slow breath."
+        },
+        {
+          "art": "object.star",
+          "say": "One by one, the stars twinkle on."
+        },
+        {
+          "art": "object.star",
+          "say": "Everything is calm and quiet."
+        },
+        {
+          "art": "object.full-moon",
+          "say": "The night is soft and safe."
+        },
+        {
+          "art": "zo.sleepy",
+          "say": "Close your eyes. Goodnight."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do we do at bedtime?",
+          "art": "object.star",
+          "options": [
+            {
+              "label": "Rest",
+              "art": "object.moon"
+            },
+            {
+              "label": "Run",
+              "art": "object.footprints"
+            }
+          ],
+          "answer": 0,
+          "explanation": "At bedtime we rest so our bodies can grow strong."
+        }
+      ]
+    },
+    {
+      "id": "bedtime-starry-sky-young",
+      "title": "Starry sky",
+      "ageGroup": "young",
+      "summary": "Starry sky",
+      "scenes": [
+        {
+          "art": "zo.sleepy",
+          "say": "Time to slow down. Take a big, slow breath."
+        },
+        {
+          "art": "object.star",
+          "say": "One by one, the stars twinkle on."
+        },
+        {
+          "art": "object.star",
+          "say": "Everything is calm and quiet."
+        },
+        {
+          "art": "object.star",
+          "say": "Listen to the quiet. Breathe in... and breathe out."
+        },
+        {
+          "art": "object.full-moon",
+          "say": "The night is soft and safe."
+        },
+        {
+          "art": "zo.sleepy",
+          "say": "Close your eyes. Goodnight."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do we do at bedtime?",
+          "art": "object.star",
+          "options": [
+            {
+              "label": "Rest",
+              "art": "object.moon"
+            },
+            {
+              "label": "Run",
+              "art": "object.footprints"
+            },
+            {
+              "label": "Shout",
+              "art": "object.music-note"
+            }
+          ],
+          "answer": 0,
+          "explanation": "At bedtime we rest so our bodies can grow strong."
+        }
+      ]
+    },
+    {
+      "id": "bedtime-cloud-blanket-little",
+      "title": "Cloud blanket",
+      "ageGroup": "little",
+      "summary": "Cloud blanket",
+      "scenes": [
+        {
+          "art": "zo.sleepy",
+          "say": "Time to slow down. Take a big, slow breath."
+        },
+        {
+          "art": "object.cloud",
+          "say": "Soft clouds float by like a blanket."
+        },
+        {
+          "art": "object.cloud",
+          "say": "Everything is calm and quiet."
+        },
+        {
+          "art": "object.full-moon",
+          "say": "The night is soft and safe."
+        },
+        {
+          "art": "zo.sleepy",
+          "say": "Close your eyes. Goodnight."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do we do at bedtime?",
+          "art": "object.cloud",
+          "options": [
+            {
+              "label": "Rest",
+              "art": "object.moon"
+            },
+            {
+              "label": "Run",
+              "art": "object.footprints"
+            }
+          ],
+          "answer": 0,
+          "explanation": "At bedtime we rest so our bodies can grow strong."
+        }
+      ]
+    },
+    {
+      "id": "bedtime-cloud-blanket-young",
+      "title": "Cloud blanket",
+      "ageGroup": "young",
+      "summary": "Cloud blanket",
+      "scenes": [
+        {
+          "art": "zo.sleepy",
+          "say": "Time to slow down. Take a big, slow breath."
+        },
+        {
+          "art": "object.cloud",
+          "say": "Soft clouds float by like a blanket."
+        },
+        {
+          "art": "object.cloud",
+          "say": "Everything is calm and quiet."
+        },
+        {
+          "art": "object.star",
+          "say": "Listen to the quiet. Breathe in... and breathe out."
+        },
+        {
+          "art": "object.full-moon",
+          "say": "The night is soft and safe."
+        },
+        {
+          "art": "zo.sleepy",
+          "say": "Close your eyes. Goodnight."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do we do at bedtime?",
+          "art": "object.cloud",
+          "options": [
+            {
+              "label": "Rest",
+              "art": "object.moon"
+            },
+            {
+              "label": "Run",
+              "art": "object.footprints"
+            },
+            {
+              "label": "Shout",
+              "art": "object.music-note"
+            }
+          ],
+          "answer": 0,
+          "explanation": "At bedtime we rest so our bodies can grow strong."
+        }
+      ]
+    },
+    {
+      "id": "bedtime-fish-dreams-little",
+      "title": "Fish dreams",
+      "ageGroup": "little",
+      "summary": "Fish dreams",
+      "scenes": [
+        {
+          "art": "zo.sleepy",
+          "say": "Time to slow down. Take a big, slow breath."
+        },
+        {
+          "art": "object.fish",
+          "say": "Little fish drift slowly in the calm water."
+        },
+        {
+          "art": "object.fish",
+          "say": "Everything is calm and quiet."
+        },
+        {
+          "art": "object.full-moon",
+          "say": "The night is soft and safe."
+        },
+        {
+          "art": "zo.sleepy",
+          "say": "Close your eyes. Goodnight."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do we do at bedtime?",
+          "art": "object.fish",
+          "options": [
+            {
+              "label": "Rest",
+              "art": "object.moon"
+            },
+            {
+              "label": "Run",
+              "art": "object.footprints"
+            }
+          ],
+          "answer": 0,
+          "explanation": "At bedtime we rest so our bodies can grow strong."
+        }
+      ]
+    },
+    {
+      "id": "bedtime-fish-dreams-young",
+      "title": "Fish dreams",
+      "ageGroup": "young",
+      "summary": "Fish dreams",
+      "scenes": [
+        {
+          "art": "zo.sleepy",
+          "say": "Time to slow down. Take a big, slow breath."
+        },
+        {
+          "art": "object.fish",
+          "say": "Little fish drift slowly in the calm water."
+        },
+        {
+          "art": "object.fish",
+          "say": "Everything is calm and quiet."
+        },
+        {
+          "art": "object.star",
+          "say": "Listen to the quiet. Breathe in... and breathe out."
+        },
+        {
+          "art": "object.full-moon",
+          "say": "The night is soft and safe."
+        },
+        {
+          "art": "zo.sleepy",
+          "say": "Close your eyes. Goodnight."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do we do at bedtime?",
+          "art": "object.fish",
+          "options": [
+            {
+              "label": "Rest",
+              "art": "object.moon"
+            },
+            {
+              "label": "Run",
+              "art": "object.footprints"
+            },
+            {
+              "label": "Shout",
+              "art": "object.music-note"
+            }
+          ],
+          "answer": 0,
+          "explanation": "At bedtime we rest so our bodies can grow strong."
+        }
+      ]
+    },
+    {
+      "id": "bedtime-cat-cushion-little",
+      "title": "Cat cushion",
+      "ageGroup": "little",
+      "summary": "Cat cushion",
+      "scenes": [
+        {
+          "art": "zo.sleepy",
+          "say": "Time to slow down. Take a big, slow breath."
+        },
+        {
+          "art": "object.cat",
+          "say": "Cat finds a soft cushion and closes her eyes."
+        },
+        {
+          "art": "object.cat",
+          "say": "Everything is calm and quiet."
+        },
+        {
+          "art": "object.full-moon",
+          "say": "The night is soft and safe."
+        },
+        {
+          "art": "zo.sleepy",
+          "say": "Close your eyes. Goodnight."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do we do at bedtime?",
+          "art": "object.cat",
+          "options": [
+            {
+              "label": "Rest",
+              "art": "object.moon"
+            },
+            {
+              "label": "Run",
+              "art": "object.footprints"
+            }
+          ],
+          "answer": 0,
+          "explanation": "At bedtime we rest so our bodies can grow strong."
+        }
+      ]
+    },
+    {
+      "id": "bedtime-cat-cushion-young",
+      "title": "Cat cushion",
+      "ageGroup": "young",
+      "summary": "Cat cushion",
+      "scenes": [
+        {
+          "art": "zo.sleepy",
+          "say": "Time to slow down. Take a big, slow breath."
+        },
+        {
+          "art": "object.cat",
+          "say": "Cat finds a soft cushion and closes her eyes."
+        },
+        {
+          "art": "object.cat",
+          "say": "Everything is calm and quiet."
+        },
+        {
+          "art": "object.star",
+          "say": "Listen to the quiet. Breathe in... and breathe out."
+        },
+        {
+          "art": "object.full-moon",
+          "say": "The night is soft and safe."
+        },
+        {
+          "art": "zo.sleepy",
+          "say": "Close your eyes. Goodnight."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do we do at bedtime?",
+          "art": "object.cat",
+          "options": [
+            {
+              "label": "Rest",
+              "art": "object.moon"
+            },
+            {
+              "label": "Run",
+              "art": "object.footprints"
+            },
+            {
+              "label": "Shout",
+              "art": "object.music-note"
+            }
+          ],
+          "answer": 0,
+          "explanation": "At bedtime we rest so our bodies can grow strong."
+        }
+      ]
+    },
+    {
+      "id": "bedtime-sleepy-sun-little",
+      "title": "Sleepy sun",
+      "ageGroup": "little",
+      "summary": "Sleepy sun",
+      "scenes": [
+        {
+          "art": "zo.sleepy",
+          "say": "Time to slow down. Take a big, slow breath."
+        },
+        {
+          "art": "object.sun",
+          "say": "The sun says goodnight and sinks behind the hills."
+        },
+        {
+          "art": "object.sun",
+          "say": "Everything is calm and quiet."
+        },
+        {
+          "art": "object.full-moon",
+          "say": "The night is soft and safe."
+        },
+        {
+          "art": "zo.sleepy",
+          "say": "Close your eyes. Goodnight."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do we do at bedtime?",
+          "art": "object.sun",
+          "options": [
+            {
+              "label": "Rest",
+              "art": "object.moon"
+            },
+            {
+              "label": "Run",
+              "art": "object.footprints"
+            }
+          ],
+          "answer": 0,
+          "explanation": "At bedtime we rest so our bodies can grow strong."
+        }
+      ]
+    },
+    {
+      "id": "bedtime-sleepy-sun-young",
+      "title": "Sleepy sun",
+      "ageGroup": "young",
+      "summary": "Sleepy sun",
+      "scenes": [
+        {
+          "art": "zo.sleepy",
+          "say": "Time to slow down. Take a big, slow breath."
+        },
+        {
+          "art": "object.sun",
+          "say": "The sun says goodnight and sinks behind the hills."
+        },
+        {
+          "art": "object.sun",
+          "say": "Everything is calm and quiet."
+        },
+        {
+          "art": "object.star",
+          "say": "Listen to the quiet. Breathe in... and breathe out."
+        },
+        {
+          "art": "object.full-moon",
+          "say": "The night is soft and safe."
+        },
+        {
+          "art": "zo.sleepy",
+          "say": "Close your eyes. Goodnight."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do we do at bedtime?",
+          "art": "object.sun",
+          "options": [
+            {
+              "label": "Rest",
+              "art": "object.moon"
+            },
+            {
+              "label": "Run",
+              "art": "object.footprints"
+            },
+            {
+              "label": "Shout",
+              "art": "object.music-note"
+            }
+          ],
+          "answer": 0,
+          "explanation": "At bedtime we rest so our bodies can grow strong."
+        }
+      ]
+    },
+    {
+      "id": "bedtime-lake-kivu-night-little",
+      "title": "Lake kivu night",
+      "ageGroup": "little",
+      "summary": "Lake kivu night",
+      "scenes": [
+        {
+          "art": "zo.sleepy",
+          "say": "Time to slow down. Take a big, slow breath."
+        },
+        {
+          "art": "object.ocean-wave",
+          "say": "Gentle waves rock the boats on Lake Kivu."
+        },
+        {
+          "art": "object.ocean-wave",
+          "say": "Everything is calm and quiet."
+        },
+        {
+          "art": "object.full-moon",
+          "say": "The night is soft and safe."
+        },
+        {
+          "art": "zo.sleepy",
+          "say": "Close your eyes. Goodnight."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do we do at bedtime?",
+          "art": "object.ocean-wave",
+          "options": [
+            {
+              "label": "Rest",
+              "art": "object.moon"
+            },
+            {
+              "label": "Run",
+              "art": "object.footprints"
+            }
+          ],
+          "answer": 0,
+          "explanation": "At bedtime we rest so our bodies can grow strong."
+        }
+      ]
+    },
+    {
+      "id": "bedtime-lake-kivu-night-young",
+      "title": "Lake kivu night",
+      "ageGroup": "young",
+      "summary": "Lake kivu night",
+      "scenes": [
+        {
+          "art": "zo.sleepy",
+          "say": "Time to slow down. Take a big, slow breath."
+        },
+        {
+          "art": "object.ocean-wave",
+          "say": "Gentle waves rock the boats on Lake Kivu."
+        },
+        {
+          "art": "object.ocean-wave",
+          "say": "Everything is calm and quiet."
+        },
+        {
+          "art": "object.star",
+          "say": "Listen to the quiet. Breathe in... and breathe out."
+        },
+        {
+          "art": "object.full-moon",
+          "say": "The night is soft and safe."
+        },
+        {
+          "art": "zo.sleepy",
+          "say": "Close your eyes. Goodnight."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do we do at bedtime?",
+          "art": "object.ocean-wave",
+          "options": [
+            {
+              "label": "Rest",
+              "art": "object.moon"
+            },
+            {
+              "label": "Run",
+              "art": "object.footprints"
+            },
+            {
+              "label": "Shout",
+              "art": "object.music-note"
+            }
+          ],
+          "answer": 0,
+          "explanation": "At bedtime we rest so our bodies can grow strong."
+        }
+      ]
+    },
+    {
+      "id": "bedtime-gorilla-nest-little",
+      "title": "Gorilla nest",
+      "ageGroup": "little",
+      "summary": "Gorilla nest",
+      "scenes": [
+        {
+          "art": "zo.sleepy",
+          "say": "Time to slow down. Take a big, slow breath."
+        },
+        {
+          "art": "object.panda",
+          "say": "A baby gorilla rests in a nest of soft leaves."
+        },
+        {
+          "art": "object.panda",
+          "say": "Everything is calm and quiet."
+        },
+        {
+          "art": "object.full-moon",
+          "say": "The night is soft and safe."
+        },
+        {
+          "art": "zo.sleepy",
+          "say": "Close your eyes. Goodnight."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do we do at bedtime?",
+          "art": "object.panda",
+          "options": [
+            {
+              "label": "Rest",
+              "art": "object.moon"
+            },
+            {
+              "label": "Run",
+              "art": "object.footprints"
+            }
+          ],
+          "answer": 0,
+          "explanation": "At bedtime we rest so our bodies can grow strong."
+        }
+      ]
+    },
+    {
+      "id": "bedtime-gorilla-nest-young",
+      "title": "Gorilla nest",
+      "ageGroup": "young",
+      "summary": "Gorilla nest",
+      "scenes": [
+        {
+          "art": "zo.sleepy",
+          "say": "Time to slow down. Take a big, slow breath."
+        },
+        {
+          "art": "object.panda",
+          "say": "A baby gorilla rests in a nest of soft leaves."
+        },
+        {
+          "art": "object.panda",
+          "say": "Everything is calm and quiet."
+        },
+        {
+          "art": "object.star",
+          "say": "Listen to the quiet. Breathe in... and breathe out."
+        },
+        {
+          "art": "object.full-moon",
+          "say": "The night is soft and safe."
+        },
+        {
+          "art": "zo.sleepy",
+          "say": "Close your eyes. Goodnight."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do we do at bedtime?",
+          "art": "object.panda",
+          "options": [
+            {
+              "label": "Rest",
+              "art": "object.moon"
+            },
+            {
+              "label": "Run",
+              "art": "object.footprints"
+            },
+            {
+              "label": "Shout",
+              "art": "object.music-note"
+            }
+          ],
+          "answer": 0,
+          "explanation": "At bedtime we rest so our bodies can grow strong."
+        }
+      ]
+    },
+    {
+      "id": "bedtime-butterfly-rest-little",
+      "title": "Butterfly rest",
+      "ageGroup": "little",
+      "summary": "Butterfly rest",
+      "scenes": [
+        {
+          "art": "zo.sleepy",
+          "say": "Time to slow down. Take a big, slow breath."
+        },
+        {
+          "art": "object.butterfly",
+          "say": "Butterfly folds her wings on a flower."
+        },
+        {
+          "art": "object.butterfly",
+          "say": "Everything is calm and quiet."
+        },
+        {
+          "art": "object.full-moon",
+          "say": "The night is soft and safe."
+        },
+        {
+          "art": "zo.sleepy",
+          "say": "Close your eyes. Goodnight."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do we do at bedtime?",
+          "art": "object.butterfly",
+          "options": [
+            {
+              "label": "Rest",
+              "art": "object.moon"
+            },
+            {
+              "label": "Run",
+              "art": "object.footprints"
+            }
+          ],
+          "answer": 0,
+          "explanation": "At bedtime we rest so our bodies can grow strong."
+        }
+      ]
+    },
+    {
+      "id": "bedtime-butterfly-rest-young",
+      "title": "Butterfly rest",
+      "ageGroup": "young",
+      "summary": "Butterfly rest",
+      "scenes": [
+        {
+          "art": "zo.sleepy",
+          "say": "Time to slow down. Take a big, slow breath."
+        },
+        {
+          "art": "object.butterfly",
+          "say": "Butterfly folds her wings on a flower."
+        },
+        {
+          "art": "object.butterfly",
+          "say": "Everything is calm and quiet."
+        },
+        {
+          "art": "object.star",
+          "say": "Listen to the quiet. Breathe in... and breathe out."
+        },
+        {
+          "art": "object.full-moon",
+          "say": "The night is soft and safe."
+        },
+        {
+          "art": "zo.sleepy",
+          "say": "Close your eyes. Goodnight."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do we do at bedtime?",
+          "art": "object.butterfly",
+          "options": [
+            {
+              "label": "Rest",
+              "art": "object.moon"
+            },
+            {
+              "label": "Run",
+              "art": "object.footprints"
+            },
+            {
+              "label": "Shout",
+              "art": "object.music-note"
+            }
+          ],
+          "answer": 0,
+          "explanation": "At bedtime we rest so our bodies can grow strong."
+        }
+      ]
+    },
+    {
+      "id": "bedtime-bee-home-little",
+      "title": "Bee home",
+      "ageGroup": "little",
+      "summary": "Bee home",
+      "scenes": [
+        {
+          "art": "zo.sleepy",
+          "say": "Time to slow down. Take a big, slow breath."
+        },
+        {
+          "art": "object.bee",
+          "say": "Bee flies home to the quiet hive."
+        },
+        {
+          "art": "object.bee",
+          "say": "Everything is calm and quiet."
+        },
+        {
+          "art": "object.full-moon",
+          "say": "The night is soft and safe."
+        },
+        {
+          "art": "zo.sleepy",
+          "say": "Close your eyes. Goodnight."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do we do at bedtime?",
+          "art": "object.bee",
+          "options": [
+            {
+              "label": "Rest",
+              "art": "object.moon"
+            },
+            {
+              "label": "Run",
+              "art": "object.footprints"
+            }
+          ],
+          "answer": 0,
+          "explanation": "At bedtime we rest so our bodies can grow strong."
+        }
+      ]
+    },
+    {
+      "id": "bedtime-bee-home-young",
+      "title": "Bee home",
+      "ageGroup": "young",
+      "summary": "Bee home",
+      "scenes": [
+        {
+          "art": "zo.sleepy",
+          "say": "Time to slow down. Take a big, slow breath."
+        },
+        {
+          "art": "object.bee",
+          "say": "Bee flies home to the quiet hive."
+        },
+        {
+          "art": "object.bee",
+          "say": "Everything is calm and quiet."
+        },
+        {
+          "art": "object.star",
+          "say": "Listen to the quiet. Breathe in... and breathe out."
+        },
+        {
+          "art": "object.full-moon",
+          "say": "The night is soft and safe."
+        },
+        {
+          "art": "zo.sleepy",
+          "say": "Close your eyes. Goodnight."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do we do at bedtime?",
+          "art": "object.bee",
+          "options": [
+            {
+              "label": "Rest",
+              "art": "object.moon"
+            },
+            {
+              "label": "Run",
+              "art": "object.footprints"
+            },
+            {
+              "label": "Shout",
+              "art": "object.music-note"
+            }
+          ],
+          "answer": 0,
+          "explanation": "At bedtime we rest so our bodies can grow strong."
+        }
+      ]
+    }
+  ]
+}

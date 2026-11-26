@@ -6,25 +6,27 @@ import { Header, Screen } from '../../components/Layout';
 import { Text } from '../../components/Typography';
 import { useT } from '../../i18n';
 import { useGuest } from '../../lib/guest';
-import { spacing } from '../../theme';
+import { ageBand, spacing } from '../../theme/core';
+import type { ButtonVariant } from '../../components/Button';
+import { ZoSays } from '../../components/Zo';
+
+const BAND_VARIANT: Record<ReturnType<typeof ageBand>, ButtonVariant> = { little: 'tangerine', middle: 'sky', big: 'grape' };
 
 export default function GuestAgeScreen() {
   const { t } = useT();
   const { setAge } = useGuest();
 
   return (
-    <Screen>
+    <Screen world>
       <Header title={t('guest.ageTitle')} onBack={() => router.replace('/welcome')} backLabel={t('common.back')} />
-      <Text variant="h2" align="center">
-        {t('guest.agePrompt')}
-      </Text>
+      <ZoSays mood="waving" message={t('guest.agePrompt')} />
       <View style={styles.ages}>
         {Array.from({ length: MAX_AGE - MIN_AGE + 1 }, (_, index) => MIN_AGE + index).map((age) => (
           <View key={age} style={styles.ageButton}>
             <Button
               label={String(age)}
               size="kid"
-              variant="sky"
+              variant={BAND_VARIANT[ageBand(age)]}
               fullWidth
               accessibilityHint={t('guest.ageHint', { age })}
               onPress={() => {

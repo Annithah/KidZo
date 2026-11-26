@@ -75,6 +75,15 @@ API tests start an embedded database per file, so they run one file at a time.
   and low-completion content.
 - **Languages:** English, French, Kinyarwanda and Kiswahili.
 
+## Design system
+
+The "Storybook Playground" identity lives in two packages used by both apps:
+
+- `packages/ui-tokens`: every color (brand, world, feedback, bedtime) with 50 to 900 scales, light, bedtime and admin themes, Fredoka and Nunito type scale, radius, 4pt spacing, tinted shadows and motion. Tests enforce WCAG AA contrast.
+- `packages/art`: original vector art (stickers, objects, categories, avatars, wardrobe, Zo in 6 moods, scenes) as shared shape data, the icon name list, and the emoji to art key map used only for migration.
+
+Content and stickers store art keys such as `sticker.ocean-pearl` or `object.apple*3`, never emoji. Screens render icons only through `<Icon>` and art through `<Art>`. `pnpm lint` runs `scripts/check-style.mjs` first, which fails on emoji or hex colors anywhere outside `packages/ui-tokens`. See `REDESIGN.md` for the full audit and decisions.
+
 ## Security notes
 
 - Argon2 password and PIN hashing, short-lived JWT access tokens with rotating refresh tokens.

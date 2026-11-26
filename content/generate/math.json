@@ -1,0 +1,2213 @@
+{
+  "topic": "math",
+  "category": "brain-games",
+  "skills": [
+    "math",
+    "counting"
+  ],
+  "art": "object.numbers",
+  "videos": [
+    {
+      "id": "add-1-plus-2",
+      "title": "1 plus 2",
+      "ageGroup": "young",
+      "summary": "1 plus 2",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "If we have one apples and get two more, how many do we have?"
+        },
+        {
+          "art": "object.apple*1",
+          "say": "One apples...",
+          "big": "1"
+        },
+        {
+          "art": "object.apple*3",
+          "say": "...plus two makes three!",
+          "big": "1 + 2 = 3"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is 1 + 2?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "3",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "4",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "2",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "1 plus 2 equals 3."
+        }
+      ]
+    },
+    {
+      "id": "add-2-plus-3",
+      "title": "2 plus 3",
+      "ageGroup": "young",
+      "summary": "2 plus 3",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "If we have two apples and get three more, how many do we have?"
+        },
+        {
+          "art": "object.apple*2",
+          "say": "Two apples...",
+          "big": "2"
+        },
+        {
+          "art": "object.apple*5",
+          "say": "...plus three makes five!",
+          "big": "2 + 3 = 5"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is 2 + 3?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "5",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "6",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "4",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "2 plus 3 equals 5."
+        }
+      ]
+    },
+    {
+      "id": "add-3-plus-4",
+      "title": "3 plus 4",
+      "ageGroup": "young",
+      "summary": "3 plus 4",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "If we have three apples and get four more, how many do we have?"
+        },
+        {
+          "art": "object.apple*3",
+          "say": "Three apples...",
+          "big": "3"
+        },
+        {
+          "art": "object.apple*7",
+          "say": "...plus four makes seven!",
+          "big": "3 + 4 = 7"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is 3 + 4?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "7",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "8",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "6",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "3 plus 4 equals 7."
+        }
+      ]
+    },
+    {
+      "id": "add-4-plus-4",
+      "title": "4 plus 4",
+      "ageGroup": "young",
+      "summary": "4 plus 4",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "If we have four apples and get four more, how many do we have?"
+        },
+        {
+          "art": "object.apple*4",
+          "say": "Four apples...",
+          "big": "4"
+        },
+        {
+          "art": "object.apple*8",
+          "say": "...plus four makes eight!",
+          "big": "4 + 4 = 8"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is 4 + 4?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "8",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "9",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "7",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "4 plus 4 equals 8."
+        }
+      ]
+    },
+    {
+      "id": "add-5-plus-2",
+      "title": "5 plus 2",
+      "ageGroup": "young",
+      "summary": "5 plus 2",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "If we have five apples and get two more, how many do we have?"
+        },
+        {
+          "art": "object.apple*5",
+          "say": "Five apples...",
+          "big": "5"
+        },
+        {
+          "art": "object.apple*7",
+          "say": "...plus two makes seven!",
+          "big": "5 + 2 = 7"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is 5 + 2?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "7",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "8",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "6",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "5 plus 2 equals 7."
+        }
+      ]
+    },
+    {
+      "id": "add-6-plus-3",
+      "title": "6 plus 3",
+      "ageGroup": "young",
+      "summary": "6 plus 3",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "If we have six apples and get three more, how many do we have?"
+        },
+        {
+          "art": "object.apple*6",
+          "say": "Six apples...",
+          "big": "6"
+        },
+        {
+          "art": "object.apple*9",
+          "say": "...plus three makes nine!",
+          "big": "6 + 3 = 9"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is 6 + 3?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "9",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "10",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "8",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "6 plus 3 equals 9."
+        }
+      ]
+    },
+    {
+      "id": "add-7-plus-1",
+      "title": "7 plus 1",
+      "ageGroup": "young",
+      "summary": "7 plus 1",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "If we have seven apples and get one more, how many do we have?"
+        },
+        {
+          "art": "object.apple*7",
+          "say": "Seven apples...",
+          "big": "7"
+        },
+        {
+          "art": "object.apple*8",
+          "say": "...plus one makes eight!",
+          "big": "7 + 1 = 8"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is 7 + 1?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "8",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "9",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "7",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "7 plus 1 equals 8."
+        }
+      ]
+    },
+    {
+      "id": "add-2-plus-6",
+      "title": "2 plus 6",
+      "ageGroup": "young",
+      "summary": "2 plus 6",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "If we have two apples and get six more, how many do we have?"
+        },
+        {
+          "art": "object.apple*2",
+          "say": "Two apples...",
+          "big": "2"
+        },
+        {
+          "art": "object.apple*8",
+          "say": "...plus six makes eight!",
+          "big": "2 + 6 = 8"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is 2 + 6?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "8",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "9",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "7",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "2 plus 6 equals 8."
+        }
+      ]
+    },
+    {
+      "id": "add-5-plus-5",
+      "title": "5 plus 5",
+      "ageGroup": "young",
+      "summary": "5 plus 5",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "If we have five apples and get five more, how many do we have?"
+        },
+        {
+          "art": "object.apple*5",
+          "say": "Five apples...",
+          "big": "5"
+        },
+        {
+          "art": "object.apple*9",
+          "say": "...plus five makes ten!",
+          "big": "5 + 5 = 10"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is 5 + 5?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "10",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "11",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "9",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "5 plus 5 equals 10."
+        }
+      ]
+    },
+    {
+      "id": "add-8-plus-2",
+      "title": "8 plus 2",
+      "ageGroup": "young",
+      "summary": "8 plus 2",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "If we have eight apples and get two more, how many do we have?"
+        },
+        {
+          "art": "object.apple*8",
+          "say": "Eight apples...",
+          "big": "8"
+        },
+        {
+          "art": "object.apple*9",
+          "say": "...plus two makes ten!",
+          "big": "8 + 2 = 10"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is 8 + 2?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "10",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "11",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "9",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "8 plus 2 equals 10."
+        }
+      ]
+    },
+    {
+      "id": "subtract-5-minus-2",
+      "title": "5 take away 2",
+      "ageGroup": "young",
+      "summary": "5 take away 2",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "We have five stars. Two fly away. How many are left?"
+        },
+        {
+          "art": "object.star*5",
+          "say": "Five stars.",
+          "big": "5"
+        },
+        {
+          "art": "object.star*3",
+          "say": "Take away two, and three are left.",
+          "big": "5 - 2 = 3"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is 5 - 2?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "3",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "4",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "5",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "5 minus 2 equals 3."
+        }
+      ]
+    },
+    {
+      "id": "subtract-6-minus-1",
+      "title": "6 take away 1",
+      "ageGroup": "young",
+      "summary": "6 take away 1",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "We have six stars. One fly away. How many are left?"
+        },
+        {
+          "art": "object.star*6",
+          "say": "Six stars.",
+          "big": "6"
+        },
+        {
+          "art": "object.star*5",
+          "say": "Take away one, and five are left.",
+          "big": "6 - 1 = 5"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is 6 - 1?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "5",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "6",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "7",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "6 minus 1 equals 5."
+        }
+      ]
+    },
+    {
+      "id": "subtract-8-minus-3",
+      "title": "8 take away 3",
+      "ageGroup": "young",
+      "summary": "8 take away 3",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "We have eight stars. Three fly away. How many are left?"
+        },
+        {
+          "art": "object.star*8",
+          "say": "Eight stars.",
+          "big": "8"
+        },
+        {
+          "art": "object.star*5",
+          "say": "Take away three, and five are left.",
+          "big": "8 - 3 = 5"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is 8 - 3?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "5",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "6",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "7",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "8 minus 3 equals 5."
+        }
+      ]
+    },
+    {
+      "id": "subtract-9-minus-4",
+      "title": "9 take away 4",
+      "ageGroup": "young",
+      "summary": "9 take away 4",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "We have nine stars. Four fly away. How many are left?"
+        },
+        {
+          "art": "object.star*9",
+          "say": "Nine stars.",
+          "big": "9"
+        },
+        {
+          "art": "object.star*5",
+          "say": "Take away four, and five are left.",
+          "big": "9 - 4 = 5"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is 9 - 4?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "5",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "6",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "7",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "9 minus 4 equals 5."
+        }
+      ]
+    },
+    {
+      "id": "subtract-10-minus-5",
+      "title": "10 take away 5",
+      "ageGroup": "young",
+      "summary": "10 take away 5",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "We have ten stars. Five fly away. How many are left?"
+        },
+        {
+          "art": "object.star*9",
+          "say": "Ten stars.",
+          "big": "10"
+        },
+        {
+          "art": "object.star*5",
+          "say": "Take away five, and five are left.",
+          "big": "10 - 5 = 5"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is 10 - 5?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "5",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "6",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "7",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "10 minus 5 equals 5."
+        }
+      ]
+    },
+    {
+      "id": "subtract-7-minus-2",
+      "title": "7 take away 2",
+      "ageGroup": "young",
+      "summary": "7 take away 2",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "We have seven stars. Two fly away. How many are left?"
+        },
+        {
+          "art": "object.star*7",
+          "say": "Seven stars.",
+          "big": "7"
+        },
+        {
+          "art": "object.star*5",
+          "say": "Take away two, and five are left.",
+          "big": "7 - 2 = 5"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is 7 - 2?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "5",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "6",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "7",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "7 minus 2 equals 5."
+        }
+      ]
+    },
+    {
+      "id": "subtract-4-minus-3",
+      "title": "4 take away 3",
+      "ageGroup": "young",
+      "summary": "4 take away 3",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "We have four stars. Three fly away. How many are left?"
+        },
+        {
+          "art": "object.star*4",
+          "say": "Four stars.",
+          "big": "4"
+        },
+        {
+          "art": "object.star*1",
+          "say": "Take away three, and one is left.",
+          "big": "4 - 3 = 1"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is 4 - 3?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "1",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "2",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "3",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "4 minus 3 equals 1."
+        }
+      ]
+    },
+    {
+      "id": "subtract-10-minus-7",
+      "title": "10 take away 7",
+      "ageGroup": "young",
+      "summary": "10 take away 7",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "We have ten stars. Seven fly away. How many are left?"
+        },
+        {
+          "art": "object.star*9",
+          "say": "Ten stars.",
+          "big": "10"
+        },
+        {
+          "art": "object.star*3",
+          "say": "Take away seven, and three are left.",
+          "big": "10 - 7 = 3"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is 10 - 7?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "3",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "4",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "5",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "10 minus 7 equals 3."
+        }
+      ]
+    },
+    {
+      "id": "subtract-9-minus-9",
+      "title": "9 take away 9",
+      "ageGroup": "young",
+      "summary": "9 take away 9",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "We have nine stars. Nine fly away. How many are left?"
+        },
+        {
+          "art": "object.star*9",
+          "say": "Nine stars.",
+          "big": "9"
+        },
+        {
+          "art": "object.sparkles",
+          "say": "Take away nine, and zero are left.",
+          "big": "9 - 9 = 0"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is 9 - 9?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "0",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "1",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "2",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "9 minus 9 equals 0."
+        }
+      ]
+    },
+    {
+      "id": "subtract-6-minus-4",
+      "title": "6 take away 4",
+      "ageGroup": "young",
+      "summary": "6 take away 4",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "We have six stars. Four fly away. How many are left?"
+        },
+        {
+          "art": "object.star*6",
+          "say": "Six stars.",
+          "big": "6"
+        },
+        {
+          "art": "object.star*2",
+          "say": "Take away four, and two are left.",
+          "big": "6 - 4 = 2"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is 6 - 4?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "2",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "3",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "4",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "6 minus 4 equals 2."
+        }
+      ]
+    },
+    {
+      "id": "times-table-2",
+      "title": "The 2 times table",
+      "ageGroup": "big",
+      "summary": "The 2 times table",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Multiplying by 2 means adding groups of 2."
+        },
+        {
+          "art": "object.numbers",
+          "say": "2 times 1 is 2.",
+          "big": "2 x 1 = 2"
+        },
+        {
+          "art": "object.numbers",
+          "say": "2 times 2 is 4.",
+          "big": "2 x 2 = 4"
+        },
+        {
+          "art": "object.numbers",
+          "say": "2 times 3 is 6.",
+          "big": "2 x 3 = 6"
+        },
+        {
+          "art": "object.numbers",
+          "say": "2 times 4 is 8.",
+          "big": "2 x 4 = 8"
+        },
+        {
+          "art": "object.numbers",
+          "say": "2 times 5 is 10.",
+          "big": "2 x 5 = 10"
+        },
+        {
+          "art": "object.numbers",
+          "say": "2 times 6 is 12.",
+          "big": "2 x 6 = 12"
+        },
+        {
+          "art": "object.numbers",
+          "say": "2 times 7 is 14.",
+          "big": "2 x 7 = 14"
+        },
+        {
+          "art": "object.numbers",
+          "say": "2 times 8 is 16.",
+          "big": "2 x 8 = 16"
+        },
+        {
+          "art": "object.numbers",
+          "say": "2 times 9 is 18.",
+          "big": "2 x 9 = 18"
+        },
+        {
+          "art": "object.numbers",
+          "say": "2 times 10 is 20.",
+          "big": "2 x 10 = 20"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "You know the 2 times table!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is 2 x 7?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "14",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "16",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "12",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "13",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "2 times 7 is 14."
+        }
+      ]
+    },
+    {
+      "id": "times-table-3",
+      "title": "The 3 times table",
+      "ageGroup": "big",
+      "summary": "The 3 times table",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Multiplying by 3 means adding groups of 3."
+        },
+        {
+          "art": "object.numbers",
+          "say": "3 times 1 is 3.",
+          "big": "3 x 1 = 3"
+        },
+        {
+          "art": "object.numbers",
+          "say": "3 times 2 is 6.",
+          "big": "3 x 2 = 6"
+        },
+        {
+          "art": "object.numbers",
+          "say": "3 times 3 is 9.",
+          "big": "3 x 3 = 9"
+        },
+        {
+          "art": "object.numbers",
+          "say": "3 times 4 is 12.",
+          "big": "3 x 4 = 12"
+        },
+        {
+          "art": "object.numbers",
+          "say": "3 times 5 is 15.",
+          "big": "3 x 5 = 15"
+        },
+        {
+          "art": "object.numbers",
+          "say": "3 times 6 is 18.",
+          "big": "3 x 6 = 18"
+        },
+        {
+          "art": "object.numbers",
+          "say": "3 times 7 is 21.",
+          "big": "3 x 7 = 21"
+        },
+        {
+          "art": "object.numbers",
+          "say": "3 times 8 is 24.",
+          "big": "3 x 8 = 24"
+        },
+        {
+          "art": "object.numbers",
+          "say": "3 times 9 is 27.",
+          "big": "3 x 9 = 27"
+        },
+        {
+          "art": "object.numbers",
+          "say": "3 times 10 is 30.",
+          "big": "3 x 10 = 30"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "You know the 3 times table!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is 3 x 7?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "21",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "24",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "18",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "20",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "3 times 7 is 21."
+        }
+      ]
+    },
+    {
+      "id": "times-table-4",
+      "title": "The 4 times table",
+      "ageGroup": "big",
+      "summary": "The 4 times table",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Multiplying by 4 means adding groups of 4."
+        },
+        {
+          "art": "object.numbers",
+          "say": "4 times 1 is 4.",
+          "big": "4 x 1 = 4"
+        },
+        {
+          "art": "object.numbers",
+          "say": "4 times 2 is 8.",
+          "big": "4 x 2 = 8"
+        },
+        {
+          "art": "object.numbers",
+          "say": "4 times 3 is 12.",
+          "big": "4 x 3 = 12"
+        },
+        {
+          "art": "object.numbers",
+          "say": "4 times 4 is 16.",
+          "big": "4 x 4 = 16"
+        },
+        {
+          "art": "object.numbers",
+          "say": "4 times 5 is 20.",
+          "big": "4 x 5 = 20"
+        },
+        {
+          "art": "object.numbers",
+          "say": "4 times 6 is 24.",
+          "big": "4 x 6 = 24"
+        },
+        {
+          "art": "object.numbers",
+          "say": "4 times 7 is 28.",
+          "big": "4 x 7 = 28"
+        },
+        {
+          "art": "object.numbers",
+          "say": "4 times 8 is 32.",
+          "big": "4 x 8 = 32"
+        },
+        {
+          "art": "object.numbers",
+          "say": "4 times 9 is 36.",
+          "big": "4 x 9 = 36"
+        },
+        {
+          "art": "object.numbers",
+          "say": "4 times 10 is 40.",
+          "big": "4 x 10 = 40"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "You know the 4 times table!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is 4 x 7?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "28",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "32",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "24",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "27",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "4 times 7 is 28."
+        }
+      ]
+    },
+    {
+      "id": "times-table-5",
+      "title": "The 5 times table",
+      "ageGroup": "big",
+      "summary": "The 5 times table",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Multiplying by 5 means adding groups of 5."
+        },
+        {
+          "art": "object.numbers",
+          "say": "5 times 1 is 5.",
+          "big": "5 x 1 = 5"
+        },
+        {
+          "art": "object.numbers",
+          "say": "5 times 2 is 10.",
+          "big": "5 x 2 = 10"
+        },
+        {
+          "art": "object.numbers",
+          "say": "5 times 3 is 15.",
+          "big": "5 x 3 = 15"
+        },
+        {
+          "art": "object.numbers",
+          "say": "5 times 4 is 20.",
+          "big": "5 x 4 = 20"
+        },
+        {
+          "art": "object.numbers",
+          "say": "5 times 5 is 25.",
+          "big": "5 x 5 = 25"
+        },
+        {
+          "art": "object.numbers",
+          "say": "5 times 6 is 30.",
+          "big": "5 x 6 = 30"
+        },
+        {
+          "art": "object.numbers",
+          "say": "5 times 7 is 35.",
+          "big": "5 x 7 = 35"
+        },
+        {
+          "art": "object.numbers",
+          "say": "5 times 8 is 40.",
+          "big": "5 x 8 = 40"
+        },
+        {
+          "art": "object.numbers",
+          "say": "5 times 9 is 45.",
+          "big": "5 x 9 = 45"
+        },
+        {
+          "art": "object.numbers",
+          "say": "5 times 10 is 50.",
+          "big": "5 x 10 = 50"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "You know the 5 times table!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is 5 x 7?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "35",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "40",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "30",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "34",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "5 times 7 is 35."
+        }
+      ]
+    },
+    {
+      "id": "times-table-6",
+      "title": "The 6 times table",
+      "ageGroup": "big",
+      "summary": "The 6 times table",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Multiplying by 6 means adding groups of 6."
+        },
+        {
+          "art": "object.numbers",
+          "say": "6 times 1 is 6.",
+          "big": "6 x 1 = 6"
+        },
+        {
+          "art": "object.numbers",
+          "say": "6 times 2 is 12.",
+          "big": "6 x 2 = 12"
+        },
+        {
+          "art": "object.numbers",
+          "say": "6 times 3 is 18.",
+          "big": "6 x 3 = 18"
+        },
+        {
+          "art": "object.numbers",
+          "say": "6 times 4 is 24.",
+          "big": "6 x 4 = 24"
+        },
+        {
+          "art": "object.numbers",
+          "say": "6 times 5 is 30.",
+          "big": "6 x 5 = 30"
+        },
+        {
+          "art": "object.numbers",
+          "say": "6 times 6 is 36.",
+          "big": "6 x 6 = 36"
+        },
+        {
+          "art": "object.numbers",
+          "say": "6 times 7 is 42.",
+          "big": "6 x 7 = 42"
+        },
+        {
+          "art": "object.numbers",
+          "say": "6 times 8 is 48.",
+          "big": "6 x 8 = 48"
+        },
+        {
+          "art": "object.numbers",
+          "say": "6 times 9 is 54.",
+          "big": "6 x 9 = 54"
+        },
+        {
+          "art": "object.numbers",
+          "say": "6 times 10 is 60.",
+          "big": "6 x 10 = 60"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "You know the 6 times table!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is 6 x 7?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "42",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "48",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "36",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "41",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "6 times 7 is 42."
+        }
+      ]
+    },
+    {
+      "id": "times-table-7",
+      "title": "The 7 times table",
+      "ageGroup": "big",
+      "summary": "The 7 times table",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Multiplying by 7 means adding groups of 7."
+        },
+        {
+          "art": "object.numbers",
+          "say": "7 times 1 is 7.",
+          "big": "7 x 1 = 7"
+        },
+        {
+          "art": "object.numbers",
+          "say": "7 times 2 is 14.",
+          "big": "7 x 2 = 14"
+        },
+        {
+          "art": "object.numbers",
+          "say": "7 times 3 is 21.",
+          "big": "7 x 3 = 21"
+        },
+        {
+          "art": "object.numbers",
+          "say": "7 times 4 is 28.",
+          "big": "7 x 4 = 28"
+        },
+        {
+          "art": "object.numbers",
+          "say": "7 times 5 is 35.",
+          "big": "7 x 5 = 35"
+        },
+        {
+          "art": "object.numbers",
+          "say": "7 times 6 is 42.",
+          "big": "7 x 6 = 42"
+        },
+        {
+          "art": "object.numbers",
+          "say": "7 times 7 is 49.",
+          "big": "7 x 7 = 49"
+        },
+        {
+          "art": "object.numbers",
+          "say": "7 times 8 is 56.",
+          "big": "7 x 8 = 56"
+        },
+        {
+          "art": "object.numbers",
+          "say": "7 times 9 is 63.",
+          "big": "7 x 9 = 63"
+        },
+        {
+          "art": "object.numbers",
+          "say": "7 times 10 is 70.",
+          "big": "7 x 10 = 70"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "You know the 7 times table!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is 7 x 7?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "49",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "56",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "42",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "48",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "7 times 7 is 49."
+        }
+      ]
+    },
+    {
+      "id": "times-table-8",
+      "title": "The 8 times table",
+      "ageGroup": "big",
+      "summary": "The 8 times table",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Multiplying by 8 means adding groups of 8."
+        },
+        {
+          "art": "object.numbers",
+          "say": "8 times 1 is 8.",
+          "big": "8 x 1 = 8"
+        },
+        {
+          "art": "object.numbers",
+          "say": "8 times 2 is 16.",
+          "big": "8 x 2 = 16"
+        },
+        {
+          "art": "object.numbers",
+          "say": "8 times 3 is 24.",
+          "big": "8 x 3 = 24"
+        },
+        {
+          "art": "object.numbers",
+          "say": "8 times 4 is 32.",
+          "big": "8 x 4 = 32"
+        },
+        {
+          "art": "object.numbers",
+          "say": "8 times 5 is 40.",
+          "big": "8 x 5 = 40"
+        },
+        {
+          "art": "object.numbers",
+          "say": "8 times 6 is 48.",
+          "big": "8 x 6 = 48"
+        },
+        {
+          "art": "object.numbers",
+          "say": "8 times 7 is 56.",
+          "big": "8 x 7 = 56"
+        },
+        {
+          "art": "object.numbers",
+          "say": "8 times 8 is 64.",
+          "big": "8 x 8 = 64"
+        },
+        {
+          "art": "object.numbers",
+          "say": "8 times 9 is 72.",
+          "big": "8 x 9 = 72"
+        },
+        {
+          "art": "object.numbers",
+          "say": "8 times 10 is 80.",
+          "big": "8 x 10 = 80"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "You know the 8 times table!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is 8 x 7?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "56",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "64",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "48",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "55",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "8 times 7 is 56."
+        }
+      ]
+    },
+    {
+      "id": "times-table-9",
+      "title": "The 9 times table",
+      "ageGroup": "big",
+      "summary": "The 9 times table",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Multiplying by 9 means adding groups of 9."
+        },
+        {
+          "art": "object.numbers",
+          "say": "9 times 1 is 9.",
+          "big": "9 x 1 = 9"
+        },
+        {
+          "art": "object.numbers",
+          "say": "9 times 2 is 18.",
+          "big": "9 x 2 = 18"
+        },
+        {
+          "art": "object.numbers",
+          "say": "9 times 3 is 27.",
+          "big": "9 x 3 = 27"
+        },
+        {
+          "art": "object.numbers",
+          "say": "9 times 4 is 36.",
+          "big": "9 x 4 = 36"
+        },
+        {
+          "art": "object.numbers",
+          "say": "9 times 5 is 45.",
+          "big": "9 x 5 = 45"
+        },
+        {
+          "art": "object.numbers",
+          "say": "9 times 6 is 54.",
+          "big": "9 x 6 = 54"
+        },
+        {
+          "art": "object.numbers",
+          "say": "9 times 7 is 63.",
+          "big": "9 x 7 = 63"
+        },
+        {
+          "art": "object.numbers",
+          "say": "9 times 8 is 72.",
+          "big": "9 x 8 = 72"
+        },
+        {
+          "art": "object.numbers",
+          "say": "9 times 9 is 81.",
+          "big": "9 x 9 = 81"
+        },
+        {
+          "art": "object.numbers",
+          "say": "9 times 10 is 90.",
+          "big": "9 x 10 = 90"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "You know the 9 times table!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is 9 x 7?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "63",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "72",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "54",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "62",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "9 times 7 is 63."
+        }
+      ]
+    },
+    {
+      "id": "times-table-10",
+      "title": "The 10 times table",
+      "ageGroup": "big",
+      "summary": "The 10 times table",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Multiplying by 10 means adding groups of 10."
+        },
+        {
+          "art": "object.numbers",
+          "say": "10 times 1 is 10.",
+          "big": "10 x 1 = 10"
+        },
+        {
+          "art": "object.numbers",
+          "say": "10 times 2 is 20.",
+          "big": "10 x 2 = 20"
+        },
+        {
+          "art": "object.numbers",
+          "say": "10 times 3 is 30.",
+          "big": "10 x 3 = 30"
+        },
+        {
+          "art": "object.numbers",
+          "say": "10 times 4 is 40.",
+          "big": "10 x 4 = 40"
+        },
+        {
+          "art": "object.numbers",
+          "say": "10 times 5 is 50.",
+          "big": "10 x 5 = 50"
+        },
+        {
+          "art": "object.numbers",
+          "say": "10 times 6 is 60.",
+          "big": "10 x 6 = 60"
+        },
+        {
+          "art": "object.numbers",
+          "say": "10 times 7 is 70.",
+          "big": "10 x 7 = 70"
+        },
+        {
+          "art": "object.numbers",
+          "say": "10 times 8 is 80.",
+          "big": "10 x 8 = 80"
+        },
+        {
+          "art": "object.numbers",
+          "say": "10 times 9 is 90.",
+          "big": "10 x 9 = 90"
+        },
+        {
+          "art": "object.numbers",
+          "say": "10 times 10 is 100.",
+          "big": "10 x 10 = 100"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "You know the 10 times table!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is 10 x 7?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "70",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "80",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "60",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "69",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "10 times 7 is 70."
+        }
+      ]
+    },
+    {
+      "id": "fractions-halves",
+      "title": "Fractions: halves",
+      "ageGroup": "big",
+      "summary": "Fractions: halves",
+      "scenes": [
+        {
+          "art": "object.pizza",
+          "say": "Imagine sharing a pizza fairly."
+        },
+        {
+          "art": "object.pizza",
+          "say": "A half is one of two equal parts. Two halves make a whole.",
+          "big": "HALVES"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Fractions help us share fairly."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How many halves make a whole?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "2",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "3",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "4",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "1",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Two equal halves make one whole."
+        }
+      ]
+    },
+    {
+      "id": "fractions-quarters",
+      "title": "Fractions: quarters",
+      "ageGroup": "big",
+      "summary": "Fractions: quarters",
+      "scenes": [
+        {
+          "art": "object.pizza",
+          "say": "Imagine sharing a pizza fairly."
+        },
+        {
+          "art": "object.pizza",
+          "say": "A quarter is one of four equal parts. Four quarters make a whole.",
+          "big": "QUARTERS"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Fractions help us share fairly."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How many quarters make a whole?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "4",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "2",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "3",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "8",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Four equal quarters make one whole."
+        }
+      ]
+    },
+    {
+      "id": "fractions-thirds",
+      "title": "Fractions: thirds",
+      "ageGroup": "big",
+      "summary": "Fractions: thirds",
+      "scenes": [
+        {
+          "art": "object.pizza",
+          "say": "Imagine sharing a pizza fairly."
+        },
+        {
+          "art": "object.pizza",
+          "say": "A third is one of three equal parts. Three thirds make a whole.",
+          "big": "THIRDS"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Fractions help us share fairly."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which is bigger, one half or one third?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "One half",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "One third",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "They are equal",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Sharing among fewer people means bigger pieces, so a half is bigger."
+        }
+      ]
+    },
+    {
+      "id": "fractions-equivalent-fractions",
+      "title": "Fractions: equivalent fractions",
+      "ageGroup": "big",
+      "summary": "Fractions: equivalent fractions",
+      "scenes": [
+        {
+          "art": "object.pizza",
+          "say": "Imagine sharing a pizza fairly."
+        },
+        {
+          "art": "object.pizza",
+          "say": "Two quarters is the same amount as one half.",
+          "big": "EQUIVALENT"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Fractions help us share fairly."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which fraction equals one half?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "2/4",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "1/3",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "3/4",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "1/4",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Two quarters is the same as one half."
+        }
+      ]
+    },
+    {
+      "id": "time-oclock",
+      "title": "Telling time: o'clock",
+      "ageGroup": "young",
+      "summary": "Telling time: o'clock",
+      "scenes": [
+        {
+          "art": "object.hourglass",
+          "say": "Let's learn to read the clock."
+        },
+        {
+          "art": "object.circle",
+          "say": "When the long hand points to 12, it is o'clock. The short hand shows the hour."
+        },
+        {
+          "art": "zo.happy",
+          "say": "Now you can tell the time!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "At 3 o'clock, where is the long hand?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "On 12",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "On 3",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "On 6",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "At o'clock times the long hand points to 12."
+        }
+      ]
+    },
+    {
+      "id": "time-half-past",
+      "title": "Telling time: half past",
+      "ageGroup": "young",
+      "summary": "Telling time: half past",
+      "scenes": [
+        {
+          "art": "object.hourglass",
+          "say": "Let's learn to read the clock."
+        },
+        {
+          "art": "object.circle",
+          "say": "When the long hand points to 6, it is half past the hour."
+        },
+        {
+          "art": "zo.happy",
+          "say": "Now you can tell the time!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "The long hand is on 6. What time is it?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Half past",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "O'clock",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Quarter past",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "The long hand on 6 means half past."
+        }
+      ]
+    },
+    {
+      "id": "time-quarter-past",
+      "title": "Telling time: quarter past",
+      "ageGroup": "big",
+      "summary": "Telling time: quarter past",
+      "scenes": [
+        {
+          "art": "object.hourglass",
+          "say": "Let's learn to read the clock."
+        },
+        {
+          "art": "object.circle",
+          "say": "Quarter past means 15 minutes after the hour. The long hand points to 3."
+        },
+        {
+          "art": "zo.happy",
+          "say": "Now you can tell the time!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How many minutes is quarter past?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "15",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "30",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "45",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "60",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "A quarter of an hour is 15 minutes."
+        }
+      ]
+    },
+    {
+      "id": "time-minutes-in-an-hour",
+      "title": "Telling time: minutes in an hour",
+      "ageGroup": "big",
+      "summary": "Telling time: minutes in an hour",
+      "scenes": [
+        {
+          "art": "object.hourglass",
+          "say": "Let's learn to read the clock."
+        },
+        {
+          "art": "object.circle",
+          "say": "An hour has 60 minutes. A day has 24 hours."
+        },
+        {
+          "art": "zo.happy",
+          "say": "Now you can tell the time!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How many minutes are in one hour?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "60",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "100",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "24",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "30",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "One hour has 60 minutes."
+        }
+      ]
+    },
+    {
+      "id": "money-counting-coins",
+      "title": "Money: counting coins",
+      "ageGroup": "big",
+      "summary": "Money: counting coins",
+      "scenes": [
+        {
+          "art": "object.gift",
+          "say": "Money helps us buy things we need."
+        },
+        {
+          "art": "object.circle",
+          "say": "Coins have different values. Two 50 franc coins make 100 francs."
+        },
+        {
+          "art": "zo.thinking",
+          "say": "Think before you spend!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Two 50 franc coins make how much?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "100 francs",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "50 francs",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "150 francs",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "25 francs",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "50 plus 50 is 100."
+        }
+      ]
+    },
+    {
+      "id": "money-making-change",
+      "title": "Money: making change",
+      "ageGroup": "big",
+      "summary": "Money: making change",
+      "scenes": [
+        {
+          "art": "object.gift",
+          "say": "Money helps us buy things we need."
+        },
+        {
+          "art": "object.circle",
+          "say": "If something costs 70 francs and you pay 100, you get 30 francs back."
+        },
+        {
+          "art": "zo.thinking",
+          "say": "Think before you spend!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "You pay 100 francs for something that costs 70. What change do you get?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "30 francs",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "70 francs",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "170 francs",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "10 francs",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "100 minus 70 is 30."
+        }
+      ]
+    },
+    {
+      "id": "money-saving",
+      "title": "Money: saving",
+      "ageGroup": "big",
+      "summary": "Money: saving",
+      "scenes": [
+        {
+          "art": "object.gift",
+          "say": "Money helps us buy things we need."
+        },
+        {
+          "art": "object.circle",
+          "say": "Saving means keeping some money for later, like in a piggy bank."
+        },
+        {
+          "art": "zo.thinking",
+          "say": "Think before you spend!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What does saving mean?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Keeping money for later",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Spending it all now",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Throwing it away",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Saving means keeping money to use later."
+        }
+      ]
+    }
+  ]
+}

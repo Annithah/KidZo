@@ -8,8 +8,9 @@ import { forbidden, unauthorized } from './errors';
 
 declare module '@fastify/jwt' {
   interface FastifyJWT {
-    payload: { sub: string; role: Role };
-    user: { sub: string; role: Role };
+    /** `scope: 'child'` marks a child-scoped token (see lib/child-scope.ts); it is never a login. */
+    payload: { sub: string; role: Role; scope?: 'child'; childId?: string };
+    user: { sub: string; role: Role; scope?: 'child'; childId?: string };
   }
 }
 
@@ -93,6 +94,8 @@ export async function requireAuth(request: FastifyRequest, _reply: FastifyReply)
   } catch {
     throw unauthorized();
   }
+  // A child-scoped token only travels in the child header; it can never act as a parent login.
+  if (request.user.scope === 'child') throw unauthorized();
   const [user] = await request.server.db
     .select({ id: users.id })
     .from(users)

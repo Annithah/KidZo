@@ -5,7 +5,18 @@ import { BrowserRouter } from 'react-router';
 import { ApiError } from '@kidzo/shared';
 import { App } from './App';
 import { AuthProvider } from './auth';
+import { ToastProvider } from './components/feedback';
+import '@fontsource/fredoka/500.css';
+import '@fontsource/fredoka/600.css';
+import '@fontsource/fredoka/700.css';
+import '@fontsource/nunito/400.css';
+import '@fontsource/nunito/600.css';
+import '@fontsource/nunito/700.css';
+import '@fontsource/nunito/800.css';
+import { installTokens } from './theme';
 import './styles.css';
+
+installTokens();
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -23,9 +34,11 @@ createRoot(root).render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <AuthProvider>
-          <App />
-        </AuthProvider>
+        <ToastProvider>
+          <AuthProvider>
+            <App />
+          </AuthProvider>
+        </ToastProvider>
       </BrowserRouter>
     </QueryClientProvider>
   </StrictMode>,

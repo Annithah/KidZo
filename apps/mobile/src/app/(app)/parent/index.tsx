@@ -3,9 +3,11 @@ import { router } from 'expo-router';
 import { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import { explorerTitle, localParts, type Child } from '@kidzo/shared';
+import { BarChart } from '../../../components/BarChart';
 import { Button } from '../../../components/Button';
 import { ProgressBar } from '../../../components/Controls';
-import { Avatar, avatarColor } from '../../../components/Kid';
+import { Icon, type IconName } from '../../../components/icon/Icon';
+import { Avatar } from '../../../components/Kid';
 import { Card, Row, Screen, SectionTitle } from '../../../components/Layout';
 import { EmptyView, ErrorView, InlineMessage, LoadingView, OfflineBanner, errorMessage } from '../../../components/States';
 import { Text } from '../../../components/Typography';
@@ -15,10 +17,11 @@ import { childrenQueryKey, useFamily } from '../../../lib/family';
 import { useParentGate } from '../../../lib/parent-gate';
 import { useInsights, useNow, useTimezone, useToday } from '../../../lib/queries';
 import { useSession } from '../../../lib/session';
-import { colors, radii, spacing } from '../../../theme';
+import { palette, radius, spacing, useTheme, type ColorName } from '../../../theme/core';
 
 export default function ControlCenter() {
   const { t } = useT();
+  const theme = useTheme();
   const { user } = useSession();
   const { lock } = useParentGate();
   const { children, isLoading, error, refetch } = useFamily();
@@ -39,13 +42,16 @@ export default function ControlCenter() {
     <Screen>
       <Row>
         <View style={{ flex: 1, gap: 2 }}>
-          <Text variant="kicker" color={colors.coral}>
-            {t('parent.kicker')}
-          </Text>
+          <Row gap={6}>
+            <Icon name="parent" size={16} color={theme.accentText} />
+            <Text variant="kicker" color={theme.accentText}>
+              {t('parent.kicker')}
+            </Text>
+          </Row>
           <Text variant="h1">{t(greetingKey, { name: user?.displayName ?? '' })}</Text>
         </View>
         <Pressable accessibilityRole="button" accessibilityLabel={t('parent.account')} onPress={() => router.push('/parent/account')} style={styles.initials}>
-          <Text variant="bodyBold" color={colors.white}>
+          <Text variant="bodyBold" color={palette.paper[500]}>
             {initials}
           </Text>
         </Pressable>
@@ -57,40 +63,53 @@ export default function ControlCenter() {
       ) : error && children.length === 0 ? (
         <ErrorView error={error} onRetry={refetch} />
       ) : !child ? (
-        <EmptyView message={t('parent.noChildren')} action={<Button label={t('profiles.add')} onPress={() => router.push('/parent/child/new')} />} />
+        <EmptyView message={t('parent.noChildren')} action={<Button label={t('profiles.add')} icon="plus" onPress={() => router.push('/parent/child/new')} />} />
       ) : (
         <>
-          <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.kids}>
-            {children.map((c, i) => (
-              <Pressable
-                key={c.id}
-                accessibilityRole="tab"
-                accessibilityState={{ selected: c.id === child.id }}
-                accessibilityLabel={c.name}
-                onPress={() => setSelectedId(c.id)}
-                style={[styles.kidChip, c.id === child.id && styles.kidChipOn]}
-              >
-                <Avatar avatar={c.avatar} size={40} color={avatarColor(i)} />
-                <View>
-                  <Text variant="bodyBold">{c.name}</Text>
-                  <Text variant="caption" muted>
-                    {explorerTitle(c.age)} · {c.age}
-                  </Text>
-                </View>
-              </Pressable>
-            ))}
-            <Pressable accessibilityRole="button" accessibilityLabel={t('parent.addChild')} onPress={() => router.push('/parent/child/new')} style={styles.addKid}>
-              <Text variant="h2" muted>
-                +
-              </Text>
+          <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.kids} accessibilityRole="tablist">
+            {children.map((c) => {
+              const on = c.id === child.id;
+              return (
+                <Pressable
+                  key={c.id}
+                  accessibilityRole="tab"
+                  accessibilityState={{ selected: on }}
+                  accessibilityLabel={c.name}
+                  onPress={() => setSelectedId(c.id)}
+                  style={[styles.kidChip, { backgroundColor: theme.surface, borderColor: on ? palette.navy[500] : theme.line }]}
+                >
+                  <Avatar avatar={c.avatar} size={40} />
+                  <View>
+                    <Text variant="bodyBold">{c.name}</Text>
+                    <Text variant="caption" muted>
+                      {explorerTitle(c.age)} · {c.age}
+                    </Text>
+                  </View>
+                </Pressable>
+              );
+            })}
+            <Pressable accessibilityRole="button" accessibilityLabel={t('parent.addChild')} onPress={() => router.push('/parent/child/new')} style={[styles.addKid, { borderColor: theme.lineStrong }]}>
+              <Icon name="plus" size={22} color={theme.textMuted} />
             </Pressable>
           </ScrollView>
           <ChildDashboard child={child} />
         </>
       )}
 
-      <Button label={`← ${t('parent.backToKids')}`} variant="navy" fullWidth onPress={backToKids} />
+      <Button label={t('parent.backToKids')} icon="back" variant="navy" fullWidth onPress={backToKids} />
     </Screen>
+  );
+}
+
+function StatTile({ value, label, icon, world }: { value: number; label: string; icon: IconName; world: ColorName }) {
+  return (
+    <View style={[styles.stat, { backgroundColor: palette[world][50], borderColor: palette[world][100] }]}>
+      <Icon name={icon} size={22} color={palette[world][800]} accent={palette[world][300]} />
+      <Text variant="h1">{value}</Text>
+      <Text variant="caption" muted>
+        {label}
+      </Text>
+    </View>
   );
 }
 
@@ -113,11 +132,10 @@ function ChildDashboard({ child }: { child: Child }) {
   const played = Math.round((today.data?.secondsPlayed ?? 0) / 60);
   const limit = today.data?.dailyLimitMinutes ?? child.settings.dailyLimitMinutes;
   const ratio = limit ? played / limit : 0;
-  const balance =
-    limit === null ? t('parent.balanceUnlimited') : ratio >= 1 ? t('parent.balanceDone') : ratio >= 0.8 ? t('parent.balanceNear') : t('parent.balanceGood');
+  const balance = limit === null ? t('parent.balanceUnlimited') : ratio >= 1 ? t('parent.balanceDone') : ratio >= 0.8 ? t('parent.balanceNear') : t('parent.balanceGood');
   const highlight = insights.data?.highlight;
   const week = insights.data?.dailyMinutes ?? [];
-  const maxDay = Math.max(1, ...week.map((d) => d.minutes));
+  const weekMinutes = Math.round((insights.data?.totalSeconds ?? 0) / 60);
   const lockTime = child.settings.lockedUntil ? new Date(child.settings.lockedUntil).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }) : '';
 
   return (
@@ -133,84 +151,85 @@ function ChildDashboard({ child }: { child: Child }) {
         </Text>
         {limit !== null ? (
           <View style={{ marginTop: spacing.xs }}>
-            <ProgressBar value={ratio} color={ratio >= 1 ? colors.coral : colors.mint} />
+            <ProgressBar value={ratio} color={ratio >= 1 ? palette.coral[500] : palette.mint[500]} />
           </View>
         ) : null}
-        <Row style={{ marginTop: spacing.md }} gap={spacing.md}>
-          <View style={[styles.stat, { backgroundColor: colors.skyTint }]}>
-            <Text variant="h1">{today.data?.adventuresCompleted ?? 0}</Text>
-            <Text variant="caption" muted>
-              {t('parent.adventures')}
-            </Text>
-          </View>
-          <View style={[styles.stat, { backgroundColor: '#FFF3C4' }]}>
-            <Text variant="h1">{today.data?.starsEarnedToday ?? 0}</Text>
-            <Text variant="caption" muted>
-              {t('parent.starsEarned')}
-            </Text>
-          </View>
+        <Row style={{ marginTop: spacing.md }} gap={spacing.sm}>
+          <StatTile value={today.data?.adventuresCompleted ?? 0} label={t('parent.adventures')} icon="adventure" world="sky" />
+          <StatTile value={today.data?.starsEarnedToday ?? 0} label={t('parent.starsEarned')} icon="star" world="star" />
         </Row>
       </Card>
 
       <SectionTitle title={t('parent.quickActions')} />
       <View style={styles.actions}>
-        <ActionTile emoji="📥" label={t('parent.downloadContent')} color={colors.skyTint} onPress={() => router.push('/parent/downloads')} />
-        <ActionTile emoji="🌙" label={t('parent.bedtimeMode')} color="#EEE8FF" onPress={() => router.push({ pathname: '/parent/limits/[id]', params: { id: child.id } })} />
+        <ActionTile icon="downloads" world="sky" label={t('parent.downloadContent')} onPress={() => router.push('/parent/downloads')} />
+        <ActionTile icon="bedtime" world="grape" label={t('parent.bedtimeMode')} onPress={() => router.push({ pathname: '/parent/limits/[id]', params: { id: child.id } })} />
         <ActionTile
-          emoji={locked ? '🔓' : '🔒'}
+          icon={locked ? 'unlock' : 'lock'}
+          world="coral"
           label={locked ? t('parent.unlock') : t('parent.lockNow')}
           sublabel={locked ? t('parent.lockedUntil', { time: lockTime }) : t('parent.lockNowHint', { name: child.name })}
-          color={colors.coralTint}
+          busy={lockMutation.isPending}
           onPress={() => lockMutation.mutate()}
         />
-        <ActionTile emoji="✏️" label={t('parent.editProfile')} color="#E3F9EF" onPress={() => router.push({ pathname: '/parent/child/[id]', params: { id: child.id } })} />
+        <ActionTile icon="edit" world="mint" label={t('parent.editProfile')} onPress={() => router.push({ pathname: '/parent/child/[id]', params: { id: child.id } })} />
       </View>
       {lockMutation.error ? <InlineMessage tone="error" message={errorMessage(lockMutation.error, t)} /> : null}
 
       <Card>
-        <Text variant="kicker" muted>
-          {t('parent.thisWeek')}
-        </Text>
+        <Row>
+          <Text variant="kicker" muted style={{ flex: 1 }}>
+            {t('parent.thisWeek')}
+          </Text>
+          <Text variant="caption" muted>
+            {t('parent.weekMinutes', { minutes: weekMinutes })}
+          </Text>
+        </Row>
         {insights.isLoading ? (
           <Text muted>{t('common.loading')}</Text>
         ) : highlight ? (
-          <>
-            <Text variant="h2">🌱 {t('parent.skillBlooming', { skill: t(`skill.${highlight.skill}` as 'skill.calm') })}</Text>
-            <Text muted>{t('parent.skillPracticed', { name: child.name, count: highlight.count })}</Text>
-          </>
+          <Row style={{ marginTop: spacing.xs, alignItems: 'flex-start' }}>
+            <View style={[styles.highlightIcon, { backgroundColor: palette.leaf[50] }]}>
+              <Icon name="sparkle" size={24} color={palette.leaf[800]} accent={palette.leaf[300]} />
+            </View>
+            <View style={{ flex: 1 }}>
+              <Text variant="h3">{t('parent.skillBlooming', { skill: t(`skill.${highlight.skill}` as 'skill.calm') })}</Text>
+              <Text variant="small" muted>
+                {t('parent.skillPracticed', { name: child.name, count: highlight.count })}
+              </Text>
+            </View>
+          </Row>
         ) : (
           <Text muted>{t('parent.noActivity')}</Text>
         )}
         {week.length > 0 ? (
-          <View style={styles.chart} accessibilityLabel={t('parent.weekMinutes', { minutes: Math.round((insights.data?.totalSeconds ?? 0) / 60) })}>
-            {week.map((d) => (
-              <View key={d.date} style={styles.barCol}>
-                <View style={[styles.bar, { height: 8 + (72 * d.minutes) / maxDay }]} />
-                <Text variant="caption" muted>
-                  {new Date(`${d.date}T12:00:00`).toLocaleDateString([], { weekday: 'narrow' })}
-                </Text>
-              </View>
-            ))}
+          <View style={{ marginTop: spacing.md }}>
+            <BarChart
+              label={t('parent.weekMinutes', { minutes: weekMinutes })}
+              data={week.map((d) => ({ label: new Date(`${d.date}T12:00:00`).toLocaleDateString([], { weekday: 'narrow' }), value: d.minutes }))}
+            />
           </View>
         ) : null}
-        <Text variant="caption" muted>
-          {t('parent.weekMinutes', { minutes: Math.round((insights.data?.totalSeconds ?? 0) / 60) })}
-        </Text>
       </Card>
     </>
   );
 }
 
-function ActionTile({ emoji, label, sublabel, color, onPress }: { emoji: string; label: string; sublabel?: string; color: string; onPress: () => void }) {
+function ActionTile({ icon, world, label, sublabel, busy, onPress }: { icon: IconName; world: ColorName; label: string; sublabel?: string; busy?: boolean; onPress: () => void }) {
+  const theme = useTheme();
   return (
     <Pressable
       accessibilityRole="button"
       accessibilityLabel={label}
       accessibilityHint={sublabel}
+      accessibilityState={{ busy: !!busy }}
+      disabled={busy}
       onPress={onPress}
-      style={({ pressed }) => [styles.tile, { backgroundColor: color, transform: [{ scale: pressed ? 0.97 : 1 }] }]}
+      style={({ pressed }) => [styles.tile, { backgroundColor: theme.surface, borderColor: theme.line, transform: [{ scale: pressed ? 0.97 : 1 }] }]}
     >
-      <Text style={{ fontSize: 30, lineHeight: 38 }}>{emoji}</Text>
+      <View style={[styles.tileIcon, { backgroundColor: palette[world][50] }]}>
+        <Icon name={icon} size={26} color={palette[world][800]} accent={palette[world][300]} />
+      </View>
       <Text variant="bodyBold">{label}</Text>
       {sublabel ? (
         <Text variant="caption" muted numberOfLines={2}>
@@ -222,26 +241,13 @@ function ActionTile({ emoji, label, sublabel, color, onPress }: { emoji: string;
 }
 
 const styles = StyleSheet.create({
-  initials: { width: 48, height: 48, borderRadius: 24, backgroundColor: colors.navy, alignItems: 'center', justifyContent: 'center' },
+  initials: { width: 48, height: 48, borderRadius: 24, backgroundColor: palette.navy[500], alignItems: 'center', justifyContent: 'center' },
   kids: { gap: spacing.sm, paddingVertical: 4 },
-  kidChip: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: spacing.xs,
-    backgroundColor: colors.white,
-    borderRadius: radii.pill,
-    paddingVertical: 6,
-    paddingLeft: 6,
-    paddingRight: spacing.md,
-    borderWidth: 3,
-    borderColor: 'transparent',
-  },
-  kidChipOn: { borderColor: colors.navy },
-  addKid: { width: 56, height: 56, borderRadius: 28, borderWidth: 3, borderStyle: 'dashed', borderColor: colors.line, alignItems: 'center', justifyContent: 'center' },
-  stat: { flex: 1, borderRadius: radii.md, padding: spacing.sm, alignItems: 'center' },
+  kidChip: { flexDirection: 'row', alignItems: 'center', gap: spacing.xs, borderRadius: radius.full, paddingVertical: 6, paddingLeft: 6, paddingRight: spacing.md, borderWidth: 2, minHeight: 56 },
+  addKid: { width: 56, height: 56, borderRadius: 28, borderWidth: 2, borderStyle: 'dashed', alignItems: 'center', justifyContent: 'center' },
+  stat: { flex: 1, borderRadius: radius.md, padding: spacing.sm, alignItems: 'flex-start', gap: 2, borderWidth: 1 },
   actions: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm },
-  tile: { width: '48%', flexGrow: 1, minHeight: 120, borderRadius: radii.lg, padding: spacing.md, gap: 4 },
-  chart: { flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', height: 110, marginTop: spacing.md },
-  barCol: { alignItems: 'center', gap: 4, flex: 1 },
-  bar: { width: 18, borderRadius: 9, backgroundColor: colors.lavender },
+  tile: { width: '48%', flexGrow: 1, minHeight: 128, borderRadius: radius.lg, padding: spacing.md, gap: 6, borderWidth: 1 },
+  tileIcon: { width: 44, height: 44, borderRadius: radius.sm, alignItems: 'center', justifyContent: 'center' },
+  highlightIcon: { width: 44, height: 44, borderRadius: radius.sm, alignItems: 'center', justifyContent: 'center' },
 });

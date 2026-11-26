@@ -3,8 +3,11 @@ import { useEffect, useRef, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { localize, type Locale, type SongBody } from '@kidzo/shared';
 import { useT } from '../../i18n';
+import { API_URL } from '../../lib/config';
+import { resolveMediaUrl } from '../../lib/media-url';
 import { speak, stopSpeaking } from '../../lib/narration';
-import { radii, spacing, usePalette } from '../../theme';
+import { palette, radius, spacing, useTheme } from '../../theme/core';
+import { Art } from '../art/Art';
 import { Button } from '../Button';
 import { Text } from '../Typography';
 
@@ -21,11 +24,11 @@ interface Props {
  */
 export function SongPlayer({ body, locale, volume, onFinish }: Props) {
   const { t } = useT();
-  const palette = usePalette();
+  const theme = useTheme();
   const [line, setLine] = useState(0);
   const [reachedEnd, setReachedEnd] = useState(false);
   const playerRef = useRef<AudioPlayer | null>(null);
-  const audioUrl = body.audioUrl;
+  const audioUrl = resolveMediaUrl(body.audioUrl, API_URL);
   const lineCount = body.lines.length;
 
   // Recorded track: play it and follow progress through the lines.
@@ -57,14 +60,14 @@ export function SongPlayer({ body, locale, volume, onFinish }: Props) {
     const current = body.lines[line];
     if (!current) return;
     void speak(localize(current.text, locale), locale, {
-      calm: palette.isCalm,
+      calm: theme.isCalm,
       onDone: () => {
         if (line + 1 < lineCount) setLine((l) => l + 1);
         else setReachedEnd(true);
       },
     });
     return () => stopSpeaking();
-  }, [audioUrl, line, body.lines, lineCount, locale, palette.isCalm]);
+  }, [audioUrl, line, body.lines, lineCount, locale, theme.isCalm]);
 
   return (
     <View style={styles.wrap}>
@@ -72,8 +75,12 @@ export function SongPlayer({ body, locale, volume, onFinish }: Props) {
         {body.lines.map((l, i) => {
           const active = i === line;
           return (
-            <View key={i} style={[styles.line, active && { backgroundColor: palette.surface }]}>
-              <Text style={styles.emoji}>{l.emoji}</Text>
+            <View
+              key={i}
+              style={[styles.line, active && { backgroundColor: theme.surface, borderColor: theme.isCalm ? theme.line : palette.star[300] }]}
+              accessibilityState={{ selected: active }}
+            >
+              <Art art={l.art} size={active ? 52 : 40} />
               <Text variant={active ? 'h3' : 'body'} muted={!active} style={{ flex: 1 }}>
                 {localize(l.text, locale)}
               </Text>
@@ -82,10 +89,11 @@ export function SongPlayer({ body, locale, volume, onFinish }: Props) {
         })}
       </View>
       <Button
-        label={`🎵  ${t('player.finishSong')}`}
+        label={t('player.finishSong')}
+        icon="song"
         size="kid"
         fullWidth
-        variant={palette.isCalm ? 'moon' : 'yellow'}
+        variant={theme.isCalm ? 'moon' : 'star'}
         disabled={!reachedEnd}
         onPress={() => {
           stopSpeaking();
@@ -100,6 +108,5 @@ export function SongPlayer({ body, locale, volume, onFinish }: Props) {
 const styles = StyleSheet.create({
   wrap: { flex: 1, gap: spacing.md },
   lines: { gap: spacing.xs, flex: 1 },
-  line: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, padding: spacing.sm, borderRadius: radii.md },
-  emoji: { fontSize: 32, lineHeight: 40 },
+  line: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, padding: spacing.sm, borderRadius: radius.lg, borderWidth: 2, borderColor: 'transparent' },
 });

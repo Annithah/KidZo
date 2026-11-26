@@ -1,6 +1,7 @@
 import { useNetworkState } from 'expo-network';
 import { readJson, writeJson } from './kv';
 import { OfflineQueue } from './offline-queue';
+import { LOCAL_BACKEND } from './config';
 import { appStore } from './storage';
 import { UsageLedger } from './usage-ledger';
 import { ApiError } from '@kidzo/shared';
@@ -11,6 +12,8 @@ export const usageLedger = new UsageLedger(appStore);
 /** True unless the device reports it is offline. Unknown counts as online so requests are tried. */
 export function useIsOnline(): boolean {
   const state = useNetworkState();
+  // The on-device backend never needs a connection.
+  if (LOCAL_BACKEND) return true;
   return state.isConnected !== false && state.isInternetReachable !== false;
 }
 

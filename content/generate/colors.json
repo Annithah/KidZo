@@ -1,0 +1,704 @@
+{
+  "topic": "colors",
+  "category": "creative-world",
+  "skills": [
+    "colors",
+    "creativity"
+  ],
+  "art": "object.palette",
+  "videos": [
+    {
+      "id": "color-red",
+      "title": "The color red",
+      "ageGroup": "little",
+      "summary": "The color red",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Today's color is red!",
+          "big": "RED"
+        },
+        {
+          "art": "object.apple",
+          "say": "An apple and a heart can be red.",
+          "show": "red"
+        },
+        {
+          "art": "object.heart",
+          "say": "Can you find something red near you?",
+          "show": "red"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Red! Well done.",
+          "big": "RED"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which one is red?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Red",
+              "art": "object.apple"
+            },
+            {
+              "label": "Blue",
+              "art": "object.whale"
+            }
+          ],
+          "answer": 0,
+          "explanation": "An apple and a heart can be red."
+        }
+      ],
+      "world": "coral"
+    },
+    {
+      "id": "color-yellow",
+      "title": "The color yellow",
+      "ageGroup": "little",
+      "summary": "The color yellow",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Today's color is yellow!",
+          "big": "YELLOW"
+        },
+        {
+          "art": "object.banana",
+          "say": "A banana and the sun look yellow.",
+          "show": "yellow"
+        },
+        {
+          "art": "object.sun",
+          "say": "Can you find something yellow near you?",
+          "show": "yellow"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Yellow! Well done.",
+          "big": "YELLOW"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which one is yellow?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Yellow",
+              "art": "object.banana"
+            },
+            {
+              "label": "Green",
+              "art": "object.turtle"
+            }
+          ],
+          "answer": 0,
+          "explanation": "A banana and the sun look yellow."
+        }
+      ],
+      "world": "star"
+    },
+    {
+      "id": "color-blue",
+      "title": "The color blue",
+      "ageGroup": "little",
+      "summary": "The color blue",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Today's color is blue!",
+          "big": "BLUE"
+        },
+        {
+          "art": "object.whale",
+          "say": "The sea and a whale can be blue.",
+          "show": "blue"
+        },
+        {
+          "art": "object.ocean-wave",
+          "say": "Can you find something blue near you?",
+          "show": "blue"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Blue! Well done.",
+          "big": "BLUE"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which one is blue?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Blue",
+              "art": "object.whale"
+            },
+            {
+              "label": "Orange",
+              "art": "object.fox"
+            }
+          ],
+          "answer": 0,
+          "explanation": "The sea and a whale can be blue."
+        }
+      ],
+      "world": "sky"
+    },
+    {
+      "id": "color-green",
+      "title": "The color green",
+      "ageGroup": "little",
+      "summary": "The color green",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Today's color is green!",
+          "big": "GREEN"
+        },
+        {
+          "art": "object.turtle",
+          "say": "Leaves and a turtle are green.",
+          "show": "green"
+        },
+        {
+          "art": "object.flower",
+          "say": "Can you find something green near you?",
+          "show": "green"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Green! Well done.",
+          "big": "GREEN"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which one is green?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Green",
+              "art": "object.turtle"
+            },
+            {
+              "label": "Purple",
+              "art": "object.wand"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Leaves and a turtle are green."
+        }
+      ],
+      "world": "leaf"
+    },
+    {
+      "id": "color-orange",
+      "title": "The color orange",
+      "ageGroup": "little",
+      "summary": "The color orange",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Today's color is orange!",
+          "big": "ORANGE"
+        },
+        {
+          "art": "object.fox",
+          "say": "A fox and a goldfish are orange.",
+          "show": "orange"
+        },
+        {
+          "art": "object.fish",
+          "say": "Can you find something orange near you?",
+          "show": "orange"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Orange! Well done.",
+          "big": "ORANGE"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which one is orange?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Orange",
+              "art": "object.fox"
+            },
+            {
+              "label": "Pink",
+              "art": "object.flower"
+            }
+          ],
+          "answer": 0,
+          "explanation": "A fox and a goldfish are orange."
+        }
+      ],
+      "world": "tangerine"
+    },
+    {
+      "id": "color-purple",
+      "title": "The color purple",
+      "ageGroup": "little",
+      "summary": "The color purple",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Today's color is purple!",
+          "big": "PURPLE"
+        },
+        {
+          "art": "object.wand",
+          "say": "Grapes and some flowers are purple.",
+          "show": "purple"
+        },
+        {
+          "art": "object.diamond",
+          "say": "Can you find something purple near you?",
+          "show": "purple"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Purple! Well done.",
+          "big": "PURPLE"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which one is purple?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Purple",
+              "art": "object.wand"
+            },
+            {
+              "label": "Red",
+              "art": "object.apple"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Grapes and some flowers are purple."
+        }
+      ],
+      "world": "grape"
+    },
+    {
+      "id": "color-pink",
+      "title": "The color pink",
+      "ageGroup": "little",
+      "summary": "The color pink",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Today's color is pink!",
+          "big": "PINK"
+        },
+        {
+          "art": "object.flower",
+          "say": "Some flowers and shells are pink.",
+          "show": "pink"
+        },
+        {
+          "art": "object.shell",
+          "say": "Can you find something pink near you?",
+          "show": "pink"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Pink! Well done.",
+          "big": "PINK"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which one is pink?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Pink",
+              "art": "object.flower"
+            },
+            {
+              "label": "Yellow",
+              "art": "object.banana"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Some flowers and shells are pink."
+        }
+      ],
+      "world": "bubblegum"
+    },
+    {
+      "id": "mix-red-yellow",
+      "title": "Mixing red and yellow",
+      "ageGroup": "young",
+      "summary": "Mixing red and yellow",
+      "scenes": [
+        {
+          "art": "object.palette",
+          "say": "What happens when we mix red and yellow paint?"
+        },
+        {
+          "art": "object.brush",
+          "say": "Swirl, swirl, swirl...",
+          "show": "red + yellow"
+        },
+        {
+          "art": "object.palette",
+          "say": "Red and yellow make orange!",
+          "big": "ORANGE"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do red and yellow make?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Orange",
+              "art": "object.palette"
+            },
+            {
+              "label": "Black",
+              "art": "object.circle"
+            },
+            {
+              "label": "Gray",
+              "art": "object.cloud"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Mixing red and yellow paint makes orange."
+        }
+      ],
+      "world": "tangerine"
+    },
+    {
+      "id": "mix-blue-yellow",
+      "title": "Mixing blue and yellow",
+      "ageGroup": "young",
+      "summary": "Mixing blue and yellow",
+      "scenes": [
+        {
+          "art": "object.palette",
+          "say": "What happens when we mix blue and yellow paint?"
+        },
+        {
+          "art": "object.brush",
+          "say": "Swirl, swirl, swirl...",
+          "show": "blue + yellow"
+        },
+        {
+          "art": "object.palette",
+          "say": "Blue and yellow make green!",
+          "big": "GREEN"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do blue and yellow make?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Green",
+              "art": "object.palette"
+            },
+            {
+              "label": "Black",
+              "art": "object.circle"
+            },
+            {
+              "label": "Gray",
+              "art": "object.cloud"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Mixing blue and yellow paint makes green."
+        }
+      ],
+      "world": "leaf"
+    },
+    {
+      "id": "mix-red-blue",
+      "title": "Mixing red and blue",
+      "ageGroup": "young",
+      "summary": "Mixing red and blue",
+      "scenes": [
+        {
+          "art": "object.palette",
+          "say": "What happens when we mix red and blue paint?"
+        },
+        {
+          "art": "object.brush",
+          "say": "Swirl, swirl, swirl...",
+          "show": "red + blue"
+        },
+        {
+          "art": "object.palette",
+          "say": "Red and blue make purple!",
+          "big": "PURPLE"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do red and blue make?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Purple",
+              "art": "object.palette"
+            },
+            {
+              "label": "Black",
+              "art": "object.circle"
+            },
+            {
+              "label": "Gray",
+              "art": "object.cloud"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Mixing red and blue paint makes purple."
+        }
+      ],
+      "world": "grape"
+    },
+    {
+      "id": "mix-red-white",
+      "title": "Mixing red and white",
+      "ageGroup": "young",
+      "summary": "Mixing red and white",
+      "scenes": [
+        {
+          "art": "object.palette",
+          "say": "What happens when we mix red and white paint?"
+        },
+        {
+          "art": "object.brush",
+          "say": "Swirl, swirl, swirl...",
+          "show": "red + white"
+        },
+        {
+          "art": "object.palette",
+          "say": "Red and white make pink!",
+          "big": "PINK"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do red and white make?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Pink",
+              "art": "object.palette"
+            },
+            {
+              "label": "Black",
+              "art": "object.circle"
+            },
+            {
+              "label": "Gray",
+              "art": "object.cloud"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Mixing red and white paint makes pink."
+        }
+      ],
+      "world": "bubblegum"
+    },
+    {
+      "id": "nature-color-green",
+      "title": "Why is it green?",
+      "ageGroup": "big",
+      "summary": "Why is it green?",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Have you wondered why nature has so much green?"
+        },
+        {
+          "art": "object.flower",
+          "say": "Plants are green because of chlorophyll, which helps them make food from sunlight.",
+          "show": "green"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Next time you are outside, look for colors and think about why."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Why do plants look green?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Chlorophyll",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Paint",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Rain",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Moonlight",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Chlorophyll helps plants make food and makes them look green."
+        }
+      ],
+      "world": "leaf"
+    },
+    {
+      "id": "nature-color-blue",
+      "title": "Why is it blue?",
+      "ageGroup": "big",
+      "summary": "Why is it blue?",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Have you wondered why nature has so much blue?"
+        },
+        {
+          "art": "object.ocean-wave",
+          "say": "The sky looks blue because air scatters blue sunlight the most.",
+          "show": "blue"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Next time you are outside, look for colors and think about why."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What makes the sky look blue?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Air scatters blue light",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "The ocean paints it",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Blue clouds",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Air scatters blue sunlight more than other colors."
+        }
+      ],
+      "world": "sky"
+    },
+    {
+      "id": "nature-color-orange",
+      "title": "Why is it orange?",
+      "ageGroup": "big",
+      "summary": "Why is it orange?",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Have you wondered why nature has so much orange?"
+        },
+        {
+          "art": "object.sun",
+          "say": "Sunsets glow orange and red when sunlight travels through more air.",
+          "show": "orange"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Next time you are outside, look for colors and think about why."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "When do sunsets look orange?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "When light passes through more air",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "When it rains",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "At noon",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "At sunset, light travels through more air, so we see orange and red."
+        }
+      ],
+      "world": "tangerine"
+    },
+    {
+      "id": "nature-color-rainbow",
+      "title": "Why is it rainbow?",
+      "ageGroup": "big",
+      "summary": "Why is it rainbow?",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Have you wondered why nature has so much rainbow?"
+        },
+        {
+          "art": "object.rainbow",
+          "say": "A rainbow appears when sunlight shines through raindrops and splits into colors.",
+          "show": "rainbow"
+        },
+        {
+          "art": "zo.happy",
+          "say": "Next time you are outside, look for colors and think about why."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What splits sunlight into a rainbow?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Raindrops",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Rocks",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Wind",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Sand",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Raindrops bend sunlight and split it into colors."
+        }
+      ],
+      "world": "grape"
+    }
+  ]
+}

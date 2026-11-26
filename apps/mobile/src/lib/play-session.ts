@@ -100,7 +100,7 @@ export function usePlaySession({ child, content, familyMode, timezone }: Options
           now,
           timeZone: timezone,
           childAge: child.age,
-          content: { calm: content.calm, ageMin: content.ageMin },
+          content: { calm: content.calm, ageMin: content.ageMin, type: content.type, skills: content.skills },
         });
         if (cancelled) return;
         setOffline(true);

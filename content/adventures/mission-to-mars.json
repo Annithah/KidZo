@@ -1,0 +1,85 @@
+{
+  "id": "mission-to-mars",
+  "title": "Mission to Mars",
+  "summary": "Plan a rover mission with NASA footage.",
+  "ageGroup": "big",
+  "skills": [
+    "space",
+    "science"
+  ],
+  "art": "object.rocket",
+  "startNodeId": "start",
+  "nodes": [
+    {
+      "id": "start",
+      "text": "Mission control! A rover is ready for Mars. What is the first step?",
+      "art": "object.rocket",
+      "video": "nasa:JPL-20200518-M2020f-0001-Shake Rattle and Roll Testing NASAs Mars 2020 Perseverance Rover",
+      "choices": [
+        {
+          "id": "test",
+          "label": "Test the rover",
+          "art": "object.puzzle",
+          "next": "test"
+        },
+        {
+          "id": "land",
+          "label": "Practice the landing",
+          "art": "object.footprints",
+          "next": "land"
+        },
+        {
+          "id": "study",
+          "label": "Study the planets",
+          "art": "object.full-moon",
+          "next": "study"
+        },
+        {
+          "id": "rest",
+          "label": "Skip the tests",
+          "art": "object.moon",
+          "next": "rest"
+        }
+      ]
+    },
+    {
+      "id": "test",
+      "text": "Engineers shake the rover to make sure it survives the launch.",
+      "art": "object.puzzle",
+      "next": "landing"
+    },
+    {
+      "id": "land",
+      "text": "Landing on Mars takes about seven minutes of careful steps.",
+      "art": "object.footprints",
+      "video": "nasa:JPL-20210222-M2020f-0001-Perseverance Rover’s Descent and Touchdown on Mars",
+      "next": "landing"
+    },
+    {
+      "id": "study",
+      "text": "Mars is the fourth planet from the sun. Jupiter is the biggest.",
+      "art": "object.full-moon",
+      "video": "kidzo:science-planets",
+      "next": "landing"
+    },
+    {
+      "id": "rest",
+      "text": "Skipping tests is risky. Good engineers always test first, so the team tests anyway.",
+      "art": "object.moon",
+      "next": "landing"
+    },
+    {
+      "id": "landing",
+      "text": "Touchdown! The rover explores an ancient river on Mars.",
+      "art": "object.rocket",
+      "video": "nasa:JPL-20231227-M2020f-0001-Perseverance Rover Zooms in on Ancient Mars River",
+      "next": "end"
+    },
+    {
+      "id": "end",
+      "text": "Mission complete. Welcome to the space team!",
+      "art": "zo.celebrating",
+      "ending": true
+    }
+  ]
+}

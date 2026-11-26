@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { useEffect, useState } from 'react';
-import { isBedtime, localParts, type Child, type ContentDetail } from '@kidzo/shared';
+import { ageGroupFor, isBedtime, isForAgeGroup, localParts, type Child, type ContentDetail } from '@kidzo/shared';
 import { api } from './api';
 import { readLocalContent } from './downloads';
 import { isNetworkError, usageLedger, withOfflineCache } from './offline';
@@ -24,6 +24,24 @@ export function useCatalog(childId: string | undefined) {
   return useQuery({
     queryKey: ['catalog', childId ?? 'all'],
     queryFn: () => withOfflineCache(`catalog.${childId ?? 'all'}`, () => api.catalog(childId ? { childId } : {})),
+  });
+}
+
+/** Items this child started recently and has not finished. */
+export function useContinueWatching(childId: string | undefined) {
+  return useQuery({
+    queryKey: ['continue', childId],
+    enabled: !!childId,
+    queryFn: () => withOfflineCache(`continue.${childId}`, () => api.continueWatching(childId ?? '')),
+  });
+}
+
+/** "Picked for you" content for a child. Cached for offline use like the catalog. */
+export function useRecommendations(childId: string | undefined) {
+  return useQuery({
+    queryKey: ['recommendations', childId],
+    enabled: !!childId,
+    queryFn: () => withOfflineCache(`recommendations.${childId}`, () => api.recommendations(childId ?? '')),
   });
 }
 
@@ -70,18 +88,24 @@ export function useInsights(childId: string | undefined) {
   });
 }
 
-/** Content package: network first, falling back to a downloaded copy when offline. */
-export function useContentDetail(id: string | undefined) {
+/**
+ * Content package for a child: network first (the server checks the child's age group), falling
+ * back to a downloaded copy only when offline, and only if it fits the child's age group.
+ */
+export function useContentDetail(id: string | undefined, child: Child | null) {
   return useQuery({
-    queryKey: ['content', id],
-    enabled: !!id,
+    queryKey: ['content', id, child?.id],
+    enabled: !!id && !!child,
     queryFn: async (): Promise<ContentDetail & { fromDownload: boolean }> => {
-      if (!id) throw new Error('No content id');
+      if (!id || !child) throw new Error('No content id');
       try {
-        return { ...(await api.content(id)), fromDownload: false };
+        return { ...(await api.content(id, child.id)), fromDownload: false };
       } catch (error) {
+        if (!isNetworkError(error)) throw error;
         const local = await readLocalContent(id);
-        if (local) return { ...local, fromDownload: true };
+        if (local && isForAgeGroup(ageGroupFor(child.age), { ageGroups: local.ageGroups, videoSeconds: local.body.kind === 'video' ? local.body.durationSeconds : null })) {
+          return { ...local, fromDownload: true };
+        }
         throw error;
       }
     },

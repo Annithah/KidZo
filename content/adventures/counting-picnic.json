@@ -1,0 +1,60 @@
+{
+  "id": "counting-picnic",
+  "title": "Zo's Counting Picnic",
+  "summary": "Count the food for a picnic with Zo.",
+  "ageGroup": "little",
+  "skills": [
+    "counting"
+  ],
+  "art": "object.apple",
+  "startNodeId": "start",
+  "nodes": [
+    {
+      "id": "start",
+      "text": "Zo is packing a picnic. What should we count first?",
+      "art": "zo.waving",
+      "video": "kidzo:count-to-3",
+      "choices": [
+        {
+          "id": "apples",
+          "label": "Apples",
+          "art": "object.apple",
+          "next": "apples"
+        },
+        {
+          "id": "bananas",
+          "label": "Bananas",
+          "art": "object.banana",
+          "next": "bananas"
+        }
+      ]
+    },
+    {
+      "id": "apples",
+      "text": "One, two, three apples in the basket!",
+      "art": "object.apple*3",
+      "video": "kidzo:count-apples-6",
+      "next": "blanket"
+    },
+    {
+      "id": "bananas",
+      "text": "Yellow bananas, ready to share!",
+      "art": "object.banana*3",
+      "video": "kidzo:count-bananas-8",
+      "next": "blanket"
+    },
+    {
+      "id": "blanket",
+      "text": "Time to sit down on the picnic blanket. Yum!",
+      "art": "object.friends",
+      "video": "kidzo:count-to-5",
+      "next": "end"
+    },
+    {
+      "id": "end",
+      "text": "What a lovely picnic. Great counting!",
+      "art": "zo.celebrating",
+      "ending": true
+    }
+  ]
+}

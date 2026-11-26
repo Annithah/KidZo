@@ -1,0 +1,105 @@
+{
+  "id": "coders-quest",
+  "title": "The Coder's Quest",
+  "summary": "Guide a robot with sequences, loops and conditions.",
+  "ageGroup": "big",
+  "skills": [
+    "problem_solving",
+    "math"
+  ],
+  "art": "object.puzzle",
+  "startNodeId": "start",
+  "nodes": [
+    {
+      "id": "start",
+      "text": "A robot needs to cross a maze. What should we give it first?",
+      "art": "object.puzzle",
+      "video": "kidzo:logic-sequences",
+      "choices": [
+        {
+          "id": "sequence",
+          "label": "A sequence of steps",
+          "art": "object.footprints",
+          "next": "sequence"
+        },
+        {
+          "id": "loop",
+          "label": "A loop",
+          "art": "object.circle",
+          "next": "loop"
+        },
+        {
+          "id": "guess",
+          "label": "A random guess",
+          "art": "object.question",
+          "next": "guess"
+        }
+      ]
+    },
+    {
+      "id": "sequence",
+      "text": "Step, step, turn. The robot follows our steps in order.",
+      "art": "object.footprints",
+      "video": "kidzo:logic-sequences",
+      "next": "condition"
+    },
+    {
+      "id": "loop",
+      "text": "Repeat four times: step. A loop saves time!",
+      "art": "object.circle",
+      "video": "kidzo:logic-loops",
+      "next": "condition"
+    },
+    {
+      "id": "guess",
+      "text": "Random guesses make the robot bump into walls. A plan works better, so we write one.",
+      "art": "object.question",
+      "next": "condition"
+    },
+    {
+      "id": "condition",
+      "text": "If there is a wall, then turn. The robot makes smart choices.",
+      "art": "object.puzzle",
+      "video": "kidzo:logic-conditions",
+      "choices": [
+        {
+          "id": "fix",
+          "label": "Test and fix bugs",
+          "art": "object.sparkles",
+          "next": "fix"
+        },
+        {
+          "id": "rush",
+          "label": "Run it untested",
+          "art": "object.rocket",
+          "next": "rush"
+        },
+        {
+          "id": "ask",
+          "label": "Ask a friend to check",
+          "art": "object.friends",
+          "next": "fix"
+        }
+      ]
+    },
+    {
+      "id": "fix",
+      "text": "We found a bug and fixed it. Debugging success!",
+      "art": "object.sparkles",
+      "video": "kidzo:logic-debugging",
+      "next": "end"
+    },
+    {
+      "id": "rush",
+      "text": "Oops, the robot spins in circles. Testing first would have caught that bug.",
+      "art": "object.rocket",
+      "next": "fix"
+    },
+    {
+      "id": "end",
+      "text": "The robot escaped the maze. You think like a coder!",
+      "art": "zo.celebrating",
+      "ending": true
+    }
+  ]
+}

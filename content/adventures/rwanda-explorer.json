@@ -1,0 +1,74 @@
+{
+  "id": "rwanda-explorer",
+  "title": "Rwanda Explorer",
+  "summary": "Visit volcanoes, lakes and forests in Rwanda.",
+  "ageGroup": "young",
+  "skills": [
+    "geography",
+    "animals"
+  ],
+  "art": "object.lion",
+  "startNodeId": "start",
+  "nodes": [
+    {
+      "id": "start",
+      "text": "Rwanda is the land of a thousand hills. Where shall we explore?",
+      "art": "object.house",
+      "video": "kidzo:africa-thousand-hills",
+      "choices": [
+        {
+          "id": "volcanoes",
+          "label": "The volcanoes",
+          "art": "object.triangle",
+          "next": "volcanoes"
+        },
+        {
+          "id": "kivu",
+          "label": "Lake Kivu",
+          "art": "object.ocean-wave",
+          "next": "kivu"
+        },
+        {
+          "id": "nyungwe",
+          "label": "Nyungwe forest",
+          "art": "object.flower",
+          "next": "nyungwe"
+        }
+      ]
+    },
+    {
+      "id": "volcanoes",
+      "text": "In Volcanoes National Park, mountain gorillas live in families.",
+      "art": "object.panda",
+      "video": "kidzo:africa-volcanoes-national-park",
+      "next": "kigali"
+    },
+    {
+      "id": "kivu",
+      "text": "Lake Kivu sparkles between Rwanda and the DR Congo.",
+      "art": "object.ocean-wave",
+      "video": "kidzo:africa-lake-kivu",
+      "next": "kigali"
+    },
+    {
+      "id": "nyungwe",
+      "text": "High above the trees, the canopy walkway sways gently.",
+      "art": "object.flower",
+      "video": "kidzo:africa-nyungwe-forest",
+      "next": "kigali"
+    },
+    {
+      "id": "kigali",
+      "text": "Back in Kigali, the clean and green capital.",
+      "art": "object.house",
+      "video": "kidzo:africa-kigali",
+      "next": "end"
+    },
+    {
+      "id": "end",
+      "text": "Murakoze, explorer! Thank you for visiting Rwanda.",
+      "art": "zo.waving",
+      "ending": true
+    }
+  ]
+}

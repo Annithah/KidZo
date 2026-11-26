@@ -29,3 +29,21 @@ export async function speak(
 export function stopSpeaking(): void {
   void Speech.stop();
 }
+
+/**
+ * Speaks and resolves when the voice has finished (or failed). A safety limit makes sure a
+ * missing "done" event from the speech engine can never hold the app forever.
+ */
+export function speakAndWait(text: string, locale: Locale, options: { calm?: boolean; maxMs?: number } = {}): Promise<void> {
+  return new Promise((resolve) => {
+    let settled = false;
+    const finish = () => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(limit);
+      resolve();
+    };
+    const limit = setTimeout(finish, options.maxMs ?? 20_000);
+    void speak(text, locale, { calm: options.calm, onDone: finish }).catch(finish);
+  });
+}

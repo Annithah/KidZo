@@ -1,0 +1,1276 @@
+{
+  "topic": "animal-sounds",
+  "category": "morning-activities",
+  "skills": [
+    "animals",
+    "music"
+  ],
+  "art": "object.lion",
+  "videos": [
+    {
+      "id": "animal-sounds-1",
+      "title": "Animal sounds: cat, bee, bunny",
+      "ageGroup": "little",
+      "summary": "Animal sounds: cat, bee, bunny",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Listen! Who is making that sound?"
+        },
+        {
+          "art": "object.cat",
+          "say": "The cat says meow.",
+          "show": "cat"
+        },
+        {
+          "art": "object.bee",
+          "say": "The bee says buzz.",
+          "show": "bee"
+        },
+        {
+          "art": "object.bunny",
+          "say": "The bunny says a tiny thump with its feet.",
+          "show": "bunny"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "The cat, bee, bunny. What a noisy, happy group!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Who says meow?",
+          "art": "object.cat",
+          "options": [
+            {
+              "label": "Cat",
+              "art": "object.cat"
+            },
+            {
+              "label": "Bee",
+              "art": "object.bee"
+            }
+          ],
+          "answer": 0,
+          "explanation": "The cat says meow."
+        }
+      ]
+    },
+    {
+      "id": "animal-sounds-2",
+      "title": "Animal sounds: lion, whale, hippo",
+      "ageGroup": "little",
+      "summary": "Animal sounds: lion, whale, hippo",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Listen! Who is making that sound?"
+        },
+        {
+          "art": "object.lion",
+          "say": "The lion says roar.",
+          "show": "lion"
+        },
+        {
+          "art": "object.whale",
+          "say": "The whale says a long, deep song.",
+          "show": "whale"
+        },
+        {
+          "art": "object.hippo",
+          "say": "The hippo says a big grunt.",
+          "show": "hippo"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "The lion, whale, hippo. What a noisy, happy group!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Who says a long, deep song?",
+          "art": "object.whale",
+          "options": [
+            {
+              "label": "Whale",
+              "art": "object.whale"
+            },
+            {
+              "label": "Hippo",
+              "art": "object.hippo"
+            }
+          ],
+          "answer": 0,
+          "explanation": "The whale says a long, deep song."
+        }
+      ]
+    },
+    {
+      "id": "animal-sounds-3",
+      "title": "Animal sounds: owl, fox, giraffe",
+      "ageGroup": "little",
+      "summary": "Animal sounds: owl, fox, giraffe",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Listen! Who is making that sound?"
+        },
+        {
+          "art": "object.owl",
+          "say": "The owl says hoo hoo.",
+          "show": "owl"
+        },
+        {
+          "art": "object.fox",
+          "say": "The fox says yip yip.",
+          "show": "fox"
+        },
+        {
+          "art": "object.giraffe",
+          "say": "The giraffe says a quiet hum.",
+          "show": "giraffe"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "The owl, fox, giraffe. What a noisy, happy group!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Who says a quiet hum?",
+          "art": "object.giraffe",
+          "options": [
+            {
+              "label": "Giraffe",
+              "art": "object.giraffe"
+            },
+            {
+              "label": "Owl",
+              "art": "object.owl"
+            }
+          ],
+          "answer": 0,
+          "explanation": "The giraffe says a quiet hum."
+        }
+      ]
+    },
+    {
+      "id": "animal-sounds-4",
+      "title": "Animal sounds: chick, panda, turtle",
+      "ageGroup": "little",
+      "summary": "Animal sounds: chick, panda, turtle",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Listen! Who is making that sound?"
+        },
+        {
+          "art": "object.chick",
+          "say": "The chick says peep peep.",
+          "show": "chick"
+        },
+        {
+          "art": "object.panda",
+          "say": "The panda says a soft bleat.",
+          "show": "panda"
+        },
+        {
+          "art": "object.turtle",
+          "say": "The turtle says almost nothing at all.",
+          "show": "turtle"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "The chick, panda, turtle. What a noisy, happy group!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Who says peep peep?",
+          "art": "object.chick",
+          "options": [
+            {
+              "label": "Chick",
+              "art": "object.chick"
+            },
+            {
+              "label": "Panda",
+              "art": "object.panda"
+            }
+          ],
+          "answer": 0,
+          "explanation": "The chick says peep peep."
+        }
+      ]
+    },
+    {
+      "id": "animal-sounds-5",
+      "title": "Animal sounds: bee, bunny, fish",
+      "ageGroup": "little",
+      "summary": "Animal sounds: bee, bunny, fish",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Listen! Who is making that sound?"
+        },
+        {
+          "art": "object.bee",
+          "say": "The bee says buzz.",
+          "show": "bee"
+        },
+        {
+          "art": "object.bunny",
+          "say": "The bunny says a tiny thump with its feet.",
+          "show": "bunny"
+        },
+        {
+          "art": "object.fish",
+          "say": "The fish says bubbles.",
+          "show": "fish"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "The bee, bunny, fish. What a noisy, happy group!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Who says a tiny thump with its feet?",
+          "art": "object.bunny",
+          "options": [
+            {
+              "label": "Bunny",
+              "art": "object.bunny"
+            },
+            {
+              "label": "Fish",
+              "art": "object.fish"
+            }
+          ],
+          "answer": 0,
+          "explanation": "The bunny says a tiny thump with its feet."
+        }
+      ]
+    },
+    {
+      "id": "animal-sounds-6",
+      "title": "Animal sounds: whale, hippo, octopus",
+      "ageGroup": "little",
+      "summary": "Animal sounds: whale, hippo, octopus",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Listen! Who is making that sound?"
+        },
+        {
+          "art": "object.whale",
+          "say": "The whale says a long, deep song.",
+          "show": "whale"
+        },
+        {
+          "art": "object.hippo",
+          "say": "The hippo says a big grunt.",
+          "show": "hippo"
+        },
+        {
+          "art": "object.octopus",
+          "say": "The octopus says no sound, it swims quietly.",
+          "show": "octopus"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "The whale, hippo, octopus. What a noisy, happy group!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Who says no sound, it swims quietly?",
+          "art": "object.octopus",
+          "options": [
+            {
+              "label": "Octopus",
+              "art": "object.octopus"
+            },
+            {
+              "label": "Whale",
+              "art": "object.whale"
+            }
+          ],
+          "answer": 0,
+          "explanation": "The octopus says no sound, it swims quietly."
+        }
+      ]
+    },
+    {
+      "id": "animal-sounds-7",
+      "title": "Animal sounds: fox, giraffe, ladybug",
+      "ageGroup": "little",
+      "summary": "Animal sounds: fox, giraffe, ladybug",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Listen! Who is making that sound?"
+        },
+        {
+          "art": "object.fox",
+          "say": "The fox says yip yip.",
+          "show": "fox"
+        },
+        {
+          "art": "object.giraffe",
+          "say": "The giraffe says a quiet hum.",
+          "show": "giraffe"
+        },
+        {
+          "art": "object.ladybug",
+          "say": "The ladybug says a tiny whirr of wings.",
+          "show": "ladybug"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "The fox, giraffe, ladybug. What a noisy, happy group!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Who says yip yip?",
+          "art": "object.fox",
+          "options": [
+            {
+              "label": "Fox",
+              "art": "object.fox"
+            },
+            {
+              "label": "Giraffe",
+              "art": "object.giraffe"
+            }
+          ],
+          "answer": 0,
+          "explanation": "The fox says yip yip."
+        }
+      ]
+    },
+    {
+      "id": "animal-sounds-8",
+      "title": "Animal sounds: panda, turtle, cat",
+      "ageGroup": "little",
+      "summary": "Animal sounds: panda, turtle, cat",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Listen! Who is making that sound?"
+        },
+        {
+          "art": "object.panda",
+          "say": "The panda says a soft bleat.",
+          "show": "panda"
+        },
+        {
+          "art": "object.turtle",
+          "say": "The turtle says almost nothing at all.",
+          "show": "turtle"
+        },
+        {
+          "art": "object.cat",
+          "say": "The cat says meow.",
+          "show": "cat"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "The panda, turtle, cat. What a noisy, happy group!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Who says almost nothing at all?",
+          "art": "object.turtle",
+          "options": [
+            {
+              "label": "Turtle",
+              "art": "object.turtle"
+            },
+            {
+              "label": "Cat",
+              "art": "object.cat"
+            }
+          ],
+          "answer": 0,
+          "explanation": "The turtle says almost nothing at all."
+        }
+      ]
+    },
+    {
+      "id": "animal-sounds-9",
+      "title": "Animal sounds: bunny, fish, lion",
+      "ageGroup": "little",
+      "summary": "Animal sounds: bunny, fish, lion",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Listen! Who is making that sound?"
+        },
+        {
+          "art": "object.bunny",
+          "say": "The bunny says a tiny thump with its feet.",
+          "show": "bunny"
+        },
+        {
+          "art": "object.fish",
+          "say": "The fish says bubbles.",
+          "show": "fish"
+        },
+        {
+          "art": "object.lion",
+          "say": "The lion says roar.",
+          "show": "lion"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "The bunny, fish, lion. What a noisy, happy group!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Who says roar?",
+          "art": "object.lion",
+          "options": [
+            {
+              "label": "Lion",
+              "art": "object.lion"
+            },
+            {
+              "label": "Bunny",
+              "art": "object.bunny"
+            }
+          ],
+          "answer": 0,
+          "explanation": "The lion says roar."
+        }
+      ]
+    },
+    {
+      "id": "animal-sounds-10",
+      "title": "Animal sounds: hippo, octopus, owl",
+      "ageGroup": "little",
+      "summary": "Animal sounds: hippo, octopus, owl",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Listen! Who is making that sound?"
+        },
+        {
+          "art": "object.hippo",
+          "say": "The hippo says a big grunt.",
+          "show": "hippo"
+        },
+        {
+          "art": "object.octopus",
+          "say": "The octopus says no sound, it swims quietly.",
+          "show": "octopus"
+        },
+        {
+          "art": "object.owl",
+          "say": "The owl says hoo hoo.",
+          "show": "owl"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "The hippo, octopus, owl. What a noisy, happy group!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Who says a big grunt?",
+          "art": "object.hippo",
+          "options": [
+            {
+              "label": "Hippo",
+              "art": "object.hippo"
+            },
+            {
+              "label": "Octopus",
+              "art": "object.octopus"
+            }
+          ],
+          "answer": 0,
+          "explanation": "The hippo says a big grunt."
+        }
+      ]
+    },
+    {
+      "id": "animal-sounds-11",
+      "title": "Animal sounds: giraffe, ladybug, chick",
+      "ageGroup": "little",
+      "summary": "Animal sounds: giraffe, ladybug, chick",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Listen! Who is making that sound?"
+        },
+        {
+          "art": "object.giraffe",
+          "say": "The giraffe says a quiet hum.",
+          "show": "giraffe"
+        },
+        {
+          "art": "object.ladybug",
+          "say": "The ladybug says a tiny whirr of wings.",
+          "show": "ladybug"
+        },
+        {
+          "art": "object.chick",
+          "say": "The chick says peep peep.",
+          "show": "chick"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "The giraffe, ladybug, chick. What a noisy, happy group!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Who says a tiny whirr of wings?",
+          "art": "object.ladybug",
+          "options": [
+            {
+              "label": "Ladybug",
+              "art": "object.ladybug"
+            },
+            {
+              "label": "Chick",
+              "art": "object.chick"
+            }
+          ],
+          "answer": 0,
+          "explanation": "The ladybug says a tiny whirr of wings."
+        }
+      ]
+    },
+    {
+      "id": "animal-sounds-12",
+      "title": "Animal sounds: turtle, cat, bee",
+      "ageGroup": "little",
+      "summary": "Animal sounds: turtle, cat, bee",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Listen! Who is making that sound?"
+        },
+        {
+          "art": "object.turtle",
+          "say": "The turtle says almost nothing at all.",
+          "show": "turtle"
+        },
+        {
+          "art": "object.cat",
+          "say": "The cat says meow.",
+          "show": "cat"
+        },
+        {
+          "art": "object.bee",
+          "say": "The bee says buzz.",
+          "show": "bee"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "The turtle, cat, bee. What a noisy, happy group!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Who says buzz?",
+          "art": "object.bee",
+          "options": [
+            {
+              "label": "Bee",
+              "art": "object.bee"
+            },
+            {
+              "label": "Turtle",
+              "art": "object.turtle"
+            }
+          ],
+          "answer": 0,
+          "explanation": "The bee says buzz."
+        }
+      ]
+    },
+    {
+      "id": "animal-sounds-13",
+      "title": "Animal sounds: fish, lion, whale",
+      "ageGroup": "little",
+      "summary": "Animal sounds: fish, lion, whale",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Listen! Who is making that sound?"
+        },
+        {
+          "art": "object.fish",
+          "say": "The fish says bubbles.",
+          "show": "fish"
+        },
+        {
+          "art": "object.lion",
+          "say": "The lion says roar.",
+          "show": "lion"
+        },
+        {
+          "art": "object.whale",
+          "say": "The whale says a long, deep song.",
+          "show": "whale"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "The fish, lion, whale. What a noisy, happy group!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Who says bubbles?",
+          "art": "object.fish",
+          "options": [
+            {
+              "label": "Fish",
+              "art": "object.fish"
+            },
+            {
+              "label": "Lion",
+              "art": "object.lion"
+            }
+          ],
+          "answer": 0,
+          "explanation": "The fish says bubbles."
+        }
+      ]
+    },
+    {
+      "id": "animal-sounds-14",
+      "title": "Animal sounds: octopus, owl, fox",
+      "ageGroup": "little",
+      "summary": "Animal sounds: octopus, owl, fox",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Listen! Who is making that sound?"
+        },
+        {
+          "art": "object.octopus",
+          "say": "The octopus says no sound, it swims quietly.",
+          "show": "octopus"
+        },
+        {
+          "art": "object.owl",
+          "say": "The owl says hoo hoo.",
+          "show": "owl"
+        },
+        {
+          "art": "object.fox",
+          "say": "The fox says yip yip.",
+          "show": "fox"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "The octopus, owl, fox. What a noisy, happy group!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Who says hoo hoo?",
+          "art": "object.owl",
+          "options": [
+            {
+              "label": "Owl",
+              "art": "object.owl"
+            },
+            {
+              "label": "Fox",
+              "art": "object.fox"
+            }
+          ],
+          "answer": 0,
+          "explanation": "The owl says hoo hoo."
+        }
+      ]
+    },
+    {
+      "id": "animal-sounds-15",
+      "title": "Animal sounds: ladybug, chick, panda",
+      "ageGroup": "little",
+      "summary": "Animal sounds: ladybug, chick, panda",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Listen! Who is making that sound?"
+        },
+        {
+          "art": "object.ladybug",
+          "say": "The ladybug says a tiny whirr of wings.",
+          "show": "ladybug"
+        },
+        {
+          "art": "object.chick",
+          "say": "The chick says peep peep.",
+          "show": "chick"
+        },
+        {
+          "art": "object.panda",
+          "say": "The panda says a soft bleat.",
+          "show": "panda"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "The ladybug, chick, panda. What a noisy, happy group!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Who says a soft bleat?",
+          "art": "object.panda",
+          "options": [
+            {
+              "label": "Panda",
+              "art": "object.panda"
+            },
+            {
+              "label": "Ladybug",
+              "art": "object.ladybug"
+            }
+          ],
+          "answer": 0,
+          "explanation": "The panda says a soft bleat."
+        }
+      ]
+    },
+    {
+      "id": "animal-sounds-16",
+      "title": "Animal sounds: cat, bee, bunny",
+      "ageGroup": "young",
+      "summary": "Animal sounds: cat, bee, bunny",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Listen! Who is making that sound?"
+        },
+        {
+          "art": "object.cat",
+          "say": "The cat says meow.",
+          "show": "cat"
+        },
+        {
+          "art": "object.bee",
+          "say": "The bee says buzz.",
+          "show": "bee"
+        },
+        {
+          "art": "object.bunny",
+          "say": "The bunny says a tiny thump with its feet.",
+          "show": "bunny"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "The cat, bee, bunny. What a noisy, happy group!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Who says meow?",
+          "art": "object.cat",
+          "options": [
+            {
+              "label": "Cat",
+              "art": "object.cat"
+            },
+            {
+              "label": "Bee",
+              "art": "object.bee"
+            },
+            {
+              "label": "Bunny",
+              "art": "object.bunny"
+            }
+          ],
+          "answer": 0,
+          "explanation": "The cat says meow."
+        }
+      ]
+    },
+    {
+      "id": "animal-sounds-17",
+      "title": "Animal sounds: lion, whale, hippo",
+      "ageGroup": "young",
+      "summary": "Animal sounds: lion, whale, hippo",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Listen! Who is making that sound?"
+        },
+        {
+          "art": "object.lion",
+          "say": "The lion says roar.",
+          "show": "lion"
+        },
+        {
+          "art": "object.whale",
+          "say": "The whale says a long, deep song.",
+          "show": "whale"
+        },
+        {
+          "art": "object.hippo",
+          "say": "The hippo says a big grunt.",
+          "show": "hippo"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "The lion, whale, hippo. What a noisy, happy group!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Who says a long, deep song?",
+          "art": "object.whale",
+          "options": [
+            {
+              "label": "Whale",
+              "art": "object.whale"
+            },
+            {
+              "label": "Hippo",
+              "art": "object.hippo"
+            },
+            {
+              "label": "Lion",
+              "art": "object.lion"
+            }
+          ],
+          "answer": 0,
+          "explanation": "The whale says a long, deep song."
+        }
+      ]
+    },
+    {
+      "id": "animal-sounds-18",
+      "title": "Animal sounds: owl, fox, giraffe",
+      "ageGroup": "young",
+      "summary": "Animal sounds: owl, fox, giraffe",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Listen! Who is making that sound?"
+        },
+        {
+          "art": "object.owl",
+          "say": "The owl says hoo hoo.",
+          "show": "owl"
+        },
+        {
+          "art": "object.fox",
+          "say": "The fox says yip yip.",
+          "show": "fox"
+        },
+        {
+          "art": "object.giraffe",
+          "say": "The giraffe says a quiet hum.",
+          "show": "giraffe"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "The owl, fox, giraffe. What a noisy, happy group!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Who says a quiet hum?",
+          "art": "object.giraffe",
+          "options": [
+            {
+              "label": "Giraffe",
+              "art": "object.giraffe"
+            },
+            {
+              "label": "Owl",
+              "art": "object.owl"
+            },
+            {
+              "label": "Fox",
+              "art": "object.fox"
+            }
+          ],
+          "answer": 0,
+          "explanation": "The giraffe says a quiet hum."
+        }
+      ]
+    },
+    {
+      "id": "animal-sounds-19",
+      "title": "Animal sounds: chick, panda, turtle",
+      "ageGroup": "young",
+      "summary": "Animal sounds: chick, panda, turtle",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Listen! Who is making that sound?"
+        },
+        {
+          "art": "object.chick",
+          "say": "The chick says peep peep.",
+          "show": "chick"
+        },
+        {
+          "art": "object.panda",
+          "say": "The panda says a soft bleat.",
+          "show": "panda"
+        },
+        {
+          "art": "object.turtle",
+          "say": "The turtle says almost nothing at all.",
+          "show": "turtle"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "The chick, panda, turtle. What a noisy, happy group!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Who says peep peep?",
+          "art": "object.chick",
+          "options": [
+            {
+              "label": "Chick",
+              "art": "object.chick"
+            },
+            {
+              "label": "Panda",
+              "art": "object.panda"
+            },
+            {
+              "label": "Turtle",
+              "art": "object.turtle"
+            }
+          ],
+          "answer": 0,
+          "explanation": "The chick says peep peep."
+        }
+      ]
+    },
+    {
+      "id": "animal-sounds-20",
+      "title": "Animal sounds: bee, bunny, fish",
+      "ageGroup": "young",
+      "summary": "Animal sounds: bee, bunny, fish",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Listen! Who is making that sound?"
+        },
+        {
+          "art": "object.bee",
+          "say": "The bee says buzz.",
+          "show": "bee"
+        },
+        {
+          "art": "object.bunny",
+          "say": "The bunny says a tiny thump with its feet.",
+          "show": "bunny"
+        },
+        {
+          "art": "object.fish",
+          "say": "The fish says bubbles.",
+          "show": "fish"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "The bee, bunny, fish. What a noisy, happy group!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Who says a tiny thump with its feet?",
+          "art": "object.bunny",
+          "options": [
+            {
+              "label": "Bunny",
+              "art": "object.bunny"
+            },
+            {
+              "label": "Fish",
+              "art": "object.fish"
+            },
+            {
+              "label": "Bee",
+              "art": "object.bee"
+            }
+          ],
+          "answer": 0,
+          "explanation": "The bunny says a tiny thump with its feet."
+        }
+      ]
+    },
+    {
+      "id": "animal-sounds-21",
+      "title": "Animal sounds: whale, hippo, octopus",
+      "ageGroup": "young",
+      "summary": "Animal sounds: whale, hippo, octopus",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Listen! Who is making that sound?"
+        },
+        {
+          "art": "object.whale",
+          "say": "The whale says a long, deep song.",
+          "show": "whale"
+        },
+        {
+          "art": "object.hippo",
+          "say": "The hippo says a big grunt.",
+          "show": "hippo"
+        },
+        {
+          "art": "object.octopus",
+          "say": "The octopus says no sound, it swims quietly.",
+          "show": "octopus"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "The whale, hippo, octopus. What a noisy, happy group!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Who says no sound, it swims quietly?",
+          "art": "object.octopus",
+          "options": [
+            {
+              "label": "Octopus",
+              "art": "object.octopus"
+            },
+            {
+              "label": "Whale",
+              "art": "object.whale"
+            },
+            {
+              "label": "Hippo",
+              "art": "object.hippo"
+            }
+          ],
+          "answer": 0,
+          "explanation": "The octopus says no sound, it swims quietly."
+        }
+      ]
+    },
+    {
+      "id": "animal-sounds-22",
+      "title": "Animal sounds: fox, giraffe, ladybug",
+      "ageGroup": "young",
+      "summary": "Animal sounds: fox, giraffe, ladybug",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Listen! Who is making that sound?"
+        },
+        {
+          "art": "object.fox",
+          "say": "The fox says yip yip.",
+          "show": "fox"
+        },
+        {
+          "art": "object.giraffe",
+          "say": "The giraffe says a quiet hum.",
+          "show": "giraffe"
+        },
+        {
+          "art": "object.ladybug",
+          "say": "The ladybug says a tiny whirr of wings.",
+          "show": "ladybug"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "The fox, giraffe, ladybug. What a noisy, happy group!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Who says yip yip?",
+          "art": "object.fox",
+          "options": [
+            {
+              "label": "Fox",
+              "art": "object.fox"
+            },
+            {
+              "label": "Giraffe",
+              "art": "object.giraffe"
+            },
+            {
+              "label": "Ladybug",
+              "art": "object.ladybug"
+            }
+          ],
+          "answer": 0,
+          "explanation": "The fox says yip yip."
+        }
+      ]
+    },
+    {
+      "id": "animal-sounds-23",
+      "title": "Animal sounds: panda, turtle, cat",
+      "ageGroup": "young",
+      "summary": "Animal sounds: panda, turtle, cat",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Listen! Who is making that sound?"
+        },
+        {
+          "art": "object.panda",
+          "say": "The panda says a soft bleat.",
+          "show": "panda"
+        },
+        {
+          "art": "object.turtle",
+          "say": "The turtle says almost nothing at all.",
+          "show": "turtle"
+        },
+        {
+          "art": "object.cat",
+          "say": "The cat says meow.",
+          "show": "cat"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "The panda, turtle, cat. What a noisy, happy group!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Who says almost nothing at all?",
+          "art": "object.turtle",
+          "options": [
+            {
+              "label": "Turtle",
+              "art": "object.turtle"
+            },
+            {
+              "label": "Cat",
+              "art": "object.cat"
+            },
+            {
+              "label": "Panda",
+              "art": "object.panda"
+            }
+          ],
+          "answer": 0,
+          "explanation": "The turtle says almost nothing at all."
+        }
+      ]
+    },
+    {
+      "id": "animal-sounds-24",
+      "title": "Animal sounds: bunny, fish, lion",
+      "ageGroup": "young",
+      "summary": "Animal sounds: bunny, fish, lion",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Listen! Who is making that sound?"
+        },
+        {
+          "art": "object.bunny",
+          "say": "The bunny says a tiny thump with its feet.",
+          "show": "bunny"
+        },
+        {
+          "art": "object.fish",
+          "say": "The fish says bubbles.",
+          "show": "fish"
+        },
+        {
+          "art": "object.lion",
+          "say": "The lion says roar.",
+          "show": "lion"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "The bunny, fish, lion. What a noisy, happy group!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Who says roar?",
+          "art": "object.lion",
+          "options": [
+            {
+              "label": "Lion",
+              "art": "object.lion"
+            },
+            {
+              "label": "Bunny",
+              "art": "object.bunny"
+            },
+            {
+              "label": "Fish",
+              "art": "object.fish"
+            }
+          ],
+          "answer": 0,
+          "explanation": "The lion says roar."
+        }
+      ]
+    },
+    {
+      "id": "animal-sounds-25",
+      "title": "Animal sounds: hippo, octopus, owl",
+      "ageGroup": "young",
+      "summary": "Animal sounds: hippo, octopus, owl",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Listen! Who is making that sound?"
+        },
+        {
+          "art": "object.hippo",
+          "say": "The hippo says a big grunt.",
+          "show": "hippo"
+        },
+        {
+          "art": "object.octopus",
+          "say": "The octopus says no sound, it swims quietly.",
+          "show": "octopus"
+        },
+        {
+          "art": "object.owl",
+          "say": "The owl says hoo hoo.",
+          "show": "owl"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "The hippo, octopus, owl. What a noisy, happy group!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Who says a big grunt?",
+          "art": "object.hippo",
+          "options": [
+            {
+              "label": "Hippo",
+              "art": "object.hippo"
+            },
+            {
+              "label": "Octopus",
+              "art": "object.octopus"
+            },
+            {
+              "label": "Owl",
+              "art": "object.owl"
+            }
+          ],
+          "answer": 0,
+          "explanation": "The hippo says a big grunt."
+        }
+      ]
+    }
+  ]
+}

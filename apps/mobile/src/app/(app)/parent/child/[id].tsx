@@ -1,8 +1,9 @@
 import { useQueryClient } from '@tanstack/react-query';
 import { router, useLocalSearchParams } from 'expo-router';
-import { Alert, Platform } from 'react-native';
+import { useState } from 'react';
 import { Button } from '../../../../components/Button';
 import { ChildForm } from '../../../../components/ChildForm';
+import { ConfirmDialog } from '../../../../components/ConfirmDialog';
 import { Header, Screen } from '../../../../components/Layout';
 import { ErrorView } from '../../../../components/States';
 import { useT } from '../../../../i18n';
@@ -15,6 +16,7 @@ export default function EditChild() {
   const queryClient = useQueryClient();
   const { children, selectChild, activeChild } = useFamily();
   const child = children.find((c) => c.id === id);
+  const [confirming, setConfirming] = useState(false);
 
   if (!child) {
     return (
@@ -32,17 +34,6 @@ export default function EditChild() {
     router.replace('/parent');
   };
 
-  const confirmDelete = () => {
-    const message = t('childForm.deleteConfirm', { name: child.name });
-    if (Platform.OS === 'web') {
-      if (globalThis.confirm?.(message)) void remove();
-      return;
-    }
-    Alert.alert(t('childForm.deleteProfile'), message, [
-      { text: t('common.cancel'), style: 'cancel' },
-      { text: t('common.delete'), style: 'destructive', onPress: () => void remove() },
-    ]);
-  };
 
   return (
     <Screen>
@@ -56,7 +47,20 @@ export default function EditChild() {
           router.back();
         }}
       />
-      <Button label={t('childForm.deleteProfile')} variant="danger" fullWidth onPress={confirmDelete} />
+      <Button label={t('childForm.deleteProfile')} icon="delete" variant="danger" fullWidth onPress={() => setConfirming(true)} />
+      <ConfirmDialog
+        visible={confirming}
+        destructive
+        title={t('childForm.deleteProfile')}
+        message={t('childForm.deleteConfirm', { name: child.name })}
+        confirmLabel={t('common.delete')}
+        cancelLabel={t('common.cancel')}
+        onConfirm={() => {
+          setConfirming(false);
+          void remove();
+        }}
+        onCancel={() => setConfirming(false)}
+      />
     </Screen>
   );
 }

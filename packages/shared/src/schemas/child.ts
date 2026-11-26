@@ -1,19 +1,12 @@
 import { z } from 'zod';
+import { CATEGORY_KEYS } from '../categories';
 import { localeSchema, timeOfDaySchema } from './common';
 
 export const AVATARS = ['fox', 'panda', 'owl', 'bunny', 'lion', 'turtle', 'whale', 'unicorn'] as const;
 export type Avatar = (typeof AVATARS)[number];
 
-export const AVATAR_EMOJI: Record<Avatar, string> = {
-  fox: '🦊',
-  panda: '🐼',
-  owl: '🦉',
-  bunny: '🐰',
-  lion: '🦁',
-  turtle: '🐢',
-  whale: '🐳',
-  unicorn: '🦄',
-};
+/** Art key for an avatar portrait. */
+export const avatarArt = (avatar: Avatar): string => `avatar.${avatar}`;
 
 export const MIN_AGE = 2;
 export const MAX_AGE = 12;
@@ -30,6 +23,10 @@ export const childSettingsSchema = z.object({
   warningMinutes: z.number().int().min(1).max(15),
   /** ISO timestamp until which the app is locked by a parent, or null. */
   lockedUntil: z.string().nullable(),
+  /** Content categories a parent has turned off for this child. Missing on older rows. */
+  blockedCategories: z.array(z.enum(CATEGORY_KEYS)).max(CATEGORY_KEYS.length).default([]),
+  /** How long the right/wrong feedback stays on screen after an answer. Missing on older rows. */
+  feedbackSeconds: z.union([z.literal(3), z.literal(5), z.literal(8)]).default(5),
 });
 export type ChildSettings = z.infer<typeof childSettingsSchema>;
 
@@ -42,9 +39,28 @@ export const DEFAULT_CHILD_SETTINGS: ChildSettings = {
   soundEffectsVolume: 0.6,
   warningMinutes: 5,
   lockedUntil: null,
+  blockedCategories: [],
+  feedbackSeconds: 5,
 };
 
-export const updateChildSettingsSchema = childSettingsSchema.omit({ lockedUntil: true }).partial();
+/** Fills settings fields added after a child was created (stored settings are JSON). */
+export function normalizeChildSettings(settings: Partial<ChildSettings> & Omit<ChildSettings, 'blockedCategories' | 'feedbackSeconds'>): ChildSettings {
+  return {
+    ...DEFAULT_CHILD_SETTINGS,
+    ...settings,
+    blockedCategories: settings.blockedCategories ?? [],
+    feedbackSeconds: settings.feedbackSeconds ?? DEFAULT_CHILD_SETTINGS.feedbackSeconds,
+  };
+}
+
+export const updateChildSettingsSchema = childSettingsSchema
+  .omit({ lockedUntil: true })
+  .partial()
+  // No default here: a partial update must not reset the blocked list.
+  .extend({
+    blockedCategories: z.array(z.enum(CATEGORY_KEYS)).max(CATEGORY_KEYS.length).optional(),
+    feedbackSeconds: z.union([z.literal(3), z.literal(5), z.literal(8)]).optional(),
+  });
 export type UpdateChildSettingsInput = z.infer<typeof updateChildSettingsSchema>;
 
 export const createChildSchema = z.object({

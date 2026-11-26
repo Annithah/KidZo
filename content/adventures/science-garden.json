@@ -1,0 +1,73 @@
+{
+  "id": "science-garden",
+  "title": "The Science Garden",
+  "summary": "Help a seed grow into a plant.",
+  "ageGroup": "young",
+  "skills": [
+    "science",
+    "nature"
+  ],
+  "art": "object.flower",
+  "startNodeId": "start",
+  "nodes": [
+    {
+      "id": "start",
+      "text": "Zo planted a seed. What does it need first?",
+      "art": "object.flower",
+      "video": "kidzo:science-seeds",
+      "choices": [
+        {
+          "id": "water",
+          "label": "Water",
+          "art": "object.ocean-wave",
+          "next": "water"
+        },
+        {
+          "id": "sun",
+          "label": "Sunshine",
+          "art": "object.sun",
+          "next": "sun"
+        },
+        {
+          "id": "dark",
+          "label": "A dark box",
+          "art": "object.gift",
+          "next": "dark"
+        }
+      ]
+    },
+    {
+      "id": "water",
+      "text": "Roots drink the water from the soil.",
+      "art": "object.ocean-wave",
+      "video": "kidzo:science-plants-need",
+      "next": "rain"
+    },
+    {
+      "id": "sun",
+      "text": "Leaves use sunlight to make food.",
+      "art": "object.sun",
+      "video": "kidzo:science-sun-is-a-star",
+      "next": "rain"
+    },
+    {
+      "id": "dark",
+      "text": "In the dark the seed waits. Plants need light to grow, so let us open the box!",
+      "art": "object.gift",
+      "next": "rain"
+    },
+    {
+      "id": "rain",
+      "text": "Clouds bring rain, and the water cycle keeps the garden growing.",
+      "art": "object.cloud",
+      "video": "kidzo:science-water-cycle",
+      "next": "end"
+    },
+    {
+      "id": "end",
+      "text": "The seed became a beautiful plant. You are a scientist!",
+      "art": "zo.celebrating",
+      "ending": true
+    }
+  ]
+}

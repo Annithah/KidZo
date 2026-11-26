@@ -15,6 +15,7 @@ import { audit } from '../lib/audit';
 import { AppError, badRequest, parse } from '../lib/errors';
 import { toChild, toSticker } from '../lib/serialize';
 import { getOwnedChild, todayStatus, weeklyInsights } from '../lib/usage';
+import { issueChildToken } from '../lib/child-scope';
 
 const MAX_CHILDREN = 8;
 const idParams = z.object({ id: z.uuid() });
@@ -117,6 +118,13 @@ export async function childRoutes(app: FastifyInstance): Promise<void> {
       .returning();
     if (!updated) throw new AppError(500, 'INTERNAL', 'Could not unlock');
     return toChild(updated);
+  });
+
+  /** Child-scoped token for kid screens. The child's age group is read from it server side. */
+  app.post('/children/:id/token', async (request) => {
+    const { id } = parse(z.object({ id: z.uuid() }), request.params);
+    const { child } = await getOwnedChild(app.db, request.user.sub, id);
+    return issueChildToken(app, request.user.sub, child.id);
   });
 
   app.get('/children/:id/today', async (request) => {

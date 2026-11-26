@@ -9,9 +9,9 @@ import { InlineMessage, errorMessage } from '../components/States';
 import { Text } from '../components/Typography';
 import { Zo } from '../components/Zo';
 import { useT } from '../i18n';
-import { validate, type FieldErrors } from '../lib/form';
+import { validate, validateField, type FieldErrors } from '../lib/form';
 import { useSession } from '../lib/session';
-import { colors, spacing } from '../theme';
+import { spacing, themes } from '../theme/core';
 
 export default function SignIn() {
   const { t } = useT();
@@ -22,6 +22,7 @@ export default function SignIn() {
   const [formError, setFormError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
 
+  const blur = (field: string) => setErrors((e) => ({ ...e, [field]: validateField(loginSchema, { email, password }, field) ?? '' }));
   const submit = async () => {
     const { data, errors: fieldErrors } = validate(loginSchema, { email, password });
     setErrors(fieldErrors);
@@ -42,8 +43,8 @@ export default function SignIn() {
       <Screen>
         <Header backLabel={t('common.back')} />
         <View style={styles.top}>
-          <Zo size={88} />
-          <Text variant="kicker" color={colors.coral}>
+          <Zo size={96} mood="waving" />
+          <Text variant="kicker" color={themes.light.accentText}>
             {t('auth.grownUpsOnly')}
           </Text>
           <Text variant="h1" align="center">
@@ -52,26 +53,30 @@ export default function SignIn() {
         </View>
         <TextField
           label={t('auth.email')}
+          icon="email"
           value={email}
           onChangeText={setEmail}
           autoCapitalize="none"
           autoComplete="email"
           keyboardType="email-address"
           textContentType="emailAddress"
-          error={errors.email}
+          error={errors.email || undefined}
+          onBlur={() => blur('email')}
         />
         <TextField
           label={t('auth.password')}
+          icon="password"
           value={password}
           onChangeText={setPassword}
           secureTextEntry
           autoComplete="current-password"
           textContentType="password"
-          error={errors.password}
+          error={errors.password || undefined}
+          onBlur={() => blur('password')}
           onSubmitEditing={submit}
         />
         {formError ? <InlineMessage tone="error" message={formError} /> : null}
-        <Button label={t('auth.signIn')} size="kid" fullWidth loading={busy} onPress={submit} />
+        <Button label={t('auth.signIn')} icon="user" size="kid" fullWidth loading={busy} disabled={busy} onPress={submit} />
         <Button label={t('auth.forgotPassword')} variant="ghost" onPress={() => router.push('/forgot-password')} />
         <Button label={t('auth.noAccount')} variant="ghost" onPress={() => router.replace('/sign-up')} />
       </Screen>

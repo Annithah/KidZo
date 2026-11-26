@@ -2,12 +2,13 @@ import { useQuery } from '@tanstack/react-query';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useEffect, useRef, useState } from 'react';
 import type { MutableRefObject } from 'react';
-import { Pressable, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { localize, type ContentDetail, type GuestPlaybackInput, type Locale } from '@kidzo/shared';
 import { Button } from '../../../components/Button';
 import { Row, Screen } from '../../../components/Layout';
 import { QuizPlayer } from '../../../components/players/QuizPlayer';
 import { SongPlayer } from '../../../components/players/SongPlayer';
+import { VideoPlayer } from '../../../components/players/VideoPlayer';
 import { StoryPlayer } from '../../../components/players/StoryPlayer';
 import { ErrorView, InlineMessage, LoadingView } from '../../../components/States';
 import { Text } from '../../../components/Typography';
@@ -15,7 +16,8 @@ import { useT } from '../../../i18n';
 import { api } from '../../../lib/api';
 import { useGuest } from '../../../lib/guest';
 import { stopSpeaking } from '../../../lib/narration';
-import { colors, radii, spacing } from '../../../theme';
+import { radius, spacing, useTheme } from '../../../theme/core';
+import { IconButton } from '../../../components/IconButton';
 
 export default function GuestPlayScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
@@ -42,15 +44,17 @@ export default function GuestPlayScreen() {
   if (!detail.data) {
     return <Screen scroll={false}><ErrorView error={detail.error} onRetry={() => void detail.refetch()} /></Screen>;
   }
-  return <GuestPlayer content={detail.data} startedAt={startedAt} />;
+  return <GuestPlayer content={detail.data} startedAt={startedAt} age={age} />;
 }
 
 function GuestPlayer({
   content,
   startedAt,
+  age,
 }: {
   content: ContentDetail;
   startedAt: MutableRefObject<number | null>;
+  age: number;
 }) {
   const { t, locale } = useT();
   const [saving, setSaving] = useState(false);
@@ -58,6 +62,7 @@ function GuestPlayer({
   const [pending, setPending] = useState<GuestPlaybackInput | null>(null);
   const activeRequest = useRef(false);
   const contentLocale = locale as Locale;
+  const theme = useTheme();
 
   const report = async (input: GuestPlaybackInput) => {
     if (activeRequest.current) return;
@@ -95,33 +100,27 @@ function GuestPlayer({
   };
 
   return (
-    <Screen scroll={content.body.kind !== 'song'}>
+    <Screen world scroll={content.body.kind !== 'song'}>
       <Row>
-        <Pressable
-          accessibilityRole="button"
-          accessibilityLabel={t('player.exit')}
-          onPress={exit}
-          hitSlop={10}
-          style={styles.close}
-        >
-          <Text variant="h3">✕</Text>
-        </Pressable>
+        <IconButton icon="close" label={t('player.exit')} onPress={exit} />
         <Text variant="bodyBold" numberOfLines={1} style={{ flex: 1 }} align="center">
           {localize(content.title, contentLocale)}
         </Text>
         <View style={styles.close} />
       </Row>
       {reportError ? (
-        <View style={styles.reportError}>
+        <View style={[styles.reportError, { backgroundColor: theme.surface }]}>
           <InlineMessage tone="error" message={t('guest.reportFailed')} />
-          <Button label={t('common.retry')} loading={saving} onPress={() => pending && void report(pending)} />
+          <Button label={t('common.retry')} icon="sync" loading={saving} onPress={() => pending && void report(pending)} />
           <Button label={t('guest.leaveWithoutReporting')} variant="secondary" onPress={() => router.replace('/guest/home')} />
         </View>
       ) : null}
       {content.body.kind === 'branching' ? (
-        <StoryPlayer body={content.body} locale={contentLocale} familyMode={false} narration onFinish={(path, answers) => finish(path, answers)} />
+        <StoryPlayer body={content.body} locale={contentLocale} familyMode={false} narration childAge={age} onFinish={(path, answers) => finish(path, answers)} />
       ) : content.body.kind === 'quiz' ? (
         <QuizPlayer body={content.body} locale={contentLocale} narration onFinish={(path, answers) => finish(path, answers)} />
+      ) : content.body.kind === 'video' ? (
+        <VideoPlayer body={content.body} locale={contentLocale} narration fallbackArt={content.coverArt} onFinish={(path, answers) => finish(path, answers)} />
       ) : (
         <SongPlayer body={content.body} locale={contentLocale} volume={0.6} onFinish={() => finish([])} />
       )}
@@ -131,5 +130,5 @@ function GuestPlayer({
 
 const styles = StyleSheet.create({
   close: { width: 48, height: 48, borderRadius: 24, alignItems: 'center', justifyContent: 'center' },
-  reportError: { gap: spacing.xs, padding: spacing.sm, backgroundColor: colors.white, borderRadius: radii.lg },
+  reportError: { gap: spacing.xs, padding: spacing.sm, borderRadius: radius.lg },
 });

@@ -1,0 +1,1567 @@
+{
+  "topic": "science",
+  "category": "learning",
+  "skills": [
+    "science",
+    "nature"
+  ],
+  "art": "object.rocket",
+  "videos": [
+    {
+      "id": "science-plants-need",
+      "title": "Plants need",
+      "ageGroup": "young",
+      "summary": "Plants need",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover something amazing!"
+        },
+        {
+          "art": "object.flower",
+          "say": "Plants need sunlight, water and air to grow."
+        },
+        {
+          "art": "object.flower",
+          "say": "Roots drink water from the soil."
+        },
+        {
+          "art": "object.flower",
+          "say": "Leaves use sunlight to make food."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do plants need to grow?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Sunlight and water",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Candy",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Darkness",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Plants need sunlight, water and air."
+        }
+      ]
+    },
+    {
+      "id": "science-seeds",
+      "title": "Seeds",
+      "ageGroup": "young",
+      "summary": "Seeds",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover something amazing!"
+        },
+        {
+          "art": "object.flower",
+          "say": "A seed is a tiny baby plant."
+        },
+        {
+          "art": "object.flower",
+          "say": "With water and warmth, it sprouts."
+        },
+        {
+          "art": "object.flower",
+          "say": "Then roots grow down and a stem grows up."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What grows down from a seed?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Roots",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Flowers",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Fruit",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Roots grow down into the soil."
+        }
+      ]
+    },
+    {
+      "id": "science-water-cycle",
+      "title": "Water cycle",
+      "ageGroup": "young",
+      "summary": "Water cycle",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover something amazing!"
+        },
+        {
+          "art": "object.cloud",
+          "say": "The sun warms water and it rises as vapor."
+        },
+        {
+          "art": "object.cloud",
+          "say": "Vapor cools and makes clouds."
+        },
+        {
+          "art": "object.cloud",
+          "say": "Clouds drop rain, and the water flows back to the sea."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What falls from clouds?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Rain",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Sand",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Leaves",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Clouds drop rain or snow."
+        }
+      ]
+    },
+    {
+      "id": "science-evaporation",
+      "title": "Evaporation",
+      "ageGroup": "big",
+      "summary": "Evaporation",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover something amazing!"
+        },
+        {
+          "art": "object.sun",
+          "say": "Evaporation is when liquid water turns into vapor."
+        },
+        {
+          "art": "object.sun",
+          "say": "Heat from the sun speeds it up."
+        },
+        {
+          "art": "object.sun",
+          "say": "Puddles disappear on sunny days because of evaporation."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Why do puddles dry up on sunny days?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Evaporation",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Freezing",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Magnetism",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Gravity",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "The sun heats the water and it evaporates."
+        }
+      ]
+    },
+    {
+      "id": "science-heart",
+      "title": "Heart",
+      "ageGroup": "big",
+      "summary": "Heart",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover something amazing!"
+        },
+        {
+          "art": "object.heart",
+          "say": "Your heart is a muscle about the size of your fist."
+        },
+        {
+          "art": "object.heart",
+          "say": "It pumps blood all around your body."
+        },
+        {
+          "art": "object.heart",
+          "say": "Blood carries oxygen to every part of you."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What does the heart pump?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Blood",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Air",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Food",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Water",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "The heart pumps blood that carries oxygen."
+        }
+      ]
+    },
+    {
+      "id": "science-lungs",
+      "title": "Lungs",
+      "ageGroup": "big",
+      "summary": "Lungs",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover something amazing!"
+        },
+        {
+          "art": "object.wind",
+          "say": "You have two lungs in your chest."
+        },
+        {
+          "art": "object.wind",
+          "say": "When you breathe in, they fill with air."
+        },
+        {
+          "art": "object.wind",
+          "say": "They pass oxygen into your blood."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How many lungs do you have?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "2",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "1",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "4",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "3",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "We have two lungs."
+        }
+      ]
+    },
+    {
+      "id": "science-bones",
+      "title": "Bones",
+      "ageGroup": "big",
+      "summary": "Bones",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover something amazing!"
+        },
+        {
+          "art": "object.house",
+          "say": "Bones hold you up, like the frame of a house."
+        },
+        {
+          "art": "object.house",
+          "say": "An adult has 206 bones."
+        },
+        {
+          "art": "object.house",
+          "say": "Babies are born with more, and some join together as they grow."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How many bones does an adult have?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "206",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "50",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "1000",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "12",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "An adult skeleton has 206 bones."
+        }
+      ]
+    },
+    {
+      "id": "science-five-senses",
+      "title": "Five senses",
+      "ageGroup": "young",
+      "summary": "Five senses",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover something amazing!"
+        },
+        {
+          "art": "object.mirror",
+          "say": "We have five senses."
+        },
+        {
+          "art": "object.mirror",
+          "say": "We see, hear, smell, taste and touch."
+        },
+        {
+          "art": "object.mirror",
+          "say": "Our senses help us learn about the world."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How many senses do we have?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "5",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "2",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "10",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Sight, hearing, smell, taste and touch: five senses."
+        }
+      ]
+    },
+    {
+      "id": "science-taste",
+      "title": "Taste",
+      "ageGroup": "young",
+      "summary": "Taste",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover something amazing!"
+        },
+        {
+          "art": "object.apple",
+          "say": "We taste with our tongue."
+        },
+        {
+          "art": "object.apple",
+          "say": "Foods can be sweet, salty, sour or bitter."
+        },
+        {
+          "art": "object.apple",
+          "say": "A lemon tastes sour!"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How does a lemon taste?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Sour",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Salty",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Spicy",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Lemons taste sour."
+        }
+      ]
+    },
+    {
+      "id": "science-planets",
+      "title": "Planets",
+      "ageGroup": "big",
+      "summary": "Planets",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover something amazing!"
+        },
+        {
+          "art": "object.rocket",
+          "say": "Our solar system has eight planets."
+        },
+        {
+          "art": "object.rocket",
+          "say": "Mercury is closest to the sun."
+        },
+        {
+          "art": "object.rocket",
+          "say": "Jupiter is the biggest planet."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which is the biggest planet?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Jupiter",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Earth",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Mars",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Mercury",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Jupiter is the largest planet in our solar system."
+        }
+      ]
+    },
+    {
+      "id": "science-sun-is-a-star",
+      "title": "Sun is a star",
+      "ageGroup": "young",
+      "summary": "Sun is a star",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover something amazing!"
+        },
+        {
+          "art": "object.sun",
+          "say": "The sun is a star."
+        },
+        {
+          "art": "object.sun",
+          "say": "It looks big because it is close to us."
+        },
+        {
+          "art": "object.sun",
+          "say": "Its light and warmth help life on Earth."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is the sun?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "A star",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "A planet",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "A cloud",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "The sun is our closest star."
+        }
+      ]
+    },
+    {
+      "id": "science-moon",
+      "title": "Moon",
+      "ageGroup": "young",
+      "summary": "Moon",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover something amazing!"
+        },
+        {
+          "art": "object.moon",
+          "say": "The moon travels around the Earth."
+        },
+        {
+          "art": "object.moon",
+          "say": "It does not make its own light."
+        },
+        {
+          "art": "object.moon",
+          "say": "It shines because the sun lights it up."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Why does the moon shine?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Sunlight hits it",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "It is on fire",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "It has lamps",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "The moon reflects light from the sun."
+        }
+      ]
+    },
+    {
+      "id": "science-day-and-night",
+      "title": "Day and night",
+      "ageGroup": "young",
+      "summary": "Day and night",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover something amazing!"
+        },
+        {
+          "art": "object.full-moon",
+          "say": "The Earth spins like a top."
+        },
+        {
+          "art": "object.full-moon",
+          "say": "When our side faces the sun, it is day."
+        },
+        {
+          "art": "object.full-moon",
+          "say": "When it faces away, it is night."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What makes day and night?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "The Earth spinning",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "The moon moving",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Clouds",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "The Earth spins, so each side takes turns facing the sun."
+        }
+      ]
+    },
+    {
+      "id": "science-gravity",
+      "title": "Gravity",
+      "ageGroup": "big",
+      "summary": "Gravity",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover something amazing!"
+        },
+        {
+          "art": "object.apple",
+          "say": "Gravity pulls things toward each other."
+        },
+        {
+          "art": "object.apple",
+          "say": "It is why a dropped apple falls down."
+        },
+        {
+          "art": "object.apple",
+          "say": "Gravity keeps the moon going around the Earth."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Why does an apple fall to the ground?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Gravity",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Wind",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Magnets",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Sound",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Gravity pulls the apple toward the Earth."
+        }
+      ]
+    },
+    {
+      "id": "science-magnets",
+      "title": "Magnets",
+      "ageGroup": "young",
+      "summary": "Magnets",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover something amazing!"
+        },
+        {
+          "art": "object.diamond",
+          "say": "Magnets pull some metals, like iron."
+        },
+        {
+          "art": "object.diamond",
+          "say": "Every magnet has a north and a south pole."
+        },
+        {
+          "art": "object.diamond",
+          "say": "Opposite poles pull together. Same poles push apart."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do magnets pull?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Some metals",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Wood",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Paper",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Magnets attract metals like iron."
+        }
+      ]
+    },
+    {
+      "id": "science-magnet-poles",
+      "title": "Magnet poles",
+      "ageGroup": "big",
+      "summary": "Magnet poles",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover something amazing!"
+        },
+        {
+          "art": "object.diamond",
+          "say": "A magnet has two poles: north and south."
+        },
+        {
+          "art": "object.diamond",
+          "say": "North and south attract each other."
+        },
+        {
+          "art": "object.diamond",
+          "say": "Two north poles push each other away."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What happens when two north poles meet?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "They push apart",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "They pull together",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Nothing",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "They melt",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Like poles repel each other."
+        }
+      ]
+    },
+    {
+      "id": "science-rain-and-rainbows",
+      "title": "Rain and rainbows",
+      "ageGroup": "young",
+      "summary": "Rain and rainbows",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover something amazing!"
+        },
+        {
+          "art": "object.rainbow",
+          "say": "Rainbows happen when the sun shines through raindrops."
+        },
+        {
+          "art": "object.rainbow",
+          "say": "The light splits into colors."
+        },
+        {
+          "art": "object.rainbow",
+          "say": "Red is always on the outside."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do we need to see a rainbow?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Sun and rain",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Snow and night",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Wind and sand",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Sunlight shining through raindrops makes a rainbow."
+        }
+      ]
+    },
+    {
+      "id": "science-weather-types",
+      "title": "Weather types",
+      "ageGroup": "young",
+      "summary": "Weather types",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover something amazing!"
+        },
+        {
+          "art": "object.cloud",
+          "say": "Weather can be sunny, rainy, windy or snowy."
+        },
+        {
+          "art": "object.cloud",
+          "say": "Clouds bring rain."
+        },
+        {
+          "art": "object.cloud",
+          "say": "Weather changes every day."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do clouds often bring?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Rain",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Sunshine",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Rainbows only",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Clouds hold water that can fall as rain."
+        }
+      ]
+    },
+    {
+      "id": "science-seasons",
+      "title": "Seasons",
+      "ageGroup": "big",
+      "summary": "Seasons",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover something amazing!"
+        },
+        {
+          "art": "object.sun",
+          "say": "Many places have seasons."
+        },
+        {
+          "art": "object.sun",
+          "say": "Near the equator, like Rwanda, there are rainy and dry seasons instead of cold winters."
+        },
+        {
+          "art": "object.sun",
+          "say": "The Earth's tilt causes the seasons."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What seasons does Rwanda have?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Rainy and dry",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Only winter",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Snow and ice",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "None at all",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Near the equator, seasons are rainy and dry."
+        }
+      ]
+    },
+    {
+      "id": "science-states-of-matter",
+      "title": "States of matter",
+      "ageGroup": "big",
+      "summary": "States of matter",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover something amazing!"
+        },
+        {
+          "art": "object.ocean-wave",
+          "say": "Matter can be solid, liquid or gas."
+        },
+        {
+          "art": "object.ocean-wave",
+          "say": "Ice is solid, water is liquid, steam is gas."
+        },
+        {
+          "art": "object.ocean-wave",
+          "say": "Heat can change one into another."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which one is a gas?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Steam",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Ice",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Water",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Rock",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Steam is water as a gas."
+        }
+      ]
+    },
+    {
+      "id": "science-floating-sinking",
+      "title": "Floating sinking",
+      "ageGroup": "young",
+      "summary": "Floating sinking",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover something amazing!"
+        },
+        {
+          "art": "object.ocean-wave",
+          "say": "Some things float, some sink."
+        },
+        {
+          "art": "object.ocean-wave",
+          "say": "A light leaf floats."
+        },
+        {
+          "art": "object.ocean-wave",
+          "say": "A heavy stone sinks."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Will a leaf float or sink?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Float",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Sink",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Fly",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "A leaf is light, so it floats."
+        }
+      ]
+    },
+    {
+      "id": "science-insects",
+      "title": "Insects",
+      "ageGroup": "young",
+      "summary": "Insects",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover something amazing!"
+        },
+        {
+          "art": "object.ladybug",
+          "say": "Insects have six legs."
+        },
+        {
+          "art": "object.ladybug",
+          "say": "Their bodies have three parts."
+        },
+        {
+          "art": "object.ladybug",
+          "say": "Bees, ants and ladybugs are insects."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How many legs does an insect have?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "6",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "8",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "4",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "All insects have six legs."
+        }
+      ]
+    },
+    {
+      "id": "science-butterfly-life-cycle",
+      "title": "Butterfly life cycle",
+      "ageGroup": "young",
+      "summary": "Butterfly life cycle",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover something amazing!"
+        },
+        {
+          "art": "object.butterfly",
+          "say": "A butterfly starts as a tiny egg."
+        },
+        {
+          "art": "object.butterfly",
+          "say": "Then it becomes a caterpillar."
+        },
+        {
+          "art": "object.butterfly",
+          "say": "It makes a chrysalis and comes out as a butterfly!"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What does a caterpillar become?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "A butterfly",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "A bee",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "A bird",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "A caterpillar changes into a butterfly."
+        }
+      ]
+    },
+    {
+      "id": "science-bees-pollinate",
+      "title": "Bees pollinate",
+      "ageGroup": "big",
+      "summary": "Bees pollinate",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover something amazing!"
+        },
+        {
+          "art": "object.bee",
+          "say": "Bees visit flowers to drink nectar."
+        },
+        {
+          "art": "object.bee",
+          "say": "Pollen sticks to their fuzzy bodies."
+        },
+        {
+          "art": "object.bee",
+          "say": "Carrying pollen helps flowers make seeds and fruit."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How do bees help flowers?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "They carry pollen",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "They water them",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "They paint them",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "They cut them",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Bees carry pollen from flower to flower."
+        }
+      ]
+    },
+    {
+      "id": "science-food-chain",
+      "title": "Food chain",
+      "ageGroup": "big",
+      "summary": "Food chain",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover something amazing!"
+        },
+        {
+          "art": "object.flower",
+          "say": "A food chain shows who eats what."
+        },
+        {
+          "art": "object.flower",
+          "say": "Plants make food from sunlight."
+        },
+        {
+          "art": "object.flower",
+          "say": "Animals eat plants, and some animals eat other animals."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Where does energy in a food chain start?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "The sun",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "The lion",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "The rain",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "The rocks",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Plants use sunlight, so energy starts with the sun."
+        }
+      ]
+    },
+    {
+      "id": "science-recycling",
+      "title": "Recycling",
+      "ageGroup": "young",
+      "summary": "Recycling",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover something amazing!"
+        },
+        {
+          "art": "object.gift",
+          "say": "Recycling turns old things into new things."
+        },
+        {
+          "art": "object.gift",
+          "say": "Paper, plastic and glass can often be recycled."
+        },
+        {
+          "art": "object.gift",
+          "say": "It keeps our planet clean."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Why do we recycle?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "To keep the planet clean",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "To make more trash",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "For no reason",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Recycling reduces waste and protects nature."
+        }
+      ]
+    },
+    {
+      "id": "science-trees-give-oxygen",
+      "title": "Trees give oxygen",
+      "ageGroup": "big",
+      "summary": "Trees give oxygen",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover something amazing!"
+        },
+        {
+          "art": "object.flower",
+          "say": "Trees take in carbon dioxide."
+        },
+        {
+          "art": "object.flower",
+          "say": "They give out oxygen that we breathe."
+        },
+        {
+          "art": "object.flower",
+          "say": "Forests like Nyungwe are very important."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do trees give out that we breathe?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Oxygen",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Smoke",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Salt",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Sand",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Trees release oxygen."
+        }
+      ]
+    },
+    {
+      "id": "science-volcano",
+      "title": "Volcano",
+      "ageGroup": "big",
+      "summary": "Volcano",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover something amazing!"
+        },
+        {
+          "art": "object.triangle",
+          "say": "A volcano is an opening in the Earth."
+        },
+        {
+          "art": "object.triangle",
+          "say": "Hot melted rock called magma rises up."
+        },
+        {
+          "art": "object.triangle",
+          "say": "When it comes out, it is called lava."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is lava?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Melted rock",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Hot water",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Ice",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Sand",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Lava is melted rock that comes out of a volcano."
+        }
+      ]
+    },
+    {
+      "id": "science-sound",
+      "title": "Sound",
+      "ageGroup": "big",
+      "summary": "Sound",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover something amazing!"
+        },
+        {
+          "art": "object.music-note",
+          "say": "Sound is made by vibrations."
+        },
+        {
+          "art": "object.music-note",
+          "say": "A drum skin shakes when you hit it."
+        },
+        {
+          "art": "object.music-note",
+          "say": "The vibrations travel through the air to your ears."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What makes sound?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Vibrations",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Colors",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Light",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Smell",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Sound is made when things vibrate."
+        }
+      ]
+    },
+    {
+      "id": "science-light-and-shadow",
+      "title": "Light and shadow",
+      "ageGroup": "young",
+      "summary": "Light and shadow",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover something amazing!"
+        },
+        {
+          "art": "object.sun",
+          "say": "Light travels in straight lines."
+        },
+        {
+          "art": "object.sun",
+          "say": "When something blocks the light, it makes a shadow."
+        },
+        {
+          "art": "object.sun",
+          "say": "Shadows are longer in the morning and evening."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What makes a shadow?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Something blocking light",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Rain",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Music",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "A shadow forms where light is blocked."
+        }
+      ]
+    }
+  ]
+}

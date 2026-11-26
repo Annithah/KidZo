@@ -6,8 +6,11 @@ import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { Directory, File, Paths } from 'expo-file-system';
 import { useCallback, useState } from 'react';
 import { Platform } from 'react-native';
+import { upgradeLegacyContent } from '@kidzo/art';
 import { contentDetailSchema, type ContentDetail } from '@kidzo/shared';
 import { api } from './api';
+import { API_URL } from './config';
+import { resolveMediaUrl } from './media-url';
 import { readJson, writeJson } from './kv';
 import { appStore } from './storage';
 
@@ -19,7 +22,7 @@ export interface DownloadEntry {
   id: string;
   version: number;
   title: string;
-  coverEmoji: string;
+  coverArt: string;
   coverColor: string;
   sizeBytes: number;
   downloadedAt: string;
@@ -38,7 +41,9 @@ const packageFile = (id: string) => new File(contentDir(), `${id}.json`);
 
 export async function listDownloads(): Promise<DownloadIndex> {
   if (!downloadsSupported) return {};
-  return readJson<DownloadIndex>(appStore, INDEX_KEY, {});
+  const index = await readJson<DownloadIndex>(appStore, INDEX_KEY, {});
+  // Entries saved before the art library carried coverEmoji; upgrade them on read.
+  return Object.fromEntries(Object.entries(index).map(([k, e]) => [k, upgradeLegacyContent(e)]));
 }
 
 export async function readLocalContent(id: string): Promise<ContentDetail | null> {
@@ -46,7 +51,7 @@ export async function readLocalContent(id: string): Promise<ContentDetail | null
   try {
     const file = packageFile(id);
     if (!file.exists) return null;
-    const parsed = contentDetailSchema.safeParse(JSON.parse(await file.text()));
+    const parsed = contentDetailSchema.safeParse(upgradeLegacyContent(JSON.parse(await file.text())));
     return parsed.success ? parsed.data : null;
   } catch {
     return null;
@@ -67,7 +72,7 @@ export async function downloadContent(id: string, onProgress?: (p: number) => vo
     const ext = body.audioUrl.split('.').pop()?.split('?')[0] ?? 'mp3';
     const target = new File(contentDir(), `${id}-audio.${ext}`);
     if (target.exists) target.delete();
-    const task = File.createDownloadTask(body.audioUrl, target, {
+    const task = File.createDownloadTask(resolveMediaUrl(body.audioUrl, API_URL), target, {
       onProgress: ({ bytesWritten, totalBytes }) => {
         if (totalBytes > 0) onProgress?.(0.3 + 0.65 * (bytesWritten / totalBytes));
       },
@@ -89,7 +94,7 @@ export async function downloadContent(id: string, onProgress?: (p: number) => vo
     id,
     version: detail.version,
     title: detail.title.en,
-    coverEmoji: detail.coverEmoji,
+    coverArt: detail.coverArt,
     coverColor: detail.coverColor,
     sizeBytes: file.size + mediaBytes,
     downloadedAt: new Date().toISOString(),

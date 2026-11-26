@@ -7,6 +7,7 @@ import {
   type BranchingPathPlan,
   type StoryChoice,
 } from '@kidzo/shared';
+import { Art } from './Art';
 
 function pathKey(choices: BranchingPathPlan['choices']): string {
   return choices.map(({ nodeId, choiceId }) => `${nodeId}:${choiceId}`).join('|');
@@ -212,7 +213,7 @@ export function BranchingPreview({ body }: { body: BranchingBody }) {
                 style={{ width: '100%', height: '100%', objectFit: 'contain' }}
               />
             ) : (
-              <span aria-hidden style={{ fontSize: 88 }}>{node.scene.emoji}</span>
+              <Art art={node.scene.art} size={120} />
             )}
             {node.videoQuestion && questionVisible ? (
               <div style={{ position: 'absolute', inset: 12, padding: 16, borderRadius: 14, background: 'rgba(20, 35, 58, 0.92)', color: 'white', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 8, overflowY: 'auto' }}>
@@ -223,7 +224,7 @@ export function BranchingPreview({ body }: { body: BranchingBody }) {
                 <div style={{ display: 'grid', gridTemplateColumns: node.choices.length > 2 ? '1fr 1fr' : '1fr', gap: 6 }}>
                   {node.choices.map((choice) => (
                     <button key={choice.id} type="button" className="btn sky small" onClick={() => choose(choice)}>
-                      {choice.emoji} {localize(choice.label, 'en')}
+                      <Art art={choice.art} size={22} /> {localize(choice.label, 'en')}
                     </button>
                   ))}
                 </div>
@@ -234,7 +235,7 @@ export function BranchingPreview({ body }: { body: BranchingBody }) {
             <div className="row">
               {node.choices.map((choice) => (
                 <button key={choice.id} type="button" className="btn sky small" onClick={() => choose(choice)}>
-                  {choice.emoji} {localize(choice.label, 'en')}
+                  <Art art={choice.art} size={22} /> {localize(choice.label, 'en')}
                 </button>
               ))}
             </div>

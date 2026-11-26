@@ -7,6 +7,8 @@ export const adminStatsSchema = z.object({
   content: z.object({
     published: z.number().int(),
     draft: z.number().int(),
+    review: z.number().int(),
+    unpublished: z.number().int(),
     archived: z.number().int(),
   }),
   sessionsLast7Days: z.number().int(),
@@ -76,3 +78,25 @@ export const ALLOWED_MEDIA_TYPES = [
 export const MAX_MEDIA_BYTES = 15 * 1024 * 1024;
 export const MAX_VIDEO_BYTES = 100 * 1024 * 1024;
 export const MAX_UPLOAD_BYTES = MAX_VIDEO_BYTES;
+
+/** Popular choices and endings per branching story, from completed sessions in a date range. */
+export const storyChoiceInsightsSchema = z.object({
+  days: z.number().int(),
+  stories: z.array(
+    z.object({
+      id: z.uuid(),
+      title: z.string(),
+      paths: z.number().int(),
+      endings: z.array(z.object({ nodeId: z.string(), text: z.string(), count: z.number().int(), percent: z.number() })),
+      choices: z.array(
+        z.object({
+          nodeId: z.string(),
+          text: z.string(),
+          reached: z.number().int(),
+          picks: z.array(z.object({ choiceId: z.string(), label: z.string(), count: z.number().int(), percent: z.number() })),
+        }),
+      ),
+    }),
+  ),
+});
+export type StoryChoiceInsights = z.infer<typeof storyChoiceInsightsSchema>;

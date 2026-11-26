@@ -1,0 +1,821 @@
+{
+  "topic": "science-explorers",
+  "category": "learning",
+  "skills": [
+    "science",
+    "nature"
+  ],
+  "art": "object.rocket",
+  "videos": [
+    {
+      "id": "science-big-photosynthesis",
+      "title": "Photosynthesis",
+      "summary": "Photosynthesis",
+      "ageGroup": "big",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover how our world works!"
+        },
+        {
+          "art": "object.flower",
+          "say": "Photosynthesis is how plants make food."
+        },
+        {
+          "art": "object.flower",
+          "say": "They use sunlight, water and carbon dioxide."
+        },
+        {
+          "art": "object.flower",
+          "say": "They make sugar and give out oxygen."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do plants give out during photosynthesis?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Oxygen",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Smoke",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Salt",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Sand",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Plants release oxygen when they make food."
+        }
+      ]
+    },
+    {
+      "id": "science-big-digestion",
+      "title": "Digestion",
+      "summary": "Digestion",
+      "ageGroup": "big",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover how our world works!"
+        },
+        {
+          "art": "object.apple",
+          "say": "Digestion breaks food into tiny pieces."
+        },
+        {
+          "art": "object.apple",
+          "say": "It starts in your mouth when you chew."
+        },
+        {
+          "art": "object.apple",
+          "say": "Your stomach and intestines finish the job."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Where does digestion start?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "In the mouth",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "In the feet",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "In the hair",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "In the ears",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Chewing in the mouth starts digestion."
+        }
+      ]
+    },
+    {
+      "id": "science-big-brain",
+      "title": "Brain",
+      "summary": "Brain",
+      "ageGroup": "big",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover how our world works!"
+        },
+        {
+          "art": "object.puzzle",
+          "say": "Your brain is the control center of your body."
+        },
+        {
+          "art": "object.puzzle",
+          "say": "It sends messages through nerves."
+        },
+        {
+          "art": "object.puzzle",
+          "say": "Sleep helps your brain learn."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What helps your brain learn?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Sleep",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Skipping meals",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Loud noise all night",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Nothing",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Good sleep helps the brain store what we learn."
+        }
+      ]
+    },
+    {
+      "id": "science-big-eyes",
+      "title": "Eyes",
+      "summary": "Eyes",
+      "ageGroup": "big",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover how our world works!"
+        },
+        {
+          "art": "object.mirror",
+          "say": "Your eyes let light in through the pupil."
+        },
+        {
+          "art": "object.mirror",
+          "say": "The light makes a picture at the back of the eye."
+        },
+        {
+          "art": "object.mirror",
+          "say": "Your brain turns it into what you see."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What lets light into the eye?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "The pupil",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "The ear",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "The nose",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "The tooth",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Light enters through the pupil."
+        }
+      ]
+    },
+    {
+      "id": "science-big-light-and-sound-speed",
+      "title": "Light and sound speed",
+      "summary": "Light and sound speed",
+      "ageGroup": "big",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover how our world works!"
+        },
+        {
+          "art": "object.sun",
+          "say": "Light travels faster than sound."
+        },
+        {
+          "art": "object.sun",
+          "say": "In a storm we see lightning before we hear thunder."
+        },
+        {
+          "art": "object.sun",
+          "say": "Light is the fastest thing we know."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Why do we see lightning before thunder?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Light is faster than sound",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Thunder is shy",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Our ears are slow",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Lightning is closer",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Light travels much faster than sound."
+        }
+      ]
+    },
+    {
+      "id": "science-big-earth-orbit",
+      "title": "Earth orbit",
+      "summary": "Earth orbit",
+      "ageGroup": "big",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover how our world works!"
+        },
+        {
+          "art": "object.full-moon",
+          "say": "The Earth travels around the sun."
+        },
+        {
+          "art": "object.full-moon",
+          "say": "One trip takes about 365 days."
+        },
+        {
+          "art": "object.full-moon",
+          "say": "That is one year."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How long does Earth take to go around the sun?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "About 365 days",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "One day",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "One week",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Ten years",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "One orbit takes about a year: 365 days."
+        }
+      ]
+    },
+    {
+      "id": "science-big-moon-phases",
+      "title": "Moon phases",
+      "summary": "Moon phases",
+      "ageGroup": "big",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover how our world works!"
+        },
+        {
+          "art": "object.moon",
+          "say": "The moon seems to change shape."
+        },
+        {
+          "art": "object.moon",
+          "say": "These shapes are called phases."
+        },
+        {
+          "art": "object.moon",
+          "say": "They happen because we see different parts of its sunlit side."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Why does the moon seem to change shape?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "We see different sunlit parts",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "It shrinks",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Clouds eat it",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "It melts",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "We see different amounts of the sunlit side."
+        }
+      ]
+    },
+    {
+      "id": "science-big-erosion",
+      "title": "Erosion",
+      "summary": "Erosion",
+      "ageGroup": "big",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover how our world works!"
+        },
+        {
+          "art": "object.ocean-wave",
+          "say": "Erosion is when wind and water wear away rock and soil."
+        },
+        {
+          "art": "object.ocean-wave",
+          "say": "Rivers can carve deep valleys."
+        },
+        {
+          "art": "object.ocean-wave",
+          "say": "Trees help hold soil in place."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What helps stop soil erosion?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Trees",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Cars",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Plastic",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Smoke",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Tree roots hold soil together."
+        }
+      ]
+    },
+    {
+      "id": "science-big-fossils",
+      "title": "Fossils",
+      "summary": "Fossils",
+      "ageGroup": "big",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover how our world works!"
+        },
+        {
+          "art": "object.shell",
+          "say": "Fossils are the remains of very old plants and animals."
+        },
+        {
+          "art": "object.shell",
+          "say": "They form in rock over millions of years."
+        },
+        {
+          "art": "object.shell",
+          "say": "Fossils teach us about dinosaurs."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What are fossils?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Remains of ancient life",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "New toys",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Clouds",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Coins",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Fossils are traces of plants and animals from long ago."
+        }
+      ]
+    },
+    {
+      "id": "science-big-electric-circuits",
+      "title": "Electric circuits",
+      "summary": "Electric circuits",
+      "ageGroup": "big",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover how our world works!"
+        },
+        {
+          "art": "object.sparkles",
+          "say": "Electricity flows in a loop called a circuit."
+        },
+        {
+          "art": "object.sparkles",
+          "say": "A battery pushes the electricity."
+        },
+        {
+          "art": "object.sparkles",
+          "say": "If the loop breaks, the bulb goes out."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What happens if a circuit is broken?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "The bulb goes out",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "The bulb gets brighter",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Nothing",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "It rains",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Electricity needs a complete loop to flow."
+        }
+      ]
+    },
+    {
+      "id": "science-big-friction",
+      "title": "Friction",
+      "summary": "Friction",
+      "ageGroup": "big",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover how our world works!"
+        },
+        {
+          "art": "object.footprints",
+          "say": "Friction is a force that slows things down."
+        },
+        {
+          "art": "object.footprints",
+          "say": "Rough surfaces have more friction."
+        },
+        {
+          "art": "object.footprints",
+          "say": "Friction helps our shoes grip the ground."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which surface has more friction?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Rough ground",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Smooth ice",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Wet glass",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Oil",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Rough surfaces create more friction."
+        }
+      ]
+    },
+    {
+      "id": "science-big-condensation",
+      "title": "Condensation",
+      "summary": "Condensation",
+      "ageGroup": "big",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover how our world works!"
+        },
+        {
+          "art": "object.cloud",
+          "say": "Condensation is when vapor cools into water drops."
+        },
+        {
+          "art": "object.cloud",
+          "say": "You see it on a cold glass on a warm day."
+        },
+        {
+          "art": "object.cloud",
+          "say": "Clouds form by condensation too."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Why do drops form on a cold glass?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Condensation",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "The glass is leaking",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Magic",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Evaporation",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Water vapor in the air cools and condenses on the cold glass."
+        }
+      ]
+    },
+    {
+      "id": "science-big-ecosystems",
+      "title": "Ecosystems",
+      "summary": "Ecosystems",
+      "ageGroup": "big",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover how our world works!"
+        },
+        {
+          "art": "object.flower",
+          "say": "An ecosystem is living things and their home working together."
+        },
+        {
+          "art": "object.flower",
+          "say": "A forest has trees, animals, soil and water."
+        },
+        {
+          "art": "object.flower",
+          "say": "If one part changes, the others are affected."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is in an ecosystem?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Living things and their home",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Only rocks",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Only people",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Only water",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "An ecosystem includes living things and their environment."
+        }
+      ]
+    },
+    {
+      "id": "science-big-teeth",
+      "title": "Teeth",
+      "summary": "Teeth",
+      "ageGroup": "big",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover how our world works!"
+        },
+        {
+          "art": "object.sparkles",
+          "say": "Children have 20 baby teeth."
+        },
+        {
+          "art": "object.sparkles",
+          "say": "Adults usually have 32 teeth."
+        },
+        {
+          "art": "object.sparkles",
+          "say": "Brushing twice a day keeps them healthy."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How many teeth do adults usually have?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "32",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "20",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "10",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "50",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Adults usually have 32 teeth."
+        }
+      ]
+    },
+    {
+      "id": "science-big-skin",
+      "title": "Skin",
+      "summary": "Skin",
+      "ageGroup": "big",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Let's discover how our world works!"
+        },
+        {
+          "art": "object.heart",
+          "say": "Your skin is your largest organ."
+        },
+        {
+          "art": "object.heart",
+          "say": "It protects you from germs."
+        },
+        {
+          "art": "object.heart",
+          "say": "It helps you feel touch and temperature."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Science is everywhere!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is the largest organ of the body?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Skin",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Heart",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Brain",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Lungs",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Skin is the largest organ."
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 import type { FastifyError, FastifyInstance } from 'fastify';
 import type { z } from 'zod';
+import { friendlyMessage } from '@kidzo/shared';
 
 export class AppError extends Error {
   constructor(
@@ -27,7 +28,7 @@ export function parse<T extends z.ZodType>(schema: T, data: unknown): z.infer<T>
       400,
       'VALIDATION_ERROR',
       'Some fields need attention',
-      result.error.issues.map((i) => ({ path: i.path.join('.'), message: i.message })),
+      result.error.issues.map((i) => ({ path: i.path.join('.'), message: friendlyMessage(i as Parameters<typeof friendlyMessage>[0]) })),
     );
   }
   return result.data;

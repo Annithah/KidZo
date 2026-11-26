@@ -14,7 +14,7 @@ import {
 } from '../src';
 
 const t = (en: string) => ({ en });
-const scene = { emoji: '🌙', color: '#24264A', videoUrl: null };
+const scene = { art: 'object.moon', color: '#24264A', videoUrl: null };
 
 const story: BranchingBody = {
   kind: 'branching',
@@ -28,8 +28,8 @@ const story: BranchingBody = {
       next: null,
       ending: false,
       choices: [
-        { id: 'sun', label: t('Catch a sunbeam'), emoji: '☀️', next: 'sunny' },
-        { id: 'mirror', label: t('Use the magic mirror'), emoji: '🪞', next: 'mirror' },
+        { id: 'sun', label: t('Catch a sunbeam'), art: 'object.sun', next: 'sunny' },
+        { id: 'mirror', label: t('Use the magic mirror'), art: 'object.mirror', next: 'mirror' },
       ],
     },
     { id: 'sunny', text: t('Flowers wake up!'), scene, familyTurn: false, choices: [], next: 'end', ending: false },
@@ -44,21 +44,21 @@ const quiz: QuizBody = {
     {
       id: 'q1',
       prompt: t('Who has a bushy red tail?'),
-      emoji: '❓',
+      art: 'object.question',
       correctOptionId: 'fox',
       options: [
-        { id: 'fox', label: t('Little fox'), emoji: '🦊' },
-        { id: 'panda', label: t('Red panda'), emoji: '🐼' },
+        { id: 'fox', label: t('Little fox'), art: 'object.fox' },
+        { id: 'panda', label: t('Red panda'), art: 'object.panda' },
       ],
     },
     {
       id: 'q2',
       prompt: t('How many legs does a cat have?'),
-      emoji: '🐱',
+      art: 'object.cat',
       correctOptionId: 'four',
       options: [
-        { id: 'two', label: t('Two'), emoji: '2️⃣' },
-        { id: 'four', label: t('Four'), emoji: '4️⃣' },
+        { id: 'two', label: t('Two'), art: 'object.sparkles' },
+        { id: 'four', label: t('Four'), art: 'object.sparkles' },
       ],
     },
   ],
@@ -233,7 +233,7 @@ describe('content input schema', () => {
     durationMinutes: 18,
     skills: ['problem_solving' as const],
     languages: ['en' as const],
-    coverEmoji: '🌸',
+    coverArt: 'object.flower',
     coverColor: '#5BC0F8',
     calm: false,
     rewardStars: 30,

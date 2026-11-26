@@ -22,7 +22,7 @@ describe('content editor model', () => {
     const draft = blankDraft('song');
     Object.assign(draft, { slug: 'song', title: { en: 'Song' }, summary: { en: 'Sing' }, languages: ['en', 'fr'] });
     if (draft.body.kind !== 'song') throw new Error('expected song');
-    draft.body.lines = [{ text: { en: 'La la' }, emoji: '🎵' }];
+    draft.body.lines = [{ text: { en: 'La la' }, art: 'object.music-note' }];
     const { publish } = liveProblems(draft);
     expect(publish.some((p) => p.includes('FR'))).toBe(true);
   });
@@ -45,8 +45,8 @@ describe('content editor model', () => {
       kind: 'branching' as const,
       startNodeId: 'a',
       nodes: [
-        { id: 'a', text: { en: 'A' }, scene: { emoji: 'x', color: '#000000', videoUrl: null }, familyTurn: false, next: null, ending: false, choices: [{ id: 'c', label: { en: 'go' }, emoji: 'x', next: 'b' }], videoQuestion: { timestampSeconds: 2, defaultChoiceId: 'c' } },
-        { id: 'b', text: { en: 'B' }, scene: { emoji: 'x', color: '#000000', videoUrl: null }, familyTurn: false, next: null, ending: true, choices: [] },
+        { id: 'a', text: { en: 'A' }, scene: { art: 'object.star', color: '#000000', videoUrl: null }, familyTurn: false, next: null, ending: false, choices: [{ id: 'c', label: { en: 'go' }, art: 'object.star', next: 'b' }], videoQuestion: { timestampSeconds: 2, defaultChoiceId: 'c' } },
+        { id: 'b', text: { en: 'B' }, scene: { art: 'object.star', color: '#000000', videoUrl: null }, familyTurn: false, next: null, ending: true, choices: [] },
       ],
     };
     const result = removeNode(body, 'b');

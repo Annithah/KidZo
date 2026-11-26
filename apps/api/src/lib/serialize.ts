@@ -6,6 +6,7 @@ import type {
   Sticker,
   User,
 } from '@kidzo/shared';
+import { ageGroupsForRange, normalizeChildSettings } from '@kidzo/shared';
 import type { children, content, playSessions, stickers, users } from '../db/schema';
 
 type UserRow = typeof users.$inferSelect;
@@ -32,7 +33,7 @@ export const toChild = (c: ChildRow): Child => ({
   avatar: c.avatar as Child['avatar'],
   locale: c.locale,
   stars: c.stars,
-  settings: c.settings,
+  settings: normalizeChildSettings(c.settings),
   createdAt: c.createdAt.toISOString(),
 });
 
@@ -45,10 +46,11 @@ export const toContentSummary = (c: ContentRow): ContentSummary => ({
   summary: c.summary,
   ageMin: c.ageMin,
   ageMax: c.ageMax,
+  ageGroups: c.ageGroups.length ? c.ageGroups : ageGroupsForRange(c.ageMin, c.ageMax),
   durationMinutes: c.durationMinutes,
   skills: c.skills,
   languages: c.languages,
-  coverEmoji: c.coverEmoji,
+  coverArt: c.coverArt,
   coverColor: c.coverColor,
   calm: c.calm,
   featured: c.featured,
@@ -58,6 +60,7 @@ export const toContentSummary = (c: ContentRow): ContentSummary => ({
   sizeBytes: c.sizeBytes,
   updatedAt: c.updatedAt.toISOString(),
   publishedAt: c.publishedAt ? c.publishedAt.toISOString() : null,
+  thumbnailUrl: c.body.kind === 'video' ? c.body.thumbnailUrl : null,
 });
 
 export const toContentDetail = (c: ContentRow): ContentDetail => ({
@@ -69,7 +72,7 @@ export const toSticker = (s: StickerRow): Sticker => ({
   id: s.id,
   slug: s.slug,
   name: s.name,
-  emoji: s.emoji,
+  art: s.art,
   color: s.color,
 });
 

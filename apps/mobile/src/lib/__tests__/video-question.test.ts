@@ -3,8 +3,8 @@ import type { StoryChoice } from '@kidzo/shared';
 import { defaultVideoChoice, VIDEO_ANSWER_TIMEOUT_MS, videoQuestionSecondsRemaining } from '../video-question';
 
 const choices: StoryChoice[] = [
-  { id: 'brush', label: { en: 'Brush teeth' }, emoji: '🪥', next: 'brush-scene' },
-  { id: 'breakfast', label: { en: 'Eat breakfast' }, emoji: '🍎', next: 'breakfast-scene' },
+  { id: 'brush', label: { en: 'Brush teeth' }, art: 'object.brush', next: 'brush-scene' },
+  { id: 'breakfast', label: { en: 'Eat breakfast' }, art: 'object.apple', next: 'breakfast-scene' },
 ];
 
 describe('timed video questions', () => {

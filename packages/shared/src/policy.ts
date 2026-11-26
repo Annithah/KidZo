@@ -1,3 +1,4 @@
+import { isCategoryAllowed } from './categories';
 import type { ChildSettings } from './schemas/child';
 import type { BlockReason } from './schemas/session';
 
@@ -78,7 +79,8 @@ export interface PlayPolicyInput {
   now: Date;
   timeZone: string;
   childAge: number;
-  content?: { calm: boolean; ageMin: number };
+  /** Type and skills are needed to check parent category restrictions. */
+  content?: { calm: boolean; ageMin: number; type?: string; skills?: readonly string[] };
 }
 
 export interface PlayPolicyResult {
@@ -93,7 +95,8 @@ export interface PlayPolicyResult {
 
 /**
  * Decides whether a child may play right now. Used by the API to enforce rules and by the
- * app to enforce them offline. Order matters: a parent lock wins, then bedtime, then limits.
+ * app to enforce them offline. Order matters: a parent lock wins, then age and blocked categories,
+ * then bedtime, then limits.
  */
 export function evaluatePlayPolicy(input: PlayPolicyInput): PlayPolicyResult {
   const { settings, secondsPlayedToday, now, timeZone, childAge, content } = input;
@@ -113,6 +116,7 @@ export function evaluatePlayPolicy(input: PlayPolicyInput): PlayPolicyResult {
 
   if (isLocked(settings, now)) return result('locked');
   if (content && childAge < content.ageMin) return result('age');
+  if (content?.type && !isCategoryAllowed(settings.blockedCategories, { type: content.type, calm: content.calm, skills: content.skills ?? [] })) return result('category');
   if (bedtimeActive && content && !content.calm) return result('bedtime');
   if (remainingSeconds !== null && remainingSeconds <= 0) return result('limit');
   return result(null);

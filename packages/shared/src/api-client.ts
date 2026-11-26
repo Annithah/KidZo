@@ -46,6 +46,8 @@ export interface RequestOptions<S extends z.ZodType | undefined> {
   schema?: S;
   auth?: boolean;
   signal?: AbortSignal;
+  /** Extra request headers, for example the child-scoped token. */
+  headers?: Record<string, string>;
 }
 
 type Result<S> = S extends z.ZodType ? z.infer<S> : unknown;
@@ -138,7 +140,7 @@ export function createApiClient(options: ApiClientOptions): ApiClient {
   ): Promise<Result<S>> {
     const auth = opts.auth ?? true;
     const send = async (tokens: AuthTokens | null) => {
-      const headers: Record<string, string> = { accept: 'application/json' };
+      const headers: Record<string, string> = { accept: 'application/json', ...opts.headers };
       if (opts.body !== undefined) headers['content-type'] = 'application/json';
       if (auth && tokens) headers.authorization = `Bearer ${tokens.accessToken}`;
       return rawFetch(

@@ -1,0 +1,688 @@
+{
+  "perPage": 30,
+  "entries": [
+    {
+      "id": "farm-animals-little",
+      "category": "morning-activities",
+      "skills": [
+        "animals"
+      ],
+      "ageGroups": [
+        "little"
+      ],
+      "calm": false,
+      "art": "object.chick",
+      "terms": [
+        "farm animals",
+        "baby animals",
+        "ducks pond",
+        "sheep meadow",
+        "cows grazing",
+        "chickens farm"
+      ],
+      "count": 14,
+      "maxSeconds": 120
+    },
+    {
+      "id": "gentle-nature-little",
+      "category": "morning-activities",
+      "skills": [
+        "nature",
+        "animals"
+      ],
+      "ageGroups": [
+        "little"
+      ],
+      "calm": false,
+      "art": "object.butterfly",
+      "terms": [
+        "butterfly flower",
+        "bird garden",
+        "fish aquarium",
+        "rabbit grass",
+        "flowers blooming"
+      ],
+      "count": 12,
+      "maxSeconds": 120
+    },
+    {
+      "id": "wildlife-young",
+      "category": "morning-activities",
+      "skills": [
+        "animals",
+        "nature"
+      ],
+      "ageGroups": [
+        "young"
+      ],
+      "calm": false,
+      "art": "object.giraffe",
+      "terms": [
+        "elephant family",
+        "giraffe savanna",
+        "zebra herd",
+        "penguins",
+        "dolphins swimming",
+        "sea turtle"
+      ],
+      "count": 14,
+      "minSeconds": 30
+    },
+    {
+      "id": "rwanda-wildlife-young",
+      "category": "morning-activities",
+      "skills": [
+        "animals",
+        "geography"
+      ],
+      "ageGroups": [
+        "young"
+      ],
+      "calm": false,
+      "art": "object.lion",
+      "terms": [
+        "mountain gorilla",
+        "rwanda gorilla",
+        "akagera",
+        "golden monkey",
+        "african elephant"
+      ],
+      "count": 10,
+      "minSeconds": 30
+    },
+    {
+      "id": "nature-documentary-big",
+      "category": "morning-activities",
+      "skills": [
+        "animals",
+        "science"
+      ],
+      "ageGroups": [
+        "big"
+      ],
+      "calm": false,
+      "art": "object.whale",
+      "terms": [
+        "wildlife documentary",
+        "coral reef",
+        "rainforest animals",
+        "migration birds",
+        "african savanna wildlife"
+      ],
+      "count": 14,
+      "minSeconds": 60
+    },
+    {
+      "id": "morning-routine-little",
+      "category": "morning-activities",
+      "skills": [
+        "habits"
+      ],
+      "ageGroups": [
+        "little"
+      ],
+      "calm": false,
+      "art": "object.sun",
+      "terms": [
+        "washing hands",
+        "brushing teeth child",
+        "breakfast fruit",
+        "tidy toys"
+      ],
+      "count": 10,
+      "sources": [
+        "pexels",
+        "pixabay"
+      ],
+      "maxSeconds": 120
+    },
+    {
+      "id": "weather-young",
+      "category": "learning",
+      "skills": [
+        "science",
+        "nature"
+      ],
+      "ageGroups": [
+        "young"
+      ],
+      "calm": false,
+      "art": "object.rainbow",
+      "terms": [
+        "rain clouds",
+        "snow falling",
+        "rainbow sky",
+        "sunrise timelapse",
+        "clouds timelapse"
+      ],
+      "count": 12,
+      "minSeconds": 20
+    },
+    {
+      "id": "plants-young",
+      "category": "learning",
+      "skills": [
+        "science",
+        "nature"
+      ],
+      "ageGroups": [
+        "young"
+      ],
+      "calm": false,
+      "art": "object.flower",
+      "terms": [
+        "seed growing timelapse",
+        "plant growing",
+        "flower timelapse",
+        "bees pollination",
+        "leaves autumn"
+      ],
+      "count": 12,
+      "minSeconds": 20
+    },
+    {
+      "id": "earth-science-big",
+      "category": "learning",
+      "skills": [
+        "science",
+        "geography"
+      ],
+      "ageGroups": [
+        "big"
+      ],
+      "calm": false,
+      "art": "object.ocean-wave",
+      "terms": [
+        "volcano",
+        "earth from space",
+        "glacier",
+        "waterfall",
+        "desert dunes",
+        "ocean waves aerial"
+      ],
+      "count": 14,
+      "minSeconds": 60
+    },
+    {
+      "id": "africa-geography-big",
+      "category": "learning",
+      "skills": [
+        "geography"
+      ],
+      "ageGroups": [
+        "big"
+      ],
+      "calm": false,
+      "art": "object.house",
+      "terms": [
+        "lake kivu",
+        "nyungwe forest",
+        "rwanda landscape",
+        "kilimanjaro",
+        "nile river",
+        "victoria falls"
+      ],
+      "count": 12,
+      "minSeconds": 30
+    },
+    {
+      "id": "counting-animals-little",
+      "category": "learning",
+      "skills": [
+        "counting",
+        "animals"
+      ],
+      "ageGroups": [
+        "little"
+      ],
+      "calm": false,
+      "art": "object.numbers",
+      "terms": [
+        "ducklings walking",
+        "puppies playing",
+        "kittens playing",
+        "fish school"
+      ],
+      "count": 12,
+      "maxSeconds": 120
+    },
+    {
+      "id": "space-wonder-young",
+      "category": "magical-adventures",
+      "skills": [
+        "space"
+      ],
+      "ageGroups": [
+        "young"
+      ],
+      "calm": false,
+      "art": "object.rocket",
+      "terms": [
+        "moon",
+        "planets",
+        "astronaut space station",
+        "earth orbit",
+        "aurora"
+      ],
+      "count": 12,
+      "sources": [
+        "nasa",
+        "wikimedia",
+        "pexels",
+        "pixabay"
+      ],
+      "minSeconds": 20
+    },
+    {
+      "id": "space-nasa-big",
+      "category": "magical-adventures",
+      "skills": [
+        "space",
+        "science"
+      ],
+      "ageGroups": [
+        "big"
+      ],
+      "calm": false,
+      "art": "object.rocket",
+      "terms": [
+        "mars rover",
+        "saturn",
+        "jupiter",
+        "solar system",
+        "international space station",
+        "hubble"
+      ],
+      "count": 16,
+      "sources": [
+        "nasa",
+        "wikimedia"
+      ],
+      "minSeconds": 60
+    },
+    {
+      "id": "starry-little",
+      "category": "magical-adventures",
+      "skills": [
+        "space"
+      ],
+      "ageGroups": [
+        "little"
+      ],
+      "calm": false,
+      "art": "object.full-moon",
+      "terms": [
+        "moon night sky",
+        "stars timelapse",
+        "earth from space"
+      ],
+      "count": 12,
+      "sources": [
+        "nasa",
+        "pexels",
+        "pixabay",
+        "wikimedia"
+      ],
+      "maxSeconds": 120
+    },
+    {
+      "id": "instruments-little",
+      "category": "music-dance",
+      "skills": [
+        "music"
+      ],
+      "ageGroups": [
+        "little"
+      ],
+      "calm": false,
+      "art": "object.music-note",
+      "terms": [
+        "drum",
+        "xylophone",
+        "piano keys",
+        "guitar strings"
+      ],
+      "count": 12,
+      "sources": [
+        "pexels",
+        "pixabay"
+      ],
+      "maxSeconds": 120
+    },
+    {
+      "id": "dance-young",
+      "category": "music-dance",
+      "skills": [
+        "music",
+        "creativity"
+      ],
+      "ageGroups": [
+        "young"
+      ],
+      "calm": false,
+      "art": "object.music-note",
+      "terms": [
+        "kids dancing",
+        "african dance",
+        "ballet",
+        "drumming circle"
+      ],
+      "count": 12,
+      "sources": [
+        "pexels",
+        "pixabay"
+      ],
+      "minSeconds": 20
+    },
+    {
+      "id": "music-big",
+      "category": "music-dance",
+      "skills": [
+        "music",
+        "science"
+      ],
+      "ageGroups": [
+        "big"
+      ],
+      "calm": false,
+      "art": "object.music-note",
+      "terms": [
+        "orchestra",
+        "violin",
+        "traditional drums",
+        "music instruments"
+      ],
+      "count": 12,
+      "sources": [
+        "pexels",
+        "pixabay",
+        "wikimedia"
+      ],
+      "minSeconds": 30
+    },
+    {
+      "id": "colors-little",
+      "category": "creative-world",
+      "skills": [
+        "colors",
+        "creativity"
+      ],
+      "ageGroups": [
+        "little"
+      ],
+      "calm": false,
+      "art": "object.palette",
+      "terms": [
+        "colorful paint",
+        "crayons",
+        "colored balloons",
+        "bubbles"
+      ],
+      "count": 12,
+      "sources": [
+        "pexels",
+        "pixabay"
+      ],
+      "maxSeconds": 120
+    },
+    {
+      "id": "art-craft-young",
+      "category": "creative-world",
+      "skills": [
+        "creativity"
+      ],
+      "ageGroups": [
+        "young"
+      ],
+      "calm": false,
+      "art": "object.brush",
+      "terms": [
+        "painting watercolor",
+        "clay modeling",
+        "paper craft",
+        "drawing"
+      ],
+      "count": 12,
+      "sources": [
+        "pexels",
+        "pixabay"
+      ],
+      "minSeconds": 20
+    },
+    {
+      "id": "art-big",
+      "category": "creative-world",
+      "skills": [
+        "creativity",
+        "geography"
+      ],
+      "ageGroups": [
+        "big"
+      ],
+      "calm": false,
+      "art": "object.palette",
+      "terms": [
+        "pottery wheel",
+        "weaving basket",
+        "street art",
+        "african art"
+      ],
+      "count": 12,
+      "sources": [
+        "pexels",
+        "pixabay",
+        "wikimedia"
+      ],
+      "minSeconds": 30
+    },
+    {
+      "id": "play-together-little",
+      "category": "family-fun",
+      "skills": [
+        "sharing"
+      ],
+      "ageGroups": [
+        "little"
+      ],
+      "calm": false,
+      "art": "object.friends",
+      "terms": [
+        "children playing playground",
+        "kids playing ball",
+        "picnic family"
+      ],
+      "count": 12,
+      "sources": [
+        "pexels",
+        "pixabay"
+      ],
+      "maxSeconds": 120
+    },
+    {
+      "id": "cooking-young",
+      "category": "family-fun",
+      "skills": [
+        "sharing",
+        "habits"
+      ],
+      "ageGroups": [
+        "young"
+      ],
+      "calm": false,
+      "art": "object.apple",
+      "terms": [
+        "cooking with kids",
+        "baking cookies",
+        "fruit salad",
+        "market fruit"
+      ],
+      "count": 12,
+      "sources": [
+        "pexels",
+        "pixabay"
+      ],
+      "minSeconds": 20
+    },
+    {
+      "id": "family-big",
+      "category": "family-fun",
+      "skills": [
+        "kindness",
+        "geography"
+      ],
+      "ageGroups": [
+        "big"
+      ],
+      "calm": false,
+      "art": "object.heart",
+      "terms": [
+        "kigali city",
+        "african market",
+        "community garden",
+        "planting trees"
+      ],
+      "count": 12,
+      "sources": [
+        "pexels",
+        "pixabay",
+        "wikimedia"
+      ],
+      "minSeconds": 30
+    },
+    {
+      "id": "patterns-young",
+      "category": "brain-games",
+      "skills": [
+        "math"
+      ],
+      "ageGroups": [
+        "young"
+      ],
+      "calm": false,
+      "art": "object.puzzle",
+      "terms": [
+        "honeycomb",
+        "patterns nature",
+        "dominoes",
+        "building blocks"
+      ],
+      "count": 12,
+      "sources": [
+        "pexels",
+        "pixabay"
+      ],
+      "minSeconds": 20
+    },
+    {
+      "id": "how-things-work-big",
+      "category": "brain-games",
+      "skills": [
+        "math",
+        "science"
+      ],
+      "ageGroups": [
+        "big"
+      ],
+      "calm": false,
+      "art": "object.puzzle",
+      "terms": [
+        "gears machine",
+        "robot",
+        "coding computer",
+        "train tracks",
+        "bridge construction"
+      ],
+      "count": 12,
+      "sources": [
+        "pexels",
+        "pixabay",
+        "wikimedia"
+      ],
+      "minSeconds": 30
+    },
+    {
+      "id": "shapes-little",
+      "category": "brain-games",
+      "skills": [
+        "math",
+        "shapes"
+      ],
+      "ageGroups": [
+        "little"
+      ],
+      "calm": false,
+      "art": "object.square",
+      "terms": [
+        "building blocks toddler",
+        "stacking cups",
+        "shape sorter"
+      ],
+      "count": 12,
+      "sources": [
+        "pexels",
+        "pixabay"
+      ],
+      "maxSeconds": 120
+    },
+    {
+      "id": "calm-ocean-little",
+      "category": "bedtime",
+      "skills": [
+        "calm"
+      ],
+      "ageGroups": [
+        "little"
+      ],
+      "calm": true,
+      "art": "object.moon",
+      "terms": [
+        "calm ocean waves",
+        "fish aquarium calm",
+        "clouds slow"
+      ],
+      "count": 12,
+      "maxSeconds": 180
+    },
+    {
+      "id": "calm-night-young",
+      "category": "bedtime",
+      "skills": [
+        "calm"
+      ],
+      "ageGroups": [
+        "young"
+      ],
+      "calm": true,
+      "art": "object.moon",
+      "terms": [
+        "night sky stars",
+        "fireflies",
+        "candle calm",
+        "moon rising"
+      ],
+      "count": 12,
+      "minSeconds": 30
+    },
+    {
+      "id": "calm-nature-big",
+      "category": "bedtime",
+      "skills": [
+        "calm",
+        "nature"
+      ],
+      "ageGroups": [
+        "big"
+      ],
+      "calm": true,
+      "art": "object.full-moon",
+      "terms": [
+        "forest rain calm",
+        "lake sunset",
+        "earth night from space",
+        "aurora borealis"
+      ],
+      "count": 12,
+      "minSeconds": 60
+    }
+  ]
+}

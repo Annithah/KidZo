@@ -6,6 +6,8 @@ import {
   computeStars,
   evaluatePlayPolicy,
   heartbeatSchema,
+  ageGroupFor,
+  isForAgeGroup,
   localParts,
   startSessionSchema,
   syncSessionsSchema,
@@ -18,6 +20,7 @@ import { requireAuth } from '../lib/auth';
 import { AppError, badRequest, notFound, parse } from '../lib/errors';
 import { toSession, toSticker } from '../lib/serialize';
 import { getOwnedChild, secondsPlayedOn } from '../lib/usage';
+import { assertSameChild, requireChildScope } from '../lib/child-scope';
 
 type SessionRow = typeof playSessions.$inferSelect;
 type ContentRow = typeof content.$inferSelect;
@@ -30,6 +33,7 @@ const BLOCK_MESSAGES = {
   bedtime: "It's calm time. Games are resting until morning.",
   limit: "That's all the play time for today. See you tomorrow!",
   age: 'This one is for older explorers.',
+  category: 'A grown-up has turned this kind of play off.',
 } as const;
 
 async function loadPublishedContent(db: Db, id: string): Promise<ContentRow> {
@@ -102,7 +106,10 @@ export async function sessionRoutes(app: FastifyInstance): Promise<void> {
   /** Starts a play session after checking locks, bedtime, age and the daily limit. */
   app.post('/sessions', async (request, reply) => {
     const input = parse(startSessionSchema, request.body);
-    const { child, timezone } = await getOwnedChild(app.db, request.user.sub, input.childId);
+    // Play is always for the child named in the child-scoped token.
+    const scope = await requireChildScope(request);
+    assertSameChild(scope, input.childId);
+    const { child, timezone } = scope;
 
     const [existing] = await app.db
       .select()
@@ -115,6 +122,10 @@ export async function sessionRoutes(app: FastifyInstance): Promise<void> {
     }
 
     const contentRow = await loadPublishedContent(app.db, input.contentId);
+    // Outside the child's age group, or a video too long for it. Category blocks are checked below.
+    if (!isForAgeGroup(scope.group, contentRow)) {
+      throw new AppError(403, 'PLAY_BLOCKED', BLOCK_MESSAGES.age, { reason: 'age', remainingSeconds: null });
+    }
     const now = new Date();
     const { date } = localParts(now, timezone);
     const policy = evaluatePlayPolicy({
@@ -123,7 +134,7 @@ export async function sessionRoutes(app: FastifyInstance): Promise<void> {
       now,
       timeZone: timezone,
       childAge: child.age,
-      content: { calm: contentRow.calm, ageMin: contentRow.ageMin },
+      content: { calm: contentRow.calm, ageMin: contentRow.ageMin, type: contentRow.type, skills: contentRow.skills },
     });
     if (!policy.allowed && policy.reason) {
       throw new AppError(403, 'PLAY_BLOCKED', BLOCK_MESSAGES[policy.reason], {
@@ -206,6 +217,7 @@ export async function sessionRoutes(app: FastifyInstance): Promise<void> {
         const { child, timezone } = await getOwnedChild(app.db, request.user.sub, item.childId);
         const [contentRow] = await app.db.select().from(content).where(eq(content.id, item.contentId)).limit(1);
         if (!contentRow) throw notFound('Content');
+        if (!isForAgeGroup(ageGroupFor(child.age), contentRow)) throw badRequest('This is not for this age group');
         const [dupe] = await app.db
           .select()
           .from(playSessions)

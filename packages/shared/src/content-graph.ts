@@ -90,6 +90,8 @@ export function validateContentBody(body: ContentBody): string[] {
       return validateQuizBody(body);
     case 'song':
       return [];
+    case 'video':
+      return body.quiz.length ? validateQuizBody({ kind: 'quiz', questions: body.quiz }) : [];
   }
 }
 
@@ -206,6 +208,11 @@ export function computeStars(
     }
     case 'song':
       return { valid: true, stars: rewardStars };
+    case 'video': {
+      // Watching earns the stars; an attached quiz must be answered, and accuracy adds to them.
+      if (body.quiz.length === 0) return { valid: true, stars: rewardStars };
+      return computeStars({ kind: 'quiz', questions: body.quiz }, rewardStars, path, answers);
+    }
   }
 }
 
@@ -236,6 +243,8 @@ export function collectBodyTexts(body: ContentBody): LocalizedText[] {
       return body.questions.flatMap((q) => [q.prompt, ...q.options.map((o) => o.label)]);
     case 'song':
       return body.lines.map((l) => l.text);
+    case 'video':
+      return [...(body.captions ? [body.captions] : []), ...body.quiz.flatMap((q) => [q.prompt, ...q.options.map((o) => o.label)])];
   }
 }
 

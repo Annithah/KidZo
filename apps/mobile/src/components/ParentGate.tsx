@@ -6,10 +6,11 @@ import { api } from '../lib/api';
 import { ApiError } from '@kidzo/shared';
 import { useParentGate } from '../lib/parent-gate';
 import { useSession } from '../lib/session';
-import { colors, spacing } from '../theme';
+import { spacing, useTheme } from '../theme/core';
+import { Icon } from './icon/Icon';
 import { Button } from './Button';
 import { TextField } from './Controls';
-import { Header, Screen } from './Layout';
+import { Header, Row, Screen } from './Layout';
 import { PinPad } from './PinPad';
 import { InlineMessage, errorMessage } from './States';
 import { Text } from './Typography';
@@ -26,6 +27,7 @@ const randomFactor = () => 6 + Math.floor(Math.random() * 7);
  */
 export function ParentGate() {
   const { t } = useT();
+  const theme = useTheme();
   const { user, setUser, signOut } = useSession();
   const { unlock } = useParentGate();
   const [mode, setMode] = useState<Mode>(user?.hasPin ? 'enter' : 'create');
@@ -98,10 +100,13 @@ export function ParentGate() {
     <Screen>
       <Header backLabel={t('common.back')} onBack={() => (router.canGoBack() ? router.back() : router.replace('/'))} />
       <View style={styles.top}>
-        <Zo size={80} />
-        <Text variant="kicker" color={colors.coral}>
-          🔒 {t('gate.title')}
-        </Text>
+        <Zo size={88} mood="waving" />
+        <Row gap={6}>
+          <Icon name="lock" size={16} color={theme.accentText} />
+          <Text variant="kicker" color={theme.accentText}>
+            {t('gate.title')}
+          </Text>
+        </Row>
       </View>
       {mode === 'offline' ? (
         <View style={styles.offline}>
@@ -111,7 +116,7 @@ export function ParentGate() {
           <Text variant="display" align="center">
             {t('gate.mathQuestion', { a: question.a, b: question.b })}
           </Text>
-          <TextField label={t('gate.title')} value={answer} onChangeText={setAnswer} keyboardType="number-pad" maxLength={3} />
+          <TextField label={t('gate.title')} value={answer} onChangeText={setAnswer} keyboardType="number-pad" maxLength={3} icon="password" />
           <Button
             label={t('common.continue')}
             size="kid"
@@ -131,7 +136,7 @@ export function ParentGate() {
         </>
       )}
       {message ? <InlineMessage tone="error" message={message} /> : null}
-      {mode === 'enter' ? <Button label={t('gate.forgot')} variant="ghost" onPress={() => void signOut()} /> : null}
+      {mode === 'enter' ? <Button label={t('gate.forgot')} icon="signOut" variant="ghost" onPress={() => void signOut()} /> : null}
     </Screen>
   );
 }

@@ -1,0 +1,875 @@
+{
+  "topic": "coding-logic",
+  "category": "brain-games",
+  "skills": [
+    "problem_solving",
+    "math"
+  ],
+  "art": "object.puzzle",
+  "videos": [
+    {
+      "id": "logic-sequences",
+      "title": "Coding basics: sequences",
+      "summary": "Coding basics: sequences",
+      "ageGroup": "big",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Time to think like a coder!"
+        },
+        {
+          "art": "object.puzzle",
+          "say": "A computer follows steps in order. We call this a sequence."
+        },
+        {
+          "art": "object.puzzle",
+          "say": "Making tea: boil water, add tea, pour, then drink."
+        },
+        {
+          "art": "object.puzzle",
+          "say": "If the order is wrong, the result is wrong."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Great thinking, coder!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is a sequence?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Steps in order",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "A random guess",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "A type of fruit",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "A drawing",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "A sequence is a set of steps in the right order."
+        }
+      ]
+    },
+    {
+      "id": "logic-algorithms",
+      "title": "Coding basics: algorithms",
+      "summary": "Coding basics: algorithms",
+      "ageGroup": "big",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Time to think like a coder!"
+        },
+        {
+          "art": "object.puzzle",
+          "say": "An algorithm is a list of steps to solve a problem."
+        },
+        {
+          "art": "object.puzzle",
+          "say": "A recipe is an algorithm for cooking."
+        },
+        {
+          "art": "object.puzzle",
+          "say": "Computers use algorithms for everything."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Great thinking, coder!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which is an algorithm?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "A recipe",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "A color",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "A song title",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "A cloud",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "A recipe is a step by step algorithm."
+        }
+      ]
+    },
+    {
+      "id": "logic-loops",
+      "title": "Coding basics: loops",
+      "summary": "Coding basics: loops",
+      "ageGroup": "big",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Time to think like a coder!"
+        },
+        {
+          "art": "object.puzzle",
+          "say": "A loop repeats steps."
+        },
+        {
+          "art": "object.puzzle",
+          "say": "Clap three times: clap, clap, clap. That is a loop of three."
+        },
+        {
+          "art": "object.puzzle",
+          "say": "Loops save time when steps repeat."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Great thinking, coder!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What does a loop do?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Repeats steps",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Stops the computer",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Deletes files",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Draws a circle",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "A loop repeats the same steps."
+        }
+      ]
+    },
+    {
+      "id": "logic-conditions",
+      "title": "Coding basics: conditions",
+      "summary": "Coding basics: conditions",
+      "ageGroup": "big",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Time to think like a coder!"
+        },
+        {
+          "art": "object.puzzle",
+          "say": "A condition is an if-then choice."
+        },
+        {
+          "art": "object.puzzle",
+          "say": "If it is raining, then take an umbrella."
+        },
+        {
+          "art": "object.puzzle",
+          "say": "Programs use conditions to make decisions."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Great thinking, coder!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "If it is raining, then...",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Take an umbrella",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Wear sunglasses only",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Go swimming outside",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Sleep on the roof",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "A condition says what to do in each case."
+        }
+      ]
+    },
+    {
+      "id": "logic-debugging",
+      "title": "Coding basics: debugging",
+      "summary": "Coding basics: debugging",
+      "ageGroup": "big",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Time to think like a coder!"
+        },
+        {
+          "art": "object.puzzle",
+          "say": "A bug is a mistake in a program."
+        },
+        {
+          "art": "object.puzzle",
+          "say": "Debugging means finding and fixing it."
+        },
+        {
+          "art": "object.puzzle",
+          "say": "Good coders test their work step by step."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Great thinking, coder!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is debugging?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Fixing mistakes",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Catching insects",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Painting",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Running fast",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Debugging means finding and fixing mistakes."
+        }
+      ]
+    },
+    {
+      "id": "logic-binary",
+      "title": "Coding basics: binary",
+      "summary": "Coding basics: binary",
+      "ageGroup": "big",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Time to think like a coder!"
+        },
+        {
+          "art": "object.puzzle",
+          "say": "Computers count with only two digits: 0 and 1."
+        },
+        {
+          "art": "object.puzzle",
+          "say": "This is called binary."
+        },
+        {
+          "art": "object.puzzle",
+          "say": "In binary, 2 is written as 10."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Great thinking, coder!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which digits does binary use?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "0 and 1",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "1 to 9",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Only 5",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "A to Z",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Binary uses only 0 and 1."
+        }
+      ]
+    },
+    {
+      "id": "logic-patterns",
+      "title": "Coding basics: patterns",
+      "summary": "Coding basics: patterns",
+      "ageGroup": "big",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Time to think like a coder!"
+        },
+        {
+          "art": "object.puzzle",
+          "say": "Patterns repeat in a predictable way."
+        },
+        {
+          "art": "object.puzzle",
+          "say": "Red, blue, red, blue: what comes next? Red!"
+        },
+        {
+          "art": "object.puzzle",
+          "say": "Spotting patterns helps us solve problems."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Great thinking, coder!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Red, blue, red, blue... what comes next?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Red",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Green",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Yellow",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Purple",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "The pattern repeats red then blue."
+        }
+      ]
+    },
+    {
+      "id": "logic-decomposition",
+      "title": "Coding basics: decomposition",
+      "summary": "Coding basics: decomposition",
+      "ageGroup": "big",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Time to think like a coder!"
+        },
+        {
+          "art": "object.puzzle",
+          "say": "Decomposition means breaking a big problem into small parts."
+        },
+        {
+          "art": "object.puzzle",
+          "say": "To clean a room: toys, then books, then clothes."
+        },
+        {
+          "art": "object.puzzle",
+          "say": "Small parts are easier to solve."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Great thinking, coder!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is decomposition?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Breaking a problem into parts",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Making a problem bigger",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Giving up",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Guessing",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Breaking a big task into small parts makes it easier."
+        }
+      ]
+    },
+    {
+      "id": "logic-variables",
+      "title": "Coding basics: variables",
+      "summary": "Coding basics: variables",
+      "ageGroup": "big",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Time to think like a coder!"
+        },
+        {
+          "art": "object.puzzle",
+          "say": "A variable is a box that stores a value."
+        },
+        {
+          "art": "object.puzzle",
+          "say": "A game can store your score in a variable."
+        },
+        {
+          "art": "object.puzzle",
+          "say": "The value can change while the game runs."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Great thinking, coder!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What does a variable store?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "A value",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Water",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "A picture frame",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Nothing ever",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "A variable holds a value that can change."
+        }
+      ]
+    },
+    {
+      "id": "logic-inputs-outputs",
+      "title": "Coding basics: inputs outputs",
+      "summary": "Coding basics: inputs outputs",
+      "ageGroup": "big",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Time to think like a coder!"
+        },
+        {
+          "art": "object.puzzle",
+          "say": "An input goes into a computer, like a key press."
+        },
+        {
+          "art": "object.puzzle",
+          "say": "An output comes out, like a sound or picture."
+        },
+        {
+          "art": "object.puzzle",
+          "say": "The computer turns inputs into outputs."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Great thinking, coder!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which is an input?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Pressing a key",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "A picture on screen",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Sound from speakers",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "A printed page",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Pressing a key sends input to the computer."
+        }
+      ]
+    },
+    {
+      "id": "logic-robots",
+      "title": "Coding basics: robots",
+      "summary": "Coding basics: robots",
+      "ageGroup": "big",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Time to think like a coder!"
+        },
+        {
+          "art": "object.puzzle",
+          "say": "A robot is a machine that follows instructions."
+        },
+        {
+          "art": "object.puzzle",
+          "say": "Sensors help it notice the world."
+        },
+        {
+          "art": "object.puzzle",
+          "say": "Motors help it move."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Great thinking, coder!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What helps a robot notice the world?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Sensors",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Paint",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Stickers",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Glue",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Sensors let robots detect light, sound and touch."
+        }
+      ]
+    },
+    {
+      "id": "logic-internet-safety",
+      "title": "Coding basics: internet safety",
+      "summary": "Coding basics: internet safety",
+      "ageGroup": "big",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Time to think like a coder!"
+        },
+        {
+          "art": "object.puzzle",
+          "say": "The internet connects computers around the world."
+        },
+        {
+          "art": "object.puzzle",
+          "say": "Never share your password or address online."
+        },
+        {
+          "art": "object.puzzle",
+          "say": "If something feels wrong, tell a grown-up."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Great thinking, coder!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What should you never share online?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Your password",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Your favorite color",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "A drawing of a cat",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "A smile",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Passwords and addresses must stay private."
+        }
+      ]
+    },
+    {
+      "id": "logic-sorting",
+      "title": "Coding basics: sorting",
+      "summary": "Coding basics: sorting",
+      "ageGroup": "big",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Time to think like a coder!"
+        },
+        {
+          "art": "object.puzzle",
+          "say": "Sorting puts things in order."
+        },
+        {
+          "art": "object.puzzle",
+          "say": "We can sort numbers from smallest to biggest."
+        },
+        {
+          "art": "object.puzzle",
+          "say": "Computers sort millions of things in a second."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Great thinking, coder!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Sort 7, 2, 5 from smallest to biggest.",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "2, 5, 7",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "7, 5, 2",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "5, 2, 7",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "2, 7, 5",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Smallest first: 2, then 5, then 7."
+        }
+      ]
+    },
+    {
+      "id": "logic-logic-puzzles",
+      "title": "Coding basics: logic puzzles",
+      "summary": "Coding basics: logic puzzles",
+      "ageGroup": "big",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Time to think like a coder!"
+        },
+        {
+          "art": "object.puzzle",
+          "say": "Logic helps us work out answers from clues."
+        },
+        {
+          "art": "object.puzzle",
+          "say": "All cats have whiskers. Tom is a cat."
+        },
+        {
+          "art": "object.puzzle",
+          "say": "So Tom has whiskers!"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Great thinking, coder!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "All birds have feathers. A robin is a bird. So a robin...",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Has feathers",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Has fur",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Has scales",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Has wheels",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "If all birds have feathers and a robin is a bird, it has feathers."
+        }
+      ]
+    },
+    {
+      "id": "logic-coordinates",
+      "title": "Coding basics: coordinates",
+      "summary": "Coding basics: coordinates",
+      "ageGroup": "big",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Time to think like a coder!"
+        },
+        {
+          "art": "object.puzzle",
+          "say": "Coordinates tell us where something is on a grid."
+        },
+        {
+          "art": "object.puzzle",
+          "say": "Go across first, then up."
+        },
+        {
+          "art": "object.puzzle",
+          "say": "Maps and games use coordinates."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Great thinking, coder!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "On a grid, what do we usually read first?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Across",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Up",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Diagonal",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Backwards",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "We read across first, then up."
+        }
+      ]
+    },
+    {
+      "id": "logic-events",
+      "title": "Coding basics: events",
+      "summary": "Coding basics: events",
+      "ageGroup": "big",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Time to think like a coder!"
+        },
+        {
+          "art": "object.puzzle",
+          "say": "An event is something that happens, like a click."
+        },
+        {
+          "art": "object.puzzle",
+          "say": "When the event happens, the program reacts."
+        },
+        {
+          "art": "object.puzzle",
+          "say": "Click the button, and the music starts."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Great thinking, coder!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is an event in a program?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Something that happens, like a click",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "A birthday party",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "A mistake",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "A loop",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Events are actions the program can react to."
+        }
+      ]
+    }
+  ]
+}

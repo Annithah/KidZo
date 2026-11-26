@@ -13,11 +13,11 @@ import {
   type Locale,
 } from '@kidzo/shared';
 import { useT } from '../i18n';
-import { serverFieldErrors, validate, type FieldErrors } from '../lib/form';
-import { colors, radii, spacing } from '../theme';
+import { serverFieldErrors, validate, validateField, type FieldErrors } from '../lib/form';
+import { palette, radius, spacing } from '../theme/core';
+import { Avatar, avatarWorld } from './art/Avatar';
 import { Button } from './Button';
 import { Segmented, Stepper, TextField } from './Controls';
-import { Avatar, avatarColor } from './Kid';
 import { Card } from './Layout';
 import { InlineMessage, errorMessage } from './States';
 import { Text } from './Typography';
@@ -37,9 +37,10 @@ export function ChildForm({ initial, submitLabel, onSubmit }: Props) {
   const [errors, setErrors] = useState<FieldErrors>({});
   const [formError, setFormError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
+  const values = { name, age, avatar, locale };
 
   const submit = async () => {
-    const { data, errors: fieldErrors } = validate(createChildSchema, { name, age, avatar, locale });
+    const { data, errors: fieldErrors } = validate(createChildSchema, values);
     setErrors(fieldErrors);
     setFormError(null);
     if (!data) return;
@@ -57,7 +58,19 @@ export function ChildForm({ initial, submitLabel, onSubmit }: Props) {
 
   return (
     <View style={styles.wrap}>
-      <TextField label={t('childForm.name')} value={name} onChangeText={setName} maxLength={30} autoComplete="off" error={errors.name} />
+      <TextField
+        label={t('childForm.name')}
+        value={name}
+        onChangeText={(v) => {
+          setName(v);
+          if (errors.name) setErrors((e) => ({ ...e, name: validateField(createChildSchema, { ...values, name: v }, 'name') ?? '' }));
+        }}
+        onBlur={() => setErrors((e) => ({ ...e, name: validateField(createChildSchema, values, 'name') ?? '' }))}
+        maxLength={30}
+        autoComplete="off"
+        icon="child"
+        error={errors.name || undefined}
+      />
 
       <Card>
         <Text variant="bodyBold">{t('childForm.age')}</Text>
@@ -72,27 +85,33 @@ export function ChildForm({ initial, submitLabel, onSubmit }: Props) {
       </Card>
 
       <Text variant="bodyBold">{t('childForm.avatar')}</Text>
-      <View style={styles.avatars} accessibilityRole="radiogroup">
-        {AVATARS.map((a, i) => (
-          <Pressable
-            key={a}
-            accessibilityRole="radio"
-            accessibilityLabel={a}
-            accessibilityState={{ selected: avatar === a }}
-            onPress={() => setAvatar(a)}
-            style={[styles.avatarChoice, avatar === a && styles.avatarOn]}
-          >
-            <Avatar avatar={a} size={60} color={avatarColor(i)} />
-          </Pressable>
-        ))}
+      <View style={styles.avatars} accessibilityRole="radiogroup" accessibilityLabel={t('childForm.avatar')}>
+        {AVATARS.map((a) => {
+          const selected = avatar === a;
+          return (
+            <Pressable
+              key={a}
+              accessibilityRole="radio"
+              accessibilityLabel={a}
+              accessibilityState={{ selected }}
+              onPress={() => setAvatar(a)}
+              style={({ pressed }) => [
+                styles.avatarChoice,
+                { borderColor: selected ? palette[avatarWorld(a)][500] : 'transparent', backgroundColor: selected ? palette[avatarWorld(a)][50] : 'transparent', transform: [{ scale: pressed ? 0.94 : 1 }] },
+              ]}
+            >
+              <Avatar avatar={a} size={64} />
+            </Pressable>
+          );
+        })}
       </View>
 
       <Text variant="bodyBold">{t('childForm.language')}</Text>
-      <Segmented options={LOCALES.map((l) => ({ value: l, label: LOCALE_LABELS[l].native }))} value={locale} onChange={setLocale} />
+      <Segmented label={t('childForm.language')} options={LOCALES.map((l) => ({ value: l, label: LOCALE_LABELS[l].native }))} value={locale} onChange={setLocale} />
 
-      <InlineMessage message={`🔐 ${t('childForm.privacy')}`} />
+      <InlineMessage message={t('childForm.privacy')} icon="privacy" />
       {formError ? <InlineMessage tone="error" message={formError} /> : null}
-      <Button label={submitLabel} size="kid" fullWidth loading={busy} onPress={submit} />
+      <Button label={submitLabel} size="kid" fullWidth loading={busy} disabled={busy} onPress={submit} />
     </View>
   );
 }
@@ -100,6 +119,5 @@ export function ChildForm({ initial, submitLabel, onSubmit }: Props) {
 const styles = StyleSheet.create({
   wrap: { gap: spacing.md },
   avatars: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm },
-  avatarChoice: { borderRadius: radii.pill, borderWidth: 4, borderColor: 'transparent', padding: 2 },
-  avatarOn: { borderColor: colors.navy },
+  avatarChoice: { borderRadius: radius.full, borderWidth: 3, padding: 3 },
 });

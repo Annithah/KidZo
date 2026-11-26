@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import {
+  storyChoiceInsightsSchema,
   adminStatsSchema,
   adminUserSchema,
   auditEntrySchema,
@@ -12,6 +13,7 @@ import {
   stickerSchema,
   userSchema,
   ApiError,
+  friendlyMessage,
   type AuthTokens,
   type ContentInput,
   type ContentStatus,
@@ -72,6 +74,10 @@ export const api = {
   publish: (id: string) => client.post(`/admin/content/${id}/publish`, undefined, { schema: contentSummarySchema }),
   unpublish: (id: string) => client.post(`/admin/content/${id}/unpublish`, undefined, { schema: contentSummarySchema }),
   archive: (id: string) => client.post(`/admin/content/${id}/archive`, undefined, { schema: contentSummarySchema }),
+  submit: (id: string) => client.post(`/admin/content/${id}/submit`, undefined, { schema: contentSummarySchema }),
+  requestChanges: (id: string) => client.post(`/admin/content/${id}/request-changes`, undefined, { schema: contentSummarySchema }),
+  restore: (id: string) => client.post(`/admin/content/${id}/restore`, undefined, { schema: contentSummarySchema }),
+  storyChoices: (days: number) => client.get('/admin/analytics/story-choices', { query: { days }, schema: storyChoiceInsightsSchema }),
   deleteContent: (id: string) => client.del(`/admin/content/${id}`),
 
   stickers: () => client.get('/admin/stickers', { schema: z.array(stickerSchema) }),
@@ -105,11 +111,13 @@ export const api = {
   },
 };
 
+/** Human summary of an API or network failure. Field-level problems are shown under fields. */
 export function describeError(error: unknown): { message: string; problems: string[] } {
   if (error instanceof ApiError) {
+    if (error.isNetwork) return { message: 'Cannot reach the KIDZO server. Check your connection and try again.', problems: [] };
     const details = Array.isArray(error.details) ? error.details : [];
-    const problems = details.map((d) => (typeof d === 'string' ? d : `${(d as { path?: string }).path ?? ''}: ${(d as { message?: string }).message ?? ''}`));
-    return { message: error.message, problems };
+    const problems = details.map((d) => (typeof d === 'string' ? d : friendlyMessage({ path: (d as { path?: string }).path ?? '', message: (d as { message?: string }).message ?? '' })));
+    return { message: error.code === 'VALIDATION_ERROR' ? 'Some fields need attention.' : error.message, problems };
   }
   return { message: error instanceof Error ? error.message : 'Something went wrong', problems: [] };
 }

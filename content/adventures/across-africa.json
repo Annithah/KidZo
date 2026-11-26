@@ -1,0 +1,86 @@
+{
+  "id": "across-africa",
+  "title": "Journey Across Africa",
+  "summary": "Travel by river, mountain and desert.",
+  "ageGroup": "big",
+  "skills": [
+    "geography"
+  ],
+  "art": "object.lion",
+  "startNodeId": "start",
+  "nodes": [
+    {
+      "id": "start",
+      "text": "Africa has 54 countries. Where does our journey begin?",
+      "art": "object.house",
+      "video": "kidzo:africa-africa-countries",
+      "choices": [
+        {
+          "id": "nile",
+          "label": "The Nile river",
+          "art": "object.ocean-wave",
+          "next": "nile"
+        },
+        {
+          "id": "kili",
+          "label": "Mount Kilimanjaro",
+          "art": "object.triangle",
+          "next": "kili"
+        },
+        {
+          "id": "sahara",
+          "label": "The Sahara",
+          "art": "object.sun",
+          "next": "sahara"
+        },
+        {
+          "id": "falls",
+          "label": "Victoria Falls",
+          "art": "object.ocean-wave",
+          "next": "falls"
+        }
+      ]
+    },
+    {
+      "id": "nile",
+      "text": "The Nile flows north to the Mediterranean Sea.",
+      "art": "object.ocean-wave",
+      "video": "kidzo:africa-nile-river",
+      "next": "serengeti"
+    },
+    {
+      "id": "kili",
+      "text": "Kilimanjaro in Tanzania is the highest mountain in Africa.",
+      "art": "object.triangle",
+      "video": "kidzo:africa-kilimanjaro",
+      "next": "serengeti"
+    },
+    {
+      "id": "sahara",
+      "text": "The Sahara is the largest hot desert in the world.",
+      "art": "object.sun",
+      "video": "kidzo:africa-sahara",
+      "next": "serengeti"
+    },
+    {
+      "id": "falls",
+      "text": "Victoria Falls thunders on the Zambezi River.",
+      "art": "object.ocean-wave",
+      "video": "kidzo:africa-victoria-falls",
+      "next": "serengeti"
+    },
+    {
+      "id": "serengeti",
+      "text": "In the Serengeti, more than a million wildebeest follow the rains.",
+      "art": "object.footprints",
+      "video": "kidzo:africa-serengeti-migration",
+      "next": "end"
+    },
+    {
+      "id": "end",
+      "text": "What a journey across Africa. Well done, explorer!",
+      "art": "zo.celebrating",
+      "ending": true
+    }
+  ]
+}

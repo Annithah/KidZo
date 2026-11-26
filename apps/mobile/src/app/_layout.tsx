@@ -1,9 +1,5 @@
 import '../i18n';
-import {
-  Baloo2_600SemiBold,
-  Baloo2_700Bold,
-  Baloo2_800ExtraBold,
-} from '@expo-google-fonts/baloo-2';
+import { Fredoka_500Medium, Fredoka_600SemiBold, Fredoka_700Bold } from '@expo-google-fonts/fredoka';
 import {
   Nunito_400Regular,
   Nunito_600SemiBold,
@@ -24,7 +20,7 @@ import { GuestProvider } from '../lib/guest';
 import { ParentGateProvider } from '../lib/parent-gate';
 import { SessionProvider, useSession } from '../lib/session';
 import { SyncManager } from '../lib/sync';
-import { colors } from '../theme';
+import { lightTheme } from '../theme';
 
 void SplashScreen.preventAutoHideAsync();
 
@@ -51,7 +47,7 @@ function RootStack() {
   if (status === 'loading') return null;
   const signedIn = status === 'signedIn';
   return (
-    <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.cream }, animation: 'slide_from_right' }}>
+    <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: lightTheme.background }, animation: 'slide_from_right' }}>
       <Stack.Screen name="index" />
       <Stack.Protected guard={!signedIn}>
         <Stack.Screen name="welcome" />
@@ -73,9 +69,9 @@ function RootStack() {
 export default function RootLayout() {
   const [queryClient] = useState(makeQueryClient);
   const [fontsLoaded, fontError] = useFonts({
-    Baloo2_600SemiBold,
-    Baloo2_700Bold,
-    Baloo2_800ExtraBold,
+    Fredoka_500Medium,
+    Fredoka_600SemiBold,
+    Fredoka_700Bold,
     Nunito_400Regular,
     Nunito_600SemiBold,
     Nunito_700Bold,

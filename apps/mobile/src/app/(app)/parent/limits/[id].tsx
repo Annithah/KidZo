@@ -2,7 +2,8 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
-import { parseTimeOfDay, type ChildSettings } from '@kidzo/shared';
+import { parseTimeOfDay, type CategoryKey, type ChildSettings } from '@kidzo/shared';
+import { CATEGORIES } from '@kidzo/ui-tokens';
 import { Button } from '../../../../components/Button';
 import { Stepper, ToggleRow } from '../../../../components/Controls';
 import { Card, Header, Row, Screen } from '../../../../components/Layout';
@@ -12,7 +13,7 @@ import { Zo } from '../../../../components/Zo';
 import { useT } from '../../../../i18n';
 import { api } from '../../../../lib/api';
 import { childrenQueryKey, useFamily } from '../../../../lib/family';
-import { bedtimeColors, colors, radii, spacing } from '../../../../theme';
+import { palette, radius, spacing, themes } from '../../../../theme/core';
 
 const LIMIT_STEPS: (number | null)[] = [10, 15, 20, 30, 45, 60, 75, 90, 120, 150, 180, 240, null];
 
@@ -44,6 +45,9 @@ export default function LimitsScreen() {
     onSuccess: () => {
       setSaved(true);
       void queryClient.invalidateQueries({ queryKey: childrenQueryKey });
+      // Blocked categories change what the child sees.
+      void queryClient.invalidateQueries({ queryKey: ['catalog', id] });
+      void queryClient.invalidateQueries({ queryKey: ['recommendations', id] });
     },
   });
 
@@ -67,6 +71,7 @@ export default function LimitsScreen() {
       footer={
         <Button
           label={t('common.save')}
+          icon="check"
           size="kid"
           fullWidth
           loading={save.isPending}
@@ -103,7 +108,7 @@ export default function LimitsScreen() {
 
       <Card>
         <ToggleRow
-          icon="🌙"
+          icon="bedtime"
           title={t('limits.gentleEvenings')}
           subtitle={t('limits.gentleEveningsHint')}
           value={draft.bedtimeEnabled}
@@ -134,16 +139,16 @@ export default function LimitsScreen() {
 
       {draft.bedtimeEnabled ? (
         <View style={styles.preview}>
-          <Text variant="kicker" color={bedtimeColors.moonYellow}>
+          <Text variant="kicker" color={themes.bedtime.accentText}>
             {t('limits.preview')}
           </Text>
           <Row>
-            <Zo size={64} mood="sleepy" bounce={false} />
+            <Zo size={72} mood="sleepy" bounce={false} />
             <View style={{ flex: 1 }}>
-              <Text variant="h3" color={bedtimeColors.textOnIndigo}>
+              <Text variant="h3" color={themes.bedtime.text}>
                 {t('limits.calmPreviewTitle', { name: child.name })}
               </Text>
-              <Text variant="small" color={bedtimeColors.textOnIndigoMuted}>
+              <Text variant="small" color={themes.bedtime.textMuted}>
                 {t('limits.calmPreviewBody', { time: displayTime(draft.bedtimeEnd) })}
               </Text>
             </View>
@@ -153,7 +158,8 @@ export default function LimitsScreen() {
 
       <Card>
         <ToggleRow
-          icon="🔊"
+          icon="readAloud"
+          world="sky"
           title={t('limits.narration')}
           subtitle={t('limits.narrationHint')}
           value={draft.narrationEnabled}
@@ -175,6 +181,49 @@ export default function LimitsScreen() {
         />
       </Card>
 
+      <Card>
+        <Text variant="kicker" muted>
+          {t('limits.feedback')}
+        </Text>
+        <Text variant="small" muted>
+          {t('limits.feedbackHint')}
+        </Text>
+        <Stepper
+          label={t('limits.feedback')}
+          valueLabel={t('limits.feedbackSeconds', { seconds: draft.feedbackSeconds })}
+          onDecrease={() => update({ feedbackSeconds: draft.feedbackSeconds === 8 ? 5 : 3 })}
+          onIncrease={() => update({ feedbackSeconds: draft.feedbackSeconds === 3 ? 5 : 8 })}
+          canDecrease={draft.feedbackSeconds > 3}
+          canIncrease={draft.feedbackSeconds < 8}
+        />
+      </Card>
+
+      <Card>
+        <Text variant="kicker" muted>
+          {t('limits.categories', { name: child.name.toUpperCase() })}
+        </Text>
+        <Text variant="small" muted>
+          {t('limits.categoriesHint', { name: child.name })}
+        </Text>
+        {CATEGORIES.map((c) => {
+          const key = c.key as CategoryKey;
+          const on = !draft.blockedCategories.includes(key);
+          return (
+            <ToggleRow
+              key={c.key}
+              art={c.art}
+              world={c.world}
+              title={t(`category.${c.key}`)}
+              subtitle={on ? t('limits.categoryOn') : t('limits.categoryOff')}
+              value={on}
+              onChange={(v) =>
+                update({ blockedCategories: v ? draft.blockedCategories.filter((b) => b !== key) : [...draft.blockedCategories, key] })
+              }
+            />
+          );
+        })}
+      </Card>
+
       {saved ? <InlineMessage tone="success" message={`${t('common.saved')} ${t('limits.settingsSaved', { name: child.name })}`} /> : null}
       {save.error ? <InlineMessage tone="error" message={errorMessage(save.error, t)} /> : null}
     </Screen>
@@ -182,5 +231,5 @@ export default function LimitsScreen() {
 }
 
 const styles = StyleSheet.create({
-  preview: { backgroundColor: bedtimeColors.deepIndigo, borderRadius: radii.lg, padding: spacing.md, gap: spacing.xs, borderWidth: 2, borderColor: colors.lavender },
+  preview: { backgroundColor: themes.bedtime.background, borderRadius: radius.lg, padding: spacing.md, gap: spacing.xs, borderWidth: 2, borderColor: palette.lavender[500] },
 });

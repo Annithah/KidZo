@@ -24,28 +24,54 @@ delivered incrementally.
 - [x] **M7 Hardening and docs** - security review, accessibility pass, README, env docs, final full check.
 - [x] **M8 Admin performance reporting** - add privacy-conscious weekly engagement, completion, duration, category, game and low-completion metrics.
 - [x] **M9 Guest video experience** - age-filtered guest catalog and playback without profiles or saved age, MP4 uploads and looping branching-scene video with emoji fallback, and anonymous daily play/completion/duration aggregates.
+- [x] **M11 Full-brief features** - review workflow, category controls, recommendations, choice and ending analytics, personal recap.
 - [x] **M10 Timed interactive video** - timestamped video questions, three-second default-answer timer, selected-choice path recording, safe publish validation for branch clips, and admin preview/answer-branch testing.
+
+## M12 Real video library, age groups and answer feedback (in progress)
+Brief: "Master Prompt: Real Video Library, Age-Based Content & 5-Second Answer Feedback" (2026-11-25).
+The brief describes Express, Next.js, SQLite and Jest; this repo is Fastify, Vite, PostgreSQL (PGlite locally) and
+Vitest. The real stack is kept. FFmpeg comes from the ffmpeg-static npm package, narration uses the Windows
+speech voices behind a TTS interface, and only NASA and Wikimedia downloads run here (no Pexels/Pixabay keys).
+
+What existed before this milestone: age ranges per item (ageMin/ageMax) with catalog filtering by child age,
+parent category blocks, a 1.2 second quiz advance with "try again" retries, timed video questions with a
+3 second auto-answer, MP4 scene uploads, no video content type, no import or generation pipeline.
+
+- [x] **Part 3 answer feedback** - shared state machine (`apps/mobile/src/lib/answer-feedback.ts`, idle -> locked -> showing -> paused -> done), `useAnswerFeedback` hook with AppState pause, `AnswerFeedback` panel (countdown ring with seconds, Zo, caption, confetti off for reduced motion, icons besides color, Next after 1.5 s). Used by quizzes, story choices and timed video questions. Wrong quiz answers now show the right answer and an optional explanation instead of retrying. Parent setting 3, 5 or 8 seconds (default 5) stored per child on the server. Little Explorers get no auto-answer timer before answering. Tests: 9 state machine tests with fake timers (Vitest, not Jest/RNTL, matching the repo) and an API settings test.
+- [x] **Part 2 age groups on the server** - groups Little Explorers 2-5 (videos up to 3 min, 2 answers, no pre-answer timer), Young Adventurers 6-8 (up to 6 min, 3 answers), Big Explorers 9-12 (up to 12 min, 3-4 answers) in `packages/shared/src/age-groups.ts`. Every content row has `age_groups` (migration 0004 backfills from the age range) and `video_seconds`. Child-scoped token: `POST /children/:id/token`, sent as `x-kidzo-child`; it can never act as a login. `/catalog`, `/catalog/recommendations`, `/content/:id`, `POST /sessions`, offline sync and the guest routes all filter by the token's age group, video length, age range and parent blocks; a `childId` in the query may only repeat the token's child. Same rules in the on-device backend. Admin shows age group badges and lets reviewers change groups. New `video` content type (variants, thumbnail, credit, optional quiz) with an admin editor and a mobile `VideoPlayer` (480p on mobile data, 720p on Wi-Fi). Tests: `apps/api/test/age-groups.test.ts` (Fastify inject, the repo's equivalent of Supertest).
+- [ ] **Part 1.2 import pipeline** (`pnpm content:import`)
+- [ ] **Part 1.3 generated learning videos** (`pnpm content:generate`)
+- [ ] **Part 1.4 and 1.5** `pnpm content:report`, `pnpm content:approve-dev`
+- [ ] **Part 4** videos everywhere in the app, 9 branching adventures
 
 ## Reconciled full-brief requirements
 - [x] Admin analytics for weekly family and child growth, plays, completions, duration, popular skills and games, and low-completion content.
 - [x] Interactive scene video: admins can attach MP4 clips up to 100 MB; timed questions pause playback at their configured timestamp, show a three-second countdown, and choose a required default answer. Publishing checks that every answer destination has its own clip; the admin preview tests all answer branches.
 - [x] Guest play without a family account: age-filtered catalog and content routes; guest age is transient and reports store daily content aggregates without a guest or child identifier.
-- [ ] Separate content review and unpublished states. Current workflow uses draft, published and archived.
-- [ ] Interest-based recommendations using minimal activity data. Guest catalog age filtering is implemented, but recommendations are not.
-- [ ] Personalized recap video generation from a child's story path. No video rendering pipeline exists yet.
-- [ ] Parent controls to restrict content categories.
-- [ ] Aggregated analytics for popular story choices and endings.
+- [x] Separate content review and unpublished states: draft -> review -> published, with "request changes" back to draft, unpublish to `unpublished` (republish without another review), archive and restore. Publishing a draft directly is refused (409 REVIEW_REQUIRED).
+- [x] Interest-based recommendations using minimal activity data: "Picked for you" row on the kid home screen, scored only from which items the child played and finished (`recommendContent` in shared, `GET /catalog/recommendations`, also in the on-device backend). Age range and blocked categories always apply.
+- [x] Personalized recap from a child's story path: the "My adventure" replay opens with the child's name and avatar, narrates each scene they visited with the choice they made, and ends with a summary of their choices. Built on the device; nothing is uploaded. A downloadable rendered video file is not produced (see Needs Jay).
+- [x] Parent controls to restrict content categories: per-child switches on the Time & bedtime screen. Blocked categories are hidden from the catalog and recommendations and refused when a session starts (reason `category`), online and offline.
+- [x] Aggregated analytics for popular story choices and endings: "Story choices and endings" on the admin Analytics page (7, 30 or 90 days), from finished adventures; totals only, no child identified.
+
+- [x] **M8 Standalone APK** - on-device backend (`apps/mobile/src/lib/local-backend`) answers every API route the app uses from a JSON database on the phone, seeded with the demo family and full catalog. Enabled by `EXPO_PUBLIC_LOCAL_BACKEND=1` in the `standalone` profile of `apps/mobile/eas.json`. Build with `eas build -p android --profile standalone`. Data stays on that phone and does not reach the real API. Password reset is not available in this mode.
 
 ## Verification log
 | Date | Scope | Typecheck | Lint | Tests | Run |
 |---|---|---|---|---|---|
 | 2026-11-18 | shared | pass | pass | 26 pass | n/a |
 | 2026-11-18 | api | pass | pass | 27 pass | server up, seeded, smoke tested with curl |
+| 2026-11-18 | mobile (M8) | pass | pass | 18 pass (3 new local backend tests) | EAS cloud APK build |
 | 2026-11-18 | full workspace (M2 to M7) | pass | pass | 81 pass (shared 31, api 29, admin 6, mobile 15) | API seeded and up, password reset smoke tested with curl, admin production build, mobile web export |
 | 2026-11-18 | M8 and full workspace | pass | pass | 82 pass (shared 31, api 30, admin 6, mobile 15) | API health and admin analytics smoke tested; admin production build |
 | 2026-11-18 | M9 and full workspace | pass | pass | 84 pass (shared 31, api 32, admin 6, mobile 15) | Admin production build and mobile web export passed |
 | 2026-11-18 | API production bundle | pass | pass | n/a | Fixed tsup 9 config compatibility; API bundle built and `/health` smoke-tested |
+| 2026-11-19 | Pulled M9 (3dae095) merged with local on-device backend | pass | pass | 87 pass (shared 31, api 32, admin 6, mobile 18) | API on fresh PGlite seeded, `/health` and `/guest/catalog` smoke-tested, admin and mobile web dev servers up |
+| 2026-11-19 | End-to-end interactive video (browser) | n/a | n/a | n/a | Admin created branching adventure, uploaded MP4 scene clip, published; mobile web guest (age 6) saw it, video looped with choices, ending reached; admin dashboard showed 1 play, 1 completion |
+| 2026-11-19 | Storybook Playground redesign (see REDESIGN.md) | pass | pass | 118 pass (tokens 18, art 8, shared 35, admin 6, mobile 18, api 33) | Admin build; migration 0003 run on dev data; admin and mobile web checked in browser |
 | 2026-11-24 | M10 timed video (targeted) | pending | pending | pending | Timestamp question/default-answer editor and mobile player in progress |
+| 2026-11-25 | Pulled 2f379d7 (timed video questions, My Day My Way, kindness scene, branching preview, EAS) merged with local redesign | pass | pass | 133 pass (tokens 18, shared 40, art 8, admin 6, mobile 28, api 33) | Friend's emoji and hex colors converted to art keys and tokens; StoryPlayer and BodyEditors merged by hand; API on fresh seeded PGlite, admin and mobile web bundle served |
+| 2026-11-25 | M11 full-brief features | pass | pass | 146 pass (tokens 18, shared 48, art 8, admin 6, mobile 31, api 35) | Admin production build; full mobile web export; live API smoke test of recommendations, story-choice analytics and status counts |
 
 ## Dev accounts (seed script, local only)
 - Admin: `admin@kidzo.local` / `KidzoAdmin2026`
@@ -64,6 +90,8 @@ delivered incrementally.
 - **Interactive branch footage:** the four bundled source excerpts do not contain all alternate morning-routine scenes. Produce and upload a separate clip for every answer destination; the Talk, Play, Thrive source still needs editorial review and excerpting.
 - **App store accounts and EAS:** Apple and Google developer accounts, `eas init` project id, bundle ids.
 - **Legal:** privacy policy and terms URLs, and a COPPA / GDPR-K review. The app records parental consent at signup and supports export and delete.
+- **Rendered recap videos:** the personal recap plays inside the app. Producing a shareable MP4 per child needs a server-side render pipeline (for example ffmpeg or Remotion workers) plus storage and a decision on whether recap files may leave the device under your privacy policy.
+- **Separate reviewer role:** any admin can approve content in review. If writers and approvers should be different people, add a reviewer role.
 - **Mascot art for Zo:** only the logo exists. Zo is drawn from the logo star for now.
 
 ## Notes
@@ -71,3 +99,5 @@ delivered incrementally.
 - `apps/admin/package.json` had lost its dependency list. It was restored from the code's imports.
 - PGlite cold start takes about 30 s on this machine, so API test files run one at a time.
 - Installs are slow because the repo is inside OneDrive. Consider moving it outside OneDrive.
+- The local PGlite database was corrupted twice on 2026-11-25 while inside OneDrive (sync plus several API processes). On this machine `apps/api/.env` now sets `PGLITE_DIR=C:/Users/hp/.kidzo/pglite`. Run only one `pnpm dev:api` at a time.
+- Media uploaded in development is saved as `http://localhost:4000/media/...`. The mobile app now rewrites loopback media links to the API address it uses (`apps/mobile/src/lib/media-url.ts`), so uploaded videos play on a phone.

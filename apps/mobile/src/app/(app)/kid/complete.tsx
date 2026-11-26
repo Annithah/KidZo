@@ -4,19 +4,22 @@ import { useEffect } from 'react';
 import { StyleSheet, View } from 'react-native';
 import Animated, { ZoomIn } from 'react-native-reanimated';
 import { localize, type Locale } from '@kidzo/shared';
+import { Art } from '../../../components/art/Art';
+import { Sticker } from '../../../components/art/Sticker';
 import { Button } from '../../../components/Button';
+import { Confetti } from '../../../components/Confetti';
+import { Icon } from '../../../components/icon/Icon';
 import { Card, Row, Screen } from '../../../components/Layout';
 import { InlineMessage } from '../../../components/States';
 import { Text } from '../../../components/Typography';
-import { Zo } from '../../../components/Zo';
 import { useT } from '../../../i18n';
 import { childrenQueryKey, useFamily } from '../../../lib/family';
 import { getLastResult } from '../../../lib/last-result';
-import { colors, radii, spacing, usePalette } from '../../../theme';
+import { palette, radius, shadow, spacing, useTheme } from '../../../theme/core';
 
 export default function Complete() {
   const { t } = useT();
-  const palette = usePalette();
+  const theme = useTheme();
   const queryClient = useQueryClient();
   const { activeChild } = useFamily();
   const result = getLastResult();
@@ -31,40 +34,41 @@ export default function Complete() {
 
   return (
     <Screen
+      world
       footer={
         <View style={{ gap: spacing.sm }}>
           {canReplay ? (
-            <Button label={`🎬  ${t('complete.watchReplay')}`} size="kid" variant={palette.isCalm ? 'moon' : 'lavender'} fullWidth onPress={() => router.push('/kid/replay')} />
+            <Button label={t('complete.watchReplay')} icon="replay" size="kid" variant={theme.isCalm ? 'moon' : 'grape'} fullWidth onPress={() => router.push('/kid/replay')} />
           ) : null}
-          <Button label={t('complete.home')} variant="secondary" fullWidth onPress={() => router.replace('/kid/home')} />
+          <Button label={t('complete.home')} icon="home" variant="secondary" fullWidth onPress={() => router.replace('/kid/home')} />
         </View>
       }
     >
+      {theme.isCalm ? null : <Confetti />}
       <View style={styles.hero}>
-        <Zo size={150} mood={palette.isCalm ? 'sleepy' : 'cheer'} />
-        <Text variant="kicker" color={palette.isCalm ? palette.accent : colors.coral}>
+        <Art art={theme.isCalm ? 'scene.bedtime' : 'scene.celebrate'} size={200} label={t('complete.title')} />
+        <Text variant="kicker" color={theme.accentText}>
           {t('complete.title')}
         </Text>
         <Text variant="h2" align="center">
           {localize(result.content.title, locale)}
         </Text>
-        <Animated.View entering={ZoomIn.springify()} style={styles.stars}>
-          <Text variant="display" color={colors.navy}>
-            ⭐ {t('complete.stars', { count: result.starsEarned })}
+        <Animated.View entering={ZoomIn.springify()} style={[styles.stars, shadow(2, palette.star[700], theme)]}>
+          <Icon name="star" weight="fill" size={32} color={palette.star[700]} />
+          <Text variant="h1" color={palette.navy[500]}>
+            {t('complete.stars', { count: result.starsEarned })}
           </Text>
         </Animated.View>
       </View>
 
       {result.stickerUnlocked ? (
         <Animated.View entering={ZoomIn.delay(400).springify()}>
-          <Card>
+          <Card layered world="grape">
             <Row>
-              <View style={[styles.sticker, { backgroundColor: result.stickerUnlocked.color }]}>
-                <Text style={{ fontSize: 44, lineHeight: 54 }}>{result.stickerUnlocked.emoji}</Text>
-              </View>
+              <Sticker art={result.stickerUnlocked.art} color={result.stickerUnlocked.color} size={96} shine />
               <View style={{ flex: 1, gap: 2 }}>
-                <View style={styles.newBadge}>
-                  <Text variant="caption" color={colors.white}>
+                <View style={[styles.newBadge, { backgroundColor: palette.coral[500] }]}>
+                  <Text variant="caption" color={palette.navy[500]}>
                     {t('complete.new')}
                   </Text>
                 </View>
@@ -79,18 +83,20 @@ export default function Complete() {
       ) : null}
 
       {canReplay ? (
-        <Text variant="bodyBold" align="center">
-          🎬 {t('complete.replayTitle')}
-        </Text>
+        <Row style={{ justifyContent: 'center' }}>
+          <Icon name="replay" size={22} />
+          <Text variant="bodyBold" align="center">
+            {t('complete.replayTitle')}
+          </Text>
+        </Row>
       ) : null}
-      {result.savedOffline ? <InlineMessage message={t('complete.savedOffline')} /> : null}
+      {result.savedOffline ? <InlineMessage message={t('complete.savedOffline')} icon="offline" /> : null}
     </Screen>
   );
 }
 
 const styles = StyleSheet.create({
   hero: { alignItems: 'center', gap: spacing.sm, paddingTop: spacing.md },
-  stars: { backgroundColor: colors.starYellow, borderRadius: radii.pill, paddingHorizontal: spacing.lg, paddingVertical: spacing.xs },
-  sticker: { width: 80, height: 80, borderRadius: 40, alignItems: 'center', justifyContent: 'center' },
-  newBadge: { alignSelf: 'flex-start', backgroundColor: colors.coral, borderRadius: radii.pill, paddingHorizontal: 10, paddingVertical: 2 },
+  stars: { backgroundColor: palette.star[200], borderRadius: radius.full, paddingHorizontal: spacing.lg, paddingVertical: spacing.xs, flexDirection: 'row', alignItems: 'center', gap: spacing.xs },
+  newBadge: { alignSelf: 'flex-start', borderRadius: radius.full, paddingHorizontal: 10, paddingVertical: 2 },
 });

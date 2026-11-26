@@ -1,0 +1,1547 @@
+{
+  "topic": "africa-rwanda",
+  "category": "learning",
+  "skills": [
+    "geography",
+    "animals"
+  ],
+  "art": "object.lion",
+  "videos": [
+    {
+      "id": "africa-volcanoes-national-park",
+      "title": "Volcanoes national park",
+      "ageGroup": "young",
+      "summary": "Volcanoes national park",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's explore Africa and Rwanda!"
+        },
+        {
+          "art": "object.triangle",
+          "say": "Volcanoes National Park is in the north of Rwanda."
+        },
+        {
+          "art": "object.triangle",
+          "say": "It has tall, green volcanoes covered in forest."
+        },
+        {
+          "art": "object.triangle",
+          "say": "Mountain gorillas live there."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Africa is full of wonders!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Who lives in Volcanoes National Park?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Mountain gorillas",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Penguins",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Polar bears",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Mountain gorillas live in Volcanoes National Park."
+        }
+      ]
+    },
+    {
+      "id": "africa-mountain-gorillas",
+      "title": "Mountain gorillas",
+      "ageGroup": "young",
+      "summary": "Mountain gorillas",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's explore Africa and Rwanda!"
+        },
+        {
+          "art": "object.panda",
+          "say": "Mountain gorillas live in family groups."
+        },
+        {
+          "art": "object.panda",
+          "say": "They eat leaves, stems and fruit."
+        },
+        {
+          "art": "object.panda",
+          "say": "A big male leader is called a silverback."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Africa is full of wonders!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is a gorilla family leader called?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "A silverback",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "A king",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "A captain",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "The leader is a silverback."
+        }
+      ]
+    },
+    {
+      "id": "africa-lake-kivu",
+      "title": "Lake kivu",
+      "ageGroup": "young",
+      "summary": "Lake kivu",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's explore Africa and Rwanda!"
+        },
+        {
+          "art": "object.ocean-wave",
+          "say": "Lake Kivu is a big lake in western Rwanda."
+        },
+        {
+          "art": "object.ocean-wave",
+          "say": "It lies between Rwanda and the Democratic Republic of the Congo."
+        },
+        {
+          "art": "object.ocean-wave",
+          "say": "People fish and swim along its shores."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Africa is full of wonders!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Lake Kivu is between Rwanda and which country?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "DR Congo",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Egypt",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Brazil",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Lake Kivu lies between Rwanda and the DR Congo."
+        }
+      ]
+    },
+    {
+      "id": "africa-nyungwe-forest",
+      "title": "Nyungwe forest",
+      "ageGroup": "young",
+      "summary": "Nyungwe forest",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's explore Africa and Rwanda!"
+        },
+        {
+          "art": "object.flower",
+          "say": "Nyungwe is a rainforest in southwest Rwanda."
+        },
+        {
+          "art": "object.flower",
+          "say": "Chimpanzees and colorful birds live there."
+        },
+        {
+          "art": "object.flower",
+          "say": "A canopy walkway lets visitors walk above the trees."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Africa is full of wonders!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What can you walk on above the trees in Nyungwe?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "A canopy walkway",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "A train",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "A slide",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Nyungwe has a canopy walkway high in the trees."
+        }
+      ]
+    },
+    {
+      "id": "africa-akagera",
+      "title": "Akagera",
+      "ageGroup": "young",
+      "summary": "Akagera",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's explore Africa and Rwanda!"
+        },
+        {
+          "art": "object.giraffe",
+          "say": "Akagera National Park is in eastern Rwanda."
+        },
+        {
+          "art": "object.giraffe",
+          "say": "It has savanna, lakes and swamps."
+        },
+        {
+          "art": "object.giraffe",
+          "say": "Giraffes, zebras, elephants and lions live there."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Africa is full of wonders!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which animal lives in Akagera?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Giraffe",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Penguin",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Kangaroo",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Giraffes live in Akagera."
+        }
+      ]
+    },
+    {
+      "id": "africa-big-five",
+      "title": "Big five",
+      "ageGroup": "big",
+      "summary": "Big five",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's explore Africa and Rwanda!"
+        },
+        {
+          "art": "object.lion",
+          "say": "The Big Five are lion, leopard, elephant, rhino and buffalo."
+        },
+        {
+          "art": "object.lion",
+          "say": "All five live in Akagera National Park."
+        },
+        {
+          "art": "object.lion",
+          "say": "Rangers protect them from harm."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Africa is full of wonders!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which animal is one of the Big Five?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Leopard",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Zebra",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Giraffe",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Hippo",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "The Big Five are lion, leopard, elephant, rhino and buffalo."
+        }
+      ]
+    },
+    {
+      "id": "africa-thousand-hills",
+      "title": "Thousand hills",
+      "ageGroup": "young",
+      "summary": "Thousand hills",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's explore Africa and Rwanda!"
+        },
+        {
+          "art": "object.house",
+          "say": "Rwanda is called the land of a thousand hills."
+        },
+        {
+          "art": "object.house",
+          "say": "Green hills cover the whole country."
+        },
+        {
+          "art": "object.house",
+          "say": "Farmers grow tea and coffee on the hills."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Africa is full of wonders!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Rwanda is called the land of a thousand...",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Hills",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Lakes",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Deserts",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Rwanda is the land of a thousand hills."
+        }
+      ]
+    },
+    {
+      "id": "africa-kigali",
+      "title": "Kigali",
+      "ageGroup": "young",
+      "summary": "Kigali",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's explore Africa and Rwanda!"
+        },
+        {
+          "art": "object.house",
+          "say": "Kigali is the capital city of Rwanda."
+        },
+        {
+          "art": "object.house",
+          "say": "It is known for being clean and green."
+        },
+        {
+          "art": "object.house",
+          "say": "It is built on many hills."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Africa is full of wonders!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is the capital of Rwanda?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Kigali",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Nairobi",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Cairo",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Kigali is the capital of Rwanda."
+        }
+      ]
+    },
+    {
+      "id": "africa-umuganda",
+      "title": "Umuganda",
+      "ageGroup": "big",
+      "summary": "Umuganda",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's explore Africa and Rwanda!"
+        },
+        {
+          "art": "object.friends",
+          "say": "Umuganda is a community work day in Rwanda."
+        },
+        {
+          "art": "object.friends",
+          "say": "It happens on the last Saturday of the month."
+        },
+        {
+          "art": "object.friends",
+          "say": "Neighbors clean streets, plant trees and help each other."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Africa is full of wonders!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "When is Umuganda?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Last Saturday of the month",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Every Monday",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Once a year",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Every night",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Umuganda is on the last Saturday of each month."
+        }
+      ]
+    },
+    {
+      "id": "africa-imigongo",
+      "title": "Imigongo",
+      "ageGroup": "big",
+      "summary": "Imigongo",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's explore Africa and Rwanda!"
+        },
+        {
+          "art": "object.palette",
+          "say": "Imigongo is a traditional art from eastern Rwanda."
+        },
+        {
+          "art": "object.palette",
+          "say": "It uses bold patterns of spirals and zigzags."
+        },
+        {
+          "art": "object.palette",
+          "say": "The colors are often black, white and red."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Africa is full of wonders!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What does imigongo art use?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Bold patterns",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Photos",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Clay pots only",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Glass",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Imigongo uses bold geometric patterns."
+        }
+      ]
+    },
+    {
+      "id": "africa-intore-dance",
+      "title": "Intore dance",
+      "ageGroup": "young",
+      "summary": "Intore dance",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's explore Africa and Rwanda!"
+        },
+        {
+          "art": "object.music-note",
+          "say": "Intore is a traditional Rwandan dance."
+        },
+        {
+          "art": "object.music-note",
+          "say": "Dancers jump high and move proudly."
+        },
+        {
+          "art": "object.music-note",
+          "say": "Drums play a strong beat."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Africa is full of wonders!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What plays the beat for Intore dance?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Drums",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Piano",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Violin",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Drums play the beat for Intore dancers."
+        }
+      ]
+    },
+    {
+      "id": "africa-rwanda-flag",
+      "title": "Rwanda flag",
+      "ageGroup": "young",
+      "summary": "Rwanda flag",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's explore Africa and Rwanda!"
+        },
+        {
+          "art": "object.sun",
+          "say": "The flag of Rwanda is blue, yellow and green."
+        },
+        {
+          "art": "object.sun",
+          "say": "It has a golden sun in the corner."
+        },
+        {
+          "art": "object.sun",
+          "say": "The sun stands for hope and light."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Africa is full of wonders!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is in the corner of the Rwanda flag?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "A sun",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "A star",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "A moon",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "The flag of Rwanda has a golden sun."
+        }
+      ]
+    },
+    {
+      "id": "africa-kinyarwanda-language",
+      "title": "Kinyarwanda language",
+      "ageGroup": "young",
+      "summary": "Kinyarwanda language",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's explore Africa and Rwanda!"
+        },
+        {
+          "art": "object.book",
+          "say": "Kinyarwanda is spoken by people all over Rwanda."
+        },
+        {
+          "art": "object.book",
+          "say": "English, French and Swahili are spoken too."
+        },
+        {
+          "art": "object.book",
+          "say": "Muraho means hello!"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Africa is full of wonders!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What does muraho mean?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Hello",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Goodbye",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Thank you",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Muraho means hello in Kinyarwanda."
+        }
+      ]
+    },
+    {
+      "id": "africa-africa-countries",
+      "title": "Africa countries",
+      "ageGroup": "big",
+      "summary": "Africa countries",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's explore Africa and Rwanda!"
+        },
+        {
+          "art": "object.house",
+          "say": "Africa is a huge continent."
+        },
+        {
+          "art": "object.house",
+          "say": "It has 54 countries."
+        },
+        {
+          "art": "object.house",
+          "say": "More than a billion people live there."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Africa is full of wonders!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How many countries are in Africa?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "54",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "10",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "100",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "7",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Africa has 54 countries."
+        }
+      ]
+    },
+    {
+      "id": "africa-nile-river",
+      "title": "Nile river",
+      "ageGroup": "big",
+      "summary": "Nile river",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's explore Africa and Rwanda!"
+        },
+        {
+          "art": "object.ocean-wave",
+          "say": "The Nile is one of the longest rivers in the world."
+        },
+        {
+          "art": "object.ocean-wave",
+          "say": "It flows north into the Mediterranean Sea."
+        },
+        {
+          "art": "object.ocean-wave",
+          "say": "Its waters start in the hills of central and east Africa."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Africa is full of wonders!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which way does the Nile flow?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "North",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "South",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "In a circle",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "It does not move",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "The Nile flows north to the Mediterranean Sea."
+        }
+      ]
+    },
+    {
+      "id": "africa-kilimanjaro",
+      "title": "Kilimanjaro",
+      "ageGroup": "big",
+      "summary": "Kilimanjaro",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's explore Africa and Rwanda!"
+        },
+        {
+          "art": "object.triangle",
+          "say": "Mount Kilimanjaro is the highest mountain in Africa."
+        },
+        {
+          "art": "object.triangle",
+          "say": "It is in Tanzania."
+        },
+        {
+          "art": "object.triangle",
+          "say": "It has snow on top even though it is near the equator."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Africa is full of wonders!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Where is Mount Kilimanjaro?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Tanzania",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Egypt",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Rwanda",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Morocco",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Kilimanjaro is in Tanzania."
+        }
+      ]
+    },
+    {
+      "id": "africa-sahara",
+      "title": "Sahara",
+      "ageGroup": "big",
+      "summary": "Sahara",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's explore Africa and Rwanda!"
+        },
+        {
+          "art": "object.sun",
+          "say": "The Sahara is the largest hot desert in the world."
+        },
+        {
+          "art": "object.sun",
+          "say": "It covers much of northern Africa."
+        },
+        {
+          "art": "object.sun",
+          "say": "Camels can walk far without drinking."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Africa is full of wonders!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is the Sahara?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "A hot desert",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "A rainforest",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "An ocean",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "A mountain",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "The Sahara is the largest hot desert."
+        }
+      ]
+    },
+    {
+      "id": "africa-lake-victoria",
+      "title": "Lake victoria",
+      "ageGroup": "big",
+      "summary": "Lake victoria",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's explore Africa and Rwanda!"
+        },
+        {
+          "art": "object.ocean-wave",
+          "say": "Lake Victoria is the largest lake in Africa."
+        },
+        {
+          "art": "object.ocean-wave",
+          "say": "It is shared by Uganda, Kenya and Tanzania."
+        },
+        {
+          "art": "object.ocean-wave",
+          "say": "Many fish live in it."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Africa is full of wonders!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is the largest lake in Africa?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Lake Victoria",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Lake Kivu",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Lake Chad",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Lake Malawi",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Lake Victoria is the largest lake in Africa."
+        }
+      ]
+    },
+    {
+      "id": "africa-victoria-falls",
+      "title": "Victoria falls",
+      "ageGroup": "big",
+      "summary": "Victoria falls",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's explore Africa and Rwanda!"
+        },
+        {
+          "art": "object.ocean-wave",
+          "say": "Victoria Falls is a huge waterfall."
+        },
+        {
+          "art": "object.ocean-wave",
+          "say": "It is on the Zambezi River, between Zambia and Zimbabwe."
+        },
+        {
+          "art": "object.ocean-wave",
+          "say": "Its spray can be seen from far away."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Africa is full of wonders!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which river makes Victoria Falls?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Zambezi",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Nile",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Congo",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Amazon",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Victoria Falls is on the Zambezi River."
+        }
+      ]
+    },
+    {
+      "id": "africa-congo-rainforest",
+      "title": "Congo rainforest",
+      "ageGroup": "big",
+      "summary": "Congo rainforest",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's explore Africa and Rwanda!"
+        },
+        {
+          "art": "object.flower",
+          "say": "The Congo rainforest is one of the biggest in the world."
+        },
+        {
+          "art": "object.flower",
+          "say": "Gorillas, okapis and forest elephants live there."
+        },
+        {
+          "art": "object.flower",
+          "say": "It helps clean the air for the planet."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Africa is full of wonders!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which animal lives in the Congo rainforest?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Okapi",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Polar bear",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Camel",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Penguin",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Okapis live in the Congo rainforest."
+        }
+      ]
+    },
+    {
+      "id": "africa-african-elephant",
+      "title": "African elephant",
+      "ageGroup": "little",
+      "summary": "African elephant",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's explore Africa and Rwanda!"
+        },
+        {
+          "art": "object.hippo",
+          "say": "The African elephant is the biggest land animal."
+        },
+        {
+          "art": "object.hippo",
+          "say": "It has big ears and a long trunk."
+        },
+        {
+          "art": "object.hippo",
+          "say": "It uses its trunk to drink and eat."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Africa is full of wonders!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What does an elephant use to drink?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Its trunk",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Its tail",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Elephants drink with their trunks."
+        }
+      ]
+    },
+    {
+      "id": "africa-giraffes",
+      "title": "Giraffes",
+      "ageGroup": "little",
+      "summary": "Giraffes",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's explore Africa and Rwanda!"
+        },
+        {
+          "art": "object.giraffe",
+          "say": "Giraffes are the tallest animals."
+        },
+        {
+          "art": "object.giraffe",
+          "say": "They have very long necks."
+        },
+        {
+          "art": "object.giraffe",
+          "say": "They eat leaves from tall trees."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Africa is full of wonders!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Which animal is the tallest?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Giraffe",
+              "art": "object.giraffe"
+            },
+            {
+              "label": "Turtle",
+              "art": "object.turtle"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Giraffes are the tallest animals."
+        }
+      ]
+    },
+    {
+      "id": "africa-cheetah",
+      "title": "Cheetah",
+      "ageGroup": "young",
+      "summary": "Cheetah",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's explore Africa and Rwanda!"
+        },
+        {
+          "art": "object.fox",
+          "say": "The cheetah is the fastest land animal."
+        },
+        {
+          "art": "object.fox",
+          "say": "It has spots and a long tail for balance."
+        },
+        {
+          "art": "object.fox",
+          "say": "It lives on the African savanna."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Africa is full of wonders!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What is the fastest land animal?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Cheetah",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Turtle",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Hippo",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "The cheetah is the fastest runner on land."
+        }
+      ]
+    },
+    {
+      "id": "africa-hippos",
+      "title": "Hippos",
+      "ageGroup": "little",
+      "summary": "Hippos",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's explore Africa and Rwanda!"
+        },
+        {
+          "art": "object.hippo",
+          "say": "Hippos love water."
+        },
+        {
+          "art": "object.hippo",
+          "say": "They stay in rivers and lakes on hot days."
+        },
+        {
+          "art": "object.hippo",
+          "say": "At night they come out to eat grass."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Africa is full of wonders!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Where do hippos stay on hot days?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "In the water",
+              "art": "object.ocean-wave"
+            },
+            {
+              "label": "In trees",
+              "art": "object.flower"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Hippos keep cool in the water."
+        }
+      ]
+    },
+    {
+      "id": "africa-zebras",
+      "title": "Zebras",
+      "ageGroup": "little",
+      "summary": "Zebras",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's explore Africa and Rwanda!"
+        },
+        {
+          "art": "object.giraffe",
+          "say": "Zebras have black and white stripes."
+        },
+        {
+          "art": "object.giraffe",
+          "say": "Every zebra has its own stripe pattern."
+        },
+        {
+          "art": "object.giraffe",
+          "say": "They live in herds on the savanna."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Africa is full of wonders!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do zebras have?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Stripes",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Spots",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Zebras have black and white stripes."
+        }
+      ]
+    },
+    {
+      "id": "africa-golden-monkeys",
+      "title": "Golden monkeys",
+      "ageGroup": "young",
+      "summary": "Golden monkeys",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's explore Africa and Rwanda!"
+        },
+        {
+          "art": "object.panda",
+          "say": "Golden monkeys live in the bamboo forests of Volcanoes National Park."
+        },
+        {
+          "art": "object.panda",
+          "say": "They have golden orange fur."
+        },
+        {
+          "art": "object.panda",
+          "say": "They love to eat bamboo."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Africa is full of wonders!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What do golden monkeys love to eat?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Bamboo",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Fish",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Bread",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Golden monkeys eat bamboo."
+        }
+      ]
+    },
+    {
+      "id": "africa-tea-and-coffee",
+      "title": "Tea and coffee",
+      "ageGroup": "big",
+      "summary": "Tea and coffee",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's explore Africa and Rwanda!"
+        },
+        {
+          "art": "object.flower",
+          "say": "Rwanda grows tea and coffee on its hills."
+        },
+        {
+          "art": "object.flower",
+          "say": "The cool hills and rain help them grow."
+        },
+        {
+          "art": "object.flower",
+          "say": "Rwandan coffee is sold around the world."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Africa is full of wonders!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What grows on Rwanda's hills?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Tea and coffee",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Ice",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Cactus only",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Nothing",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Tea and coffee grow on Rwanda's hills."
+        }
+      ]
+    },
+    {
+      "id": "africa-serengeti-migration",
+      "title": "Serengeti migration",
+      "ageGroup": "big",
+      "summary": "Serengeti migration",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's explore Africa and Rwanda!"
+        },
+        {
+          "art": "object.footprints",
+          "say": "Every year, more than a million wildebeest travel across the Serengeti."
+        },
+        {
+          "art": "object.footprints",
+          "say": "They follow the rains to find fresh grass."
+        },
+        {
+          "art": "object.footprints",
+          "say": "Zebras and gazelles travel with them."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Africa is full of wonders!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Why do wildebeest travel?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "To find fresh grass",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "To go to school",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "To find snow",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "To sleep",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "They follow the rains to find fresh grass."
+        }
+      ]
+    },
+    {
+      "id": "africa-lake-tanganyika",
+      "title": "Lake tanganyika",
+      "ageGroup": "big",
+      "summary": "Lake tanganyika",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's explore Africa and Rwanda!"
+        },
+        {
+          "art": "object.fish",
+          "say": "Lake Tanganyika is one of the longest freshwater lakes in the world."
+        },
+        {
+          "art": "object.fish",
+          "say": "It is also very deep."
+        },
+        {
+          "art": "object.fish",
+          "say": "Hundreds of kinds of colorful fish live there."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Africa is full of wonders!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What lives in Lake Tanganyika?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Colorful fish",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Penguins",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Camels",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Bears",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Lake Tanganyika is home to many colorful fish."
+        }
+      ]
+    },
+    {
+      "id": "africa-baobab-tree",
+      "title": "Baobab tree",
+      "ageGroup": "young",
+      "summary": "Baobab tree",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's explore Africa and Rwanda!"
+        },
+        {
+          "art": "object.flower",
+          "say": "The baobab is a giant African tree."
+        },
+        {
+          "art": "object.flower",
+          "say": "Its trunk can store lots of water."
+        },
+        {
+          "art": "object.flower",
+          "say": "Some baobabs are over a thousand years old."
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Africa is full of wonders!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What can a baobab trunk store?",
+          "art": "object.question",
+          "options": [
+            {
+              "label": "Water",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Books",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "Snow",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Baobab trunks store water for dry times."
+        }
+      ]
+    }
+  ]
+}

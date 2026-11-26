@@ -1,0 +1,2028 @@
+{
+  "topic": "counting",
+  "category": "learning",
+  "skills": [
+    "counting"
+  ],
+  "art": "object.numbers",
+  "videos": [
+    {
+      "id": "count-to-1",
+      "title": "Count to one",
+      "ageGroup": "little",
+      "summary": "Count to one",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Hello! Let's count apples together."
+        },
+        {
+          "art": "object.apple",
+          "say": "One.",
+          "big": "1"
+        },
+        {
+          "art": "object.apple",
+          "say": "One apple! Great counting.",
+          "show": "1 apple"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How many apples?",
+          "art": "object.apple",
+          "options": [
+            {
+              "label": "1",
+              "art": "object.apple"
+            },
+            {
+              "label": "2",
+              "art": "object.apple*2"
+            }
+          ],
+          "answer": 0,
+          "explanation": "We counted one apple."
+        }
+      ]
+    },
+    {
+      "id": "count-to-2",
+      "title": "Count to two",
+      "ageGroup": "little",
+      "summary": "Count to two",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Hello! Let's count stars together."
+        },
+        {
+          "art": "object.star",
+          "say": "One.",
+          "big": "1"
+        },
+        {
+          "art": "object.star*2",
+          "say": "Two.",
+          "big": "2"
+        },
+        {
+          "art": "object.star*2",
+          "say": "Two stars! Great counting.",
+          "show": "2 stars"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How many stars?",
+          "art": "object.star*2",
+          "options": [
+            {
+              "label": "2",
+              "art": "object.star*2"
+            },
+            {
+              "label": "3",
+              "art": "object.star*3"
+            }
+          ],
+          "answer": 0,
+          "explanation": "We counted two stars."
+        }
+      ]
+    },
+    {
+      "id": "count-to-3",
+      "title": "Count to three",
+      "ageGroup": "little",
+      "summary": "Count to three",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Hello! Let's count fish together."
+        },
+        {
+          "art": "object.fish",
+          "say": "One.",
+          "big": "1"
+        },
+        {
+          "art": "object.fish*2",
+          "say": "Two.",
+          "big": "2"
+        },
+        {
+          "art": "object.fish*3",
+          "say": "Three.",
+          "big": "3"
+        },
+        {
+          "art": "object.fish*3",
+          "say": "Three fish! Great counting.",
+          "show": "3 fish"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How many fish?",
+          "art": "object.fish*3",
+          "options": [
+            {
+              "label": "3",
+              "art": "object.fish*3"
+            },
+            {
+              "label": "4",
+              "art": "object.fish*4"
+            }
+          ],
+          "answer": 0,
+          "explanation": "We counted three fish."
+        }
+      ]
+    },
+    {
+      "id": "count-to-4",
+      "title": "Count to four",
+      "ageGroup": "little",
+      "summary": "Count to four",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Hello! Let's count bees together."
+        },
+        {
+          "art": "object.bee",
+          "say": "One.",
+          "big": "1"
+        },
+        {
+          "art": "object.bee*2",
+          "say": "Two.",
+          "big": "2"
+        },
+        {
+          "art": "object.bee*3",
+          "say": "Three.",
+          "big": "3"
+        },
+        {
+          "art": "object.bee*4",
+          "say": "Four.",
+          "big": "4"
+        },
+        {
+          "art": "object.bee*4",
+          "say": "Four bees! Great counting.",
+          "show": "4 bees"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How many bees?",
+          "art": "object.bee*4",
+          "options": [
+            {
+              "label": "4",
+              "art": "object.bee*4"
+            },
+            {
+              "label": "5",
+              "art": "object.bee*5"
+            }
+          ],
+          "answer": 0,
+          "explanation": "We counted four bees."
+        }
+      ]
+    },
+    {
+      "id": "count-to-5",
+      "title": "Count to five",
+      "ageGroup": "little",
+      "summary": "Count to five",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Hello! Let's count flowers together."
+        },
+        {
+          "art": "object.flower",
+          "say": "One.",
+          "big": "1"
+        },
+        {
+          "art": "object.flower*2",
+          "say": "Two.",
+          "big": "2"
+        },
+        {
+          "art": "object.flower*3",
+          "say": "Three.",
+          "big": "3"
+        },
+        {
+          "art": "object.flower*4",
+          "say": "Four.",
+          "big": "4"
+        },
+        {
+          "art": "object.flower*5",
+          "say": "Five.",
+          "big": "5"
+        },
+        {
+          "art": "object.flower*5",
+          "say": "Five flowers! Great counting.",
+          "show": "5 flowers"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How many flowers?",
+          "art": "object.flower*5",
+          "options": [
+            {
+              "label": "5",
+              "art": "object.flower*5"
+            },
+            {
+              "label": "6",
+              "art": "object.flower*6"
+            }
+          ],
+          "answer": 0,
+          "explanation": "We counted five flowers."
+        }
+      ]
+    },
+    {
+      "id": "count-apples-6",
+      "title": "Count six apples",
+      "ageGroup": "little",
+      "summary": "Count six apples",
+      "scenes": [
+        {
+          "art": "zo.happy",
+          "say": "How many apples can you see? Count with me."
+        },
+        {
+          "art": "object.apple*6",
+          "say": "One, Two, Three, Four, Five, Six",
+          "big": "6"
+        },
+        {
+          "art": "object.apple*6",
+          "say": "There are six apples!",
+          "show": "6 apples"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How many apples were there?",
+          "art": "object.apple",
+          "options": [
+            {
+              "label": "6",
+              "art": "object.apple*6"
+            },
+            {
+              "label": "4",
+              "art": "object.apple*4"
+            }
+          ],
+          "answer": 0,
+          "explanation": "We counted six apples."
+        }
+      ]
+    },
+    {
+      "id": "count-stars-7",
+      "title": "Count seven stars",
+      "ageGroup": "little",
+      "summary": "Count seven stars",
+      "scenes": [
+        {
+          "art": "zo.happy",
+          "say": "How many stars can you see? Count with me."
+        },
+        {
+          "art": "object.star*7",
+          "say": "One, Two, Three, Four, Five, Six, Seven",
+          "big": "7"
+        },
+        {
+          "art": "object.star*7",
+          "say": "There are seven stars!",
+          "show": "7 stars"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How many stars were there?",
+          "art": "object.star",
+          "options": [
+            {
+              "label": "7",
+              "art": "object.star*7"
+            },
+            {
+              "label": "5",
+              "art": "object.star*5"
+            }
+          ],
+          "answer": 0,
+          "explanation": "We counted seven stars."
+        }
+      ]
+    },
+    {
+      "id": "count-fish-8",
+      "title": "Count eight fish",
+      "ageGroup": "little",
+      "summary": "Count eight fish",
+      "scenes": [
+        {
+          "art": "zo.happy",
+          "say": "How many fish can you see? Count with me."
+        },
+        {
+          "art": "object.fish*8",
+          "say": "One, Two, Three, Four, Five, Six, Seven, Eight",
+          "big": "8"
+        },
+        {
+          "art": "object.fish*8",
+          "say": "There are eight fish!",
+          "show": "8 fish"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How many fish were there?",
+          "art": "object.fish",
+          "options": [
+            {
+              "label": "8",
+              "art": "object.fish*8"
+            },
+            {
+              "label": "6",
+              "art": "object.fish*6"
+            }
+          ],
+          "answer": 0,
+          "explanation": "We counted eight fish."
+        }
+      ]
+    },
+    {
+      "id": "count-bees-9",
+      "title": "Count nine bees",
+      "ageGroup": "little",
+      "summary": "Count nine bees",
+      "scenes": [
+        {
+          "art": "zo.happy",
+          "say": "How many bees can you see? Count with me."
+        },
+        {
+          "art": "object.bee*9",
+          "say": "One, Two, Three, Four, Five, Six, Seven, Eight, Nine",
+          "big": "9"
+        },
+        {
+          "art": "object.bee*9",
+          "say": "There are nine bees!",
+          "show": "9 bees"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How many bees were there?",
+          "art": "object.bee",
+          "options": [
+            {
+              "label": "9",
+              "art": "object.bee*9"
+            },
+            {
+              "label": "7",
+              "art": "object.bee*7"
+            }
+          ],
+          "answer": 0,
+          "explanation": "We counted nine bees."
+        }
+      ]
+    },
+    {
+      "id": "count-flowers-6",
+      "title": "Count six flowers",
+      "ageGroup": "little",
+      "summary": "Count six flowers",
+      "scenes": [
+        {
+          "art": "zo.happy",
+          "say": "How many flowers can you see? Count with me."
+        },
+        {
+          "art": "object.flower*6",
+          "say": "One, Two, Three, Four, Five, Six",
+          "big": "6"
+        },
+        {
+          "art": "object.flower*6",
+          "say": "There are six flowers!",
+          "show": "6 flowers"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How many flowers were there?",
+          "art": "object.flower",
+          "options": [
+            {
+              "label": "6",
+              "art": "object.flower*6"
+            },
+            {
+              "label": "4",
+              "art": "object.flower*4"
+            }
+          ],
+          "answer": 0,
+          "explanation": "We counted six flowers."
+        }
+      ]
+    },
+    {
+      "id": "count-hearts-7",
+      "title": "Count seven hearts",
+      "ageGroup": "little",
+      "summary": "Count seven hearts",
+      "scenes": [
+        {
+          "art": "zo.happy",
+          "say": "How many hearts can you see? Count with me."
+        },
+        {
+          "art": "object.heart*7",
+          "say": "One, Two, Three, Four, Five, Six, Seven",
+          "big": "7"
+        },
+        {
+          "art": "object.heart*7",
+          "say": "There are seven hearts!",
+          "show": "7 hearts"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How many hearts were there?",
+          "art": "object.heart",
+          "options": [
+            {
+              "label": "7",
+              "art": "object.heart*7"
+            },
+            {
+              "label": "5",
+              "art": "object.heart*5"
+            }
+          ],
+          "answer": 0,
+          "explanation": "We counted seven hearts."
+        }
+      ]
+    },
+    {
+      "id": "count-bananas-8",
+      "title": "Count eight bananas",
+      "ageGroup": "little",
+      "summary": "Count eight bananas",
+      "scenes": [
+        {
+          "art": "zo.happy",
+          "say": "How many bananas can you see? Count with me."
+        },
+        {
+          "art": "object.banana*8",
+          "say": "One, Two, Three, Four, Five, Six, Seven, Eight",
+          "big": "8"
+        },
+        {
+          "art": "object.banana*8",
+          "say": "There are eight bananas!",
+          "show": "8 bananas"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How many bananas were there?",
+          "art": "object.banana",
+          "options": [
+            {
+              "label": "8",
+              "art": "object.banana*8"
+            },
+            {
+              "label": "6",
+              "art": "object.banana*6"
+            }
+          ],
+          "answer": 0,
+          "explanation": "We counted eight bananas."
+        }
+      ]
+    },
+    {
+      "id": "count-ladybugs-9",
+      "title": "Count nine ladybugs",
+      "ageGroup": "little",
+      "summary": "Count nine ladybugs",
+      "scenes": [
+        {
+          "art": "zo.happy",
+          "say": "How many ladybugs can you see? Count with me."
+        },
+        {
+          "art": "object.ladybug*9",
+          "say": "One, Two, Three, Four, Five, Six, Seven, Eight, Nine",
+          "big": "9"
+        },
+        {
+          "art": "object.ladybug*9",
+          "say": "There are nine ladybugs!",
+          "show": "9 ladybugs"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How many ladybugs were there?",
+          "art": "object.ladybug",
+          "options": [
+            {
+              "label": "9",
+              "art": "object.ladybug*9"
+            },
+            {
+              "label": "7",
+              "art": "object.ladybug*7"
+            }
+          ],
+          "answer": 0,
+          "explanation": "We counted nine ladybugs."
+        }
+      ]
+    },
+    {
+      "id": "count-chicks-6",
+      "title": "Count six chicks",
+      "ageGroup": "little",
+      "summary": "Count six chicks",
+      "scenes": [
+        {
+          "art": "zo.happy",
+          "say": "How many chicks can you see? Count with me."
+        },
+        {
+          "art": "object.chick*6",
+          "say": "One, Two, Three, Four, Five, Six",
+          "big": "6"
+        },
+        {
+          "art": "object.chick*6",
+          "say": "There are six chicks!",
+          "show": "6 chicks"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How many chicks were there?",
+          "art": "object.chick",
+          "options": [
+            {
+              "label": "6",
+              "art": "object.chick*6"
+            },
+            {
+              "label": "4",
+              "art": "object.chick*4"
+            }
+          ],
+          "answer": 0,
+          "explanation": "We counted six chicks."
+        }
+      ]
+    },
+    {
+      "id": "count-shells-7",
+      "title": "Count seven shells",
+      "ageGroup": "little",
+      "summary": "Count seven shells",
+      "scenes": [
+        {
+          "art": "zo.happy",
+          "say": "How many shells can you see? Count with me."
+        },
+        {
+          "art": "object.shell*7",
+          "say": "One, Two, Three, Four, Five, Six, Seven",
+          "big": "7"
+        },
+        {
+          "art": "object.shell*7",
+          "say": "There are seven shells!",
+          "show": "7 shells"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "How many shells were there?",
+          "art": "object.shell",
+          "options": [
+            {
+              "label": "7",
+              "art": "object.shell*7"
+            },
+            {
+              "label": "5",
+              "art": "object.shell*5"
+            }
+          ],
+          "answer": 0,
+          "explanation": "We counted seven shells."
+        }
+      ]
+    },
+    {
+      "id": "count-1-to-10",
+      "title": "Count from 1 to 10",
+      "ageGroup": "young",
+      "summary": "Count from 1 to 10",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's count from 1 all the way to 10."
+        },
+        {
+          "art": "object.numbers",
+          "say": "One.",
+          "big": "1"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Two.",
+          "big": "2"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Three.",
+          "big": "3"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Four.",
+          "big": "4"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Five.",
+          "big": "5"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Six.",
+          "big": "6"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Seven.",
+          "big": "7"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Eight.",
+          "big": "8"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Nine.",
+          "big": "9"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Ten.",
+          "big": "10"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "You counted to ten!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What number comes after 9?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "10",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "11",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "8",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Ten comes right after nine."
+        }
+      ]
+    },
+    {
+      "id": "count-3-to-12",
+      "title": "Count from 3 to 12",
+      "ageGroup": "young",
+      "summary": "Count from 3 to 12",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's count from 3 all the way to 12."
+        },
+        {
+          "art": "object.numbers",
+          "say": "Three.",
+          "big": "3"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Four.",
+          "big": "4"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Five.",
+          "big": "5"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Six.",
+          "big": "6"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Seven.",
+          "big": "7"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Eight.",
+          "big": "8"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Nine.",
+          "big": "9"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Ten.",
+          "big": "10"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Eleven.",
+          "big": "11"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Twelve.",
+          "big": "12"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "You counted to twelve!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What number comes after 11?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "12",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "13",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "10",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Twelve comes right after eleven."
+        }
+      ]
+    },
+    {
+      "id": "count-5-to-14",
+      "title": "Count from 5 to 14",
+      "ageGroup": "young",
+      "summary": "Count from 5 to 14",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's count from 5 all the way to 14."
+        },
+        {
+          "art": "object.numbers",
+          "say": "Five.",
+          "big": "5"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Six.",
+          "big": "6"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Seven.",
+          "big": "7"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Eight.",
+          "big": "8"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Nine.",
+          "big": "9"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Ten.",
+          "big": "10"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Eleven.",
+          "big": "11"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Twelve.",
+          "big": "12"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Thirteen.",
+          "big": "13"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Fourteen.",
+          "big": "14"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "You counted to fourteen!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What number comes after 13?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "14",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "15",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "12",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Fourteen comes right after thirteen."
+        }
+      ]
+    },
+    {
+      "id": "count-7-to-16",
+      "title": "Count from 7 to 16",
+      "ageGroup": "young",
+      "summary": "Count from 7 to 16",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's count from 7 all the way to 16."
+        },
+        {
+          "art": "object.numbers",
+          "say": "Seven.",
+          "big": "7"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Eight.",
+          "big": "8"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Nine.",
+          "big": "9"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Ten.",
+          "big": "10"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Eleven.",
+          "big": "11"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Twelve.",
+          "big": "12"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Thirteen.",
+          "big": "13"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Fourteen.",
+          "big": "14"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Fifteen.",
+          "big": "15"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Sixteen.",
+          "big": "16"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "You counted to sixteen!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What number comes after 15?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "16",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "17",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "14",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Sixteen comes right after fifteen."
+        }
+      ]
+    },
+    {
+      "id": "count-9-to-18",
+      "title": "Count from 9 to 18",
+      "ageGroup": "young",
+      "summary": "Count from 9 to 18",
+      "scenes": [
+        {
+          "art": "zo.waving",
+          "say": "Let's count from 9 all the way to 18."
+        },
+        {
+          "art": "object.numbers",
+          "say": "Nine.",
+          "big": "9"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Ten.",
+          "big": "10"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Eleven.",
+          "big": "11"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Twelve.",
+          "big": "12"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Thirteen.",
+          "big": "13"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Fourteen.",
+          "big": "14"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Fifteen.",
+          "big": "15"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Sixteen.",
+          "big": "16"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Seventeen.",
+          "big": "17"
+        },
+        {
+          "art": "object.numbers",
+          "say": "Eighteen.",
+          "big": "18"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "You counted to eighteen!"
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "What number comes after 17?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "18",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "19",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "16",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "Eighteen comes right after seventeen."
+        }
+      ]
+    },
+    {
+      "id": "skip-count-2s-to-20",
+      "title": "Skip counting by 2s",
+      "ageGroup": "young",
+      "summary": "Skip counting by 2s",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Skip counting means adding 2 each time. Ready?"
+        },
+        {
+          "art": "object.numbers",
+          "say": "2.",
+          "big": "2"
+        },
+        {
+          "art": "object.numbers",
+          "say": "4.",
+          "big": "4"
+        },
+        {
+          "art": "object.numbers",
+          "say": "6.",
+          "big": "6"
+        },
+        {
+          "art": "object.numbers",
+          "say": "8.",
+          "big": "8"
+        },
+        {
+          "art": "object.numbers",
+          "say": "10.",
+          "big": "10"
+        },
+        {
+          "art": "object.numbers",
+          "say": "12.",
+          "big": "12"
+        },
+        {
+          "art": "object.numbers",
+          "say": "14.",
+          "big": "14"
+        },
+        {
+          "art": "object.numbers",
+          "say": "16.",
+          "big": "16"
+        },
+        {
+          "art": "object.numbers",
+          "say": "18.",
+          "big": "18"
+        },
+        {
+          "art": "object.numbers",
+          "say": "20.",
+          "big": "20"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Counting by 2s is a fast way to count big groups."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Counting by 2s, what comes after 6?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "8",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "9",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "7",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "6 plus 2 is 8."
+        }
+      ]
+    },
+    {
+      "id": "skip-count-5s-to-50",
+      "title": "Skip counting by 5s",
+      "ageGroup": "young",
+      "summary": "Skip counting by 5s",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Skip counting means adding 5 each time. Ready?"
+        },
+        {
+          "art": "object.numbers",
+          "say": "5.",
+          "big": "5"
+        },
+        {
+          "art": "object.numbers",
+          "say": "10.",
+          "big": "10"
+        },
+        {
+          "art": "object.numbers",
+          "say": "15.",
+          "big": "15"
+        },
+        {
+          "art": "object.numbers",
+          "say": "20.",
+          "big": "20"
+        },
+        {
+          "art": "object.numbers",
+          "say": "25.",
+          "big": "25"
+        },
+        {
+          "art": "object.numbers",
+          "say": "30.",
+          "big": "30"
+        },
+        {
+          "art": "object.numbers",
+          "say": "35.",
+          "big": "35"
+        },
+        {
+          "art": "object.numbers",
+          "say": "40.",
+          "big": "40"
+        },
+        {
+          "art": "object.numbers",
+          "say": "45.",
+          "big": "45"
+        },
+        {
+          "art": "object.numbers",
+          "say": "50.",
+          "big": "50"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Counting by 5s is a fast way to count big groups."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Counting by 5s, what comes after 15?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "20",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "21",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "16",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "15 plus 5 is 20."
+        }
+      ]
+    },
+    {
+      "id": "skip-count-10s-to-100",
+      "title": "Skip counting by 10s",
+      "ageGroup": "young",
+      "summary": "Skip counting by 10s",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Skip counting means adding 10 each time. Ready?"
+        },
+        {
+          "art": "object.numbers",
+          "say": "10.",
+          "big": "10"
+        },
+        {
+          "art": "object.numbers",
+          "say": "20.",
+          "big": "20"
+        },
+        {
+          "art": "object.numbers",
+          "say": "30.",
+          "big": "30"
+        },
+        {
+          "art": "object.numbers",
+          "say": "40.",
+          "big": "40"
+        },
+        {
+          "art": "object.numbers",
+          "say": "50.",
+          "big": "50"
+        },
+        {
+          "art": "object.numbers",
+          "say": "60.",
+          "big": "60"
+        },
+        {
+          "art": "object.numbers",
+          "say": "70.",
+          "big": "70"
+        },
+        {
+          "art": "object.numbers",
+          "say": "80.",
+          "big": "80"
+        },
+        {
+          "art": "object.numbers",
+          "say": "90.",
+          "big": "90"
+        },
+        {
+          "art": "object.numbers",
+          "say": "100.",
+          "big": "100"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Counting by 10s is a fast way to count big groups."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Counting by 10s, what comes after 30?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "40",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "41",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "31",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "30 plus 10 is 40."
+        }
+      ]
+    },
+    {
+      "id": "skip-count-2s-to-30",
+      "title": "Skip counting by 2s",
+      "ageGroup": "big",
+      "summary": "Skip counting by 2s",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Skip counting means adding 2 each time. Ready?"
+        },
+        {
+          "art": "object.numbers",
+          "say": "2.",
+          "big": "2"
+        },
+        {
+          "art": "object.numbers",
+          "say": "4.",
+          "big": "4"
+        },
+        {
+          "art": "object.numbers",
+          "say": "6.",
+          "big": "6"
+        },
+        {
+          "art": "object.numbers",
+          "say": "8.",
+          "big": "8"
+        },
+        {
+          "art": "object.numbers",
+          "say": "10.",
+          "big": "10"
+        },
+        {
+          "art": "object.numbers",
+          "say": "12.",
+          "big": "12"
+        },
+        {
+          "art": "object.numbers",
+          "say": "14.",
+          "big": "14"
+        },
+        {
+          "art": "object.numbers",
+          "say": "16.",
+          "big": "16"
+        },
+        {
+          "art": "object.numbers",
+          "say": "18.",
+          "big": "18"
+        },
+        {
+          "art": "object.numbers",
+          "say": "20.",
+          "big": "20"
+        },
+        {
+          "art": "object.numbers",
+          "say": "22.",
+          "big": "22"
+        },
+        {
+          "art": "object.numbers",
+          "say": "24.",
+          "big": "24"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Counting by 2s is a fast way to count big groups."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Counting by 2s, what comes after 6?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "8",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "9",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "7",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "10",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "6 plus 2 is 8."
+        }
+      ]
+    },
+    {
+      "id": "skip-count-5s-to-100",
+      "title": "Skip counting by 5s",
+      "ageGroup": "big",
+      "summary": "Skip counting by 5s",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Skip counting means adding 5 each time. Ready?"
+        },
+        {
+          "art": "object.numbers",
+          "say": "5.",
+          "big": "5"
+        },
+        {
+          "art": "object.numbers",
+          "say": "10.",
+          "big": "10"
+        },
+        {
+          "art": "object.numbers",
+          "say": "15.",
+          "big": "15"
+        },
+        {
+          "art": "object.numbers",
+          "say": "20.",
+          "big": "20"
+        },
+        {
+          "art": "object.numbers",
+          "say": "25.",
+          "big": "25"
+        },
+        {
+          "art": "object.numbers",
+          "say": "30.",
+          "big": "30"
+        },
+        {
+          "art": "object.numbers",
+          "say": "35.",
+          "big": "35"
+        },
+        {
+          "art": "object.numbers",
+          "say": "40.",
+          "big": "40"
+        },
+        {
+          "art": "object.numbers",
+          "say": "45.",
+          "big": "45"
+        },
+        {
+          "art": "object.numbers",
+          "say": "50.",
+          "big": "50"
+        },
+        {
+          "art": "object.numbers",
+          "say": "55.",
+          "big": "55"
+        },
+        {
+          "art": "object.numbers",
+          "say": "60.",
+          "big": "60"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Counting by 5s is a fast way to count big groups."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Counting by 5s, what comes after 15?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "20",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "21",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "16",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "25",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "15 plus 5 is 20."
+        }
+      ]
+    },
+    {
+      "id": "skip-count-10s-to-200",
+      "title": "Skip counting by 10s",
+      "ageGroup": "big",
+      "summary": "Skip counting by 10s",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Skip counting means adding 10 each time. Ready?"
+        },
+        {
+          "art": "object.numbers",
+          "say": "10.",
+          "big": "10"
+        },
+        {
+          "art": "object.numbers",
+          "say": "20.",
+          "big": "20"
+        },
+        {
+          "art": "object.numbers",
+          "say": "30.",
+          "big": "30"
+        },
+        {
+          "art": "object.numbers",
+          "say": "40.",
+          "big": "40"
+        },
+        {
+          "art": "object.numbers",
+          "say": "50.",
+          "big": "50"
+        },
+        {
+          "art": "object.numbers",
+          "say": "60.",
+          "big": "60"
+        },
+        {
+          "art": "object.numbers",
+          "say": "70.",
+          "big": "70"
+        },
+        {
+          "art": "object.numbers",
+          "say": "80.",
+          "big": "80"
+        },
+        {
+          "art": "object.numbers",
+          "say": "90.",
+          "big": "90"
+        },
+        {
+          "art": "object.numbers",
+          "say": "100.",
+          "big": "100"
+        },
+        {
+          "art": "object.numbers",
+          "say": "110.",
+          "big": "110"
+        },
+        {
+          "art": "object.numbers",
+          "say": "120.",
+          "big": "120"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Counting by 10s is a fast way to count big groups."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Counting by 10s, what comes after 30?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "40",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "41",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "31",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "50",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "30 plus 10 is 40."
+        }
+      ]
+    },
+    {
+      "id": "skip-count-3s-to-30",
+      "title": "Skip counting by 3s",
+      "ageGroup": "big",
+      "summary": "Skip counting by 3s",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Skip counting means adding 3 each time. Ready?"
+        },
+        {
+          "art": "object.numbers",
+          "say": "3.",
+          "big": "3"
+        },
+        {
+          "art": "object.numbers",
+          "say": "6.",
+          "big": "6"
+        },
+        {
+          "art": "object.numbers",
+          "say": "9.",
+          "big": "9"
+        },
+        {
+          "art": "object.numbers",
+          "say": "12.",
+          "big": "12"
+        },
+        {
+          "art": "object.numbers",
+          "say": "15.",
+          "big": "15"
+        },
+        {
+          "art": "object.numbers",
+          "say": "18.",
+          "big": "18"
+        },
+        {
+          "art": "object.numbers",
+          "say": "21.",
+          "big": "21"
+        },
+        {
+          "art": "object.numbers",
+          "say": "24.",
+          "big": "24"
+        },
+        {
+          "art": "object.numbers",
+          "say": "27.",
+          "big": "27"
+        },
+        {
+          "art": "object.numbers",
+          "say": "30.",
+          "big": "30"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Counting by 3s is a fast way to count big groups."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Counting by 3s, what comes after 9?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "12",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "13",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "10",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "15",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "9 plus 3 is 12."
+        }
+      ]
+    },
+    {
+      "id": "skip-count-4s-to-40",
+      "title": "Skip counting by 4s",
+      "ageGroup": "big",
+      "summary": "Skip counting by 4s",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Skip counting means adding 4 each time. Ready?"
+        },
+        {
+          "art": "object.numbers",
+          "say": "4.",
+          "big": "4"
+        },
+        {
+          "art": "object.numbers",
+          "say": "8.",
+          "big": "8"
+        },
+        {
+          "art": "object.numbers",
+          "say": "12.",
+          "big": "12"
+        },
+        {
+          "art": "object.numbers",
+          "say": "16.",
+          "big": "16"
+        },
+        {
+          "art": "object.numbers",
+          "say": "20.",
+          "big": "20"
+        },
+        {
+          "art": "object.numbers",
+          "say": "24.",
+          "big": "24"
+        },
+        {
+          "art": "object.numbers",
+          "say": "28.",
+          "big": "28"
+        },
+        {
+          "art": "object.numbers",
+          "say": "32.",
+          "big": "32"
+        },
+        {
+          "art": "object.numbers",
+          "say": "36.",
+          "big": "36"
+        },
+        {
+          "art": "object.numbers",
+          "say": "40.",
+          "big": "40"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Counting by 4s is a fast way to count big groups."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Counting by 4s, what comes after 12?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "16",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "17",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "13",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "20",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "12 plus 4 is 16."
+        }
+      ]
+    },
+    {
+      "id": "skip-count-25s-to-200",
+      "title": "Skip counting by 25s",
+      "ageGroup": "big",
+      "summary": "Skip counting by 25s",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Skip counting means adding 25 each time. Ready?"
+        },
+        {
+          "art": "object.numbers",
+          "say": "25.",
+          "big": "25"
+        },
+        {
+          "art": "object.numbers",
+          "say": "50.",
+          "big": "50"
+        },
+        {
+          "art": "object.numbers",
+          "say": "75.",
+          "big": "75"
+        },
+        {
+          "art": "object.numbers",
+          "say": "100.",
+          "big": "100"
+        },
+        {
+          "art": "object.numbers",
+          "say": "125.",
+          "big": "125"
+        },
+        {
+          "art": "object.numbers",
+          "say": "150.",
+          "big": "150"
+        },
+        {
+          "art": "object.numbers",
+          "say": "175.",
+          "big": "175"
+        },
+        {
+          "art": "object.numbers",
+          "say": "200.",
+          "big": "200"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Counting by 25s is a fast way to count big groups."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Counting by 25s, what comes after 75?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "100",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "101",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "76",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "125",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "75 plus 25 is 100."
+        }
+      ]
+    },
+    {
+      "id": "skip-count-100s-to-1000",
+      "title": "Skip counting by 100s",
+      "ageGroup": "big",
+      "summary": "Skip counting by 100s",
+      "scenes": [
+        {
+          "art": "zo.thinking",
+          "say": "Skip counting means adding 100 each time. Ready?"
+        },
+        {
+          "art": "object.numbers",
+          "say": "100.",
+          "big": "100"
+        },
+        {
+          "art": "object.numbers",
+          "say": "200.",
+          "big": "200"
+        },
+        {
+          "art": "object.numbers",
+          "say": "300.",
+          "big": "300"
+        },
+        {
+          "art": "object.numbers",
+          "say": "400.",
+          "big": "400"
+        },
+        {
+          "art": "object.numbers",
+          "say": "500.",
+          "big": "500"
+        },
+        {
+          "art": "object.numbers",
+          "say": "600.",
+          "big": "600"
+        },
+        {
+          "art": "object.numbers",
+          "say": "700.",
+          "big": "700"
+        },
+        {
+          "art": "object.numbers",
+          "say": "800.",
+          "big": "800"
+        },
+        {
+          "art": "object.numbers",
+          "say": "900.",
+          "big": "900"
+        },
+        {
+          "art": "object.numbers",
+          "say": "1000.",
+          "big": "1000"
+        },
+        {
+          "art": "zo.cheering",
+          "say": "Counting by 100s is a fast way to count big groups."
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Counting by 100s, what comes after 300?",
+          "art": "object.numbers",
+          "options": [
+            {
+              "label": "400",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "401",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "301",
+              "art": "object.sparkles"
+            },
+            {
+              "label": "500",
+              "art": "object.sparkles"
+            }
+          ],
+          "answer": 0,
+          "explanation": "300 plus 100 is 400."
+        }
+      ]
+    }
+  ]
+}

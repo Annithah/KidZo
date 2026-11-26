@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import { stickerSchema } from './content';
 
-export const BLOCK_REASONS = ['locked', 'bedtime', 'limit', 'age'] as const;
+export const BLOCK_REASONS = ['locked', 'bedtime', 'limit', 'age', 'category'] as const;
 export type BlockReason = (typeof BLOCK_REASONS)[number];
 
 export const startSessionSchema = z.object({

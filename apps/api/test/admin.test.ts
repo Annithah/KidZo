@@ -23,7 +23,7 @@ const draft = {
   durationMinutes: 5,
   skills: ['kindness'],
   languages: ['en'],
-  coverEmoji: '🚀',
+  coverArt: 'object.rocket',
   coverColor: '#5BC0F8',
   calm: false,
   rewardStars: 10,
@@ -31,8 +31,8 @@ const draft = {
     kind: 'branching',
     startNodeId: 'a',
     nodes: [
-      { id: 'a', text: { en: 'Start' }, scene: { emoji: '🚀', color: '#5BC0F8' }, next: 'b' },
-      { id: 'b', text: { en: 'The end' }, scene: { emoji: '🌟', color: '#FFD23F' }, ending: true },
+      { id: 'a', text: { en: 'Start' }, scene: { art: 'object.rocket', color: '#5BC0F8' }, next: 'b' },
+      { id: 'b', text: { en: 'The end' }, scene: { art: 'object.sparkle-star', color: '#FFD23F' }, ending: true },
     ],
   },
 };
@@ -127,7 +127,15 @@ describe('content workflow', () => {
     const before = await ctx.app.inject({ method: 'GET', url: `/content/${item.id}`, headers: bearer(tokens.accessToken) });
     expect(before.statusCode).toBe(404);
 
-    const pub = await ctx.app.inject({ method: 'POST', url: `/admin/content/${item.id}/publish`, headers: bearer(adminToken) });
+    const post = (action: string) => ctx.app.inject({ method: 'POST', url: `/admin/content/${item.id}/${action}`, headers: bearer(adminToken) });
+    // Drafts go through review before they can go live.
+    const early = await post('publish');
+    expect(early.statusCode).toBe(409);
+    expect(early.json().error.code).toBe('REVIEW_REQUIRED');
+    expect((await post('submit')).json().status).toBe('review');
+    expect((await post('request-changes')).json().status).toBe('draft');
+    expect((await post('submit')).json().status).toBe('review');
+    const pub = await post('publish');
     expect(pub.json().status).toBe('published');
     const after = await ctx.app.inject({ method: 'GET', url: `/content/${item.id}`, headers: bearer(tokens.accessToken) });
     expect(after.statusCode).toBe(200);
@@ -137,6 +145,13 @@ describe('content workflow', () => {
 
     const del = await ctx.app.inject({ method: 'DELETE', url: `/admin/content/${item.id}`, headers: bearer(adminToken) });
     expect(del.statusCode).toBe(400);
+
+    // Unpublished content was approved before, so it can go live again without another review.
+    expect((await post('archive')).statusCode).toBe(409);
+    expect((await post('unpublish')).json().status).toBe('unpublished');
+    const hidden = await ctx.app.inject({ method: 'GET', url: `/content/${item.id}`, headers: bearer(tokens.accessToken) });
+    expect(hidden.statusCode).toBe(404);
+    expect((await post('publish')).json().status).toBe('published');
   });
 
   it('blocks publishing broken stories and missing translations', async () => {
@@ -153,7 +168,7 @@ describe('content workflow', () => {
     expect(problems.some((p) => p.includes('FR'))).toBe(true);
     const pub = await ctx.app.inject({
       method: 'POST',
-      url: `/admin/content/${created.json().id}/publish`,
+      url: `/admin/content/${created.json().id}/submit`,
       headers: bearer(adminToken),
     });
     expect(pub.statusCode).toBe(400);

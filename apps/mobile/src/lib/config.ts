@@ -14,6 +14,12 @@ function resolveApiUrl(): string {
   return 'http://localhost:4000';
 }
 
+/**
+ * Standalone builds set EXPO_PUBLIC_LOCAL_BACKEND=1. The app then answers every API call from
+ * an on-device database with the demo family and full catalog, so it works with no server.
+ */
+export const LOCAL_BACKEND = process.env.EXPO_PUBLIC_LOCAL_BACKEND === '1';
+
 export const API_URL = resolveApiUrl();
 
 /** Parent area unlock lasts this long without activity. */

@@ -1,0 +1,73 @@
+{
+  "id": "elephant-trek",
+  "title": "Elephant Family Trek",
+  "summary": "Walk with an elephant family across the savanna.",
+  "ageGroup": "young",
+  "skills": [
+    "animals",
+    "nature"
+  ],
+  "art": "object.hippo",
+  "startNodeId": "start",
+  "nodes": [
+    {
+      "id": "start",
+      "text": "A baby elephant is just one week old. What should the family do first?",
+      "art": "object.hippo",
+      "video": "wikimedia:199969323",
+      "choices": [
+        {
+          "id": "water",
+          "label": "Find water",
+          "art": "object.ocean-wave",
+          "next": "water"
+        },
+        {
+          "id": "walk",
+          "label": "Go for a walk",
+          "art": "object.footprints",
+          "next": "walk"
+        },
+        {
+          "id": "talk",
+          "label": "Talk together",
+          "art": "object.music-note",
+          "next": "talk"
+        }
+      ]
+    },
+    {
+      "id": "water",
+      "text": "Elephants drink with their trunks and splash to stay cool.",
+      "art": "object.ocean-wave",
+      "video": "kidzo:africa-african-elephant",
+      "next": "home"
+    },
+    {
+      "id": "walk",
+      "text": "Mum and baby walk side by side, slow and steady.",
+      "art": "object.footprints",
+      "video": "wikimedia:199969414",
+      "next": "home"
+    },
+    {
+      "id": "talk",
+      "text": "Elephants rumble very low sounds to talk to each other.",
+      "art": "object.music-note",
+      "video": "wikimedia:108113047",
+      "next": "home"
+    },
+    {
+      "id": "home",
+      "text": "At sunset, the family rests together.",
+      "art": "object.sun",
+      "next": "end"
+    },
+    {
+      "id": "end",
+      "text": "The elephant family is safe and happy. What a trek!",
+      "art": "zo.celebrating",
+      "ending": true
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "id": "shape-hunt",
+  "title": "Shape Hunt in the Garden",
+  "summary": "Find circles, squares and triangles.",
+  "ageGroup": "little",
+  "skills": [
+    "shapes"
+  ],
+  "art": "object.triangle",
+  "startNodeId": "start",
+  "nodes": [
+    {
+      "id": "start",
+      "text": "Zo lost some shapes in the garden. Which one shall we find first?",
+      "art": "zo.thinking",
+      "video": "kidzo:shape-circle",
+      "choices": [
+        {
+          "id": "circle",
+          "label": "A circle",
+          "art": "object.circle",
+          "next": "circle"
+        },
+        {
+          "id": "triangle",
+          "label": "A triangle",
+          "art": "object.triangle",
+          "next": "triangle"
+        }
+      ]
+    },
+    {
+      "id": "circle",
+      "text": "Round like the sun. A circle!",
+      "art": "object.circle",
+      "video": "kidzo:shape-circle",
+      "next": "square"
+    },
+    {
+      "id": "triangle",
+      "text": "Three sides. A triangle!",
+      "art": "object.triangle",
+      "video": "kidzo:shape-triangle",
+      "next": "square"
+    },
+    {
+      "id": "square",
+      "text": "And here is a square, with four sides the same.",
+      "art": "object.square",
+      "video": "kidzo:shape-square",
+      "next": "end"
+    },
+    {
+      "id": "end",
+      "text": "You found all the shapes. Shape hunter!",
+      "art": "zo.cheering",
+      "ending": true
+    }
+  ]
+}
