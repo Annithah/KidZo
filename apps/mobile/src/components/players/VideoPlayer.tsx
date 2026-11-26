@@ -1,6 +1,7 @@
 import { NetworkStateType, useNetworkState } from 'expo-network';
 import { useVideoPlayer, VideoView } from 'expo-video';
 import { useEffect, useMemo, useState } from 'react';
+import { creditLine } from '../../lib/credit-line';
 import { calmVolume, getSleepTimerEnd, useSleepTimer } from '../../lib/sleep-timer';
 import { StyleSheet, View } from 'react-native';
 import { localize, type Locale, type VideoBody } from '@kidzo/shared';
@@ -81,10 +82,7 @@ export function VideoPlayer({ body, locale, narration, feedbackSeconds, fallback
     };
   }, [player]);
 
-  const credit = useMemo(() => {
-    const c = body.credit;
-    return [c.author, c.attribution, c.license].filter((v, i, all) => v && all.indexOf(v) === i).join(' · ');
-  }, [body.credit]);
+  const credit = useMemo(() => creditLine(body.credit), [body.credit]);
 
   if (quizOpen && body.quiz.length > 0) {
     return (
